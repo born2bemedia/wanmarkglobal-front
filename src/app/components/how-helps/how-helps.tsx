@@ -99,6 +99,9 @@ function HelpBlock({
         <Title level={5} color="black" weight={500}>
           {title}
         </Title>
+        <Link href={buttonMeta.link}>
+          <HelpButton value={buttonMeta.value} />
+        </Link>
       </div>
       <section className={st.helpBlocks}>
         {blocks.map(({ title, desc, icon }) => (
@@ -124,7 +127,13 @@ function HelpButton({
   return (
     <Button
       variant="black"
-      className={cn(st.helpBtn, mobile ? st.helpBtnMobile : st.helpBtnDesktop)}
+      className={cn(
+        {
+          [st.helpBtnMobile]: mobile,
+          [st.helpBtnDesktop]: !mobile,
+        },
+        st.helpBtn,
+      )}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
