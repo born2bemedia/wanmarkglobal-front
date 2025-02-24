@@ -1,0 +1,36 @@
+.btn {
+  border-radius: 100px;
+  padding: 10px 20px;
+  transition: all 300ms ease-in-out;
+}
+
+.btnWhite {
+  background: #FFF;
+  border: 1px solid #FFF;
+  color: #000000;
+
+  &:hover {
+    background: transparent;
+  }
+}
+
+.btnBlack {
+  background: #000;
+  border: 1px solid #000;
+  color: #FFF;
+
+  &:hover {
+    background: transparent;
+    color: #000;
+  }
+}
+
+.btnGrey {
+  background: rgba(255, 255, 255, 0.44);
+  border: 1px solid rgba(255, 255, 255, 0.44);
+  color: #000;
+
+  &:hover {
+    background: transparent;
+  }
+}

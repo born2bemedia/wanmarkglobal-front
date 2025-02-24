@@ -1,0 +1,61 @@
+.oneSize {
+  font-size: 3.625rem;
+}
+
+.twoSize {
+  font-size: 2.625rem;
+}
+
+.threeSize {
+  font-size: 2.375rem;
+}
+
+.fourSize {
+  font-size: 2rem;
+}
+
+.fiveSize {
+  font-size: 1.375rem;
+}
+
+.sixSize {
+  font-size: 1.125rem;
+}
+
+.weightBold {
+  font-weight: 700;
+}
+
+.weightSemibold {
+  font-weight: 600;
+}
+
+.weightMedium {
+  font-weight: 500;
+}
+
+.weightRegular {
+  font-weight: 400;
+}
+
+.darkBlueColor {
+  color: #0B1635;
+}
+
+.mediumBlueColor {
+  color: #0D2056;
+}
+
+.blackColor {
+  color: rgba(0, 0, 0, 0.70);
+}
+
+.lightBlueColor {
+  color: #3D4D7C;
+}
+
+@media (max-width: 768px) {
+  .oneSize {
+    font-size: 2.813rem;
+  }
+}
