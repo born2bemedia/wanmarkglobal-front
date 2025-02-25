@@ -1,0 +1,79 @@
+.layout {
+  margin-top: 6px;
+  padding: 80px 28px 60px 28px;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+}
+
+.titleLayout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 42px;
+}
+
+.title {
+  width: 360px;
+  text-transform: uppercase;
+  line-height: normal;
+}
+
+.textWidth {
+  max-width: 511px;
+  text-align: left;
+  line-height: normal;
+}
+
+.contactLayout {
+  align-items: center;
+  gap: 18px;
+}
+
+.contactText {
+  text-align: right;
+  width: 157px;
+}
+
+.contactMobile {
+  display: none;
+}
+
+.contactDesktop {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    padding: 22px 12px;
+  }
+
+  .title {
+    width: 97%;
+  }
+
+  .contactMobile {
+    display: flex;
+  }
+
+  .contactDesktop {
+    display: none;
+  }
+
+  .contactLayout {
+    flex-direction: column-reverse;
+    width: 100%;
+
+    .contactText {
+      width: 100%;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 24px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
