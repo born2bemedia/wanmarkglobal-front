@@ -12,13 +12,13 @@
   text-transform: uppercase;
 }
 
+.helpBtnDesktop {
+  display: flex;
+}
+
 .helpBtn {
   align-items: center;
   gap: 10px;
-}
-
-.helpBtnDesktop {
-  display: flex;
 }
 
 .helpBtnMobile {
