@@ -7,7 +7,6 @@
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  z-index: 0;
 }
 
 .metallicSphere {
@@ -24,6 +23,7 @@
   flex-direction: column;
   justify-content: flex-end;
   gap: 18px;
+  z-index: 1;
 
   .titleLayout {
     width: 590px;
