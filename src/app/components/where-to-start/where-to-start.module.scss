@@ -1,0 +1,48 @@
+.layout {
+  border-radius: 12px;
+  margin-top: 6px;
+  padding: 80px 28px;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.imgBanner {
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .checkBtn {
+    flex-shrink: 0;
+  }
+
+  .textLayout {
+    width: 340px;
+    line-height: normal;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout {
+    padding: 22px 12px;
+  }
+
+  .footer {
+    align-items: start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .textLayout {
+    width: 100%;
+  }
+
+  .checkBtn {
+    width: 100%;
+  }
+}
