@@ -83,7 +83,6 @@
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 
@@ -94,6 +93,27 @@
     height: 10px;
   }
 }
+
+.firstFlowDot {
+  top: 0;
+  transform: translate(-50%, -535%);
+}
+
+.secondFlowDot {
+  top: 0;
+  transform: translate(-50%, -200%);
+}
+
+.thirdFlowDot {
+  top: 0;
+  transform: translate(-50%, 100%);
+}
+
+.fourFlowDot {
+  top: 0;
+  transform: translate(-50%, 435%);
+}
+
 
 .mobileSteps {
   display: none;

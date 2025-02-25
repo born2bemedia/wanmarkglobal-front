@@ -133,7 +133,7 @@ export function StepSlide({
         </Title>
         <Text color="mediumBlue">{desc}</Text>
       </div>
-      <FlowLine />
+      <FlowLine step={index + 1} />
       <div className={st.slideImgLayout} style={{ backgroundColor: bgColor }}>
         {img}
       </div>
@@ -170,11 +170,18 @@ export function StepCard({
   );
 }
 
-export function FlowLine() {
+export function FlowLine({ step }: { step: number }) {
   return (
     <div className={st.flow}>
       <div className={st.flowLine} />
-      <div className={st.flowDotLayout}>
+      <div
+        className={cn(st.flowDotLayout, {
+          [st.firstFlowDot]: step === 1,
+          [st.secondFlowDot]: step === 2,
+          [st.thirdFlowDot]: step === 3,
+          [st.fourFlowDot]: step === 4,
+        })}
+      >
         <div />
       </div>
     </div>
