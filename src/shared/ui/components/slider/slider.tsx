@@ -14,6 +14,7 @@ export function Slider({ slides }: { slides: ReactNode[] }) {
       direction="vertical"
       slidesPerView={1}
       spaceBetween={30}
+      speed={700}
       mousewheel={true}
       modules={[Mousewheel, Pagination]}
       className="mySwiper"
