@@ -1,0 +1,163 @@
+.layout {
+  padding: 80px 28px;
+  margin-top: 6px;
+  border-radius: 12px;
+  background-color: #FFFFFF;
+}
+
+.slider {
+  margin-top: 30px;
+}
+
+.slideImgLayout {
+  border-radius: 12px;
+  width: 468px;
+  height: 300px;
+  position: relative;
+  overflow: visible;
+}
+
+.slideLayout {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.flowLineLayout {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.slideInfo {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+
+  .slideTag {
+    margin-bottom: 20px;
+  }
+
+  .slideTitle {
+    margin-bottom: 8px;
+  }
+}
+
+.flow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.flowLine {
+  width: 1px;
+  height: 380px;
+  background-color: #E4EDFF;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.stepImg {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.stepThreeImg {
+  top: -120px;
+}
+
+.flowDotLayout {
+  width: 32px;
+  height: 32px;
+  background-color: #E4EDFF;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  div {
+    border-radius: 100px;
+    background-color: #587FED;
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.mobileSteps {
+  display: none;
+}
+
+.stepCardLayout {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.cardTitle {
+  margin-top: 10px;
+  margin-bottom: 14px;
+}
+
+.cardImgLayout {
+  border-radius: 12px;
+  width: 100%;
+  height: 236px;
+  position: relative;
+  overflow: visible;
+}
+
+@media (max-width: 1024px) {
+  .slider {
+    display: none;
+  }
+
+  .stepImg {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .stepOneImg {
+    width: 216px;
+    height: 212px;
+  }
+
+  .stepTwoImg {
+    width: 216px;
+    height: 216px;
+  }
+
+  .stepThreeImg {
+    width: 350px;
+    height: 350px;
+  }
+
+  .stepFourImg {
+    width: 217px;
+    height: 217px;
+  }
+
+  .mobileSteps {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout {
+    padding: 22px 12px;
+  }
+}
