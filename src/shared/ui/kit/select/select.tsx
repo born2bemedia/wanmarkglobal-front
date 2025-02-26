@@ -18,15 +18,17 @@ export function Select({
   options,
   value,
   onChange,
+  textWeight = 500,
 }: {
   options: SelectOption[];
   value: string;
+  textWeight?: 400 | 500;
   onChange?: (value: string) => void;
 }) {
   return (
     <Root>
       <DropdownMenuTrigger className={st.selectTrigger}>
-        <Text weight={500}>{value}</Text>
+        <Text weight={textWeight}>{value}</Text>
         <ArrowDown />
       </DropdownMenuTrigger>
       <DropdownMenuPortal>
@@ -37,7 +39,7 @@ export function Select({
               className={st.selectItem}
               onClick={() => onChange?.(option.value)}
             >
-              <Text weight={500}>{option.label}</Text>
+              <Text weight={textWeight}>{option.label}</Text>
             </DropdownMenuItem>
           ))}
         </DropdownMenuContent>

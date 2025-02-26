@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 
+import { Footer } from '@/shared/ui/components/footer';
 import { Header } from '@/shared/ui/components/header';
 
 import 'reset-css';
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
