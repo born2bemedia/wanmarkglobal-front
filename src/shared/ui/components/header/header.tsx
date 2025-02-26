@@ -1,14 +1,12 @@
 'use client';
 
-import { JSX } from 'react';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 import { BurgerMenu } from '@/features/burger-menu/components';
 
 import { cn } from '@/shared/lib/styles';
 import { SocialNetworks } from '@/shared/ui/components/social-networks';
-import { Bag, Enter, Facebook, Instagram, X } from '@/shared/ui/icons';
+import { Bag, Enter } from '@/shared/ui/icons';
 import { Button } from '@/shared/ui/kit/button';
 import { Select } from '@/shared/ui/kit/select';
 import { Text } from '@/shared/ui/kit/text';
@@ -85,13 +83,5 @@ export function Header() {
         <BurgerMenu />
       </section>
     </header>
-  );
-}
-
-function SocialNetwork({ icon, link }: { icon: JSX.Element; link: string }) {
-  return (
-    <Link href={link} className={st.socialNetwork}>
-      {icon}
-    </Link>
   );
 }
