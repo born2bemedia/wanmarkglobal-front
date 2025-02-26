@@ -79,5 +79,13 @@ button {
 }
 
 a {
+  all: unset;
+  color: inherit;
   text-decoration: none;
+  cursor: pointer;
+}
+
+a:focus,
+a:focus-visible {
+  outline: none;
 }

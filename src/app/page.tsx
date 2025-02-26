@@ -1,8 +1,9 @@
+import { Faq } from './components/faq';
 import { Hero } from './components/hero';
 import { HowHelps } from './components/how-helps';
+import { HowItWorks } from './components/how-it-works';
+import { Stories } from './components/stories';
 import { WhereToStart } from './components/where-to-start';
-import { Faq } from '@/app/components/faq';
-import { HowItWorks } from '@/app/components/how-it-works';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <WhereToStart />
       <HowItWorks />
       <Faq />
+      <Stories />
     </main>
   );
 }
