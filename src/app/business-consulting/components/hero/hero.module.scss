@@ -1,0 +1,96 @@
+.layout {
+  overflow: hidden;
+  height: 460px;
+  border-radius: 12px;
+  background-color: #D3CBFF;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 28px;
+
+  div {
+    margin-top: auto;
+  }
+}
+
+.content {
+  z-index: 5;
+}
+
+.metallicSphere {
+  position: absolute;
+  right: -120px;
+  top: -180px;
+  z-index: -1;
+}
+
+
+.title {
+  width: 400px;
+  line-height: 72px;
+  margin-bottom: 18px;
+}
+
+.contactUs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 51px;
+}
+
+.textMargin {
+  margin-top: 14px;
+}
+
+.btnWithIcon {
+  align-items: center;
+  gap: 10px;
+}
+
+.desktopBtn {
+  display: flex;
+}
+
+.mobileBtn {
+  display: none;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    padding: 12px;
+  }
+
+  .title {
+    line-height: normal;
+    width: 100%;
+  }
+
+  .mobileBtn {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .textMargin {
+    margin-bottom: 20px;
+  }
+
+  .title {
+    margin-bottom: 14px;
+  }
+
+  .contactUs {
+    margin-bottom: 14px;
+  }
+
+  .desktopBtn {
+    display: none;
+  }
+
+  .metallicSphere {
+    width: 325px;
+    height: 325px;
+    right: -90px;
+    top: -130px;
+  }
+}

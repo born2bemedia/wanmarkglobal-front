@@ -1,11 +1,17 @@
 'use client';
 
-export function Butterfly() {
+export function Butterfly({
+  width = '29',
+  height = '30',
+}: {
+  width?: string;
+  height?: string;
+}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="29"
-      height="30"
+      width={width}
+      height={height}
       viewBox="0 0 29 30"
       fill="none"
     >

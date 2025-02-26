@@ -1,8 +1,10 @@
 export * from './arrow-down';
 export * from './arrow-top-right';
+export * from './arrow-top-right-circle';
 export * from './asterisk';
 export * from './butterfly';
 export * from './close';
+export * from './decor-element';
 export * from './facebook';
 export * from './five-dots';
 export * from './instagram';
@@ -10,4 +12,5 @@ export * from './magnet';
 export * from './menu';
 export * from './mithosis';
 export * from './stairs';
+export * from './star';
 export * from './x';

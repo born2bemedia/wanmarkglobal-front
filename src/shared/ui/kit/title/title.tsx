@@ -12,12 +12,14 @@ export function Title({
   color = 'mediumBlue',
   level = 1,
   weight = 700,
+  uppercase = false,
 }: {
   children: ReactNode;
   color?: 'mediumBlue' | 'darkBlue' | 'lightBlue' | 'black';
   level?: 1 | 2 | 3 | 4 | 5 | 6;
   weight?: 400 | 500 | 600 | 700;
   className?: string;
+  uppercase?: boolean;
 }) {
   const Tag = `h${level}` as keyof JSX.IntrinsicElements;
   const titleClasses = cn(
@@ -36,6 +38,7 @@ export function Title({
       [st.mediumBlueColor]: color === 'mediumBlue',
       [st.blackColor]: color === 'black',
       [st.darkBlueColor]: color === 'darkBlue',
+      [st.uppercase]: uppercase,
     },
     className,
   );

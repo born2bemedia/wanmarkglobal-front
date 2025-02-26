@@ -11,11 +11,13 @@ export function Text({
   className,
   color = 'mediumBlue',
   weight = 400,
+  uppercase = false,
 }: {
   children: ReactNode;
   color?: 'mediumBlue' | 'darkBlue' | 'lightBlue' | 'black';
   className?: string;
   weight?: 300 | 400 | 500;
+  uppercase?: boolean;
 }) {
   const textClasses = cn(
     {
@@ -26,6 +28,7 @@ export function Text({
       [st.thinWeight]: weight === 300,
       [st.normalWeight]: weight === 400,
       [st.mediumWeight]: weight === 500,
+      [st.uppercase]: uppercase,
     },
     className,
   );
