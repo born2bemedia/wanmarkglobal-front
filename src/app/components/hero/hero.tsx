@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 
+import { motion } from '@/shared/lib/motion';
 import { cn } from '@/shared/lib/styles';
 import { ArrowTopRight } from '@/shared/ui/icons';
 import { Button } from '@/shared/ui/kit/button';
