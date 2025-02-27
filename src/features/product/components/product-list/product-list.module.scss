@@ -1,0 +1,48 @@
+.layout {
+  margin-top: 6px;
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  padding: 80px 28px;
+}
+
+.titleLayout {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.titleEl {
+  width: 410px;
+}
+
+.textEl {
+  width: 312px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    padding: 22px 12px;
+  }
+
+  .products {
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  }
+
+  .titleLayout {
+    flex-direction: column;
+  }
+
+  .titleEl {
+    margin-bottom: 12px;
+  }
+
+  .titleEl, .textEl {
+    width: 100%;
+  }
+}
