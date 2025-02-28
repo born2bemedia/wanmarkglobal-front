@@ -16,7 +16,7 @@ export function Title({
   uppercase = false,
 }: {
   children: ReactNode;
-  color?: 'mediumBlue' | 'darkBlue' | 'lightBlue' | 'black';
+  color?: 'mediumBlue' | 'darkBlue' | 'lightBlue' | 'black' | 'darkPurple';
   level?: 1 | 2 | 3 | 4 | 5 | 6;
   weight?: 400 | 500 | 600 | 700;
   className?: string;
@@ -40,6 +40,7 @@ export function Title({
       [st.mediumBlueColor]: color === 'mediumBlue',
       [st.blackColor]: color === 'black',
       [st.darkBlueColor]: color === 'darkBlue',
+      [st.darkPurple]: color === 'darkPurple',
       [st.uppercase]: uppercase,
     },
     className,

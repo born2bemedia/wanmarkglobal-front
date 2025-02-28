@@ -9,19 +9,19 @@ import { Button } from '@/shared/ui/kit/button';
 import { Text } from '@/shared/ui/kit/text';
 import { Title } from '@/shared/ui/kit/title';
 
-import st from './business-consulting-package.module.scss';
+import st from './marketing-consulting-package.module.scss';
 
 const steps = [
   {
-    title: 'Select the services you need from any segment.',
+    title: 'Select the marketing services you need from any category.',
     bgColor: '#FFC1F9',
     img: (
       <Image
         className={cn(st.stepImg, st.stepOneImg)}
-        src="/metallic-urchin.svg"
+        src="/metallic-vase.svg"
         alt="metallic"
-        width={375}
-        height={375}
+        width={277}
+        height={277}
       />
     ),
   },
@@ -31,29 +31,29 @@ const steps = [
     img: (
       <Image
         className={cn(st.stepImg, st.stepTwoImg)}
-        src="/metallic-thorn.svg"
+        src="/metallic-worm.svg"
         alt="metallic"
-        width={351}
-        height={351}
+        width={340}
+        height={340}
       />
     ),
   },
   {
-    title: 'Enjoy a lower price per service when bundling multiple options.',
+    title: 'Enjoy bulk pricing discounts when bundling multiple services.',
     bgColor: '#FFDE7D',
     img: (
       <Image
         className={cn(st.stepImg, st.stepThreeImg)}
-        src="/metallic-dentures.svg"
+        src="/metallic-star.svg"
         alt="metallic"
-        width={333}
-        height={333}
+        width={323}
+        height={323}
       />
     ),
   },
 ];
 
-export function BusinessConsultingPackage() {
+export function MarketingConsultingPackage() {
   return (
     <section className={st.layout}>
       <section className={st.header}>
@@ -65,7 +65,7 @@ export function BusinessConsultingPackage() {
             className={st.title}
             uppercase
           >
-            Flexible Business
+            Flexible Marketing
           </Title>
           <Title
             level={4}
@@ -78,9 +78,6 @@ export function BusinessConsultingPackage() {
           </Title>
         </div>
         <div className={st.desc}>
-          <Title level={6} color="darkBlue" weight={500}>
-            Need multiple services across different categories?
-          </Title>
           <Text color="lightBlue">
             Build your own package and get a custom price with a bulk order
             discount.

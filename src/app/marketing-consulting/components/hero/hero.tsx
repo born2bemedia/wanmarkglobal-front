@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import { motion } from '@/shared/lib/motion';
 import { cn } from '@/shared/lib/styles';
-import { ArrowTopRightCircle } from '@/shared/ui/icons';
+import { ArrowTopRight, ArrowTopRightCircle } from '@/shared/ui/icons';
 import { Button } from '@/shared/ui/kit/button';
 import { Separator } from '@/shared/ui/kit/separator';
 import { Text } from '@/shared/ui/kit/text';
@@ -23,29 +23,33 @@ export function Hero() {
         transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
       >
         <Image
-          src="/metallic-sphere.svg"
+          src="/metallic-bomb.svg"
           alt="metallic-sphere"
           className={st.metallicSphere}
-          width={483}
-          height={483}
+          width={512}
+          height={512}
         />
       </motion.div>
-      <div className={st.content}>
-        <Title weight={500} color="mediumBlue" className={st.title} uppercase>
-          Business Consulting
-        </Title>
+      <section className={st.content}>
+        <div className={st.titleLayout}>
+          <Title weight={500} color="darkPurple" className={st.title}>
+            Marketing Consulting
+          </Title>
+        </div>
         <div className={st.contactUs}>
-          <Title level={5} weight={500} color="lightBlue" uppercase>
-            Start, Structure, and Grow Your Business
+          <Title level={5} weight={500} color="darkPurple" uppercase>
+            Get Noticed, Get Clients, Get Results
           </Title>
           <ContactUsButton />
         </div>
         <Separator />
-        <Text color="lightBlue" className={st.textMargin} uppercase>
-          Scroll to explore
-        </Text>
+        <section className={st.heroFooter}>
+          <Text color="darkPurple" uppercase>
+            Scroll to explore
+          </Text>
+        </section>
         <ContactUsButton mobile />
-      </div>
+      </section>
     </section>
   );
 }
@@ -53,17 +57,13 @@ export function Hero() {
 function ContactUsButton({ mobile = false }: { mobile?: boolean }) {
   return (
     <Button
-      variant="white"
-      className={cn(
-        {
-          [st.desktopBtn]: !mobile,
-          [st.mobileBtn]: mobile,
-        },
-        st.btnWithIcon,
-      )}
+      className={cn(st.btn, {
+        [st.mobileBtn]: mobile,
+        [st.desktopBtn]: !mobile,
+      })}
     >
       Contact Us
-      <ArrowTopRightCircle />
+      <ArrowTopRightCircle color="darkPurple" />
     </Button>
   );
 }

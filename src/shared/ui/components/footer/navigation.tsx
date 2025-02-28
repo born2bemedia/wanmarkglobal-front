@@ -11,25 +11,25 @@ const navItems = [
   {
     title: 'Company',
     links: [
-      { label: 'Market Cases', href: '#' },
-      { label: 'About Us', href: '#' },
-      { label: 'Contact', href: '#' },
+      { label: 'Market Cases', href: '/market-cases' },
+      { label: 'About Us', href: '/about-us' },
+      { label: 'Contact', href: '/contacts' },
     ],
   },
   {
     title: 'Services',
     links: [
       { label: 'Business Consulting', href: '/business-consulting' },
-      { label: 'Marketing Consulting', href: '#' },
-      { label: 'Growth Solutions', href: '#' },
+      { label: 'Marketing Consulting', href: '/marketing-consulting' },
+      { label: 'Growth Solutions', href: '/growth-solutions' },
     ],
   },
   {
     title: 'Resources',
     links: [
-      { label: 'How We Work', href: '#' },
-      { label: 'FAQ', href: '#' },
-      { label: 'Pricing', href: '#' },
+      { label: 'How We Work', href: '/how-we-work' },
+      { label: 'FAQ', href: '/faq' },
+      { label: 'Pricing', href: '/pricing' },
     ],
   },
 ];
