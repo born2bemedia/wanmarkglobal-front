@@ -15,9 +15,9 @@ export function Text({
   size = 'base',
 }: {
   children: ReactNode;
-  color?: 'mediumBlue' | 'darkBlue' | 'lightBlue' | 'black';
+  color?: 'mediumBlue' | 'darkBlue' | 'lightBlue' | 'black' | 'darkPurple';
   className?: string;
-  weight?: 300 | 400 | 500;
+  weight?: 200 | 300 | 400 | 500;
   size?: 'sm' | 'base' | 'lg';
   uppercase?: boolean;
 }) {
@@ -27,6 +27,8 @@ export function Text({
       [st.mediumBlueColor]: color === 'mediumBlue',
       [st.blackColor]: color === 'black',
       [st.darkBlueColor]: color === 'darkBlue',
+      [st.darkPurple]: color === 'darkPurple',
+      [st.extraThinWeight]: weight === 200,
       [st.thinWeight]: weight === 300,
       [st.normalWeight]: weight === 400,
       [st.mediumWeight]: weight === 500,

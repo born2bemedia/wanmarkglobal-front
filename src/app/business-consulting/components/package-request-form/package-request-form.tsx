@@ -119,7 +119,7 @@ export function PackageRequestForm() {
         >
           <Image
             className={st.orderImg}
-            src="/metallic-white.png"
+            src="/metallic-white.svg"
             alt="metallic"
             width={595}
             height={595}

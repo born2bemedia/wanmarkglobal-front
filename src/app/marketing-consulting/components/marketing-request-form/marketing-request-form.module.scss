@@ -1,0 +1,44 @@
+.layout {
+  margin-top: 6px;
+  padding: 80px 28px;
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 70px;
+  overflow: hidden;
+}
+
+.title {
+  width: 400px;
+  margin-bottom: 12px;
+}
+
+.orderImg {
+  top: 220px;
+  position: absolute;
+  left: -320px;
+  transform: rotate(-8.851deg);
+}
+
+@media (max-width: 768px) {
+  .layout {
+    padding: 22px 12px;
+    gap: 30px;
+    flex-direction: column;
+  }
+
+  .requestLayout {
+    align-items: center;
+    gap: 12px;
+
+    button {
+      width: 100%;
+    }
+  }
+
+  .orderImg {
+    display: none;
+  }
+}

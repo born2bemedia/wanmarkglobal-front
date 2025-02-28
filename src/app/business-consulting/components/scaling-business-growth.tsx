@@ -9,9 +9,9 @@ const products: Product[] = [
   {
     icon: <RhodeIsland />,
     color: '#C1D5FF',
-    title: 'Google & Social Media Ads Strategy',
-    desc: 'Plan and structure high-ROI campaigns.',
-    cost: '1350.00',
+    title: 'Revenue Growth Planning',
+    desc: 'identify profitable expansion strategies.',
+    cost: '1270.00',
   },
   {
     icon: <Eye />,
@@ -36,7 +36,7 @@ const products: Product[] = [
   },
   {
     icon: <Worm />,
-    color: '#AD9FFF',
+    color: '#FFA0A2',
     title: 'Competitive Analysis & Market Positioning',
     desc: 'Stay ahead of industry trends.',
     cost: '1600.00',

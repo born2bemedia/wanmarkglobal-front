@@ -23,7 +23,7 @@ export function Hero() {
         transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
       >
         <Image
-          src="/metallic-white.png"
+          src="/metallic-white.svg"
           alt="metallic-sphere"
           className={st.metallicSphere}
           width={546}
