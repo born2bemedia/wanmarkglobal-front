@@ -1,0 +1,89 @@
+.formLayout {
+  max-width: 1000px;
+  width: 100%;
+}
+
+.twoRecordsLine {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 26px;
+}
+
+.dialogContent {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  gap: 12px;
+  text-align: center;
+
+  p {
+    line-height: normal;
+  }
+}
+
+.servicesLayout {
+  margin: 26px 0;
+}
+
+.servicesTitle {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.services {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+}
+
+.column {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.agreementLayout {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  padding-left: 4px;
+  align-items: center;
+  position: relative;
+}
+
+.agreementError {
+  position: absolute;
+  bottom: -4px;
+}
+
+.requestBtn {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .twoRecordsLine {
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  .services {
+    flex-direction: column;
+  }
+
+  .agreementLayout {
+    flex-direction: column;
+    gap: 12px;
+    padding-left: 8px;
+  }
+
+  .requestBtn {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

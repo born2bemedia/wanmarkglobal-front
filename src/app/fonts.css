@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'Fixel';
+  src: url('../shared/fonts/FixelText-ExtraLight.otf') format('opentype');
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fixel';
+  src: url('../shared/fonts/FixelText-Light.otf') format('opentype');
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fixel';
+  src: url('../shared/fonts/FixelText-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fixel';
+  src: url('../shared/fonts/FixelText-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fixel';
+  src: url('../shared/fonts/FixelText-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fixel';
+  src: url('../shared/fonts/FixelText-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-display: swap;
+}

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { SocialNetworks } from '@/shared/ui/components/social-networks';
@@ -14,8 +15,10 @@ export function Footer() {
     <footer className={st.layout}>
       <section className={st.footerTop}>
         <div>
-          <p className={st.logo}>[BRAND] LOGO</p>
-          <Text color="black">
+          <Link href="/">
+            <Image src="/full-logo.svg" alt="Wanmark" width={130} height={25} />
+          </Link>
+          <Text color="black" className={st.desc}>
             Business & Marketing, Engineered for Your Success.
           </Text>
           <ol className={st.list}>
