@@ -1,0 +1,33 @@
+button {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  border: none;
+  background: none;
+  font: inherit;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+a {
+  all: unset;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:focus,
+a:focus-visible {
+  outline: none;
+}
+
+input, textarea {
+  border: 0;
+  font-family: 'Fixel', sans-serif;
+}

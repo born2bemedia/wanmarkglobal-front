@@ -4,6 +4,7 @@ export * from './arrow-top-right-circle';
 export * from './asterisk';
 export * from './bag';
 export * from './butterfly';
+export * from './check';
 export * from './circle';
 export * from './clever';
 export * from './close';

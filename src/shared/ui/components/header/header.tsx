@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 import { BurgerMenu } from '@/features/burger-menu/components';
@@ -19,7 +21,9 @@ export function Header() {
   return (
     <header className={st.header}>
       <section className={st.logoAndLinks}>
-        <div>[BRAND] LOGO</div>
+        <Link href="/">
+          <Image src="/full-logo.svg" alt="Wanmark" width={130} height={25} />
+        </Link>
         <section className={cn(st.toolbar, st.networks)}>
           <span className={st.select}>
             <Select options={[{ label: 'ENG', value: 'ENG' }]} value="ENG" />

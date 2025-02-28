@@ -19,7 +19,7 @@ const navItems = [
   {
     title: 'Services',
     links: [
-      { label: 'Business Consulting', href: '#' },
+      { label: 'Business Consulting', href: '/business-consulting' },
       { label: 'Marketing Consulting', href: '#' },
       { label: 'Growth Solutions', href: '#' },
     ],
