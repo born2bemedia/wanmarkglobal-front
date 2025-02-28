@@ -10,6 +10,18 @@
   margin-bottom: 26px;
 }
 
+.dialogContent {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  gap: 12px;
+  text-align: center;
+
+  p {
+    line-height: normal;
+  }
+}
+
 .servicesLayout {
   margin: 26px 0;
 }

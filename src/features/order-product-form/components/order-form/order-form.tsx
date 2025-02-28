@@ -1,31 +1,35 @@
 'use client';
 
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 
-import {
-  OrderProductSchema,
-  orderProductSchema,
-} from '@/features/order-product-form/lib/order-product.schema';
-import { ProductService } from '@/features/product/components/product-service';
+import { ProductService } from '@/features/product/components';
 
 import { Controller, useForm, zodResolver } from '@/shared/lib/forms';
 import { useCountryCode } from '@/shared/lib/hooks';
+import { notifyError } from '@/shared/lib/notify';
 import { ArrowTopRightCircle } from '@/shared/ui/icons';
 import { Button } from '@/shared/ui/kit/button';
 import { Checkbox } from '@/shared/ui/kit/checkbox';
+import { Dialog } from '@/shared/ui/kit/dialog/dialog';
 import { Loader } from '@/shared/ui/kit/loader';
 import { PhoneField } from '@/shared/ui/kit/phone-field';
 import { Text } from '@/shared/ui/kit/text';
 import { TextArea } from '@/shared/ui/kit/text-area/text-area';
 import { TextField } from '@/shared/ui/kit/text-field';
+import { Title } from '@/shared/ui/kit/title';
 
+import {
+  OrderProductSchema,
+  orderProductSchema,
+} from '../../lib/order-product.schema';
+import { orderProduct } from '../../services/order-product.action';
 import st from './order-form.module.scss';
 
 const splitIntoColumns = (
   items: { name: string; icon?: ReactNode }[],
   columns: number = 2,
 ) => {
-  const mid = Math.ceil(items.length / columns); // Количество элементов в первой колонке
+  const mid = Math.ceil(items.length / columns);
   return [items.slice(0, mid), items.slice(mid)];
 };
 
@@ -36,6 +40,8 @@ export function OrderForm({
   type: 'Business Consulting' | 'Marketing Consulting';
   services: { name: string; icon?: ReactNode }[];
 }) {
+  const [dialogOpen, setDialogOpen] = useState<boolean>(false);
+
   const countryCode = useCountryCode();
 
   const {
@@ -58,8 +64,14 @@ export function OrderForm({
   });
 
   const onSubmit = handleSubmit(async (data: OrderProductSchema) => {
-    console.log({ ...data, type });
-    reset();
+    try {
+      await orderProduct({ ...data, type });
+      setDialogOpen(true);
+      reset();
+    } catch (e) {
+      console.error('Error send form', e);
+      notifyError('Failed to send the request. Please try again later.');
+    }
   });
 
   const [leftColumn, rightColumn] = splitIntoColumns(services);
@@ -214,6 +226,17 @@ export function OrderForm({
           )}
         </Button>
       </section>
+      <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+        <section className={st.dialogContent}>
+          <Title level={5} color="darkBlue" weight={500} uppercase>
+            Your request has been submitted!
+          </Title>
+          <Text color="lightBlue">
+            We will review your selections and contact you shortly with a
+            personalized proposal.
+          </Text>
+        </section>
+      </Dialog>
     </form>
   );
 }
