@@ -1,10 +1,11 @@
 import type { ReactNode } from 'react';
 import type { Metadata } from 'next';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 import { Toaster } from '@/shared/lib/notify';
 import { Footer } from '@/shared/ui/components/footer';
 import { Header } from '@/shared/ui/components/header';
-import { Preloader } from '@/shared/ui/components/preloader/preloader';
+import { Preloader } from '@/shared/ui/components/preloader';
 
 import './globals.css';
 
@@ -20,6 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleAnalytics gaId={process.env.GA_ID ?? ''} />
       <body>
         <Header />
         <Preloader />
