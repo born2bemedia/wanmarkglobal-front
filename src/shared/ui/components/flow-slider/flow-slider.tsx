@@ -24,12 +24,10 @@ export function FlowSlider({
   }[];
   titleWidth?: number;
 }) {
-  const { width } = useWindowSize();
-
   return (
     <section className={st.slider}>
-      {width <= 1024 ? (
-        steps.map(({ title, img, bgColor, desc }, i) => (
+      <section className={st.mobileFlow}>
+        {steps.map(({ title, img, bgColor, desc }, i) => (
           <StepCard
             key={title}
             title={title}
@@ -38,8 +36,9 @@ export function FlowSlider({
             img={img}
             bgColor={bgColor}
           />
-        ))
-      ) : (
+        ))}
+      </section>
+      <section className={st.desktopFlow}>
         <Slider
           slides={steps.map(({ title, img, bgColor, desc }, i) => (
             <StepSlide
@@ -54,7 +53,7 @@ export function FlowSlider({
             />
           ))}
         />
-      )}
+      </section>
     </section>
   );
 }

@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { Toaster } from '@/shared/lib/notify';
 import { Footer } from '@/shared/ui/components/footer';
 import { Header } from '@/shared/ui/components/header';
+import { Preloader } from '@/shared/ui/components/preloader/preloader';
 
 import './globals.css';
 
@@ -21,6 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Header />
+        <Preloader />
         {children}
         <Footer />
         <Toaster position="bottom-right" reverseOrder={false} />

@@ -26,7 +26,14 @@ export function Header() {
         </Link>
         <section className={cn(st.toolbar, st.networks)}>
           <span className={st.select}>
-            <Select options={[{ label: 'ENG', value: 'ENG' }]} value="ENG" />
+            <Select
+              options={[
+                { label: 'ENG', value: 'ENG' },
+                { label: 'DEU', value: 'DEU' },
+                { label: 'ITA', value: 'ITA' },
+              ]}
+              value="ENG"
+            />
           </span>
           <SocialNetworks />
         </section>
