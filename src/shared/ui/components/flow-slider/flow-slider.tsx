@@ -2,7 +2,6 @@
 
 import { ReactNode, useMemo } from 'react';
 
-import { useWindowSize } from '@/shared/lib/hooks';
 import { cn } from '@/shared/lib/styles';
 import { Slider } from '@/shared/ui/components/slider';
 import { Tag } from '@/shared/ui/kit/tag';
