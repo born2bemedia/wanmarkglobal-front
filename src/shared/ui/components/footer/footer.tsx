@@ -24,18 +24,21 @@ export function Footer() {
           <ol className={st.list}>
             <li>
               <Text size="lg" color="black">
-                Address 1
+                2nd Floor College House, 17 King Edwards Road, Ruislip, London,
+                United Kingdom, HA4 7AE
               </Text>
             </li>
             <li>
               <Text size="lg" color="black">
-                Address 2
+                Unit 7, 6 Westgate Street, Hackney, E8 3RN
               </Text>
             </li>
             <li>
-              <Text size="lg" color="black">
-                Email:
-              </Text>
+              <Link href="mailto:info@wanmarkglobal.com">
+                <Text size="lg" color="black">
+                  info@wanmarkglobal.com
+                </Text>
+              </Link>
             </li>
             <li>
               <Text size="lg" color="black">

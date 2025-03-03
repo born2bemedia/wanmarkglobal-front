@@ -2,7 +2,6 @@
 
 import { ReactNode, useMemo } from 'react';
 
-import { useWindowSize } from '@/shared/lib/hooks';
 import { cn } from '@/shared/lib/styles';
 import { Slider } from '@/shared/ui/components/slider';
 import { Tag } from '@/shared/ui/kit/tag';
@@ -24,12 +23,10 @@ export function FlowSlider({
   }[];
   titleWidth?: number;
 }) {
-  const { width } = useWindowSize();
-
   return (
     <section className={st.slider}>
-      {width <= 1024 ? (
-        steps.map(({ title, img, bgColor, desc }, i) => (
+      <section className={st.mobileFlow}>
+        {steps.map(({ title, img, bgColor, desc }, i) => (
           <StepCard
             key={title}
             title={title}
@@ -38,8 +35,9 @@ export function FlowSlider({
             img={img}
             bgColor={bgColor}
           />
-        ))
-      ) : (
+        ))}
+      </section>
+      <section className={st.desktopFlow}>
         <Slider
           slides={steps.map(({ title, img, bgColor, desc }, i) => (
             <StepSlide
@@ -54,7 +52,7 @@ export function FlowSlider({
             />
           ))}
         />
-      )}
+      </section>
     </section>
   );
 }

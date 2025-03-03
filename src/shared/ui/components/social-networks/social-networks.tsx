@@ -7,9 +7,9 @@ import { Facebook, Instagram, X } from '@/shared/ui/icons';
 import st from './social-networks.module.scss';
 
 const socialNetworks = [
-  { icon: <Instagram />, link: 'https://instagram.com/' },
-  { icon: <X />, link: 'https://x.com/' },
-  { icon: <Facebook />, link: 'https://www.facebook.com/' },
+  { icon: <Instagram />, link: 'https://www.instagram.com/wanmarkglobal/' },
+  { icon: <X />, link: 'https://x.com/WanmarkGlobal' },
+  { icon: <Facebook />, link: 'https://www.facebook.com/wanmarkglobal/' },
 ];
 
 export function SocialNetworks() {

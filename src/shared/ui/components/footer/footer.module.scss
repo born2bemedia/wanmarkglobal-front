@@ -10,6 +10,7 @@
 }
 
 .list {
+  padding-right: 40px;
   margin-top: 24px;
   display: flex;
   flex-direction: column;
@@ -76,6 +77,10 @@
 }
 
 @media (max-width: 768px) {
+  .list {
+    padding-right: 0;
+  }
+
   .layout {
     padding: 40px 12px 12px 12px;
   }
