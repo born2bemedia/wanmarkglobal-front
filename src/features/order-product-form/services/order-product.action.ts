@@ -8,7 +8,7 @@ import {
   EMAIL_USER,
 } from '@/shared/config/env';
 
-import { OrderProductSchema } from '../lib/order-product.schema';
+import { OrderProductWithServiceSchema } from '../lib/order-product.schema';
 
 function makeBody({
   from,
@@ -46,7 +46,10 @@ export async function orderProduct({
   email,
   firstName,
   selectedServices,
-}: Omit<OrderProductSchema, 'agreement'> & { type: string }) {
+}: Omit<OrderProductWithServiceSchema, 'agreement' | 'selectedServices'> & {
+  type: string;
+  selectedServices?: string[];
+}) {
   try {
     const OAuth2 = google.auth.OAuth2;
     const oauth2Client = new OAuth2(
@@ -76,7 +79,7 @@ export async function orderProduct({
         <p><b>Project Description:</b> ${projectDescription}</p>
         <p><b>Phone:</b> ${phone}</p>
         <p><b>Email:</b> ${email}</p>
-        <p><b>Selected services:</b> ${selectedServices.join(', ')}</p>
+        <p><b>Selected services:</b> ${selectedServices?.join(', ')}</p>
       `,
     });
 

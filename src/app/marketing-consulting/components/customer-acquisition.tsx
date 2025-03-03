@@ -7,7 +7,6 @@ import {
   Butterfly,
   Direction,
   Eye,
-  Pill,
   RhodeIsland,
   Worm,
 } from '@/shared/ui/icons';

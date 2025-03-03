@@ -19,7 +19,6 @@ import {
   Lightning,
   Magnet,
   Pedestal,
-  Pill,
   RhodeIsland,
   Star,
   Worm,

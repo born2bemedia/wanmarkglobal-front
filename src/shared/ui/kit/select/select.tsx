@@ -8,7 +8,7 @@ import {
   Root,
 } from '@radix-ui/react-dropdown-menu';
 
-import { ArrowDown } from '@/shared/ui/icons';
+import { ChevronDown } from '@/shared/ui/icons';
 import { Text } from '@/shared/ui/kit/text';
 
 import st from './select.module.scss';
@@ -29,7 +29,7 @@ export function Select({
     <Root>
       <DropdownMenuTrigger className={st.selectTrigger}>
         <Text weight={textWeight}>{value}</Text>
-        <ArrowDown />
+        <ChevronDown />
       </DropdownMenuTrigger>
       <DropdownMenuPortal>
         <DropdownMenuContent className={st.selectContent} sideOffset={10}>

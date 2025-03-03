@@ -19,8 +19,8 @@ import { TextField } from '@/shared/ui/kit/text-field';
 import { Title } from '@/shared/ui/kit/title';
 
 import {
-  OrderProductSchema,
-  orderProductSchema,
+  OrderProductWithServiceSchema,
+  orderProductWithServiceSchema,
 } from '../../lib/order-product.schema';
 import { orderProduct } from '../../services/order-product.action';
 import st from './order-form.module.scss';
@@ -49,8 +49,8 @@ export function OrderForm({
     control,
     formState: { isSubmitting },
     reset,
-  } = useForm<OrderProductSchema>({
-    resolver: zodResolver(orderProductSchema),
+  } = useForm<OrderProductWithServiceSchema>({
+    resolver: zodResolver(orderProductWithServiceSchema),
     reValidateMode: 'onChange',
     mode: 'onChange',
     defaultValues: {
@@ -63,7 +63,7 @@ export function OrderForm({
     },
   });
 
-  const onSubmit = handleSubmit(async (data: OrderProductSchema) => {
+  const onSubmit = handleSubmit(async (data: OrderProductWithServiceSchema) => {
     try {
       await orderProduct({ ...data, type });
       setDialogOpen(true);
