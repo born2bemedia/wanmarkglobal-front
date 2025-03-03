@@ -7,14 +7,24 @@
 
 .desc {
   margin-top: 6px;
+  width: 320px;
+  line-height: normal;
 }
 
 .list {
-  padding-right: 40px;
+  width: 500px;
   margin-top: 24px;
   display: flex;
   flex-direction: column;
   gap: 8px;
+
+  p {
+    line-height: normal;
+  }
+
+  .highlighted {
+    font-weight: 500;
+  }
 }
 
 .footerTop {
@@ -37,7 +47,7 @@
   .navList {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 14px;
   }
 
   .title {
@@ -78,7 +88,7 @@
 
 @media (max-width: 768px) {
   .list {
-    padding-right: 0;
+    width: 100%;
   }
 
   .layout {
