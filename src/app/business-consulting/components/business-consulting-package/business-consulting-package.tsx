@@ -99,7 +99,7 @@ export function BusinessConsultingPackage() {
           <Title level={3} weight={500} uppercase>
             Price:
           </Title>
-          <Text weight={200} className={st.priceText} uppercase>
+          <Text weight={200} size="heading" uppercase>
             On Demand
           </Text>
         </div>

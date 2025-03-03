@@ -18,7 +18,7 @@ export function Text({
   color?: 'mediumBlue' | 'darkBlue' | 'lightBlue' | 'black' | 'darkPurple';
   className?: string;
   weight?: 200 | 300 | 400 | 500;
-  size?: 'sm' | 'base' | 'lg';
+  size?: 'sm' | 'base' | 'lg' | 'heading';
   uppercase?: boolean;
 }) {
   const textClasses = cn(
@@ -35,6 +35,7 @@ export function Text({
       [st.smSize]: size === 'sm',
       [st.baseSize]: size === 'base',
       [st.lgSize]: size === 'lg',
+      [st.headingSize]: size === 'heading',
       [st.uppercase]: uppercase,
     },
     className,
