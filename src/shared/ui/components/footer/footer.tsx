@@ -18,30 +18,32 @@ export function Footer() {
           <Link href="/">
             <Image src="/full-logo.svg" alt="Wanmark" width={130} height={25} />
           </Link>
-          <Text color="black" className={st.desc}>
+          <Text color="darkBlue" weight={300} className={st.desc}>
             Business & Marketing, Engineered for Your Success.
           </Text>
           <ol className={st.list}>
             <li>
-              <Text size="lg" color="black">
+              <Text size="lg" color="darkBlue">
+                <strong className={st.highlighted}>Registered Address:</strong>{' '}
                 2nd Floor College House, 17 King Edwards Road, Ruislip, London,
                 United Kingdom, HA4 7AE
               </Text>
             </li>
             <li>
-              <Text size="lg" color="black">
-                Unit 7, 6 Westgate Street, Hackney, E8 3RN
+              <Text size="lg" color="darkBlue">
+                <strong className={st.highlighted}>Office address:</strong> Unit
+                7, 6 Westgate Street, Hackney, E8 3RN
               </Text>
             </li>
             <li>
               <Link href="mailto:info@wanmarkglobal.com">
-                <Text size="lg" color="black">
+                <Text size="lg" color="darkBlue">
                   info@wanmarkglobal.com
                 </Text>
               </Link>
             </li>
             <li>
-              <Text size="lg" color="black">
+              <Text size="lg" color="darkBlue">
                 Phone:
               </Text>
             </li>
@@ -51,7 +53,7 @@ export function Footer() {
       </section>
       <Separator className={st.desktopSeparator} />
       <section className={st.footerBottom}>
-        <Text color="black">
+        <Text color="darkBlue" weight={300}>
           © {new Date().getFullYear()} Wanmark Ltd. All rights reserved.
         </Text>
         <Separator className={st.mobileSeparator} />
@@ -59,22 +61,22 @@ export function Footer() {
           <ol className={st.policiesLayout}>
             <li>
               <Link href="#">
-                <Text color="black">Terms of Use</Text>
+                <Text color="darkBlue">Terms of Use</Text>
               </Link>
             </li>
             <li>
               <Link href="#">
-                <Text color="black">Privacy Policy</Text>
+                <Text color="darkBlue">Privacy Policy</Text>
               </Link>
             </li>
             <li>
               <Link href="#">
-                <Text color="black">Cookie Policy</Text>
+                <Text color="darkBlue">Cookie Policy</Text>
               </Link>
             </li>
             <li>
               <Link href="#">
-                <Text color="black">Refund Policy</Text>
+                <Text color="darkBlue">Refund Policy</Text>
               </Link>
             </li>
           </ol>

@@ -6,7 +6,7 @@ import { PackageRequestForm } from './components/package-request-form';
 import { ScalingBusinessGrowth } from './components/scaling-business-growth';
 import { ClientAcquisition } from './components/сlient-acquisition';
 
-export default function BusinessConsulting() {
+export default async function BusinessConsulting() {
   return (
     <main>
       <Hero />

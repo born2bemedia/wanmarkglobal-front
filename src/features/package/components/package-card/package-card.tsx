@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode } from 'react';
+import { JSX } from 'react';
 
 import { cn } from '@/shared/lib/styles';
 import { ArrowDown, ArrowTopRightCircle } from '@/shared/ui/icons';
@@ -22,7 +22,7 @@ export function PackageCard({
   description: string;
   price: string;
   onOrder?: () => void;
-  services: { icon: ReactNode; title: string }[];
+  services: { icon: JSX.Element; title: string }[];
   color: 'surfaceYellow' | 'grey';
 }) {
   const layoutClasses = cn(st.layout, {
