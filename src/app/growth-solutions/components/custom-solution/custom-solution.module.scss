@@ -1,0 +1,40 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  h3 {
+    line-height: normal;
+  }
+}
+
+.requestLayout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  p {
+    width: 294px;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .requestLayout {
+    flex-direction: column;
+    gap: 12px;
+
+    p, button {
+      width: 100%;
+    }
+
+    button {
+      justify-content: space-between;
+    }
+  }
+}

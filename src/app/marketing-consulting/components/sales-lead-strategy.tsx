@@ -3,17 +3,7 @@
 import { ProductList } from '@/features/product/components';
 import type { Product } from '@/features/product/lib';
 
-import {
-  Butterfly,
-  Clever,
-  Direction,
-  Eye,
-  Magnet,
-  Pedestal,
-  Stairs,
-  Star,
-  Worm,
-} from '@/shared/ui/icons';
+import { Clever, Magnet, Pedestal, Stairs, Star } from '@/shared/ui/icons';
 
 const products: Product[] = [
   {

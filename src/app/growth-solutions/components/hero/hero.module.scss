@@ -1,0 +1,15 @@
+.metallicSphere {
+  position: absolute;
+  right: -120px;
+  top: -190px;
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .metallicSphere {
+    width: 325px;
+    height: 325px;
+    right: -90px;
+    top: -130px;
+  }
+}

@@ -10,8 +10,14 @@ export const orderProductSchema = z.object({
     .refine(isPhoneValid, 'Invalid phone number format'),
   email: z.string().email('Invalid email address'),
   projectDescription: z.string().nonempty('Project description is required'),
-  selectedServices: z.array(z.string()).nonempty('Select at least one service'),
   agreement: z.boolean().refine(value => value, 'You must agree to the terms'),
 });
 
+export const orderProductWithServiceSchema = orderProductSchema.extend({
+  selectedServices: z.array(z.string()).nonempty('Select at least one service'),
+});
+
+export type OrderProductWithServiceSchema = z.infer<
+  typeof orderProductWithServiceSchema
+>;
 export type OrderProductSchema = z.infer<typeof orderProductSchema>;

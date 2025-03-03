@@ -1,0 +1,94 @@
+.layout {
+  border-radius: 12px;
+  padding: 4px;
+  width: 100%;
+}
+
+.surfaceYellowColor {
+  background-color: #FFE69E;
+}
+
+.greyColor {
+  background-color: #FAFAFA;
+}
+
+.titleLayout {
+  margin-top: 6px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contentLayout {
+  min-height: 585px;
+  margin-top: 6px;
+  border-radius: 12px;
+  background: #FFF;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    color: black;
+    margin-bottom: 14px;
+  }
+
+  .includes {
+    opacity: 0.6;
+    margin-bottom: 14px;
+  }
+
+  .serviceLayout {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .serviceCard {
+    border-radius: 6px;
+    background-color: #FAFAFA;
+    align-items: center;
+    display: flex;
+    gap: 8px;
+    padding: 8px 20px 8px 12px;
+  }
+
+  .price {
+    font-size: 1.875rem;
+    color: #2149BA;
+  }
+
+  .orderLayout {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  h4 {
+    font-size: 1.875rem;
+  }
+
+  .orderBtn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .orderLayout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 40px !important;
+
+    button {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+}
