@@ -43,9 +43,11 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <Text size="lg" color="darkBlue">
-                Phone:
-              </Text>
+              <Link href="tel:+447418036208">
+                <Text size="lg" color="darkBlue">
+                  +447418036208
+                </Text>
+              </Link>
             </li>
           </ol>
         </div>
