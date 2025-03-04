@@ -13,9 +13,11 @@ import st from './general-request-form.module.scss';
 export function GeneralRequestForm({
   title = 'Package Request Form',
   description = 'Request Your Custom Business Consulting Solution',
+  subject = 'Business Consulting',
 }: {
   title?: string;
   description?: string;
+  subject?: 'Contact' | 'Business Consulting' | 'Marketing Consulting';
 }) {
   return (
     <section className={st.layout}>
@@ -42,7 +44,7 @@ export function GeneralRequestForm({
           />
         </motion.div>
       </section>
-      <OrderNoServicesForm type="Business Consulting" />
+      <OrderNoServicesForm type={subject} />
     </section>
   );
 }

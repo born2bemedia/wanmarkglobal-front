@@ -9,6 +9,7 @@ export default function Contact() {
     <main>
       <Hero />
       <GeneralRequestForm
+        subject="Contact"
         title="General Inquiry Form"
         description="Need assistance or more information? Send us your request, and we’ll respond shortly."
       />

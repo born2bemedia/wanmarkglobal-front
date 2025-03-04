@@ -26,7 +26,7 @@ import st from './order-form.module.scss';
 export function OrderNoServicesForm({
   type,
 }: {
-  type: 'Business Consulting' | 'Marketing Consulting';
+  type: 'Business Consulting' | 'Marketing Consulting' | 'Contact';
 }) {
   const [dialogOpen, setDialogOpen] = useState<boolean>(false);
 
