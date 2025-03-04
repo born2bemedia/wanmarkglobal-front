@@ -1,10 +1,11 @@
 import { solutionsMapping } from '@/features/package/lib';
 import { getProducts } from '@/features/product/services';
 
+import { GeneralRequestForm } from '@/shared/ui/components/general-request-form';
+
 import { CustomSolution } from './components/custom-solution';
 import { Hero } from './components/hero';
 import { MarketPackages } from './components/market-packages';
-import { PackageRequestForm } from './components/package-request-form';
 
 export default async function GrowthSolutions() {
   const products = await getProducts({ slug: 'growth-solutions' });
@@ -22,7 +23,7 @@ export default async function GrowthSolutions() {
         <MarketPackages key={index} packages={pair} position={index} />
       ))}
       <CustomSolution />
-      <PackageRequestForm />
+      <GeneralRequestForm />
     </main>
   );
 }

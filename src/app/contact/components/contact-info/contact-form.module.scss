@@ -1,0 +1,56 @@
+.layout {
+  display: flex;
+  justify-content: space-between;
+  gap: 70px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cards {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 50%;
+}
+
+.cardLayout {
+  padding: 16px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+    gap: 20px;
+    padding: 22px 12px;
+  }
+
+  .cards {
+    margin-top: 30px;
+  }
+
+  .cardLayout {
+    width: 92%;
+  }
+
+  .cards {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
