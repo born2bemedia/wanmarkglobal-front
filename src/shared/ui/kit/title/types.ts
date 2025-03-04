@@ -7,4 +7,5 @@ export type TitleColor =
   | 'blackYellow'
   | 'opacityBlackYellow'
   | 'umberPeach'
-  | 'opacityUmberPeach';
+  | 'opacityUmberPeach'
+  | 'white';

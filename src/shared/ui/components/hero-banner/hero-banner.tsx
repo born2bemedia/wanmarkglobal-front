@@ -19,16 +19,28 @@ export function HeroBanner({
   contactText,
   scrollToExplore,
   contactUsIcon,
+  backgroundImage,
 }: {
-  image: ReactNode;
+  image?: ReactNode;
   color: string;
   title: { color: TitleColor; value: string; width?: string };
   contactText: { color: TitleColor; value: string; width?: string };
-  scrollToExplore: { color: 'mediumBlue' | 'umber'; value: string; width?: string };
+  scrollToExplore: {
+    color: 'mediumBlue' | 'umber' | 'white';
+    value: string;
+    width?: string;
+  };
   contactUsIcon: ReactNode;
+  backgroundImage?: string;
 }) {
   return (
-    <section className={st.layout} style={{ backgroundColor: color }}>
+    <section
+      className={st.layout}
+      style={{
+        backgroundColor: color,
+        ...(backgroundImage && { backgroundImage: `url(${backgroundImage})` }),
+      }}
+    >
       <motion.div
         animate={{
           y: [0, -15, 0],
