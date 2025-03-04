@@ -1,0 +1,135 @@
+.card {
+  display: flex;
+  align-items: stretch;
+  gap: 6px;
+  box-sizing: border-box;
+  width: 100%;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+  .cardThumbnail {
+    position: relative;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 28px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-sizing: border-box;
+    @media (max-width: 768px) {
+      width: 100%;
+      height: 452px;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 160px;
+      display: block;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.38) 0%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      z-index: 0;
+    }
+    img {
+      object-fit: cover;
+      z-index: 1;
+      @media (max-width: 768px) {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .title {
+      position: relative;
+      z-index: 2;
+      h2 {
+        color: #fafafa;
+        font-size: 38px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-transform: uppercase;
+      }
+      p {
+        color: #fafafa;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+      }
+    }
+    a {
+      position: relative;
+      z-index: 2;
+      color: #000;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 6px 6px 20px;
+      border-radius: 20px;
+      background: #fafafa;
+      text-decoration: none;
+    }
+  }
+  .cardContent {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 40px 28px;
+    border-radius: 12px;
+    background: #fff;
+    box-sizing: border-box;
+    @media (max-width: 768px) {
+      width: 100%;
+      padding: 12px;
+    }
+    .details {
+      display: flex;
+      border-radius: 12px;
+      background: #fafafa;
+      padding: 20px;
+      gap: 18px;
+      align-items: flex-start;
+      @media (max-width: 768px) {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .info {
+        width: calc(100% - 58px);
+        @media (max-width: 768px) {
+          width: 100%;
+        }
+        h3 {
+          color: #0b1635;
+          font-size: 30px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+        }
+        > div {
+          color: #3d4d7c;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          ul {
+            list-style: disc;
+            padding-left: 20px;
+          }
+        }
+      }
+    }
+  }
+}

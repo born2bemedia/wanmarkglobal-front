@@ -6,7 +6,8 @@
   flex-direction: column;
   position: relative;
   padding: 28px;
-
+  background-size: cover;
+  background-position: center;
   div {
     margin-top: auto;
   }
@@ -28,6 +29,7 @@
   width: 400px;
   line-height: 72px;
   margin-bottom: 10px;
+  max-width: 100%;
 }
 
 .contactUs {

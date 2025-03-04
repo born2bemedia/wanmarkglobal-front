@@ -17,16 +17,30 @@ export function HeroBanner({
   color,
   title,
   contactText,
+  scrollToExplore,
   contactUsIcon,
+  backgroundImage,
 }: {
-  image: ReactNode;
+  image?: ReactNode;
   color: string;
   title: { color: TitleColor; value: string; width?: string };
-  contactText: { color: TitleColor; value: string };
+  contactText: { color: TitleColor; value: string; width?: string };
+  scrollToExplore: {
+    color: 'mediumBlue' | 'umber' | 'white';
+    value: string;
+    width?: string;
+  };
   contactUsIcon: ReactNode;
+  backgroundImage?: string;
 }) {
   return (
-    <section className={st.layout} style={{ backgroundColor: color }}>
+    <section
+      className={st.layout}
+      style={{
+        backgroundColor: color,
+        ...(backgroundImage && { backgroundImage: `url(${backgroundImage})` }),
+      }}
+    >
       <motion.div
         animate={{
           y: [0, -15, 0],
@@ -47,14 +61,20 @@ export function HeroBanner({
           {title.value}
         </Title>
         <div className={st.contactUs}>
-          <Title level={5} weight={500} color={contactText.color} uppercase>
+          <Title
+            level={5}
+            weight={500}
+            color={contactText.color}
+            uppercase
+            style={{ width: contactText.width, lineHeight: '1.3' }}
+          >
             {contactText.value}
           </Title>
           <ContactUsButton>{contactUsIcon}</ContactUsButton>
         </div>
         <Separator />
-        <Text color="mediumBlue" className={st.textMargin} uppercase>
-          Scroll to explore
+        <Text color={scrollToExplore.color} className={st.textMargin} uppercase>
+          {scrollToExplore.value ? scrollToExplore.value : 'Scroll to explore'}
         </Text>
         <ContactUsButton mobile>{contactUsIcon}</ContactUsButton>
       </div>

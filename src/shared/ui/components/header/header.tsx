@@ -74,7 +74,9 @@ export function Header() {
           textWeight={400}
           onChange={value => router.push(value)}
         />
-        <Text>Market Cases</Text>
+        <Link href="/market-cases">
+          <Text>Market Cases</Text>
+        </Link>
         <Select
           options={[
             {
