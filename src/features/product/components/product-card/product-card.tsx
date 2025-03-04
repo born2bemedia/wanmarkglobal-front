@@ -1,5 +1,7 @@
 'use client';
 
+import { ReactNode } from 'react';
+
 import { type Product } from '@/features/product/lib';
 
 import { ArrowTopRightCircle } from '@/shared/ui/icons';
@@ -16,7 +18,14 @@ export function ProductCard({
   title,
   color,
   onOrder,
-}: Product & { onOrder?: () => void }) {
+}: Product & {
+  onOrder?: (args: {
+    title: string;
+    icon: ReactNode;
+    price: string;
+    color: string;
+  }) => void;
+}) {
   return (
     <article className={st.layout}>
       <section className={st.title}>
@@ -32,7 +41,11 @@ export function ProductCard({
         <Title level={3} weight={500} style={{ color }} uppercase>
           €{cost}
         </Title>
-        <Button variant="black" className={st.orderBtn} onClick={onOrder}>
+        <Button
+          variant="black"
+          className={st.orderBtn}
+          onClick={() => onOrder?.({ icon, title, price: cost, color })}
+        >
           Order <ArrowTopRightCircle color="black" />
         </Button>
       </section>

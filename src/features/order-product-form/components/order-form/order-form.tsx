@@ -226,7 +226,12 @@ export function OrderForm({
           )}
         </Button>
       </section>
-      <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+      <Dialog
+        open={dialogOpen}
+        onOpenChange={setDialogOpen}
+        layoutClassName={st.dialogLayout}
+        withDecor
+      >
         <section className={st.dialogContent}>
           <Title level={5} color="darkBlue" weight={500} uppercase>
             Your request has been submitted!

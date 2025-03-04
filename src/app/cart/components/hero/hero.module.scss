@@ -1,0 +1,43 @@
+.layout {
+  padding: 28px;
+  overflow: hidden;
+  height: 260px;
+  border-radius: 12px;
+  background-color: #C1D5FF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+
+  .title {
+    width: 590px;
+    line-height: 72px;
+    z-index: 2;
+  }
+}
+
+.metallicSphere {
+  position: absolute;
+  right: -150px;
+  top: -40px;
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    padding: 28px 12px;
+    height: 359px;
+  }
+
+  .title {
+    width: 80% !important;
+    line-height: normal !important;
+  }
+
+  .metallicSphere {
+    width: 376px;
+    height: 376px;
+    right: -120px;
+    top: -120px;
+  }
+}

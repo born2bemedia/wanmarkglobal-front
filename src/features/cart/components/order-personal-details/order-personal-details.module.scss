@@ -1,0 +1,67 @@
+.layout {
+  padding: 40px 28px;
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.separator {
+  margin-top: 12px;
+  margin-bottom: 32px;
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.agreement {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .checks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout {
+    padding: 40px 12px;
+    width: initial;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .agreement {
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+
+    .btn {
+      margin-top: 16px;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+}
