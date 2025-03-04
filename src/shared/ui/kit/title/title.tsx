@@ -45,6 +45,8 @@ export function Title({
       [st.darkPurple]: color === 'darkPurple',
       [st.blackYellow]: color === 'blackYellow',
       [st.opacityBlackYellow]: color === 'opacityBlackYellow',
+      [st.umberPeach]: color === 'umberPeach',
+      [st.opacityUmberPeach]: color === 'opacityUmberPeach',
       [st.uppercase]: uppercase,
     },
     className,
