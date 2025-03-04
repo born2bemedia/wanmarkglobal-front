@@ -1,5 +1,7 @@
 'use client';
 
+import { useEffect, useState } from 'react';
+
 import { getCartProducts } from '@/features/cart/services';
 
 import { Controller, useForm, zodResolver } from '@/shared/lib/forms';
@@ -20,8 +22,15 @@ import { OrderSchema, orderSchema } from '../../lib/order.schema';
 import st from './order-personal-details.module.scss';
 
 export function OrderPersonalDetails() {
+  const [productsLength, setProductsLength] = useState(
+    getCartProducts().length,
+  );
+
   const countryCode = useCountryCode();
-  const products = getCartProducts();
+
+  useEffect(() => {
+    setProductsLength(getCartProducts().length);
+  }, []);
 
   const {
     handleSubmit,
@@ -206,7 +215,7 @@ export function OrderPersonalDetails() {
         <Button
           variant="black"
           className={st.btn}
-          disabled={isSubmitting || !products.length}
+          disabled={isSubmitting || !productsLength}
         >
           {isSubmitting ? (
             <>

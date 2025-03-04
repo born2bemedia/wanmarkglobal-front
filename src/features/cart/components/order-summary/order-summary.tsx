@@ -12,7 +12,7 @@ import { OrderCard } from '../order-card';
 import st from './order-summary.module.scss';
 
 export function OrderSummary() {
-  const [products, setProducts] = useState(getCartProducts()); // Use state to track products
+  const [products, setProducts] = useState(getCartProducts());
 
   const totalPrice = useMemo(
     () =>
