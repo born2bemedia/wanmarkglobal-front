@@ -1,0 +1,53 @@
+.layout {
+  padding: 80px 28px;
+  border-radius: 12px;
+  background: #fff;
+  margin: 6px 0;
+  @media (max-width: 768px) {
+    padding: 22px 12px;
+  }
+  .content {
+    display: flex;
+    gap: 70px;
+    margin: 0 auto;
+    @media (max-width: 768px) {
+      flex-direction: column-reverse;
+      gap: 12px;
+    }
+    .text {
+      width: calc(50% - 35px);
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+      p{
+        font-size: 14px;
+        line-height: 1.5;
+      }
+    }
+
+    .subtitle {
+      width: calc(50% - 35px);
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+      h2 {
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 1.2;
+        font-size: 38px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-transform: uppercase;
+        @media (max-width: 768px) {
+          font-size: 28px;
+          width: 100%;
+        }
+        span {
+          display: block;
+          font-weight: 200;
+        }
+      }
+    }
+  }
+}

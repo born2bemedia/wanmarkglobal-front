@@ -23,7 +23,7 @@ export function CaseCard({
           <h2>{title}</h2>
           <p>{subTitle}</p>
         </div>
-        <Link href={`/cases/${slug}`}>
+        <Link href={`/market-cases/${slug}`}>
           Read the Case <ArrowTopRightCircle color="blue" />
         </Link>
       </div>
