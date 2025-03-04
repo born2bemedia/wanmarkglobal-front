@@ -1,9 +1,9 @@
-import React from 'react';
 import {
   aboutOurServices,
   aboutTheProcess,
   clientsQuestions,
 } from '@/shared/lib/faq';
+
 import { FaqSection } from './components/faq-section';
 import { HaveQuestion } from './components/have-question';
 import { Hero } from './components/hero';

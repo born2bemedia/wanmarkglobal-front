@@ -37,7 +37,7 @@ export const aboutOurServices: AccordionDef[] = [
     title: "How do I know which service is right for me?",
     content: (
       <Text color="lightBlue">
-        If you"re unsure, you can either explore our structured packages or
+        If you&apos;re unsure, you can either explore our structured packages or
         request a consultation, during which we assess your needs and recommend
         the best approach.
       </Text>
@@ -70,7 +70,7 @@ export const aboutTheProcess: AccordionDef[] = [
     content: (
       <Text color="lightBlue">
         We ensure clear expectations and regular check-ins during the process to
-        prevent this. However, if you're not satisfied with the outcome, we will
+        prevent this. However, if you&apos;re not satisfied with the outcome, we will
         work with you to adjust or refine the deliverables within the agreed
         scope.
       </Text>

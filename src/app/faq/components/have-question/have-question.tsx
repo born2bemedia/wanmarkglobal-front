@@ -25,7 +25,7 @@ export function HaveQuestion() {
       />
       <section className={st.requestLayout}>
         <Text color="lightBlue">
-        If you don't see your question here, feel free to contact our team for assistance.
+        If you don&apos;t see your question here, feel free to contact our team for assistance.
         </Text>
         <Button variant="black">
         Contact Us <ArrowTopRightCircle color="black" />

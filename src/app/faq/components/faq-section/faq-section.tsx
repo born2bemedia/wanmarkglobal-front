@@ -1,10 +1,12 @@
 'use client';
+
+import Image from 'next/image';
+
 import { Accordion } from '@/shared/ui/kit/accordion/accordion';
 import { AccordionDef } from '@/shared/ui/kit/accordion/types';
 import { Title } from '@/shared/ui/kit/title';
 
 import st from './faq-section.module.scss';
-import Image from 'next/image';
 
 export function FaqSection({
   title,
