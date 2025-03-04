@@ -15,7 +15,7 @@ export function Text({
   size = 'base',
 }: {
   children: ReactNode;
-  color?: 'mediumBlue' | 'darkBlue' | 'lightBlue' | 'black' | 'darkPurple';
+  color?: 'mediumBlue' | 'darkBlue' | 'lightBlue' | 'black' | 'darkPurple' | 'umber';
   className?: string;
   weight?: 200 | 300 | 400 | 500;
   size?: 'sm' | 'base' | 'lg' | 'heading';
@@ -28,6 +28,7 @@ export function Text({
       [st.blackColor]: color === 'black',
       [st.darkBlueColor]: color === 'darkBlue',
       [st.darkPurple]: color === 'darkPurple',
+      [st.umber]: color === 'umber',
       [st.extraThinWeight]: weight === 200,
       [st.thinWeight]: weight === 300,
       [st.normalWeight]: weight === 400,
