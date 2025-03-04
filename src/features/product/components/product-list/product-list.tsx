@@ -7,7 +7,7 @@ import { getCartProducts } from '@/features/cart/services';
 import { ProductCard } from '@/features/product/components';
 import { Product } from '@/features/product/lib';
 
-import { lsRead, lsWrite } from '@/shared/lib/browser';
+import { lsWrite } from '@/shared/lib/browser';
 import { Text } from '@/shared/ui/kit/text';
 import { Title } from '@/shared/ui/kit/title';
 

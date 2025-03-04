@@ -22,7 +22,9 @@ export function Text({
     | 'black'
     | 'darkPurple'
     | 'darkGrey'
-    | 'deepBlack' | 'umber' | 'white';
+    | 'deepBlack'
+    | 'umber'
+    | 'white';
   className?: string;
   weight?: 200 | 300 | 400 | 500;
   size?: 'sm' | 'base' | 'lg' | 'xl' | 'heading';
