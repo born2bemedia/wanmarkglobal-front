@@ -10,6 +10,7 @@ import st from './hero.module.scss';
 export function Hero() {
   return (
     <HeroBanner
+      scrollToExplore={{ color: 'mediumBlue', value: 'Scroll to explore' }}
       image={
         <Image
           src="/metallic-sphere.svg"
