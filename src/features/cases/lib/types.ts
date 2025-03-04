@@ -56,7 +56,7 @@ export type Case = {
   challenge: string;
   strategy: string;
   result: string;
-  firstSection?: { text: string; image: string };
+  firstSection?: { text?: string; image: string };
   secondSection?: { subtitle: string; text: string };
   thirdSection?: {
     subtitle: string;

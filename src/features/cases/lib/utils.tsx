@@ -44,3 +44,19 @@ export async function casesMapping(cases: OriginCase[]) {
     }),
   );
 }
+
+export async function casesLoopMapping(cases: OriginCase[]) {
+  return await Promise.all(
+    cases.map(async item => {
+      return {
+        title: item.title,
+        slug: item.slug,
+        subTitle: item.subtitle,
+        thumbnail: `${process.env.SERVER_URL}${item.thumbnail?.url}`,
+        challenge: item.challenge,
+        strategy: item.strategy,
+        result: item.result,
+      };
+    }),
+  );
+}

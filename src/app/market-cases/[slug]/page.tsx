@@ -18,7 +18,6 @@ export default async function MarketCasePage({
   const { slug } = awaitedParams;
 
   const singleCase = await getSingleCase({ slug });
-  console.log(singleCase);
   const caseData = await casesMapping(singleCase);
 
   return (
