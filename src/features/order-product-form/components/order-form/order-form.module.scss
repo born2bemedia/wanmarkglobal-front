@@ -10,8 +10,16 @@
   margin-bottom: 26px;
 }
 
+.dialogLayout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .dialogContent {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   width: 400px;
   gap: 12px;
@@ -70,6 +78,10 @@
   .twoRecordsLine {
     flex-direction: column;
     gap: 26px;
+  }
+
+  .dialogContent {
+    width: 100%;
   }
 
   .services {

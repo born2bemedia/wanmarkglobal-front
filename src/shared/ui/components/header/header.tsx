@@ -1,10 +1,13 @@
 'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 import { BurgerMenu } from '@/features/burger-menu/components';
+import { EmptyCartDialog } from '@/features/cart/components';
+import { getCartProducts } from '@/features/cart/services';
 
 import { cn } from '@/shared/lib/styles';
 import { SocialNetworks } from '@/shared/ui/components/social-networks';
@@ -17,6 +20,18 @@ import st from './header.module.scss';
 
 export function Header() {
   const router = useRouter();
+
+  const [cartDialogOpen, setCartDialogOpen] = useState<boolean>(false);
+
+  const openCartHandler = () => {
+    const cartProducts = getCartProducts();
+
+    if (cartProducts.length) {
+      router.push('/cart');
+    } else {
+      setCartDialogOpen(true);
+    }
+  };
 
   return (
     <header className={st.header}>
@@ -38,6 +53,7 @@ export function Header() {
           <SocialNetworks />
         </section>
       </section>
+      <EmptyCartDialog open={cartDialogOpen} onOpen={setCartDialogOpen} />
       <nav className={cn(st.toolbar, st.nav)}>
         <Select
           options={[
@@ -82,7 +98,7 @@ export function Header() {
         />
         <Text>Pricing</Text>
         <div className={st.navBtns}>
-          <Button variant="grey">
+          <Button variant="grey" onClick={openCartHandler}>
             Cart
             <Bag />
           </Button>

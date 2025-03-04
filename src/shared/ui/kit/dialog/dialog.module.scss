@@ -9,6 +9,7 @@
 
 .content {
   background-color: #FFFFFF;
+  overflow: hidden;
   border-radius: 12px;
   position: fixed;
   top: 50%;
@@ -48,8 +49,10 @@
 }
 
 .contentLayout {
+  padding: 50px 0;
   position: relative;
   display: flex;
+  height: 100%;
   flex-direction: column;
   text-align: center;
 }
@@ -57,6 +60,27 @@
 .close {
   margin: 32px auto 0 auto;
   width: max-content;
+}
+
+@media (max-width: 820px) {
+  .content {
+    width: 90%;
+  }
+
+  .contentLayout {
+    padding: 20px 12px;
+  }
+
+  .rightDecorElements {
+    right: -330px;
+    bottom: -216px;
+  }
+
+  .leftDecorElements {
+    left: -300px;
+    bottom: -210px;
+  }
+
 }
 
 @keyframes overlayShow {

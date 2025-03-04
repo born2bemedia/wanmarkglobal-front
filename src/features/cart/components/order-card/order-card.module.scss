@@ -1,0 +1,40 @@
+.layout {
+  background-color: #FAFAFA;
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+}
+
+.deleteBtn {
+  border-radius: 100px;
+  background-color: #FAFAFA;
+  height: 32px;
+  width: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon {
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+}

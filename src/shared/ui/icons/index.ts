@@ -23,6 +23,7 @@ export * from './leaf';
 export * from './lightning';
 export * from './magnet';
 export * from './menu';
+export * from './minus';
 export * from './mithosis';
 export * from './pedestal';
 export * from './pill';

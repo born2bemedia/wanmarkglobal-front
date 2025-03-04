@@ -1,0 +1,12 @@
+.layout {
+  margin-top: 6px;
+  display: flex;
+  gap: 6px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .layout {;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,17 @@
+.dropdown {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 100%;
+  background-color: #fefffe;
+  border-radius: 8px;
+  box-shadow: 0 0 0 2px #C1D5FF;
+  z-index: 10;
+  max-height: 208px;
+  overflow-y: auto;
+  transition: all 300ms ease-in-out;
+
+  &:hover {
+    background-color: #FAFAFA;
+  }
+}

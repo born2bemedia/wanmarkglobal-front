@@ -15,10 +15,19 @@ export function Text({
   size = 'base',
 }: {
   children: ReactNode;
-  color?: 'mediumBlue' | 'darkBlue' | 'lightBlue' | 'black' | 'darkPurple' | 'umber' | 'white';
+  color?:
+    | 'mediumBlue'
+    | 'darkBlue'
+    | 'lightBlue'
+    | 'black'
+    | 'darkPurple'
+    | 'darkGrey'
+    | 'deepBlack'
+    | 'umber'
+    | 'white';
   className?: string;
   weight?: 200 | 300 | 400 | 500;
-  size?: 'sm' | 'base' | 'lg' | 'heading';
+  size?: 'sm' | 'base' | 'lg' | 'xl' | 'heading';
   uppercase?: boolean;
 }) {
   const textClasses = cn(
@@ -39,6 +48,9 @@ export function Text({
       [st.lgSize]: size === 'lg',
       [st.headingSize]: size === 'heading',
       [st.uppercase]: uppercase,
+      [st.darkGrayColor]: color === 'darkGrey',
+      [st.deepBlack]: color === 'deepBlack',
+      [st.xlSize]: size === 'xl',
     },
     className,
   );
