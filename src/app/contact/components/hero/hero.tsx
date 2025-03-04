@@ -13,29 +13,29 @@ export function Hero() {
       image={
         <Image
           className={st.metallicSphere}
-          src="/metallic-sphere-faq.svg"
+          src="/metallic-urchin.svg"
           alt="metallic-white"
           width={453}
           height={449}
         />
       }
-      color="#FFD6BD"
+      color="#C1D5FF"
       title={{
-        color: 'umberPeach',
-        value: 'Answers to Your Questions',
-        width: '640px',
+        color: 'mediumBlue',
+        value: 'Let’s Talk About Your Business Success',
+        width: '710px',
       }}
       contactText={{
-        color: 'opacityUmberPeach',
+        color: 'lightBlue',
         value:
-          'Clear, specific details about our services, process, and how we help turn ideas into businesses.',
-        width: '640px',
+          'Have questions or need expert guidance? Get in touch with us today.',
+        width: '710px',
       }}
       scrollToExplore={{
-        color: 'umber',
+        color: 'mediumBlue',
         value: 'Scroll to explore',
       }}
-      contactUsIcon={<ArrowTopRightCircle color="umber" />}
+      contactUsIcon={<ArrowTopRightCircle color="blue" />}
     />
   );
 }

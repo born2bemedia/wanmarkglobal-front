@@ -1,0 +1,43 @@
+.layout {
+  margin-top: 6px;
+  padding: 80px 28px;
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 70px;
+  overflow: hidden;
+
+  .text {
+    width: 454px;
+    line-height: normal;
+  }
+}
+
+.title {
+  width: 400px;
+  margin-bottom: 12px;
+}
+
+.orderImg {
+  top: 50px;
+  position: absolute;
+  left: -120px;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    padding: 22px 12px;
+    gap: 30px;
+    flex-direction: column;
+  }
+
+  .text {
+    width: initial !important;
+  }
+
+  .orderImg {
+    display: none;
+  }
+}

@@ -12,7 +12,7 @@ const navItems = [
     links: [
       { label: 'Market Cases', href: '/market-cases' },
       { label: 'About Us', href: '/about-us' },
-      { label: 'Contact', href: '/contacts' },
+      { label: 'Contact', href: '/contact' },
     ],
   },
   {
