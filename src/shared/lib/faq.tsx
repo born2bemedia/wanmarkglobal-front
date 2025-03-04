@@ -1,9 +1,9 @@
-import { AccordionDef } from '@/shared/ui/kit/accordion/types';
-import { Text } from '@/shared/ui/kit/text';
+import { AccordionDef } from "@/shared/ui/kit/accordion/types";
+import { Text } from "@/shared/ui/kit/text";
 
 export const aboutOurServices: AccordionDef[] = [
   {
-    title: 'What documents do I receive after purchasing a service?',
+    title: "What documents do I receive after purchasing a service?",
     content: (
       <Text color="lightBlue">
         Depending on the service, you will receive well-structured strategies,
@@ -14,7 +14,7 @@ export const aboutOurServices: AccordionDef[] = [
     ),
   },
   {
-    title: 'Do you help with legal company registration and setup?',
+    title: "Do you help with legal company registration and setup?",
     content: (
       <Text color="lightBlue">
         We provide legal and registration guidance, helping you understand
@@ -24,7 +24,7 @@ export const aboutOurServices: AccordionDef[] = [
     ),
   },
   {
-    title: 'Can I request changes to a completed service?',
+    title: "Can I request changes to a completed service?",
     content: (
       <Text color="lightBlue">
         Yes, we will refine the deliverables if you need minor adjustments based
@@ -34,10 +34,10 @@ export const aboutOurServices: AccordionDef[] = [
     ),
   },
   {
-    title: 'How do I know which service is right for me?',
+    title: "How do I know which service is right for me?",
     content: (
       <Text color="lightBlue">
-        If you're unsure, you can either explore our structured packages or
+        If you"re unsure, you can either explore our structured packages or
         request a consultation, during which we assess your needs and recommend
         the best approach.
       </Text>
@@ -47,7 +47,7 @@ export const aboutOurServices: AccordionDef[] = [
 
 export const aboutTheProcess: AccordionDef[] = [
   {
-    title: 'When do I need to pay for the services?',
+    title: "When do I need to pay for the services?",
     content: (
       <Text color="lightBlue">
         Payment is required before we start working on your project. Once we
@@ -57,7 +57,7 @@ export const aboutTheProcess: AccordionDef[] = [
     ),
   },
   {
-    title: 'Can I pay with a credit card or PayPal?',
+    title: "Can I pay with a credit card or PayPal?",
     content: (
       <Text color="lightBlue">
         Currently, we only accept bank transfers. You will receive payment
@@ -66,18 +66,18 @@ export const aboutTheProcess: AccordionDef[] = [
     ),
   },
   {
-    title: 'What happens if I’m dissatisfied with the service?',
+    title: "What happens if I'm dissatisfied with the service?",
     content: (
       <Text color="lightBlue">
         We ensure clear expectations and regular check-ins during the process to
-        prevent this. However, if you’re not satisfied with the outcome, we will
+        prevent this. However, if you're not satisfied with the outcome, we will
         work with you to adjust or refine the deliverables within the agreed
         scope.
       </Text>
     ),
   },
   {
-    title: 'How will I communicate with my assigned consultant?',
+    title: "How will I communicate with my assigned consultant?",
     content: (
       <Text color="lightBlue">
         Your dedicated manager will coordinate the process and communicate with
@@ -91,7 +91,7 @@ export const aboutTheProcess: AccordionDef[] = [
 export const clientsQuestions: AccordionDef[] = [
   {
     title:
-      'I want to start a business but have nothing yet. Where should I begin?',
+      "I want to start a business but have nothing yet. Where should I begin?",
     content: (
       <Text color="lightBlue">
         If you only have an idea, start with our Business Foundation Package. We
@@ -101,7 +101,7 @@ export const clientsQuestions: AccordionDef[] = [
     ),
   },
   {
-    title: 'Do I need experience in business or marketing to work with you?',
+    title: "Do I need experience in business or marketing to work with you?",
     content: (
       <Text color="lightBlue">
         No, our services are designed for both beginners and experienced
@@ -111,7 +111,7 @@ export const clientsQuestions: AccordionDef[] = [
     ),
   },
   {
-    title: 'Can I buy multiple services at once?',
+    title: "Can I buy multiple services at once?",
     content: (
       <Text color="lightBlue">
         Yes, you can bundle multiple services or choose a Growth Package that
@@ -122,7 +122,7 @@ export const clientsQuestions: AccordionDef[] = [
     ),
   },
   {
-    title: 'How long does it take to complete a service?',
+    title: "How long does it take to complete a service?",
     content: (
       <Text color="lightBlue">
         Timelines vary depending on the service. Simple strategies and reports

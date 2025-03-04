@@ -1,6 +1,4 @@
 'use client';
-
-import { useState } from 'react';
 import { Accordion } from '@/shared/ui/kit/accordion/accordion';
 import { AccordionDef } from '@/shared/ui/kit/accordion/types';
 import { Title } from '@/shared/ui/kit/title';
