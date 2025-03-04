@@ -1,8 +1,8 @@
 'use server';
 
-import { Case } from '@/features/product/lib';
+import { OriginCase } from '../lib';
 
-export async function getCases(): Promise<Case[]> {
+export async function getCases(): Promise<OriginCase[]> {
   const res = await fetch(`${process.env.SERVER_URL}/api/cases`, {
     method: 'GET',
     next: { revalidate: 60 },
