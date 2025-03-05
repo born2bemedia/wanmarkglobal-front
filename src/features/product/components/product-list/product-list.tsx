@@ -23,11 +23,13 @@ export function ProductList({
   desc: string;
 }) {
   const onOrderHandler = ({
+    id,
     title,
     icon,
     price,
     color,
   }: {
+    id: string;
     title: string;
     icon: ReactNode;
     price: string;
@@ -40,7 +42,7 @@ export function ProductList({
     if (existingProduct) {
       toast.error(`Product ${title} already added in the cart`);
     } else {
-      const orderProducts = [...products, { title, icon, price, color }];
+      const orderProducts = [...products, { id, title, icon, price, color }];
       lsWrite('cart', orderProducts);
       toast.success(`Product ${title} added to cart`);
     }

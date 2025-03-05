@@ -12,6 +12,7 @@ import { Title } from '@/shared/ui/kit/title';
 import st from './product-card.module.scss';
 
 export function ProductCard({
+  id,
   cost,
   desc,
   icon,
@@ -20,6 +21,7 @@ export function ProductCard({
   onOrder,
 }: Product & {
   onOrder?: (args: {
+    id: string;
     title: string;
     icon: ReactNode;
     price: string;
@@ -44,7 +46,7 @@ export function ProductCard({
         <Button
           variant="black"
           className={st.orderBtn}
-          onClick={() => onOrder?.({ icon, title, price: cost, color })}
+          onClick={() => onOrder?.({ id, icon, title, price: cost, color })}
         >
           Order <ArrowTopRightCircle color="black" />
         </Button>

@@ -9,6 +9,7 @@ export async function productsMapping(products: OriginProduct[]) {
         : null;
 
       return {
+        id: product.id,
         icon: iconSvg ? (
           <span dangerouslySetInnerHTML={{ __html: iconSvg }} />
         ) : (
