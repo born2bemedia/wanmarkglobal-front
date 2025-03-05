@@ -13,10 +13,10 @@ export function Hero() {
       image={
         <Image
           className={st.metallicSphere}
-          src="/metallic-urchin.svg"
+          src="/metallic-about.svg"
           alt="metallic-white"
-          width={453}
-          height={449}
+          width={648}
+          height={648}
         />
       }
       color="#C1D5FF"
@@ -36,6 +36,7 @@ export function Hero() {
         value: 'Scroll to explore',
       }}
       contactUsIcon={<ArrowTopRightCircle color="blue" />}
+      layoutClassName={st.layout}
     />
   );
 }
