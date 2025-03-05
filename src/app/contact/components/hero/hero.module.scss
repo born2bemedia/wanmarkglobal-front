@@ -1,15 +1,20 @@
 .metallicSphere {
   position: absolute;
-  right: -120px;
-  top: -190px;
+  right: -160px;
+  top: -300px;
   z-index: -1;
+  transform: rotate(16.776deg);
 }
 
 @media (max-width: 768px) {
+  .layout {
+    height: 612px;
+  }
+
   .metallicSphere {
-    width: 325px;
-    height: 325px;
-    right: -90px;
-    top: -130px;
+    width: 450px;
+    height: 450px;
+    right: -150px;
+    top: -250px;
   }
 }

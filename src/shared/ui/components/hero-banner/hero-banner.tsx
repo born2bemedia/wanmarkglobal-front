@@ -20,6 +20,7 @@ export function HeroBanner({
   scrollToExplore,
   contactUsIcon,
   backgroundImage,
+  layoutClassName,
 }: {
   image?: ReactNode;
   color: string;
@@ -32,10 +33,11 @@ export function HeroBanner({
   };
   contactUsIcon: ReactNode;
   backgroundImage?: string;
+  layoutClassName?: string;
 }) {
   return (
     <section
-      className={st.layout}
+      className={cn(st.layout, layoutClassName)}
       style={{
         backgroundColor: color,
         ...(backgroundImage && { backgroundImage: `url(${backgroundImage})` }),
