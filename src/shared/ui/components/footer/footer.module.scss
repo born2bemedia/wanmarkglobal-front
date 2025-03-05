@@ -117,6 +117,11 @@
     flex-direction: column-reverse;
   }
 
+  .policiesLayout {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .policiesAndNetworks {
     flex-direction: column-reverse;
     gap: 12px;

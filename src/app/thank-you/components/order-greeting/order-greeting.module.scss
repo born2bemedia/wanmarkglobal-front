@@ -1,0 +1,45 @@
+.layout {
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  padding: 40px 28px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  p {
+    line-height: normal;
+  }
+}
+
+.link {
+  font-weight: 600;
+}
+
+.elements {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    padding: 22px 12px;
+    width: initial;
+  }
+
+  .elements {
+    margin-top: 76px;
+  }
+
+  .elementToHide {
+    display: none;
+  }
+}

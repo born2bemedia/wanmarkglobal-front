@@ -7,7 +7,7 @@ import { Title } from '@/shared/ui/kit/title';
 
 import st from './hero.module.scss';
 
-export function Hero() {
+export function Hero({ title = 'Your Selected Services' }: { title?: string }) {
   return (
     <section className={st.layout}>
       <motion.div
@@ -26,7 +26,7 @@ export function Hero() {
         />
       </motion.div>
       <Title weight={500} color="darkBlue" className={st.title} uppercase>
-        Your Selected Services
+        {title}
       </Title>
     </section>
   );
