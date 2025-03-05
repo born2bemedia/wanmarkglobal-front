@@ -1,6 +1,7 @@
 import { JSX } from 'react';
 
 export type Product = {
+  id: string;
   icon: JSX.Element;
   color: string;
   title: string;
@@ -9,6 +10,7 @@ export type Product = {
 };
 
 export type OriginProduct = {
+  id: string;
   icon?: {
     url: string;
   };
