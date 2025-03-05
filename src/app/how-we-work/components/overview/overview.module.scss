@@ -1,0 +1,40 @@
+.metallicOne {
+  position: absolute;
+  top: -42px;
+  left: 40px;
+}
+
+.img {
+  max-width: 468px;
+  max-height: 300px;
+}
+
+.metallicTwo {
+  position: absolute;
+  top: -30px;
+  left: 40px;
+}
+
+@media (max-width: 1024px) {
+  .img {
+    max-width: 100%;
+    max-height: 236px;
+  }
+
+  .metallicOne, .metallicTwo {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .metallicOne {
+    top: 0;
+    width: 235px;
+    height: 235px;
+  }
+
+  .metallicTwo {
+    top: 0;
+    width: 222px;
+    height: 220px;
+  }
+}

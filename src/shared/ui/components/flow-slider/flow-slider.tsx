@@ -83,12 +83,16 @@ function StepSlide({
         <Title
           level={4}
           weight={500}
-          className={st.slideTitle}
+          className={cn(st.slideTitle, st.text, st.lineHeightText)}
           style={{ width: `${titleWidth}px` }}
         >
           {title}
         </Title>
-        {desc && <Text color="mediumBlue">{desc}</Text>}
+        {desc && (
+          <Text color="mediumBlue" className={cn(st.text, st.lineHeightText)}>
+            {desc}
+          </Text>
+        )}
       </div>
       <FlowLine step={index + 1} totalSteps={totalSteps} />
       <div className={st.slideImgLayout} style={{ backgroundColor: bgColor }}>
@@ -115,10 +119,18 @@ function StepCard({
     <article className={st.stepCardLayout}>
       <div>
         <Tag>Step {index + 1}</Tag>
-        <Title level={4} weight={500} className={st.cardTitle}>
+        <Title
+          level={4}
+          weight={500}
+          className={cn(st.cardTitle, st.lineHeightText)}
+        >
           {title}
         </Title>
-        {desc && <Text color="mediumBlue">{desc}</Text>}
+        {desc && (
+          <Text color="mediumBlue" className={st.lineHeightText}>
+            {desc}
+          </Text>
+        )}
       </div>
       <div className={st.cardImgLayout} style={{ backgroundColor: bgColor }}>
         {img}

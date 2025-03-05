@@ -5,6 +5,7 @@ import { ReactNode } from 'react';
 import { cn } from '@/shared/lib/styles';
 
 import st from './text.module.scss';
+import type { TextColor } from './types';
 
 export function Text({
   children,
@@ -15,16 +16,7 @@ export function Text({
   size = 'base',
 }: {
   children: ReactNode;
-  color?:
-    | 'mediumBlue'
-    | 'darkBlue'
-    | 'lightBlue'
-    | 'black'
-    | 'darkPurple'
-    | 'darkGrey'
-    | 'deepBlack'
-    | 'umber'
-    | 'white';
+  color?: TextColor;
   className?: string;
   weight?: 200 | 300 | 400 | 500;
   size?: 'sm' | 'base' | 'lg' | 'xl' | 'heading';
@@ -50,6 +42,7 @@ export function Text({
       [st.uppercase]: uppercase,
       [st.darkGrayColor]: color === 'darkGrey',
       [st.deepBlack]: color === 'deepBlack',
+      [st.coralColor]: color === 'coral',
       [st.xlSize]: size === 'xl',
     },
     className,
