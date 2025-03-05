@@ -1,0 +1,16 @@
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .link {
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
