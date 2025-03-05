@@ -1,11 +1,14 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useMemo } from 'react';
+import { useRouter } from 'next/navigation';
 
-import { getCartProducts } from '@/features/cart/services';
+import { calculateTotalPrice } from '@/features/cart/lib/utils';
+import { clearCart } from '@/features/cart/services';
 
 import { Controller, useForm, zodResolver } from '@/shared/lib/forms';
 import { useCountryCode } from '@/shared/lib/hooks';
+import { notifyError } from '@/shared/lib/notify';
 import { ArrowTopRightCircle } from '@/shared/ui/icons';
 import { Autocomplete } from '@/shared/ui/kit/autocomplete';
 import { Button } from '@/shared/ui/kit/button';
@@ -17,20 +20,18 @@ import { Text } from '@/shared/ui/kit/text';
 import { TextField } from '@/shared/ui/kit/text-field';
 import { Title } from '@/shared/ui/kit/title';
 
+import { useCartProducts } from '../../hooks/use-cart-products';
 import { allowedCountries } from '../../lib/countries';
 import { OrderSchema, orderSchema } from '../../lib/order.schema';
+import { createOrder } from '../../services/create-order.action';
 import st from './order-personal-details.module.scss';
 
 export function OrderPersonalDetails() {
-  const [productsLength, setProductsLength] = useState(
-    getCartProducts().length,
-  );
-
+  const { products } = useCartProducts();
   const countryCode = useCountryCode();
+  const router = useRouter();
 
-  useEffect(() => {
-    setProductsLength(getCartProducts().length);
-  }, []);
+  const totalPrice = useMemo(() => calculateTotalPrice(products), [products]);
 
   const {
     handleSubmit,
@@ -54,8 +55,15 @@ export function OrderPersonalDetails() {
   });
 
   const onSubmit = handleSubmit(async (data: OrderSchema) => {
-    console.log(data);
-    reset();
+    const res = await createOrder({ products, billing: data, totalPrice });
+
+    if (res?.message === 'Order successfully created.') {
+      router.push('/thank-you');
+      clearCart();
+      reset();
+    } else {
+      notifyError('Something went wrong. Please try again later.');
+    }
   });
 
   return (
@@ -215,7 +223,7 @@ export function OrderPersonalDetails() {
         <Button
           variant="black"
           className={st.btn}
-          disabled={isSubmitting || !productsLength}
+          disabled={isSubmitting || !products.length}
         >
           {isSubmitting ? (
             <>

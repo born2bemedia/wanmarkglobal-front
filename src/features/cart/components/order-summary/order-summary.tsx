@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
+import { calculateTotalPrice } from '@/features/cart/lib/utils';
 import { deleteCartProduct, getCartProducts } from '@/features/cart/services';
 
 import { Separator } from '@/shared/ui/kit/separator';
@@ -14,13 +15,7 @@ import st from './order-summary.module.scss';
 export function OrderSummary() {
   const [products, setProducts] = useState(getCartProducts());
 
-  const totalPrice = useMemo(
-    () =>
-      products.reduce((total, { price }) => {
-        return total + Number(price);
-      }, 0),
-    [products],
-  );
+  const totalPrice = useMemo(() => calculateTotalPrice(products), [products]);
 
   useEffect(() => {
     setProducts(getCartProducts());

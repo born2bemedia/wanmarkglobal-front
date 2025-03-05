@@ -71,11 +71,11 @@ export function Header() {
             },
           ]}
           value="Services"
-          textWeight={400}
+          textWeight={500}
           onChange={value => router.push(value)}
         />
         <Link href="/market-cases">
-          <Text>Market Cases</Text>
+          <Text weight={500}>Market Cases</Text>
         </Link>
         <Select
           options={[
@@ -93,17 +93,17 @@ export function Header() {
             },
           ]}
           value="Company"
-          textWeight={400}
+          textWeight={500}
           onChange={value => router.push(value)}
         />
-        <Text>Pricing</Text>
+        <Text weight={500}>Pricing</Text>
         <div className={st.navBtns}>
           <Button variant="grey" onClick={openCartHandler}>
-            Cart
+            <Text weight={500}>Cart</Text>
             <Bag />
           </Button>
           <Button variant="grey">
-            Login
+            <Text weight={500}>Login</Text>
             <Enter />
           </Button>
         </div>

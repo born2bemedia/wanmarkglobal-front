@@ -1,18 +1,7 @@
-import { ReactElement } from 'react';
+import { type CartProduct } from '@/features/cart/lib/types';
 
 import { lsRead } from '@/shared/lib/browser';
 
 export const getCartProducts = () => {
-  return lsRead<
-    {
-      title: string;
-      icon: ReactElement<{
-        dangerouslySetInnerHTML: {
-          __html: string;
-        };
-      }>;
-      price: string;
-      color: string;
-    }[]
-  >('cart', []);
+  return lsRead<CartProduct[]>('cart', []);
 };
