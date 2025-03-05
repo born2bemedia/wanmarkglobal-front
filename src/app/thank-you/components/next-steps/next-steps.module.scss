@@ -1,0 +1,84 @@
+.layout {
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  padding: 40px 28px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.cards {
+  display: flex;
+  gap: 12px;
+}
+
+.stepsLayout {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stepCard {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-radius: 12px;
+  height: 116px;
+  padding: 16px;
+}
+
+.firstStep {
+  background-color: #E0EAFF;
+}
+
+.secondStep {
+  background-color: #C1D5FF;
+}
+
+.thirdStep {
+  background-color: #A2C0FF;
+}
+
+.btnWrapper {
+  margin-top: auto;
+  margin-left: auto;
+}
+
+.btn {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    padding: 22px 12px;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+
+  .btnWrapper {
+    margin-top: 22px;
+    margin-left: 0;
+  }
+
+  .stepCard {
+    height: max-content;
+  }
+
+  .stepsLayout {
+    gap: 22px;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .layout {
+    width: initial;
+  }
+}
