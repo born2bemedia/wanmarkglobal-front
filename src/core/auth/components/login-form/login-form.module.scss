@@ -17,6 +17,16 @@
   gap: 12px;
 }
 
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  background: #FAFAFA;
+  height: 32px;
+  width: 32px;
+}
+
 .link {
   text-decoration-line: underline;
   text-decoration-style: solid;
@@ -27,7 +37,7 @@
 }
 
 .forgotPassword {
-  text-align: right;
+  margin-left: auto;
 }
 
 .btnLayout {
