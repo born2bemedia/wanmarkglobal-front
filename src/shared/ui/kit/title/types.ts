@@ -10,4 +10,6 @@ export type TitleColor =
   | 'opacityUmberPeach'
   | 'white'
   | 'coral'
-  | 'opacityCoral';
+  | 'opacityCoral'
+  | 'lightGreen'
+  | 'green';

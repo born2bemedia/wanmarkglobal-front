@@ -8,4 +8,6 @@ export type TextColor =
   | 'deepBlack'
   | 'umber'
   | 'white'
-  | 'coral';
+  | 'coral'
+  | 'lightGreen'
+  | 'green';

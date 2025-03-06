@@ -1,6 +1,13 @@
 'use client';
 
-type ColorVariant = 'blue' | 'black' | 'darkPurple' | 'umber' | 'coral';
+type ColorVariant =
+  | 'blue'
+  | 'black'
+  | 'darkPurple'
+  | 'umber'
+  | 'coral'
+  | 'green'
+  | 'white';
 
 const COLORS: Record<ColorVariant, string> = {
   blue: '#0D2056',
@@ -8,6 +15,8 @@ const COLORS: Record<ColorVariant, string> = {
   darkPurple: '#560D46',
   umber: '#242102',
   coral: '#480808',
+  green: '#0a4a19',
+  white: '#fff',
 };
 
 export function ArrowTopRightCircle({
