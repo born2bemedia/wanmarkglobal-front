@@ -149,15 +149,14 @@ function StepCard({
 
 function FlowLine({ step, totalSteps }: { step: number; totalSteps: number }) {
   const translateY = useMemo(() => {
-    if (totalSteps === 1) return '-50%'; // Если 1 шаг, оставляем в центре
+    if (totalSteps === 1) return '-50%';
 
-    const minY = -535; // Первая точка
-    const maxY = 435; // Последняя точка
+    const minY = -535;
+    const maxY = 435;
 
-    if (step === 1) return `${minY}%`; // Первая точка фиксирована
-    if (step === totalSteps) return `${maxY}%`; // Последняя точка фиксирована
+    if (step === 1) return `${minY}%`;
+    if (step === totalSteps) return `${maxY}%`;
 
-    // Расчет позиции для промежуточных точек
     const stepPercentage =
       ((step - 1) / (totalSteps - 1)) * (maxY - minY) + minY;
     return `${stepPercentage}%`;
