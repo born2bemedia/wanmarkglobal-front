@@ -19,6 +19,7 @@
   justify-content: center;
   align-items: center;
   transform: translate(-50%, -50%);
+  max-width: 800px;
   width: 800px;
   height: 420px;
   animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -49,12 +50,15 @@
 }
 
 .contentLayout {
-  padding: 50px 0;
   position: relative;
   display: flex;
   height: 100%;
   flex-direction: column;
   text-align: center;
+}
+
+.layoutClass {
+  padding: 50px 0;
 }
 
 .close {

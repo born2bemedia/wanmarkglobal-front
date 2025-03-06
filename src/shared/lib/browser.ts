@@ -1,3 +1,7 @@
+import Cookies from 'js-cookie';
+
+export { Cookies as cookies };
+
 export const lsRead = <T>(key: string, fallback: T): T => {
   const value = localStorage.getItem(key);
   return value ? (JSON.parse(value) as T) : fallback;
