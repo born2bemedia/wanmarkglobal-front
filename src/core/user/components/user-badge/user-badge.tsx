@@ -19,8 +19,8 @@ export function UserBadge() {
 
   useEffect(() => {
     const storedUser = cookies.get('user');
-    const parsedUser = JSON.parse(storedUser ?? '');
-    setUser(parsedUser === '' ? null : parsedUser);
+    const parsedUser = storedUser ? JSON.parse(storedUser) : null;
+    setUser(parsedUser);
   }, []);
 
   const initials = useMemo(() => user?.firstName[0] ?? '', [user?.firstName]);

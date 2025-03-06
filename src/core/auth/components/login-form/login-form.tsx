@@ -1,12 +1,11 @@
 'use client';
 
+import { ResetPasswordForm } from '@/core/auth/components/reset-password';
 import { LoginSchema, loginSchema } from '@/core/auth/lib/login.schema';
-import { useLoginModalStore } from '@/core/auth/services/auth.store';
 import { login } from '@/core/auth/services/login.action';
 
 import { Controller, useForm, zodResolver } from '@/shared/lib/forms';
 import { notifyError, notifySuccess } from '@/shared/lib/notify';
-import { cn } from '@/shared/lib/styles';
 import { ArrowTopRightCircle, Close } from '@/shared/ui/icons';
 import { Button } from '@/shared/ui/kit/button';
 import { Loader } from '@/shared/ui/kit/loader';
@@ -14,9 +13,15 @@ import { Text } from '@/shared/ui/kit/text';
 import { TextField } from '@/shared/ui/kit/text-field';
 import { Title } from '@/shared/ui/kit/title';
 
+import {
+  useLoginModalStore,
+  useResetPasswordStore,
+} from '../../services/auth.store';
 import st from './login-form.module.scss';
 
 export function LoginForm() {
+  const { show, switchTo } = useResetPasswordStore();
+
   const { setOpen } = useLoginModalStore();
 
   const {
@@ -46,13 +51,17 @@ export function LoginForm() {
     }
   });
 
-  return (
+  return show ? (
+    <ResetPasswordForm />
+  ) : (
     <form onSubmit={onSubmit} className={st.form}>
       <div className={st.header}>
         <Title level={5} color="darkBlue" uppercase>
           Log In
         </Title>
-        <Close />
+        <button className={st.icon} onClick={() => setOpen(false)}>
+          <Close />
+        </button>
       </div>
       <section className={st.formInner}>
         <Controller
@@ -79,13 +88,19 @@ export function LoginForm() {
                 hint={error?.message}
                 {...field}
               />
-              <Text
-                color="lightBlue"
-                weight={300}
-                className={cn(st.link, st.forgotPassword)}
+              <button
+                className={st.forgotPassword}
+                onClick={() => switchTo(true)}
               >
-                Forgot your password?
-              </Text>
+                <Text
+                  color="lightBlue"
+                  weight={300}
+                  size="sm"
+                  className={st.link}
+                >
+                  Forgot your password?
+                </Text>
+              </button>
             </>
           )}
         />

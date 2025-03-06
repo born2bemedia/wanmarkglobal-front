@@ -4,6 +4,14 @@ export const useLoginModalStore = create<{
   open: boolean;
   setOpen: (open: boolean) => void;
 }>(set => ({
-  open: true,
+  open: false,
   setOpen: open => set({ open }),
+}));
+
+export const useResetPasswordStore = create<{
+  show: boolean;
+  switchTo: (open: boolean) => void;
+}>(set => ({
+  show: false,
+  switchTo: show => set({ show }),
 }));

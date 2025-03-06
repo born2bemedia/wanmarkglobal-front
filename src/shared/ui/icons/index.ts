@@ -6,6 +6,7 @@ export * from './bag';
 export * from './butterfly';
 export * from './check';
 export * from './chevron-down';
+export * from './chevron-left';
 export * from './circle';
 export * from './clever';
 export * from './close';
