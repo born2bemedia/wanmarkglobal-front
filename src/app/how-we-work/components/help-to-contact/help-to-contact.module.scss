@@ -1,0 +1,49 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.title {
+  max-width: 490px;
+  line-height: normal;
+}
+
+.text {
+  max-width: 294px;
+  line-height: normal;
+}
+
+.imgLayout {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+.img {
+  object-fit: cover;
+}
+
+.footerLayout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .imgLayout {
+    height: 202px;
+  }
+
+  .footerLayout {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+}

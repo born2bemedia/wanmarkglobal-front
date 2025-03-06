@@ -6,7 +6,7 @@ import { motion } from '@/shared/lib/motion';
 import { cn } from '@/shared/lib/styles';
 import { Button } from '@/shared/ui/kit/button';
 import { Separator } from '@/shared/ui/kit/separator';
-import { Text } from '@/shared/ui/kit/text';
+import { Text, type TextColor } from '@/shared/ui/kit/text';
 import { Title } from '@/shared/ui/kit/title';
 import { TitleColor } from '@/shared/ui/kit/title/types';
 
@@ -27,7 +27,7 @@ export function HeroBanner({
   title: { color: TitleColor; value: string; width?: string };
   contactText: { color: TitleColor; value: string; width?: string };
   scrollToExplore: {
-    color: 'mediumBlue' | 'umber' | 'white';
+    color: TextColor;
     value: string;
     width?: string;
   };

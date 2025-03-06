@@ -1,0 +1,58 @@
+.layout {
+  padding: 80px 28px;
+  margin-top: 6px;
+  border-radius: 12px;
+  background-color: #FFFFFF;
+}
+
+.stepImg {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.stepThreeImg {
+  top: -35px;
+}
+
+.titleNumber {
+  font-size: 58px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #000000;
+}
+
+@media (max-width: 1024px) {
+  .stepImg {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .stepOneImg {
+    width: 216px;
+    height: 212px;
+  }
+
+  .stepTwoImg {
+    width: 216px;
+    height: 216px;
+  }
+
+  .stepThreeImg {
+    width: 220px;
+    height: 220px;
+  }
+
+  .stepFourImg {
+    width: 217px;
+    height: 217px;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout {
+    padding: 22px 12px;
+  }
+}
