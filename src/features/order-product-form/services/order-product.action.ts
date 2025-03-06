@@ -76,7 +76,7 @@ export async function orderProduct({
     const adminEmailBody = makeBody({
       to: EMAIL_USER,
       from: EMAIL_USER,
-      subject: `New ${type} order`,
+      subject: `New ${type} ${type === 'Contact' ? 'Request' : 'Order'}`,
       message: `
         <p><b>Name:</b> ${firstName} ${lastName}</p>
         <p><b>Project Description:</b> ${projectDescription}</p>
