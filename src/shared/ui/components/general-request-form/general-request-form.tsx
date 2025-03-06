@@ -17,7 +17,11 @@ export function GeneralRequestForm({
 }: {
   title?: string;
   description?: string;
-  subject?: 'Contact' | 'Business Consulting' | 'Marketing Consulting';
+  subject?:
+    | 'Contact'
+    | 'Business Consulting'
+    | 'Marketing Consulting'
+    | 'Growth Solutions';
 }) {
   return (
     <section className={st.layout}>
