@@ -13,6 +13,7 @@ import st from './flow-slider.module.scss';
 export function FlowSlider({
   steps,
   titleWidth,
+  notag,
 }: {
   steps: {
     title: string;
@@ -22,6 +23,7 @@ export function FlowSlider({
     index: number;
   }[];
   titleWidth?: number;
+  notag?: boolean;
 }) {
   return (
     <section className={st.slider}>
@@ -34,6 +36,7 @@ export function FlowSlider({
             index={i}
             img={img}
             bgColor={bgColor}
+            notag={notag}
           />
         ))}
       </section>
@@ -49,6 +52,7 @@ export function FlowSlider({
               bgColor={bgColor}
               totalSteps={steps.length}
               titleWidth={titleWidth}
+              notag={notag}
             />
           ))}
         />
@@ -65,6 +69,7 @@ function StepSlide({
   index,
   totalSteps,
   titleWidth,
+  notag,
 }: {
   title: string;
   desc?: string;
@@ -73,20 +78,21 @@ function StepSlide({
   index: number;
   totalSteps: number;
   titleWidth?: number;
+  notag?: boolean;
 }) {
   const isEven = useMemo(() => index % 2 !== 0, [index]);
 
   return (
     <article className={cn(st.slideLayout, { [st.slideReversed]: isEven })}>
       <div className={st.slideInfo}>
-        <Tag className={st.slideTag}>Step {index + 1}</Tag>
+        {!notag && <Tag className={st.slideTag}>Step {index + 1}</Tag>}
         <Title
           level={4}
           weight={500}
           className={cn(st.slideTitle, st.text, st.lineHeightText)}
           style={{ width: `${titleWidth}px` }}
         >
-          {title}
+          <span dangerouslySetInnerHTML={{ __html: title }} />
         </Title>
         {desc && (
           <Text color="mediumBlue" className={cn(st.text, st.lineHeightText)}>
@@ -108,23 +114,25 @@ function StepCard({
   img,
   bgColor,
   index,
+  notag,
 }: {
   title: string;
   desc?: string;
   bgColor: string;
   img: ReactNode;
   index: number;
+  notag?: boolean;
 }) {
   return (
     <article className={st.stepCardLayout}>
       <div>
-        <Tag>Step {index + 1}</Tag>
+        {!notag && <Tag>Step {index + 1}</Tag>}
         <Title
           level={4}
           weight={500}
           className={cn(st.cardTitle, st.lineHeightText)}
         >
-          {title}
+          <span dangerouslySetInnerHTML={{ __html: title }} />
         </Title>
         {desc && (
           <Text color="mediumBlue" className={st.lineHeightText}>
