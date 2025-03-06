@@ -1,0 +1,15 @@
+.layout {
+  justify-content: start;
+  align-items: start;
+}
+
+.content {
+  padding: 30px;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 20px 16px;
+  }
+}

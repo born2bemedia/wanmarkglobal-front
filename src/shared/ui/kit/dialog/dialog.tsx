@@ -10,6 +10,7 @@ import {
   Trigger,
 } from '@radix-ui/react-dialog';
 
+import { cn } from '@/shared/lib/styles';
 import { Button } from '@/shared/ui/kit/button';
 
 import st from './dialog.module.scss';
@@ -20,6 +21,8 @@ export function Dialog({
   open,
   onOpenChange,
   layoutClassName,
+  contentClassName,
+  contentLayoutClassName,
   withDecor = false,
   hideCloseBtn = false,
 }: {
@@ -30,17 +33,19 @@ export function Dialog({
   withDecor?: boolean;
   hideCloseBtn?: boolean;
   layoutClassName?: string;
+  contentClassName?: string;
+  contentLayoutClassName?: string;
 }) {
   return (
     <Root open={open} onOpenChange={onOpenChange}>
       <Trigger asChild={!!trigger}>{trigger ? trigger : null}</Trigger>
       <Portal>
         <Overlay className={st.overlay} />
-        <Content className={st.content}>
-          <section className={st.contentLayout}>
+        <Content className={cn(st.content, contentClassName)}>
+          <section className={cn(st.contentLayout, contentLayoutClassName)}>
             <Title />
             <Description
-              className={layoutClassName}
+              className={cn(st.layoutClass, layoutClassName)}
               style={{ height: '100%' }}
               asChild
             >
