@@ -53,6 +53,7 @@
   position: relative;
   display: flex;
   height: 100%;
+  width: 100%;
   flex-direction: column;
   text-align: center;
 }
@@ -71,7 +72,7 @@
     width: 90%;
   }
 
-  .contentLayout {
+  .layoutClass {
     padding: 20px 12px;
   }
 

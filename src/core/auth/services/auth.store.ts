@@ -4,6 +4,6 @@ export const useLoginModalStore = create<{
   open: boolean;
   setOpen: (open: boolean) => void;
 }>(set => ({
-  open: false,
+  open: true,
   setOpen: open => set({ open }),
 }));
