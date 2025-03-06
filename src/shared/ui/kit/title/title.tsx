@@ -50,6 +50,8 @@ export function Title({
       [st.white]: color === 'white',
       [st.coralColor]: color === 'coral',
       [st.opacityCoralColor]: color === 'opacityCoral',
+      [st.lightGreen]: color === 'lightGreen',
+      [st.green]: color === 'green',
       [st.uppercase]: uppercase,
     },
     className,

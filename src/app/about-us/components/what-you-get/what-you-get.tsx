@@ -16,10 +16,10 @@ const steps = [
     img: (
       <Image
         className={cn(st.stepImg, st.stepOneImg)}
-        src="/step-one.svg"
+        src="/about/step-one.png"
         alt="metallic"
-        width={360}
-        height={356}
+        width={350}
+        height={350}
       />
     ),
   },
@@ -30,10 +30,10 @@ const steps = [
     img: (
       <Image
         className={cn(st.stepImg, st.stepTwoImg)}
-        src="/step-two.svg"
+        src="/about/step-two.png"
         alt="metallic"
-        width={351}
-        height={351}
+        width={340}
+        height={360}
       />
     ),
   },
@@ -44,10 +44,10 @@ const steps = [
     img: (
       <Image
         className={cn(st.stepImg, st.stepThreeImg)}
-        src="/step-three.svg"
+        src="/about/step-three.png"
         alt="metallic"
-        width={508}
-        height={508}
+        width={380}
+        height={380}
       />
     ),
   },

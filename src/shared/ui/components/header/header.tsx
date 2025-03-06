@@ -96,7 +96,9 @@ export function Header() {
           textWeight={500}
           onChange={value => router.push(value)}
         />
-        <Text weight={500}>Pricing</Text>
+        <Link href="/pricing">
+          <Text weight={500}>Pricing</Text>
+        </Link>
         <div className={st.navBtns}>
           <Button variant="grey" onClick={openCartHandler}>
             <Text weight={500}>Cart</Text>

@@ -43,6 +43,8 @@ export function Text({
       [st.darkGrayColor]: color === 'darkGrey',
       [st.deepBlack]: color === 'deepBlack',
       [st.coralColor]: color === 'coral',
+      [st.lightGreen]: color === 'lightGreen',
+      [st.green]: color === 'green',
       [st.xlSize]: size === 'xl',
     },
     className,
