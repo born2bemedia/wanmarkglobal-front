@@ -23,7 +23,7 @@ export default async function GrowthSolutions() {
         <MarketPackages key={index} packages={pair} position={index} />
       ))}
       <CustomSolution />
-      <GeneralRequestForm />
+      <GeneralRequestForm subject="Growth Solutions" />
     </main>
   );
 }

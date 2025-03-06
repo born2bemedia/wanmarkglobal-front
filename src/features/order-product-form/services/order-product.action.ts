@@ -2,6 +2,9 @@
 
 import { google } from 'googleapis';
 
+import { consultingSubjects } from '@/features/letters/lib/subjects';
+import { getUserMessage } from '@/features/letters/lib/utils';
+
 import {
   EMAIL_CLIENT_ID,
   EMAIL_CLIENT_SECRET,
@@ -87,6 +90,22 @@ export async function orderProduct({
       userId: 'me',
       requestBody: { raw: adminEmailBody },
     });
+
+    if (type !== 'Contact') {
+      const userEmailBody = makeBody({
+        to: email,
+        from: EMAIL_USER,
+        subject: consultingSubjects.get(type) ?? 'From Wanmark Global',
+        message: getUserMessage({ type, config: { firstName } }) ?? '',
+      });
+
+      await gmail.users.messages
+        .send({
+          userId: 'me',
+          requestBody: { raw: userEmailBody },
+        })
+        .catch(err => console.error(err));
+    }
 
     if (res.status !== 200) {
       throw new Error(`Failed to send email. Status: ${res.status}`);

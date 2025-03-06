@@ -20,7 +20,7 @@ export async function MarketingRequestForm() {
   return (
     <section className={st.layout}>
       <RequestInfo />
-      <OrderForm type="Business Consulting" services={services} />
+      <OrderForm type="Marketing Consulting" services={services} />
     </section>
   );
 }
