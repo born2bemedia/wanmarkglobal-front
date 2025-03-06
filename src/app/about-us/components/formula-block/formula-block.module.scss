@@ -1,0 +1,76 @@
+.formulaBlock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border-radius: 12px;
+  background: #fafafa;
+  padding: 40px;
+  height: 320px;
+  margin-top: 30px;
+  position: relative;
+  flex-wrap: wrap;
+  @media (max-width: 768px) {
+    height: auto;
+    padding: 20px;
+    justify-content: flex-start;
+  }
+  .formulaBack {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/about/formula.svg');
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 0;
+    //opacity: 0;
+    transition: all 0.5s;
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+  > div {
+    position: relative;
+    z-index: 1;
+    color: #0b1635;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border-radius: 12px;
+    background: #fff;
+    border: 2px solid #fff;
+    display: flex;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    @media (max-width: 768px) {
+      padding: 6px 12px;
+    }
+    &.blue {
+      background: #c1d5ff;
+      border: 2px solid #c1d5ff;
+      &.active {
+        border-color: #2149ba;
+        &:last-child {
+          background: #2149ba;
+          color: #fff;
+          svg {
+            path {
+              fill: #fff;
+            }
+          }
+        }
+      }
+    }
+    &.white {
+      &.active {
+        border-color: #a2c0ff;
+      }
+    }
+  }
+}

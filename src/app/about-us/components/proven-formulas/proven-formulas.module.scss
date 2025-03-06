@@ -1,0 +1,23 @@
+.layout {
+  .content {
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: 767px) {
+      flex-direction: column;
+      gap: 12px;
+    }
+    h3 {
+      width: 460px;
+      @media (max-width: 767px) {
+        width: 100%;
+      }
+    }
+    p {
+      width: 350px;
+      line-height: 1.5;
+      @media (max-width: 767px) {
+        width: 100%;
+      }
+    }
+  }
+}

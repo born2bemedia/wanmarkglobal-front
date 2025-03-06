@@ -12,6 +12,14 @@
 
 .fourSize {
   font-size: 2rem;
+  span{
+    span{
+      font-size: 58px;
+      @media (max-width: 768px) {
+        font-size: 45px;
+      }
+    }
+  }
 }
 
 .fiveSize {
@@ -95,6 +103,8 @@
 .uppercase {
   text-transform: uppercase;
 }
+
+
 
 @media (max-width: 768px) {
   .oneSize {
