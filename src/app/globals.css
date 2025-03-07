@@ -30,3 +30,7 @@ body[data-scroll-locked] {
 ::-webkit-scrollbar-track {
   background-color: #EFEFEF;
 }
+
+.no-scroll {
+  overflow: hidden;
+}
