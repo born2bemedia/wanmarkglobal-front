@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo } from 'react';
 
 import { useLoginModalStore } from '@/core/auth/services/auth.store';
 
@@ -10,18 +10,18 @@ import { Avatar } from '@/shared/ui/kit/avatar/avatar';
 import { Button } from '@/shared/ui/kit/button';
 import { Text } from '@/shared/ui/kit/text';
 
-import { User } from '../../lib/types';
+import { useUserStore } from '../../services/user.store';
 import st from './user-badge.module.scss';
 
 export function UserBadge() {
   const { setOpen } = useLoginModalStore();
-  const [user, setUser] = useState<User | null>(null);
+  const { user, setUser } = useUserStore();
 
   useEffect(() => {
     const storedUser = cookies.get('user');
     const parsedUser = storedUser ? JSON.parse(storedUser) : null;
     setUser(parsedUser);
-  }, []);
+  }, [setUser]);
 
   const initials = useMemo(() => user?.firstName[0] ?? '', [user?.firstName]);
 

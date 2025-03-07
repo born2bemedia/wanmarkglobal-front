@@ -11,20 +11,17 @@
   height: 100%;
 }
 
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
 .formInner {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-}
-
-.icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 100px;
-  background: #FAFAFA;
-  height: 32px;
-  width: 32px;
+  gap: 18px;
 }
 
 .icon {

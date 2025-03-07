@@ -14,6 +14,7 @@ import { TextField } from '@/shared/ui/kit/text-field';
 import { Title } from '@/shared/ui/kit/title';
 
 import {
+  useAuthStore,
   useLoginModalStore,
   useResetPasswordStore,
 } from '../../services/auth.store';
@@ -21,8 +22,8 @@ import st from './login-form.module.scss';
 
 export function LoginForm() {
   const { show, switchTo } = useResetPasswordStore();
-
   const { setOpen } = useLoginModalStore();
+  const { openRegister } = useAuthStore();
 
   const {
     handleSubmit,
@@ -56,7 +57,7 @@ export function LoginForm() {
   ) : (
     <form onSubmit={onSubmit} className={st.form}>
       <div className={st.header}>
-        <Title level={5} color="darkBlue" uppercase>
+        <Title level={5} color="darkBlue" weight={500} uppercase>
           Log In
         </Title>
         <button className={st.icon} onClick={() => setOpen(false)}>
@@ -120,7 +121,13 @@ export function LoginForm() {
         </Button>
         <Text color="lightBlue">
           Don&#39;t have an account yet?{' '}
-          <span className={st.link}>Registration</span>
+          <button
+            className={st.link}
+            type="button"
+            onClick={() => openRegister(true)}
+          >
+            Registration
+          </button>
         </Text>
       </section>
     </form>
