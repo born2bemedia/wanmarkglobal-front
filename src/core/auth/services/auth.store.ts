@@ -15,3 +15,11 @@ export const useResetPasswordStore = create<{
   show: false,
   switchTo: show => set({ show }),
 }));
+
+export const useAuthStore = create<{
+  register: boolean;
+  openRegister: (register: boolean) => void;
+}>(set => ({
+  register: false,
+  openRegister: register => set({ register }),
+}));

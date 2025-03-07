@@ -24,7 +24,7 @@ export async function login({
       httpOnly: true,
     });
     cookieInst.set('user', JSON.stringify(result.user));
-    return { message: result.message, success: true };
+    return { message: result.message, success: true, user: result.user };
   } else {
     return { message: result.message, success: false };
   }
