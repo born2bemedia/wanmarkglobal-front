@@ -5,13 +5,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
+import { LoginDialog } from '@/core/auth/components';
+import { UserBadge } from '@/core/user/components';
+
 import { BurgerMenu } from '@/features/burger-menu/components';
 import { EmptyCartDialog } from '@/features/cart/components';
 import { getCartProducts } from '@/features/cart/services';
 
 import { cn } from '@/shared/lib/styles';
 import { SocialNetworks } from '@/shared/ui/components/social-networks';
-import { Bag, Enter } from '@/shared/ui/icons';
+import { Bag } from '@/shared/ui/icons';
 import { Button } from '@/shared/ui/kit/button';
 import { Select } from '@/shared/ui/kit/select';
 import { Text } from '@/shared/ui/kit/text';
@@ -54,6 +57,7 @@ export function Header() {
         </section>
       </section>
       <EmptyCartDialog open={cartDialogOpen} onOpen={setCartDialogOpen} />
+      <LoginDialog />
       <nav className={cn(st.toolbar, st.nav)}>
         <Select
           options={[
@@ -104,10 +108,7 @@ export function Header() {
             <Text weight={500}>Cart</Text>
             <Bag />
           </Button>
-          <Button variant="grey">
-            <Text weight={500}>Login</Text>
-            <Enter />
-          </Button>
+          <UserBadge />
         </div>
       </nav>
       <section className={st.burgerMenu}>
