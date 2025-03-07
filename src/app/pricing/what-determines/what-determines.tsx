@@ -1,5 +1,6 @@
 import Image from 'next/image';
 
+import { cn } from '@/shared/lib/styles';
 import { Layout } from '@/shared/ui/components/layout';
 import { ArrowTopRightCircle } from '@/shared/ui/icons';
 import { LinkButton } from '@/shared/ui/kit/link-button';
@@ -47,6 +48,14 @@ export function WhatDetermines() {
               key factors:
             </Text>
           </div>
+          <LinkButton
+            url="/how-we-work"
+            variant="black"
+            className={cn(st.linkButton, st.linkBtnDesktop)}
+          >
+            Learn How We Work
+            <ArrowTopRightCircle color="black" />
+          </LinkButton>
         </div>
         <div className={st.reasons}>
           {reasons.map(reason => (
@@ -69,7 +78,7 @@ export function WhatDetermines() {
         <LinkButton
           url="/how-we-work"
           variant="black"
-          className={st.linkButton}
+          className={cn(st.linkButton, st.linkBtnMobile)}
         >
           Learn How We Work
           <ArrowTopRightCircle color="black" />
