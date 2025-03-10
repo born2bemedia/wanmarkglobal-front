@@ -11,7 +11,7 @@ export function AccountLayout({ children }: { children: ReactNode }) {
     <section className={st.layout}>
       {children}
       <div className={st.btnLayout}>
-        <Button variant="grey" className={st.btn}>
+        <Button variant="secondary" className={st.btn}>
           Log Out
         </Button>
       </div>

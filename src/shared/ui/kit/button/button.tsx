@@ -12,7 +12,7 @@ export function Button({
   variant = 'white',
   ...props
 }: ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: 'black' | 'white' | 'grey';
+  variant?: 'black' | 'white' | 'grey' | 'secondary';
 }) {
   const buttonClasses = cn(
     st.btn,
@@ -20,6 +20,7 @@ export function Button({
       [st.btnBlack]: variant === 'black',
       [st.btnWhite]: variant === 'white',
       [st.btnGrey]: variant === 'grey',
+      [st.btnSecondary]: variant === 'secondary',
     },
     className,
   );

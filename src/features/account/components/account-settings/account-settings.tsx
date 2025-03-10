@@ -1,8 +1,5 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { useWindowSize } from 'react-use';
-
 import { logout } from '@/core/auth/services/logout.action';
 import { useUserStore } from '@/core/user/services/user.store';
 

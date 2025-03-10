@@ -29,7 +29,7 @@ export function Hero() {
         <Title weight={500} uppercase>
           Your Account
         </Title>
-        <Title level={5} color="mediumBlue" weight={500}>
+        <Title level={5} color="mediumBlue" weight={500} uppercase>
           Manage Your Services & Documents
         </Title>
       </div>
