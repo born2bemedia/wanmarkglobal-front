@@ -48,7 +48,7 @@ export function OrderForm({
   const {
     handleSubmit,
     control,
-    formState: { isSubmitting, errors },
+    formState: { isSubmitting },
     reset,
   } = useForm<OrderProductWithServiceSchema>({
     resolver: zodResolver(orderProductWithServiceSchema),
