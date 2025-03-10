@@ -23,9 +23,9 @@ export function OrderCard({
       __html: string;
     };
   }>;
-  price: string;
+  price: number;
   color: string;
-  onDelete: () => void; // onDelete prop
+  onDelete: () => void;
 }) {
   const element = (hovered: boolean) => (
     <section className={st.wrapper}>
@@ -36,20 +36,19 @@ export function OrderCard({
           exit={{ opacity: 0, x: -100 }}
           transition={{ duration: 0.3 }}
         >
-          <button
-            className={st.deleteBtn}
-            onClick={onDelete} // Trigger onDelete when clicked
-          >
+          <button className={st.deleteBtn} onClick={onDelete}>
             <Minus />
           </button>
         </motion.div>
       )}
       <article className={st.layout}>
         <section className={st.title}>
-          <div
-            className={st.icon}
-            dangerouslySetInnerHTML={icon.props.dangerouslySetInnerHTML}
-          />
+          {icon ? (
+            <div
+              className={st.icon}
+              dangerouslySetInnerHTML={icon.props.dangerouslySetInnerHTML}
+            />
+          ) : null}
           <Text color="darkBlue" size="lg" weight={500}>
             {title}
           </Text>

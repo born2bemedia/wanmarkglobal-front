@@ -70,6 +70,7 @@ export function OrderPersonalDetails() {
       clearCart();
       reset();
     } else {
+      console.error(res);
       notifyError('Something went wrong. Please try again later.');
     }
   });

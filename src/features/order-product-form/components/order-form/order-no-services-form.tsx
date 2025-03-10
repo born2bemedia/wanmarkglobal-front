@@ -56,7 +56,7 @@ export function OrderNoServicesForm({
 
   const onSubmit = handleSubmit(async (data: OrderProductSchema) => {
     try {
-      await orderProduct({ ...data, type });
+      await orderProduct({ ...data, type, user: null });
       setDialogOpen(true);
       reset();
     } catch (e) {
