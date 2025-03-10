@@ -1,0 +1,27 @@
+.layout {
+  border-radius: 12px;
+  padding: 28px;
+  background-color: #FFFFFF;
+  margin-top: 6px;
+}
+
+.btnLayout {
+  display: none;
+  justify-content: end;
+  align-items: flex-end;
+}
+
+.btn {
+  margin-top: 30px;
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    padding: 22px 12px;
+  }
+
+  .btnLayout {
+    display: flex;
+  }
+}

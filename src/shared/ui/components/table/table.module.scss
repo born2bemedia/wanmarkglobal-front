@@ -1,0 +1,58 @@
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  table-layout: fixed;
+}
+
+.headerGroup {
+  background-color: #FAFAFA;
+}
+
+.header {
+  color: #292728;
+  font-size: 1.125rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 12px;
+  min-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rowGroup {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.cell {
+  padding: 16px;
+  text-align: center;
+  min-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.noData {
+  text-align: center;
+  padding: 16px;
+  height: 300px;
+}
+
+@media (max-width: 1024px) {
+  .table {
+    table-layout: auto;
+  }
+
+  .header,
+  .cell {
+    white-space: nowrap;
+    min-width: 150px;
+  }
+}

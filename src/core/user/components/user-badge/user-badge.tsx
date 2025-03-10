@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo } from 'react';
+import Link from 'next/link';
 
 import { useLoginModalStore } from '@/core/auth/services/auth.store';
 
@@ -27,12 +28,12 @@ export function UserBadge({ className }: { className?: string }) {
   const initials = useMemo(() => user?.firstName[0] ?? '', [user?.firstName]);
 
   return user ? (
-    <section className={cn(st.badge, className)}>
+    <Link href="/account" className={cn(st.badge, className)}>
       <Text color="mediumBlue" weight={500}>
         {user.firstName} {user.lastName}
       </Text>
       <Avatar initials={initials} />
-    </section>
+    </Link>
   ) : (
     <Button variant="grey" className={className} onClick={() => setOpen(true)}>
       <Text weight={500}>Login</Text>

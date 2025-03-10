@@ -3,6 +3,7 @@
 import { ResetPasswordForm } from '@/core/auth/components/reset-password';
 import { LoginSchema, loginSchema } from '@/core/auth/lib/login.schema';
 import { login } from '@/core/auth/services/login.action';
+import { useUserStore } from '@/core/user/services/user.store';
 
 import { Controller, useForm, zodResolver } from '@/shared/lib/forms';
 import { notifyError, notifySuccess } from '@/shared/lib/notify';
@@ -24,6 +25,7 @@ export function LoginForm() {
   const { show, switchTo } = useResetPasswordStore();
   const { setOpen } = useLoginModalStore();
   const { openRegister } = useAuthStore();
+  const { setUser } = useUserStore();
 
   const {
     handleSubmit,
@@ -44,6 +46,7 @@ export function LoginForm() {
     const res = await login(data);
 
     if (res.success) {
+      setUser(res.user);
       setOpen(false);
       notifySuccess(res.message);
       reset();
