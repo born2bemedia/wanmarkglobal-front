@@ -80,9 +80,11 @@ const columns = columnDefBuilder<Order>([
     header: 'Get Invoice',
     size: 200,
     cell: () => (
-      <Text size="lg" color="deepBlack" weight={400}>
-        DOWNLOAD
-      </Text>
+      <button>
+        <Text size="lg" color="deepBlack" weight={400} underline>
+          DOWNLOAD
+        </Text>
+      </button>
     ),
   },
 ]);
@@ -90,7 +92,7 @@ const columns = columnDefBuilder<Order>([
 export function OrdersTable({ values }: { values: Order[] }) {
   return (
     <div>
-      <Table data={[]} columns={columns} columnFullWidth />
+      <Table data={values} columns={columns} columnFullWidth />
     </div>
   );
 }

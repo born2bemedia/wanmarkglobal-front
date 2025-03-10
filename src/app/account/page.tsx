@@ -14,7 +14,7 @@ export default async function Account() {
     services: order.items.map(item => item.product.title),
     orderStatus: order.status,
     paymentMethod: order.paymentMethod,
-    getInvoice: order.invoice.url,
+    getInvoice: `http://localhost:3001${order.invoice?.url}`,
   }));
 
   console.log(orders);
