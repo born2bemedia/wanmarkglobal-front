@@ -1,12 +1,16 @@
-import { AccountSettings } from '@/features/account/components';
+import dynamic from 'next/dynamic';
+
 import { Order } from '@/features/account/lib/types';
 import { getUserOrders } from '@/features/account/services';
 
 import { Hero } from './components/hero';
 
+const AccountSettings = dynamic(() =>
+  import('@/features/account/components').then(mod => mod.AccountSettings),
+);
+
 export default async function Account() {
-  const res = await getUserOrders({ userID: '2' });
-  console.log(res);
+  const res = await getUserOrders();
 
   const orders: Order[] = res.docs.map(order => ({
     orderId: order.orderNumber,
@@ -16,8 +20,6 @@ export default async function Account() {
     paymentMethod: order.paymentMethod,
     getInvoice: `http://localhost:3001${order.invoice?.url}`,
   }));
-
-  console.log(orders);
 
   return (
     <main>
