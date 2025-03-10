@@ -32,7 +32,7 @@ export function Footer() {
             <li>
               <Text size="lg" color="darkBlue">
                 <strong className={st.highlighted}>Office address:</strong> Unit
-                7, 6 Westgate Street, Hackney, E8 3RN
+                7, 6 Westgate Street, London, E8 3RN, United Kingdom
               </Text>
             </li>
             <li>
