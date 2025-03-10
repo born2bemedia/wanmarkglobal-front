@@ -12,15 +12,17 @@ export function Autocomplete({
   placeholder,
   label,
   hint,
+  initialValue,
   onChange,
 }: {
   items: { value: string; label: string }[];
+  onChange?: (value: string) => void;
+  initialValue?: string;
   placeholder?: string;
   label?: string;
   hint?: string;
-  onChange?: (value: string) => void;
 }) {
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState(initialValue);
   const [isOpen, setIsOpen] = useState(false);
 
   const autocompleteRef = useRef<HTMLDivElement>(null);
@@ -33,6 +35,7 @@ export function Autocomplete({
 
   const handleSelect = (label: string) => {
     setSearch(label);
+    onChange?.(label);
     setIsOpen(false);
   };
 
