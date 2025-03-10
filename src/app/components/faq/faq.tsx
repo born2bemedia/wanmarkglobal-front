@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 import { cn } from '@/shared/lib/styles';
 import { ArrowTopRight } from '@/shared/ui/icons';
@@ -89,13 +90,15 @@ function ContactUsButton() {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <Button
-      variant="black"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <span>Contact Us</span>
-      <ArrowTopRight color={isHovered ? 'black' : 'white'} />
-    </Button>
+    <Link href="/contact">
+      <Button
+        variant="black"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <span>Contact Us</span>
+        <ArrowTopRight color={isHovered ? 'black' : 'white'} />
+      </Button>
+    </Link>
   );
 }

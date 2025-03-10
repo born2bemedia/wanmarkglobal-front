@@ -22,7 +22,10 @@ import st from './how-helps.module.scss';
 const help = [
   {
     title: 'Business Consulting',
-    buttonMeta: { value: 'Go to Business Consulting', link: '#' },
+    buttonMeta: {
+      value: 'Go to Business Consulting',
+      link: '/business-consulting',
+    },
     blocks: [
       {
         title: 'Validation & Planning',
@@ -43,7 +46,10 @@ const help = [
   },
   {
     title: 'Marketing Consulting',
-    buttonMeta: { value: 'Go to Marketing Consulting', link: '#' },
+    buttonMeta: {
+      value: 'Go to Marketing Consulting',
+      link: '/marketing-consulting',
+    },
     blocks: [
       {
         title: 'Brand & Market Positioning',
