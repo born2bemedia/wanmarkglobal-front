@@ -21,10 +21,10 @@ export function ProductCard({
   onOrder,
 }: Product & {
   onOrder?: (args: {
-    id: string;
+    id: number;
     title: string;
     icon: ReactNode;
-    price: string;
+    price: number;
     color: string;
   }) => void;
 }) {

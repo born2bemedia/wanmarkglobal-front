@@ -23,7 +23,7 @@ export function OrderCard({
       __html: string;
     };
   }>;
-  price: string;
+  price: number;
   color: string;
   onDelete: () => void;
 }) {

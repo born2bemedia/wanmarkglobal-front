@@ -64,8 +64,6 @@ export function OrderForm({
     },
   });
 
-  console.log('@errors', errors);
-
   const onSubmit = handleSubmit(async (data: OrderProductWithServiceSchema) => {
     try {
       await orderProduct({ ...data, type, user });

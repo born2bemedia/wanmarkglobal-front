@@ -23,11 +23,11 @@ export function PackageCard({
   color,
   services,
 }: {
-  id: string;
+  id: number;
   icon?: string;
   title: string;
   description: string;
-  price: string;
+  price: number;
   onOrder?: () => void;
   services: { icon: JSX.Element; title: string }[];
   color: 'surfaceYellow' | 'grey';
@@ -44,10 +44,10 @@ export function PackageCard({
     price,
     color,
   }: {
-    id: string;
+    id: number;
     title: string;
     icon: ReactNode;
-    price: string;
+    price: number;
     color: string;
   }) => {
     const products = getCartProducts();

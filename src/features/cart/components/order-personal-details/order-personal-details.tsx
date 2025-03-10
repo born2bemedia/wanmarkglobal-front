@@ -57,8 +57,6 @@ export function OrderPersonalDetails() {
     },
   });
 
-  console.log('@products', products);
-
   const onSubmit = handleSubmit(async (data: OrderSchema) => {
     const res = await createOrder({
       products,
@@ -67,13 +65,12 @@ export function OrderPersonalDetails() {
       user,
     });
 
-    console.log(res);
-
     if (res?.message === 'Order successfully created.') {
       router.push('/thank-you');
       clearCart();
       reset();
     } else {
+      console.error(res);
       notifyError('Something went wrong. Please try again later.');
     }
   });
