@@ -3,6 +3,8 @@
 import { useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 
+import { useUserStore } from '@/core/user/services/user.store';
+
 import { calculateTotalPrice } from '@/features/cart/lib/utils';
 import { clearCart } from '@/features/cart/services';
 
@@ -30,6 +32,7 @@ export function OrderPersonalDetails() {
   const { products } = useCartProducts();
   const countryCode = useCountryCode();
   const router = useRouter();
+  const { user } = useUserStore();
 
   const totalPrice = useMemo(() => calculateTotalPrice(products), [products]);
 
@@ -55,7 +58,12 @@ export function OrderPersonalDetails() {
   });
 
   const onSubmit = handleSubmit(async (data: OrderSchema) => {
-    const res = await createOrder({ products, billing: data, totalPrice });
+    const res = await createOrder({
+      products,
+      billing: data,
+      totalPrice,
+      user,
+    });
 
     if (res?.message === 'Order successfully created.') {
       router.push('/thank-you');
