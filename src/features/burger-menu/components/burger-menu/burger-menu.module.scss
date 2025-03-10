@@ -5,6 +5,13 @@
   padding: 4px;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
 .menuLabel {
   border-radius: 100px;
   background: rgba(255, 255, 255, 0.44);
@@ -15,26 +22,16 @@
   gap: 10px;
 }
 
-.overlay {
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px);
-  animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
-  z-index: 998;
-}
-
 .content {
-  background-color: #FFFFFF;
+  background-color: #EFEFEF;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100vw;
   height: 100vh;
-  padding: 20px;
   animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
-  z-index: 999;
+  z-index: 555;
   overflow-y: auto;
   overflow-x: hidden;
 
@@ -45,13 +42,71 @@
 
 .contentLayout {
   position: relative;
-  padding: 10px 100px;
+  border-radius: 12px;
+  background-color: #E0EAFF;
+  height: 95vh;
+  margin: 12px;
 }
 
 .close {
   position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   top: 20px;
   right: 15px;
+  color: #0D2056;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.44);
+  backdrop-filter: blur(20px);
+  padding: 10px 15px;
+}
+
+.navigationLayout {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  margin-top: 30px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.30);
+  padding: 12px;
+  backdrop-filter: blur(20px);
+}
+
+.navBtns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+
+  .btnsInner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+.navMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 26px;
+}
+
+.footer {
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.30);
+  padding: 12px 4px 12px 22px;
+  backdrop-filter: blur(20px);
+  display: flex;
+  justify-content: space-between;
+}
+
+.networks {
+  display: flex;
+  gap: 4px;
 }
 
 @keyframes overlayShow {
@@ -109,7 +164,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1058px) {
   .logo {
     display: none;
   }

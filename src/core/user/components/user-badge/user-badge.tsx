@@ -5,6 +5,7 @@ import { useEffect, useMemo } from 'react';
 import { useLoginModalStore } from '@/core/auth/services/auth.store';
 
 import { cookies } from '@/shared/lib/browser';
+import { cn } from '@/shared/lib/styles';
 import { Enter } from '@/shared/ui/icons';
 import { Avatar } from '@/shared/ui/kit/avatar/avatar';
 import { Button } from '@/shared/ui/kit/button';
@@ -13,7 +14,7 @@ import { Text } from '@/shared/ui/kit/text';
 import { useUserStore } from '../../services/user.store';
 import st from './user-badge.module.scss';
 
-export function UserBadge() {
+export function UserBadge({ className }: { className?: string }) {
   const { setOpen } = useLoginModalStore();
   const { user, setUser } = useUserStore();
 
@@ -26,14 +27,14 @@ export function UserBadge() {
   const initials = useMemo(() => user?.firstName[0] ?? '', [user?.firstName]);
 
   return user ? (
-    <section className={st.badge}>
+    <section className={cn(st.badge, className)}>
       <Text color="mediumBlue" weight={500}>
         {user.firstName} {user.lastName}
       </Text>
       <Avatar initials={initials} />
     </section>
   ) : (
-    <Button variant="grey" onClick={() => setOpen(true)}>
+    <Button variant="grey" className={className} onClick={() => setOpen(true)}>
       <Text weight={500}>Login</Text>
       <Enter />
     </Button>
