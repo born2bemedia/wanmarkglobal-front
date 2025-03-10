@@ -11,6 +11,8 @@ export async function servicesMapping(products: OriginProduct[]) {
         : null;
 
       return {
+        id: product.id,
+        price: product.price,
         icon: iconSvg ? (
           <span
             dangerouslySetInnerHTML={{ __html: iconSvg }}
@@ -19,7 +21,8 @@ export async function servicesMapping(products: OriginProduct[]) {
         ) : (
           <span>No Icon</span>
         ),
-        name: product.title,
+        title: product.title,
+        color: product.color,
       };
     }),
   );

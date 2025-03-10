@@ -1,3 +1,5 @@
+import { ReactElement } from 'react';
+
 import { z } from '@/shared/lib/forms';
 import { isPhoneValid } from '@/shared/ui/kit/phone-field';
 
@@ -14,7 +16,19 @@ export const orderProductSchema = z.object({
 });
 
 export const orderProductWithServiceSchema = orderProductSchema.extend({
-  selectedServices: z.array(z.string()).nonempty('Select at least one service'),
+  selectedServices: z
+    .array(
+      z.object({
+        id: z.number(),
+        title: z.string(),
+        icon: z.custom<
+          ReactElement<{ dangerouslySetInnerHTML: { __html: string } }>
+        >(),
+        price: z.number(),
+        color: z.string(),
+      }),
+    )
+    .nonempty('Select at least one service'),
 });
 
 export type OrderProductWithServiceSchema = z.infer<

@@ -29,10 +29,10 @@ export function ProductList({
     price,
     color,
   }: {
-    id: string;
+    id: number;
     title: string;
     icon: ReactNode;
-    price: string;
+    price: number;
     color: string;
   }) => {
     const products = getCartProducts();

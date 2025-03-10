@@ -1,9 +1,11 @@
 import { JSX } from 'react';
 
 export type Package = {
+  id: number;
+  icon?: string;
   description: string;
   title: string;
-  price: string;
+  price: number;
   color: string;
   services: {
     icon: JSX.Element;

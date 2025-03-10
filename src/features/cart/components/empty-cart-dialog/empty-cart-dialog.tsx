@@ -23,7 +23,12 @@ export function EmptyCartDialog({
   const icon = getRandomIcon();
 
   return (
-    <Dialog open={open} onOpenChange={onOpen} hideCloseBtn>
+    <Dialog
+      open={open}
+      onOpenChange={onOpen}
+      layoutClassName={st.layoutDialog}
+      hideCloseBtn
+    >
       <section className={st.layout}>
         <div className={st.text}>
           <Title level={5} weight={500} color="darkBlue" uppercase>
