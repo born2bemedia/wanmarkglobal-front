@@ -21,7 +21,7 @@ export function Hero() {
         scrollToExplore={{ color: 'lightGreen', value: 'Scroll to explore' }}
         image={
           <Image
-            src="/pricing/metallic.png"
+            src="/pricing/metallic.svg"
             alt="metallic-sphere"
             className={st.metallicSphere}
             width={540}
@@ -37,7 +37,7 @@ export function Hero() {
         contactText={{
           color: 'lightGreen',
           value:
-            "Learn how we price our business and marketing consulting services and what goes into the cost.",
+            'Learn how we price our business and marketing consulting services and what goes into the cost.',
           width: `${isMobile ? '100%' : '50%'}`,
         }}
         contactUsIcon={<ArrowTopRightCircle color="green" />}

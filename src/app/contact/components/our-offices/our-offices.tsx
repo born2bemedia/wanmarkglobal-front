@@ -37,7 +37,7 @@ export function OurOffices() {
           ></iframe>
         </Location>
         <Location
-          address="Unit 7, 6 Westgate Street, Hackney, E8 3RN"
+          address="Unit 7, 6 Westgate Street, London, E8 3RN, United Kingdom"
           desc="Office address"
         >
           <iframe

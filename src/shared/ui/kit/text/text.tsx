@@ -13,6 +13,8 @@ export function Text({
   color = 'mediumBlue',
   weight = 400,
   uppercase = false,
+  capitalize = false,
+  underline = false,
   size = 'base',
 }: {
   children: ReactNode;
@@ -21,6 +23,8 @@ export function Text({
   weight?: 200 | 300 | 400 | 500;
   size?: 'sm' | 'base' | 'lg' | 'xl' | 'heading';
   uppercase?: boolean;
+  capitalize?: boolean;
+  underline?: boolean;
 }) {
   const textClasses = cn(
     {
@@ -46,6 +50,8 @@ export function Text({
       [st.lightGreen]: color === 'lightGreen',
       [st.green]: color === 'green',
       [st.xlSize]: size === 'xl',
+      [st.capitalize]: capitalize,
+      [st.underline]: underline,
     },
     className,
   );

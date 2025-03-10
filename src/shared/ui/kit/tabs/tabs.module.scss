@@ -1,0 +1,36 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.list {
+  flex-shrink: 0;
+  width: max-content;
+  border-radius: 100px;
+  background:  #FAFAFA;
+  backdrop-filter: blur(20px);
+  padding: 6px 26px 6px 6px;
+}
+
+.trigger {
+  color: #0D2056;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  transition: all 300ms ease-in-out;
+  padding: 5px 20px;
+  border-radius: 100px;
+}
+
+.trigger[data-state="active"] {
+  background: #E0EAFF;
+}
+
+@media (max-width: 768px) {
+  .list {
+    padding: 4px 18px 4px 4px;
+  }
+}
