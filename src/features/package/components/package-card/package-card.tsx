@@ -1,7 +1,11 @@
 'use client';
 
-import { JSX } from 'react';
+import { JSX, ReactNode } from 'react';
+import toast from 'react-hot-toast';
 
+import { getCartProducts } from '@/features/cart/services';
+
+import { lsWrite } from '@/shared/lib/browser';
 import { cn } from '@/shared/lib/styles';
 import { ArrowDown, ArrowTopRightCircle } from '@/shared/ui/icons';
 import { Button } from '@/shared/ui/kit/button';
@@ -11,13 +15,16 @@ import { Title } from '@/shared/ui/kit/title';
 import st from './package-card.module.scss';
 
 export function PackageCard({
+  id,
+  icon,
   description,
-  onOrder,
   price,
   title,
   color,
   services,
 }: {
+  id: string;
+  icon?: string;
   title: string;
   description: string;
   price: string;
@@ -29,6 +36,32 @@ export function PackageCard({
     [st.surfaceYellowColor]: color === 'surfaceYellow',
     [st.greyColor]: color === 'grey',
   });
+
+  const onOrderHandler = ({
+    id,
+    title,
+    icon,
+    price,
+    color,
+  }: {
+    id: string;
+    title: string;
+    icon: ReactNode;
+    price: string;
+    color: string;
+  }) => {
+    const products = getCartProducts();
+
+    const existingProduct = products.find(product => product.title === title);
+
+    if (existingProduct) {
+      toast.error(`Product ${title} already added in the cart`);
+    } else {
+      const orderProducts = [...products, { id, title, icon, price, color }];
+      lsWrite('cart', orderProducts);
+      toast.success(`Product ${title} added to cart`);
+    }
+  };
 
   return (
     <article className={layoutClasses}>
@@ -63,7 +96,11 @@ export function PackageCard({
           <Title level={4} color="mediumBlue" weight={300}>
             Price: <span className={st.price}>€{price}</span>
           </Title>
-          <Button variant="black" className={st.orderBtn} onClick={onOrder}>
+          <Button
+            variant="black"
+            className={st.orderBtn}
+            onClick={() => onOrderHandler({ id, icon, title, price, color })}
+          >
             Order Now
             <ArrowTopRightCircle color="black" />
           </Button>

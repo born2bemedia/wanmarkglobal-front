@@ -6,9 +6,12 @@ const filteredCountries = Object.fromEntries(
   ),
 );
 
-export const allowedCountries = Object.values(filteredCountries).map(
-  ({ name }) => ({
-    value: name,
-    label: name,
-  }),
-);
+const baseCountries = Object.values(filteredCountries).map(({ name }) => ({
+  value: name,
+  label: name,
+}));
+
+export const allowedCountries = [
+  ...baseCountries,
+  { value: 'United States', label: 'United States' },
+];

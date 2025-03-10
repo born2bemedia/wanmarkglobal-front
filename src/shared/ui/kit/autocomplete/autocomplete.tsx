@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { Text } from '@/shared/ui/kit/text';
 import { TextField } from '@/shared/ui/kit/text-field';
@@ -23,6 +23,8 @@ export function Autocomplete({
   const [search, setSearch] = useState('');
   const [isOpen, setIsOpen] = useState(false);
 
+  const autocompleteRef = useRef<HTMLDivElement>(null);
+
   const filteredItems = search
     ? items.filter(item =>
         item.label.toLowerCase().includes(search.toLowerCase()),
@@ -34,8 +36,24 @@ export function Autocomplete({
     setIsOpen(false);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        autocompleteRef.current &&
+        !autocompleteRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div style={{ position: 'relative', width: '100%' }}>
+    <div ref={autocompleteRef} style={{ position: 'relative', width: '100%' }}>
       <TextField
         value={search}
         label={label}

@@ -15,6 +15,7 @@ export function MarketPackages({
   return (
     <section className={st.layout}>
       <PackageCard
+        id={packages[0].id}
         title={packages[0].title}
         description={packages[0].description}
         price={packages[0].price}
@@ -22,6 +23,7 @@ export function MarketPackages({
         color={position % 2 === 0 ? 'surfaceYellow' : 'grey'}
       />
       <PackageCard
+        id={packages[1].id}
         title={packages[1].title}
         description={packages[1].description}
         price={packages[1].price}

@@ -57,6 +57,8 @@ export function OrderPersonalDetails() {
     },
   });
 
+  console.log('@products', products);
+
   const onSubmit = handleSubmit(async (data: OrderSchema) => {
     const res = await createOrder({
       products,
@@ -64,6 +66,8 @@ export function OrderPersonalDetails() {
       totalPrice,
       user,
     });
+
+    console.log(res);
 
     if (res?.message === 'Order successfully created.') {
       router.push('/thank-you');
