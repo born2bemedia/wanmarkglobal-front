@@ -1,4 +1,5 @@
 export type User = {
+  id: number;
   address: string;
   city: string;
   collection: string;

@@ -36,7 +36,12 @@ const columns = columnDefBuilder<Order>([
     header: 'Services',
     size: 200,
     cell: ({ getValue }) => (
-      <Text size="lg" color="deepBlack" weight={400}>
+      <Text
+        size="lg"
+        color="deepBlack"
+        weight={400}
+        className={st.servicesLine}
+      >
         {getValue<string>()}
       </Text>
     ),
