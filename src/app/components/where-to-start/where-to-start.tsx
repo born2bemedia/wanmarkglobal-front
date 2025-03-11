@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { ArrowTopRight } from '@/shared/ui/icons';
 import { Button } from '@/shared/ui/kit/button';
@@ -46,14 +47,16 @@ function CheckSolutionBtn() {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <Button
-      className={st.checkBtn}
-      variant="black"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <span>Check Growth Solutions</span>
-      <ArrowTopRight color={isHovered ? 'black' : 'white'} />
-    </Button>
+    <Link href="/growth-solutions">
+      <Button
+        className={st.checkBtn}
+        variant="black"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <span>Check Growth Solutions</span>
+        <ArrowTopRight color={isHovered ? 'black' : 'white'} />
+      </Button>
+    </Link>
   );
 }

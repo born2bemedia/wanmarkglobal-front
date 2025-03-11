@@ -1,6 +1,8 @@
 'use client';
 
-import { ReactNode, useState } from 'react';
+import { useState } from 'react';
+
+import { useUserStore } from '@/core/user/services/user.store';
 
 import { ProductService } from '@/features/product/components';
 
@@ -22,13 +24,11 @@ import {
   OrderProductWithServiceSchema,
   orderProductWithServiceSchema,
 } from '../../lib/order-product.schema';
+import type { Service } from '../../lib/types';
 import { orderProduct } from '../../services/order-product.action';
 import st from './order-form.module.scss';
 
-const splitIntoColumns = (
-  items: { name: string; icon?: ReactNode }[],
-  columns: number = 2,
-) => {
+const splitIntoColumns = (items: Service[], columns: number = 2) => {
   const mid = Math.ceil(items.length / columns);
   return [items.slice(0, mid), items.slice(mid)];
 };
@@ -38,9 +38,10 @@ export function OrderForm({
   type,
 }: {
   type: 'Business Consulting' | 'Marketing Consulting';
-  services: { name: string; icon?: ReactNode }[];
+  services: Service[];
 }) {
   const [dialogOpen, setDialogOpen] = useState<boolean>(false);
+  const { user } = useUserStore();
 
   const countryCode = useCountryCode();
 
@@ -65,7 +66,7 @@ export function OrderForm({
 
   const onSubmit = handleSubmit(async (data: OrderProductWithServiceSchema) => {
     try {
-      await orderProduct({ ...data, type });
+      await orderProduct({ ...data, type, user });
       setDialogOpen(true);
       reset();
     } catch (e) {
@@ -155,14 +156,16 @@ export function OrderForm({
               <div className={st.column}>
                 {leftColumn.map(service => (
                   <ProductService
-                    key={service.name}
-                    name={service.name}
+                    key={service.title}
+                    name={service.title}
                     icon={service.icon}
-                    checked={field.value.includes(service.name)}
+                    checked={field.value.some(
+                      item => item.title === service.title,
+                    )}
                     onCheckedChange={checked => {
                       const updatedServices = checked
-                        ? [...field.value, service.name]
-                        : field.value.filter((s: string) => s !== service.name);
+                        ? [...field.value, service]
+                        : field.value.filter(s => s.title !== service.title);
                       field.onChange(updatedServices);
                     }}
                   />
@@ -171,14 +174,16 @@ export function OrderForm({
               <div className={st.column}>
                 {rightColumn.map(service => (
                   <ProductService
-                    key={service.name}
-                    name={service.name}
+                    key={service.title}
+                    name={service.title}
                     icon={service.icon}
-                    checked={field.value.includes(service.name)}
+                    checked={field.value.some(
+                      item => item.title === service.title,
+                    )}
                     onCheckedChange={checked => {
                       const updatedServices = checked
-                        ? [...field.value, service.name]
-                        : field.value.filter((s: string) => s !== service.name);
+                        ? [...field.value, service.title]
+                        : field.value.filter(s => s.title !== service.title);
                       field.onChange(updatedServices);
                     }}
                   />
@@ -210,6 +215,7 @@ export function OrderForm({
         />
         <Button
           variant="black"
+          type="submit"
           className={st.requestBtn}
           disabled={isSubmitting}
         >

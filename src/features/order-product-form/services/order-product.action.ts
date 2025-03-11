@@ -2,6 +2,10 @@
 
 import { google } from 'googleapis';
 
+import { User } from '@/core/user/lib/types';
+
+import { CartProduct } from '@/features/cart/lib/types';
+import { createOrder } from '@/features/cart/services/create-order.action';
 import { consultingSubjects } from '@/features/letters/lib/subjects';
 import { getUserMessage } from '@/features/letters/lib/utils';
 
@@ -49,9 +53,11 @@ export async function orderProduct({
   email,
   firstName,
   selectedServices,
+  user,
 }: Omit<OrderProductWithServiceSchema, 'agreement' | 'selectedServices'> & {
   type: string;
-  selectedServices?: string[];
+  selectedServices?: CartProduct[];
+  user: User | null;
 }) {
   try {
     const OAuth2 = google.auth.OAuth2;
@@ -73,6 +79,20 @@ export async function orderProduct({
 
     const gmail = google.gmail({ version: 'v1', auth: oauth2Client });
 
+    if (selectedServices?.length) {
+      await createOrder({
+        billing: {
+          email,
+          firstName,
+          lastName,
+          phone,
+        },
+        products: selectedServices,
+        user,
+        totalPrice: 1000,
+      });
+    }
+
     const adminEmailBody = makeBody({
       to: EMAIL_USER,
       from: EMAIL_USER,
@@ -82,7 +102,7 @@ export async function orderProduct({
         <p><b>Project Description:</b> ${projectDescription}</p>
         <p><b>Phone:</b> ${phone}</p>
         <p><b>Email:</b> ${email}</p>
-        <p><b>Selected services:</b> ${selectedServices?.join(', ')}</p>
+        <p><b>Selected services:</b> ${selectedServices?.map(({ title }) => title).join(', ')}</p>
       `,
     });
 

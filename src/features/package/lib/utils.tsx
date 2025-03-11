@@ -42,6 +42,8 @@ export const solutionsMapping = (products: OriginProduct[]) => {
       ) ?? [];
 
     return {
+      id: product.id,
+      icon: product.icon?.url,
       description: product.excerpt,
       title: product.title,
       price: product.price,

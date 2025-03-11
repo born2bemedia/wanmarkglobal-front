@@ -5,20 +5,20 @@ export type OrderBilling = {
   firstName: string;
   lastName: string;
   phone: string;
-  zip: string;
-  city: string;
-  street: string;
-  country: string;
+  zip?: string;
+  city?: string;
+  street?: string;
+  country?: string;
 };
 
 export type CartProduct = {
-  id: string;
+  id: number;
   title: string;
   icon: ReactElement<{
     dangerouslySetInnerHTML: {
       __html: string;
     };
   }>;
-  price: string;
+  price: number;
   color: string;
 };

@@ -1,23 +1,23 @@
 import { JSX } from 'react';
 
 export type Product = {
-  id: string;
+  id: number;
   icon: JSX.Element;
   color: string;
   title: string;
   desc: string;
-  cost: string;
+  cost: number;
 };
 
 export type OriginProduct = {
-  id: string;
+  id: number;
   icon?: {
     url: string;
   };
   color: string;
   title: string;
   excerpt: string;
-  price: string;
+  price: number;
   includes?: Includes;
 };
 
