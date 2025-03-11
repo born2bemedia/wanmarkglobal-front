@@ -11,8 +11,6 @@ export default async function RefundPolicy() {
     res.content.root.children,
   );
 
-  console.log(lastUpdate);
-
   return (
     <main>
       <PolicyHero

@@ -25,14 +25,13 @@ export function Stories({ values }: { values: StoryPreview[] }) {
         </Text>
       </section>
       <section className={st.storiesLayout}>
-        {values.map(({ id, type, title, thumbnail }, i) => (
+        {values.map(({ id, type, title }, i) => (
           <StoryCard
             key={id}
             id={id}
             title={title}
             color={colors[i]}
             type={type}
-            thumbnail={thumbnail}
           />
         ))}
       </section>
@@ -45,13 +44,11 @@ export function StoryCard({
   type,
   color,
   title,
-  thumbnail,
 }: {
   id: string;
   title: string;
   type: string;
   color: string;
-  thumbnail: string;
 }) {
   const icons: Record<string, JSX.Element> = {
     pink: <Stairs color="#FFD2FB" height="22" width="22" />,

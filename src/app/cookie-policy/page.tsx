@@ -11,8 +11,6 @@ export default async function PrivacyPolicy() {
     res.content.root.children,
   );
 
-  console.log(lastUpdate);
-
   return (
     <main>
       <PolicyHero
