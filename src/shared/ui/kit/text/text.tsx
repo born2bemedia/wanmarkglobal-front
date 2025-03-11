@@ -21,7 +21,7 @@ export function Text({
   children: ReactNode;
   color?: TextColor;
   className?: string;
-  weight?: 200 | 300 | 400 | 500;
+  weight?: 200 | 300 | 400 | 500 | 600;
   size?: 'sm' | 'base' | 'lg' | 'xl' | 'heading';
   uppercase?: boolean;
   capitalize?: boolean;
@@ -41,6 +41,7 @@ export function Text({
       [st.thinWeight]: weight === 300,
       [st.normalWeight]: weight === 400,
       [st.mediumWeight]: weight === 500,
+      [st.semiboldWeight]: weight === 600,
       [st.smSize]: size === 'sm',
       [st.baseSize]: size === 'base',
       [st.lgSize]: size === 'lg',

@@ -4,3 +4,9 @@
   background-color: #FFFFFF;
   padding: 0 16% 40px 16%;
 }
+
+@media (max-width: 768px) {
+  .layout {
+    padding: 12px 22px;
+  }
+}

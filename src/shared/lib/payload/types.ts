@@ -6,6 +6,9 @@ export type Node = {
   fields?: {
     columns: { header: string }[];
     rows: { cells: { value: string }[] }[];
+    url?: string;
+    newTab?: boolean;
   };
+  format: number;
   children?: Node[];
 };

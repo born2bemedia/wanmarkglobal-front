@@ -1,11 +1,13 @@
-import { createElement, type ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import { nanoid } from 'nanoid';
 
 import { InfoCard } from '@/features/policies/components';
 
 import { Text } from '@/shared/ui/kit/text';
 import { Title } from '@/shared/ui/kit/title';
+import { TitleLevel } from '@/shared/ui/kit/title/types';
 
+import st from './styles.module.scss';
 import { Node } from './types';
 
 const infoKeywords = [
@@ -29,7 +31,8 @@ function parseNode(node: Node, listStyle = {}): React.ReactNode {
     const level = node.tag.slice(1);
     return (
       <Title
-        level={Number(level)}
+        key={nanoid()}
+        level={Number(level) as TitleLevel}
         color="darkBlue"
         weight={500}
         uppercase={level === '3'}
@@ -41,16 +44,35 @@ function parseNode(node: Node, listStyle = {}): React.ReactNode {
   }
 
   if (node.type === 'paragraph') {
+    const formattedChildren = node.children?.map(child => {
+      if (child.type === 'text' && child.format === 1) {
+        return (
+          <span key={nanoid()} style={{ fontWeight: 600 }}>
+            {child.text}
+          </span>
+        );
+      }
+      return parseChildren([child]);
+    });
+
     return (
-      <Text
+      <Text key={nanoid()} size="lg" style={{ lineHeight: 'normal' }}>
+        {formattedChildren}
+      </Text>
+    );
+  }
+
+  if (node.type === 'link') {
+    return (
+      <a
         key={nanoid()}
-        size="lg"
-        weight={300}
-        color="mediumBlue"
-        style={{ lineHeight: 'normal' }}
+        href={node.fields?.url}
+        target={node.fields?.newTab ? '_blank' : '_self'}
+        rel="noopener noreferrer"
+        style={{ textDecoration: 'underline', fontWeight: 600 }}
       >
         {parseChildren(node.children)}
-      </Text>
+      </a>
     );
   }
 
@@ -61,62 +83,88 @@ function parseNode(node: Node, listStyle = {}): React.ReactNode {
             listStyleType: 'disc',
             listPositionType: 'inside',
             marginLeft: '20px',
-            color: '#3D4D7C',
+            color: '#0d2056',
             lineHeight: 'normal',
           }
         : {};
 
-    // Check if any item in the list contains the info keywords
     const containsInfoCardItems = node.children?.some(item =>
       item.children?.some(child =>
-        infoKeywords.some(keyword => child.text.startsWith(keyword)),
+        infoKeywords.some(keyword => child.text?.startsWith(keyword)),
       ),
     );
 
-    // Check the number of elements in the list
     const numberOfItems = node.children?.length || 0;
 
-    let layoutStyle = {};
+    let layoutStyle = '';
 
     if (containsInfoCardItems) {
-      // Apply grid layout for more than 3 items, otherwise apply flex layout
-      layoutStyle =
-        numberOfItems > 3
-          ? {
-              display: 'grid',
-              gridTemplateColumns: 'repeat(2, 1fr)',
-              gap: '20px',
-            }
-          : { display: 'flex', gap: '12px', width: '100%' };
+      layoutStyle = numberOfItems > 3 ? st.grid : st.flex;
     }
 
     return (
-      <ul key={nanoid()} style={layoutStyle}>
+      <ul key={nanoid()} style={{ padding: '30px 0' }} className={layoutStyle}>
         {parseChildren(node.children, listSt)}
       </ul>
     );
   }
 
   if (node.type === 'listitem') {
-    const childrenText = node.children
-      ?.map(child => child.text)
-      .join(' ')
-      .trim();
-
+    const firstChildText = node.children?.[0]?.text?.trim() ?? '';
     const isInfoCard = infoKeywords.some(keyword =>
-      childrenText.startsWith(keyword),
+      firstChildText.startsWith(keyword),
     );
 
     if (isInfoCard) {
-      const [name, value] = childrenText.split(':').map(part => part.trim());
-      return <InfoCard key={nanoid()} name={name} value={value} />;
+      const name = firstChildText.replace(':', '').trim();
+      const valueNode = node.children?.slice(1) ?? [];
+
+      const valueContent = valueNode.map(child => {
+        if (
+          child.type === 'autolink' &&
+          child.fields?.url?.startsWith('mailto:')
+        ) {
+          return (
+            <a key={nanoid()} href={child.fields.url}>
+              {child.fields.url.replace('mailto:', '')}
+            </a>
+          );
+        }
+        if (child.type === 'link' && child.fields?.url) {
+          return (
+            <a
+              key={nanoid()}
+              href={child.fields.url}
+              target={child.fields.newTab ? '_blank' : '_self'}
+            >
+              {child.fields.url}
+            </a>
+          );
+        }
+        return parseChildren([child]);
+      });
+
+      return (
+        <InfoCard key={nanoid()} name={name} value={<>{valueContent}</>} />
+      );
     }
+
+    const children = node.children || [];
+
+    const formattedChildren = children.map(child => {
+      if (child.type === 'text' && child.format === 1) {
+        return (
+          <span key={nanoid()} style={{ fontWeight: 600 }}>
+            {child.text}
+          </span>
+        );
+      }
+      return parseChildren([child]);
+    });
 
     return (
       <li key={nanoid()} style={listStyle}>
-        <Text color="mediumBlue" weight={300}>
-          {parseChildren(node.children)}
-        </Text>
+        {formattedChildren}
       </li>
     );
   }
