@@ -12,6 +12,7 @@ export type TitleColor =
   | 'coral'
   | 'opacityCoral'
   | 'lightGreen'
-  | 'green';
+  | 'green'
+  | 'blackPurple';
 
 export type TitleLevel = 1 | 2 | 3 | 4 | 5 | 6;

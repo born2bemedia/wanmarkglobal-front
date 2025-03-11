@@ -3,17 +3,22 @@ import { getPolicy } from '@/features/policies/services';
 
 import { parseJSONToElements } from '@/shared/lib/payload';
 
-import st from './privacy-policy.module.scss';
+import st from './cookie-policy.module.scss';
 
 export default async function PrivacyPolicy() {
-  const res = await getPolicy({ id: '2' });
-  const { elements } = parseJSONToElements(res.content.root.children);
+  const res = await getPolicy({ id: '3' });
+  const { elements, lastUpdate } = parseJSONToElements(
+    res.content.root.children,
+  );
+
+  console.log(lastUpdate);
 
   return (
     <main>
       <PolicyHero
-        title={{ value: 'Privacy Policy', color: 'blackYellow' }}
-        color="#FFE69E"
+        title={{ value: 'Cookie Policy', color: 'darkPurple' }}
+        hint={{ value: lastUpdate ?? '', color: 'darkPurple' }}
+        color="#FFD2FB"
       />
       <PolicyLayout className={st.layout}>{elements}</PolicyLayout>
     </main>

@@ -3,6 +3,7 @@
 import Image from 'next/image';
 
 import { motion } from '@/shared/lib/motion';
+import { Text, TextColor } from '@/shared/ui/kit/text';
 import { Title } from '@/shared/ui/kit/title';
 import { TitleColor } from '@/shared/ui/kit/title/types';
 
@@ -11,8 +12,10 @@ import st from './policy-hero.module.scss';
 export function PolicyHero({
   title,
   color,
+  hint,
 }: {
   title: { value: string; color: TitleColor };
+  hint?: { value: string; color: TextColor };
   color: string;
 }) {
   return (
@@ -32,9 +35,12 @@ export function PolicyHero({
           height={546}
         />
       </motion.div>
-      <Title weight={500} className={st.title} color={title.color} uppercase>
-        {title.value}
-      </Title>
+      <section className={st.title}>
+        {hint ? <Text color={hint.color}>{hint.value}</Text> : null}
+        <Title weight={500} color={title.color} uppercase>
+          {title.value}
+        </Title>
+      </section>
     </section>
   );
 }

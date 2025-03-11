@@ -5,12 +5,12 @@ import { parseJSONToElements } from '@/shared/lib/payload';
 
 export default async function TermsOfUse() {
   const res = await getPolicy({ id: '1' });
-  const elements = parseJSONToElements(res.content.root.children);
+  const { elements } = parseJSONToElements(res.content.root.children);
 
   return (
     <main>
       <PolicyHero
-        title={{ value: 'Terms of Use', color: 'darkPurple' }}
+        title={{ value: 'Terms of Use', color: 'blackPurple' }}
         color="#D3CBFF"
       />
       <PolicyLayout>{elements}</PolicyLayout>

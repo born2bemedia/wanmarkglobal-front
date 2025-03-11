@@ -10,7 +10,11 @@
 }
 
 .title {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
   margin-top: auto;
+  z-index: 2;
 }
 
 .metallicSphere {
@@ -18,4 +22,16 @@
   right: -400px;
   top: -20px;
   z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    padding: 0 12px 28px 12px;
+  }
+
+  .metallicSphere {
+    width: 288px;
+    height: 288px;
+    right: -80px;
+  }
 }
