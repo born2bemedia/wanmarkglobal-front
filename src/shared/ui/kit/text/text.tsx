@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode } from 'react';
+import { CSSProperties, ReactNode } from 'react';
 
 import { cn } from '@/shared/lib/styles';
 
@@ -10,6 +10,7 @@ import type { TextColor } from './types';
 export function Text({
   children,
   className,
+  style,
   color = 'mediumBlue',
   weight = 400,
   uppercase = false,
@@ -25,6 +26,7 @@ export function Text({
   uppercase?: boolean;
   capitalize?: boolean;
   underline?: boolean;
+  style?: CSSProperties;
 }) {
   const textClasses = cn(
     {
@@ -56,5 +58,9 @@ export function Text({
     className,
   );
 
-  return <p className={textClasses}>{children}</p>;
+  return (
+    <p className={textClasses} style={style}>
+      {children}
+    </p>
+  );
 }
