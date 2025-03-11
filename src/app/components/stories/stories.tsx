@@ -58,6 +58,11 @@ export function StoryCard({
     blue: <FiveDots width="23" height="22" />,
     purple: <Butterfly color="#D3CBFF" width="21" height="22" />,
   };
+  const imagesSrc: Record<string, string> = {
+    blue: '/articles/blue.png',
+    purple: '/articles/purple.png',
+    pink: '/articles/pink.png',
+  };
 
   return (
     <article>
@@ -76,7 +81,7 @@ export function StoryCard({
         <div
           className={st.storyCardImage}
           style={{
-            backgroundImage: `url(${thumbnail})`,
+            backgroundImage: `url(${imagesSrc[color]})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
