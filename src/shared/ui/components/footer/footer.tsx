@@ -67,17 +67,17 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="#">
+              <Link href="/privacy-policy">
                 <Text color="darkBlue">Privacy Policy</Text>
               </Link>
             </li>
             <li>
-              <Link href="#">
+              <Link href="/cookie-policy">
                 <Text color="darkBlue">Cookie Policy</Text>
               </Link>
             </li>
             <li>
-              <Link href="#">
+              <Link href="/refund-policy">
                 <Text color="darkBlue">Refund Policy</Text>
               </Link>
             </li>
