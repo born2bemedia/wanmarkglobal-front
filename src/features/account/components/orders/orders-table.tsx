@@ -36,16 +36,18 @@ const columns = columnDefBuilder<Order>([
     accessorKey: 'services',
     header: 'Services',
     size: 200,
-    cell: ({ getValue }) => (
-      <Text
-        size="lg"
-        color="deepBlack"
-        weight={400}
-        className={st.servicesLine}
-      >
-        {getValue<string>()}
-      </Text>
-    ),
+    cell: ({ getValue }) => {
+      return (
+        <Text
+          size="lg"
+          color="deepBlack"
+          weight={400}
+          className={st.servicesLine}
+        >
+          {getValue<string[]>().join(', ')}
+        </Text>
+      );
+    },
   },
   {
     accessorKey: 'orderStatus',
@@ -89,6 +91,7 @@ const columns = columnDefBuilder<Order>([
       return (
         <button
           className={st.downloadBtn}
+          disabled={!getValue<string>()}
           onClick={() =>
             getValue<string>()
               ? downloadFile({

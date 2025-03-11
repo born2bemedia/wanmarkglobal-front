@@ -20,12 +20,21 @@ export const lsRemove = (key: string) => {
   }
 };
 
-export const downloadFile = ({
+export const downloadFile = async ({
   url,
   fileName,
 }: {
   url: string;
   fileName: string;
 }) => {
-  saveAs(url, fileName);
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    }
+    const blob = await response.blob();
+    saveAs(blob, fileName);
+  } catch (error) {
+    console.error(error);
+  }
 };
