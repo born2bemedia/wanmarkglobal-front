@@ -11,12 +11,6 @@ import { Title } from '@/shared/ui/kit/title';
 import st from './stories.module.scss';
 import { StoryPreview } from './types';
 
-// const stories: StoryPreview[] = [
-//   { id: '1', title: 'Story 1', type: 'Heading', color: 'blue' },
-//   { id: '2', title: 'Story 2', type: 'Heading', color: 'purple' },
-//   { id: '3', title: 'Story 3', type: 'Heading', color: 'pink' },
-// ];
-
 const colors = ['blue', 'purple', 'pink'];
 
 export function Stories({ values }: { values: StoryPreview[] }) {
@@ -63,11 +57,6 @@ export function StoryCard({
     pink: <Stairs color="#FFD2FB" height="22" width="22" />,
     blue: <FiveDots width="23" height="22" />,
     purple: <Butterfly color="#D3CBFF" width="21" height="22" />,
-  };
-  const imagesSrc: Record<string, string> = {
-    blue: '/articles/blue.png',
-    purple: '/articles/purple.png',
-    pink: '/articles/pink.png',
   };
 
   return (
