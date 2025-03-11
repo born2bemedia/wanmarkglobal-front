@@ -20,10 +20,29 @@ const infoKeywords = [
   'Registered Number',
 ];
 
-export function parseJSONToElements(json: Node[]): ReactNode[] {
-  if (!Array.isArray(json)) return [<></>];
+export function parseJSONToElements(json: Node[]): {
+  elements: ReactNode[];
+  lastUpdate: string | null;
+} {
+  if (!Array.isArray(json)) return { elements: [<></>], lastUpdate: null };
 
-  return json.map(parseNode);
+  let lastUpdate: string | null = null;
+  const elements: ReactNode[] = [];
+
+  if (
+    json[0].type === 'paragraph' &&
+    json[0].children?.some(child => child.text?.includes('Last Updated'))
+  ) {
+    lastUpdate =
+      json[0].children?.find(child => child.text?.includes('Last Updated'))
+        ?.text ?? null;
+
+    json.shift();
+  }
+
+  elements.push(...json.map(parseNode));
+
+  return { elements, lastUpdate };
 }
 
 function parseNode(node: Node, listStyle = {}): React.ReactNode {
