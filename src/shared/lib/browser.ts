@@ -1,3 +1,4 @@
+import { saveAs } from 'file-saver';
 import Cookies from 'js-cookie';
 
 export { Cookies as cookies };
@@ -17,4 +18,14 @@ export const lsRemove = (key: string) => {
   } catch (error) {
     console.error(`Failed to remove "${key}" from localStorage:`, error);
   }
+};
+
+export const downloadFile = ({
+  url,
+  fileName,
+}: {
+  url: string;
+  fileName: string;
+}) => {
+  saveAs(url, fileName);
 };

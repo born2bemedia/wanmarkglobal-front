@@ -1,6 +1,9 @@
 import dynamic from 'next/dynamic';
 
-import { originOrdersMapping } from '@/features/account/lib';
+import {
+  originDocumentsMapping,
+  originOrdersMapping,
+} from '@/features/account/lib';
 import { getUserOrders } from '@/features/account/services';
 
 import { Hero } from './components/hero';
@@ -13,11 +16,12 @@ export default async function Account() {
   const res = await getUserOrders();
 
   const orders = originOrdersMapping(res);
+  const documents = originDocumentsMapping(res);
 
   return (
     <main>
       <Hero />
-      <AccountSettings orders={orders} />
+      <AccountSettings orders={orders} documents={documents} />
     </main>
   );
 }

@@ -2,6 +2,10 @@
 @import 'reset-css';
 @import "local-reset.css";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   padding: 12px;
   overflow-x: hidden;

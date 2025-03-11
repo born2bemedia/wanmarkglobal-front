@@ -1,5 +1,11 @@
 import type { User } from '@/core/user/lib/types';
 
+export type Document = {
+  orderId: string;
+  services: string[];
+  documentation: string | null;
+};
+
 export type Order = {
   orderId: string;
   orderDate: string;
@@ -20,7 +26,8 @@ export type OriginOrder = {
     orderNotes: string;
     billingAddress: BillingAddress;
     createdAt: string;
-    invoice?: Invoice;
+    invoice?: File;
+    documents?: File;
     updatedAt: string;
   }[];
 };
@@ -79,7 +86,7 @@ type BillingAddress = {
   zip: string;
 };
 
-type Invoice = {
+type File = {
   id: number;
   alt: string;
   updatedAt: string;
