@@ -62,7 +62,7 @@ export function Footer() {
         <div className={st.policiesAndNetworks}>
           <ol className={st.policiesLayout}>
             <li>
-              <Link href="#">
+              <Link href="/terms-of-use">
                 <Text color="darkBlue">Terms of Use</Text>
               </Link>
             </li>
