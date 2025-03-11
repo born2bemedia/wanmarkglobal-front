@@ -182,7 +182,7 @@ export function OrderForm({
                     )}
                     onCheckedChange={checked => {
                       const updatedServices = checked
-                        ? [...field.value, service.title]
+                        ? [...field.value, service]
                         : field.value.filter(s => s.title !== service.title);
                       field.onChange(updatedServices);
                     }}
