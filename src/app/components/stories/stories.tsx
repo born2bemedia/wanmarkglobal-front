@@ -11,13 +11,9 @@ import { Title } from '@/shared/ui/kit/title';
 import st from './stories.module.scss';
 import { StoryPreview } from './types';
 
-const stories: StoryPreview[] = [
-  { id: '1', title: 'Story 1', type: 'Heading', color: 'blue' },
-  { id: '2', title: 'Story 2', type: 'Heading', color: 'purple' },
-  { id: '3', title: 'Story 3', type: 'Heading', color: 'pink' },
-];
+const colors = ['blue', 'purple', 'pink'];
 
-export function Stories() {
+export function Stories({ values }: { values: StoryPreview[] }) {
   return (
     <section className={st.layout}>
       <section className={st.titleLayout}>
@@ -29,8 +25,15 @@ export function Stories() {
         </Text>
       </section>
       <section className={st.storiesLayout}>
-        {stories.map(({ id, type, color, title }) => (
-          <StoryCard key={id} id={id} title={title} color={color} type={type} />
+        {values.map(({ id, type, title, thumbnail }, i) => (
+          <StoryCard
+            key={id}
+            id={id}
+            title={title}
+            color={colors[i]}
+            type={type}
+            thumbnail={thumbnail}
+          />
         ))}
       </section>
     </section>
@@ -42,11 +45,13 @@ export function StoryCard({
   type,
   color,
   title,
+  thumbnail,
 }: {
   id: string;
   title: string;
   type: string;
-  color: 'pink' | 'blue' | 'purple';
+  color: string;
+  thumbnail: string;
 }) {
   const icons: Record<string, JSX.Element> = {
     pink: <Stairs color="#FFD2FB" height="22" width="22" />,
@@ -68,7 +73,7 @@ export function StoryCard({
             {title}
           </Title>
         </div>
-        <Link href={`/stories/${id}`} className={st.storyCardLink}>
+        <Link href={`/market-cases/${id}`} className={st.storyCardLink}>
           <Text color="darkBlue">READ FULL STORY</Text>
         </Link>
       </section>
