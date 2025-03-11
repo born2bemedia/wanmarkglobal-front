@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode } from 'react';
+import { CSSProperties, ReactNode } from 'react';
 
 import { cn } from '@/shared/lib/styles';
 
@@ -10,6 +10,7 @@ import type { TextColor } from './types';
 export function Text({
   children,
   className,
+  style,
   color = 'mediumBlue',
   weight = 400,
   uppercase = false,
@@ -20,11 +21,12 @@ export function Text({
   children: ReactNode;
   color?: TextColor;
   className?: string;
-  weight?: 200 | 300 | 400 | 500;
+  weight?: 200 | 300 | 400 | 500 | 600;
   size?: 'sm' | 'base' | 'lg' | 'xl' | 'heading';
   uppercase?: boolean;
   capitalize?: boolean;
   underline?: boolean;
+  style?: CSSProperties;
 }) {
   const textClasses = cn(
     {
@@ -39,6 +41,7 @@ export function Text({
       [st.thinWeight]: weight === 300,
       [st.normalWeight]: weight === 400,
       [st.mediumWeight]: weight === 500,
+      [st.semiboldWeight]: weight === 600,
       [st.smSize]: size === 'sm',
       [st.baseSize]: size === 'base',
       [st.lgSize]: size === 'lg',
@@ -56,5 +59,9 @@ export function Text({
     className,
   );
 
-  return <p className={textClasses}>{children}</p>;
+  return (
+    <p className={textClasses} style={style}>
+      {children}
+    </p>
+  );
 }

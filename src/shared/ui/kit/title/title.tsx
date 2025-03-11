@@ -5,7 +5,7 @@ import { CSSProperties, JSX, ReactNode } from 'react';
 import { cn } from '@/shared/lib/styles';
 
 import st from './title.module.scss';
-import { TitleColor } from './types';
+import { TitleColor, TitleLevel } from './types';
 
 export function Title({
   children,
@@ -18,7 +18,7 @@ export function Title({
 }: {
   children: ReactNode;
   color?: TitleColor;
-  level?: 1 | 2 | 3 | 4 | 5 | 6;
+  level?: TitleLevel;
   weight?: 300 | 400 | 500 | 600 | 700;
   className?: string;
   style?: CSSProperties;
