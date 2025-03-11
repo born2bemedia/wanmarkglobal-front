@@ -3,17 +3,19 @@ import { getPolicy } from '@/features/policies/services';
 
 import { parseJSONToElements } from '@/shared/lib/payload';
 
-export default async function TermsOfUse() {
-  const res = await getPolicy({ id: '1' });
+import st from './privacy-policy.module.scss';
+
+export default async function PrivacyPolicy() {
+  const res = await getPolicy({ id: '2' });
   const elements = parseJSONToElements(res.content.root.children);
 
   return (
     <main>
       <PolicyHero
-        title={{ value: 'Terms of Use', color: 'darkPurple' }}
-        color="#D3CBFF"
+        title={{ value: 'Privacy Policy', color: 'blackYellow' }}
+        color="#FFE69E"
       />
-      <PolicyLayout>{elements}</PolicyLayout>
+      <PolicyLayout className={st.layout}>{elements}</PolicyLayout>
     </main>
   );
 }
