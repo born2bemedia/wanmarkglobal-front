@@ -3,6 +3,7 @@
 import { paymentIcon, statusIcon } from '@/features/account/lib/status-icon';
 import type { Order } from '@/features/account/lib/types';
 
+import { downloadFile } from '@/shared/lib/browser';
 import { format } from '@/shared/lib/date';
 import { columnDefBuilder } from '@/shared/lib/table';
 import { Table } from '@/shared/ui/components/table';
@@ -35,16 +36,18 @@ const columns = columnDefBuilder<Order>([
     accessorKey: 'services',
     header: 'Services',
     size: 200,
-    cell: ({ getValue }) => (
-      <Text
-        size="lg"
-        color="deepBlack"
-        weight={400}
-        className={st.servicesLine}
-      >
-        {getValue<string>()}
-      </Text>
-    ),
+    cell: ({ getValue }) => {
+      return (
+        <Text
+          size="lg"
+          color="deepBlack"
+          weight={400}
+          className={st.servicesLine}
+        >
+          {getValue<string[]>().join(', ')}
+        </Text>
+      );
+    },
   },
   {
     accessorKey: 'orderStatus',
@@ -84,13 +87,26 @@ const columns = columnDefBuilder<Order>([
     accessorKey: 'getInvoice',
     header: 'Get Invoice',
     size: 200,
-    cell: () => (
-      <button>
-        <Text size="lg" color="deepBlack" weight={400} underline>
-          DOWNLOAD
-        </Text>
-      </button>
-    ),
+    cell: ({ getValue }) => {
+      return (
+        <button
+          className={st.downloadBtn}
+          disabled={!getValue<string>()}
+          onClick={() =>
+            getValue<string>()
+              ? downloadFile({
+                  url: getValue<string>(),
+                  fileName: 'invoice.pdf',
+                })
+              : null
+          }
+        >
+          <Text size="lg" color="deepBlack" weight={400} underline>
+            DOWNLOAD
+          </Text>
+        </button>
+      );
+    },
   },
 ]);
 

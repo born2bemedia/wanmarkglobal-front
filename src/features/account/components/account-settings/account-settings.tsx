@@ -5,7 +5,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { logout } from '@/core/auth/services/logout.action';
 import { useUserStore } from '@/core/user/services/user.store';
 
-import { type Order } from '@/features/account/lib/types';
+import { type Document, type Order } from '@/features/account/lib/types';
 
 import { TabContent, Tabs } from '@/shared/ui/kit/tabs';
 
@@ -20,7 +20,13 @@ const defaultTabs = [
   { id: 'yourData', label: 'Your Data' },
 ];
 
-export function AccountSettings({ orders }: { orders: Order[] }) {
+export function AccountSettings({
+  orders,
+  documents,
+}: {
+  orders: Order[];
+  documents: Document[];
+}) {
   const { setUser } = useUserStore();
   const [width, setWidth] = useState<number>(0);
   const [isClient, setIsClient] = useState(false);
@@ -57,7 +63,7 @@ export function AccountSettings({ orders }: { orders: Order[] }) {
             <Orders values={orders} />
           </TabContent>
           <TabContent id="yourDocuments">
-            <Documents />
+            <Documents values={documents} />
           </TabContent>
           <TabContent id="yourData">
             <PersonalInfo />
@@ -74,7 +80,7 @@ export function AccountSettings({ orders }: { orders: Order[] }) {
           <Orders values={orders} />
         </TabContent>
         <TabContent id="yourDocuments">
-          <Documents />
+          <Documents values={documents} />
         </TabContent>
         <TabContent id="yourData">
           <PersonalInfo />

@@ -8,3 +8,9 @@
 .servicesLine {
   line-height: normal;
 }
+
+.downloadBtn {
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
