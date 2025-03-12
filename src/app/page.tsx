@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     title: 'Business & Marketing Consulting | Wanmark Global',
     description:
       'Get expert business and marketing consulting to turn your ideas into a structured, profitable business. Book a consultation today.',
+    images: 'https://wanmarkglobal.com/meta/home.png',
   },
 };
 

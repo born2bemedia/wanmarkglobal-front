@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     title: 'FAQ – Business & Marketing Consulting Answers | Wanmark Global',
     description:
       'Find answers to common questions about our consulting services, process, payments, and how we help individuals grow their businesses.',
+    images: 'https://wanmarkglobal.com/meta/faq.png',
   },
 };
 

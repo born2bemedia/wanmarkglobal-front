@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     title: 'Marketing Consulting Services | Wanmark Global',
     description:
       'Boost your brand with expert marketing consulting. Get strategies for customer acquisition, brand positioning, and business growth. Talk to an expert today.',
+    images: 'https://wanmarkglobal.com/meta/marketing-consulting.png',
   },
 };
 

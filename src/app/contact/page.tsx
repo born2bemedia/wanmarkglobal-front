@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     title: 'Contact Us | Wanmark Global',
     description:
       'Contact Wanmark Global for expert business and marketing consulting. Send us a request, email, or call us today.',
+    images: 'https://wanmarkglobal.com/meta/contact-us.png',
   },
 };
 

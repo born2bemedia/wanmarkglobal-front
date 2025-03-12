@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     title: 'About Us | Wanmark Global',
     description:
       'Learn how Wanmark Global helps individuals turn ideas into successful businesses with expert business and marketing consulting.',
+    images: 'https://wanmarkglobal.com/meta/about-us.png',
   },
 };
 

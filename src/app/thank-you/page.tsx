@@ -1,7 +1,15 @@
-'use client';
+import type { Metadata } from 'next';
 
 import { Content } from './components/content';
 import { Hero } from '@/app/cart/components/hero';
+
+export const metadata: Metadata = {
+  title: 'Thank You | Wanmark Global',
+  openGraph: {
+    title: 'Thank You | Wanmark Global',
+  },
+  robots: 'noindex',
+};
 
 export default function ThankYou() {
   return (

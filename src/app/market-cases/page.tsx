@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: 'Market Success Stories | Wanmark Global',
     description:
       'Discover how strategic business planning and marketing helped personal projects skyrocket into successful businesses. See what’s possible.',
+    images: 'https://wanmarkglobal.com/meta/market-cases.png',
   },
 };
 

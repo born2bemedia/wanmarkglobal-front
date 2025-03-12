@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     title: 'Our Consulting Process | Wanmark Global',
     description:
       'Learn how we guide you through business and marketing consulting—from strategy development to execution. See our process and get started today.',
+    images: 'https://wanmarkglobal.com/meta/how-we-work.png',
   },
 };
 

@@ -24,6 +24,9 @@ export type OriginCase = {
   metaTags?: {
     title: string;
     description: string;
+    image: {
+      url: string;
+    };
   };
   thirdSection?: {
     subtitle: string;

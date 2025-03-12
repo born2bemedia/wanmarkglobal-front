@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     title: 'Growth Consulting | Wanmark Global',
     description:
       'Scale your business with expert growth consulting. Get strategies for expansion, automation, and revenue increase. Book a consultation today.',
+    images: 'https://wanmarkglobal.com/meta/growth-solutions.png',
   },
 };
 

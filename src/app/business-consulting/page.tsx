@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     title: 'Business Consulting Services | Wanmark Global',
     description:
       'Get structured business consulting to validate your idea, develop a solid business model, and scale successfully. Start your journey today.',
+    images: 'https://wanmarkglobal.com/meta/business-consulting.png',
   },
 };
 

@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     title: 'How We Price Our Services | Wanmark Global',
     description:
       'Learn how our business and marketing consulting prices are structured. Understand what goes into the cost and why expert guidance is a smart investment.',
+    images: 'https://wanmarkglobal.com/meta/pricing.png',
   },
 };
 

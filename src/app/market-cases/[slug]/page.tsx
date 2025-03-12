@@ -25,6 +25,7 @@ export async function generateMetadata({
     openGraph: {
       title: `${caseData[0].meta?.title} | Wanmark Global`,
       description: `${caseData[0].meta?.description}`,
+      images: `${caseData[0].meta.image}`,
     },
   };
 }
