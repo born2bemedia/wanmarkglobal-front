@@ -64,11 +64,19 @@
   }
 }
 
+.textSize {
+  font-size: 0.875rem !important;
+}
+
 @media (max-width: 768px) {
   .layout {
     flex-direction: column;
     padding: 22px 12px;
     gap: 30px;
+  }
+
+  .textSize {
+    font-size: 0.75rem !important;
   }
   
   .storiesLayout {

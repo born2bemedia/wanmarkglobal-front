@@ -21,6 +21,13 @@ export type OriginCase = {
     subtitle: string;
     text: string;
   };
+  metaTags?: {
+    title: string;
+    description: string;
+    image: {
+      url: string;
+    };
+  };
   thirdSection?: {
     subtitle: string;
     strategies: {
