@@ -22,6 +22,7 @@ export function Hero() {
       autoplay={{ delay: 10000 }}
       speed={700}
       modules={[Autoplay]}
+      allowTouchMove={false}
       style={{ width: '100%', height: '808px', borderRadius: '12px' }}
       onSwiper={swiper => (swiperRef.current = swiper)}
     >
