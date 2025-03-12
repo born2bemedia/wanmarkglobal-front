@@ -2,17 +2,62 @@
   overflow: hidden;
   height: 808px;
   border-radius: 12px;
-  background-color: #C1D5FF;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
+  width: 100%;
+}
+
+.blueBg {
+  background-color: #C1D5FF;
+}
+
+.purpleBg {
+  background-color: #D3CBFF;
+}
+
+.pinkBg {
+  background-color: #FFD2FB;
+}
+
+.slider {
+  height: 808px;
 }
 
 .metallicSphere {
   position: absolute;
   right: -150px;
   top: -20px;
+  z-index: -1;
+}
+
+.purpleMetallicOne {
+  position: absolute;
+  right: -200px;
+  top: 180px;
+  z-index: -1;
+}
+
+
+.purpleMetallicTwo {
+  position: absolute;
+  left: -280px;
+  top: -150px;
+  z-index: -1;
+}
+
+.pinkMetallicOne {
+  position: absolute;
+  right: -200px;
+  top: 150px;
+  z-index: -1;
+}
+
+.pinkMetallicTwo {
+  position: absolute;
+  left: -200px;
+  top: -100px;
   z-index: -1;
 }
 
@@ -24,6 +69,7 @@
   justify-content: flex-end;
   gap: 18px;
   z-index: 1;
+  text-align: left;
 
   .titleLayout {
     width: 590px;
@@ -34,6 +80,10 @@
     text-transform: uppercase;
     margin-bottom: 18px;
   }
+}
+
+.mb0 {
+  margin-bottom: 0 !important;
 }
 
 .contactUs {
@@ -68,7 +118,6 @@
 }
 
 .scrollText {
-  color: rgba(13, 32, 86, 0.70);
   text-transform: uppercase;
 }
 
@@ -83,6 +132,37 @@
 }
 
 @media (max-width: 768px) {
+  .purpleMetallicOne {
+    width: 292px;
+    height: 292px;
+    right: -170px;
+    top: 350px;
+  }
+
+  .purpleMetallicTwo {
+    top: -180px;
+  }
+
+  .pinkMetallicOne {
+    width: 392px;
+    height: 392px;
+    right: -270px;
+    top: 280px;
+  }
+
+  .pinkMetallicTwo {
+    width: 392px;
+    height: 392px;
+    left: -120px;
+    top: -50px;
+  }
+
+  .metallicSphere {
+    width: 391px;
+    height: 391px;
+    top: -50px;
+  }
+
   .content {
     padding: 0 12px;
 

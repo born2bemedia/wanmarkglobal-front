@@ -3,10 +3,16 @@
 export function ArrowTopRight({
   color = 'blue',
 }: {
-  color?: 'blue' | 'white' | 'black';
+  color?: 'blue' | 'white' | 'black' | 'blackPurple';
 }) {
   const strokeColor =
-    color === 'black' ? 'black' : color === 'blue' ? '#0D2056' : 'white';
+    color === 'black'
+      ? 'black'
+      : color === 'blue'
+        ? '#0D2056'
+        : color === 'blackPurple'
+          ? '#410D56'
+          : 'white';
 
   return (
     <svg
