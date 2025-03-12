@@ -48,7 +48,7 @@ export default async function MarketCasePage({
       <Hero
         title={caseData[0].title}
         subtitle={caseData[0].subTitle}
-        backgroundImage={caseData[0].background}
+        backgroundSrc={caseData[0].background}
       />
       {caseData[0].firstSection?.text && caseData[0].firstSection?.image && (
         <FirstSection

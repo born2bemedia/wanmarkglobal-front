@@ -84,7 +84,12 @@ export function StoryCard({
               Your browser does not support the video tag.
             </video>
           ) : (
-            <Image src={thumbnail} alt={title} fill />
+            <Image
+              className={st.storyCardImage}
+              src={thumbnail}
+              alt={title}
+              fill
+            />
           )}
           <Tag className={st.storyTag}>
             <Text color="darkBlue" className={st.textSize}>

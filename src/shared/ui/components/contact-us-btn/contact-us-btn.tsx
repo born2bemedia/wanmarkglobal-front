@@ -7,12 +7,19 @@ import { Button } from '@/shared/ui/kit/button';
 
 import st from './contact-us-btn.module.scss';
 
-export function ContactUsBtn() {
+export function ContactUsBtn({
+  variant = 'black',
+}: {
+  variant?: 'black' | 'white';
+}) {
   return (
     <Link href="/contact" className={st.link}>
-      <Button variant="black" className={st.btn}>
+      <Button
+        variant={variant === 'black' ? 'black' : 'white'}
+        className={st.btn}
+      >
         Contact Us
-        <ArrowTopRightCircle color="black" />
+        <ArrowTopRightCircle color={variant === 'black' ? 'black' : 'blue'} />
       </Button>
     </Link>
   );
