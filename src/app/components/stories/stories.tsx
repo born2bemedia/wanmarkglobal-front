@@ -4,7 +4,6 @@ import { JSX } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { useWindow } from '@/shared/lib/hooks';
 import { Butterfly, FiveDots, Stairs } from '@/shared/ui/icons';
 import { Tag } from '@/shared/ui/kit/tag';
 import { Text } from '@/shared/ui/kit/text';
@@ -55,8 +54,6 @@ export function StoryCard({
   color: string;
   thumbnail: string;
 }) {
-  const { width } = useWindow();
-
   const icons: Record<string, JSX.Element> = {
     pink: <Stairs color="#FFD2FB" height="22" width="22" />,
     blue: <FiveDots width="23" height="22" />,
@@ -90,7 +87,7 @@ export function StoryCard({
             <Image src={thumbnail} alt={title} fill />
           )}
           <Tag className={st.storyTag}>
-            <Text color="darkBlue" size={width <= 768 ? 'sm' : 'base'}>
+            <Text color="darkBlue" className={st.textSize}>
               {type}
             </Text>
           </Tag>

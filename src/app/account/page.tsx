@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 
 import {
@@ -11,6 +12,14 @@ import { Hero } from './components/hero';
 const AccountSettings = dynamic(() =>
   import('@/features/account/components').then(mod => mod.AccountSettings),
 );
+
+export const metadata: Metadata = {
+  title: 'Account | Wanmark Global',
+  openGraph: {
+    title: 'Account | Wanmark Global',
+  },
+  robots: 'noindex',
+};
 
 export default async function Account() {
   const res = await getUserOrders();

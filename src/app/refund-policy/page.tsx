@@ -1,9 +1,19 @@
+import type { Metadata } from 'next';
+
 import { PolicyHero, PolicyLayout } from '@/features/policies/components';
 import { getPolicy } from '@/features/policies/services';
 
 import { parseJSONToElements } from '@/shared/lib/payload';
 
 import st from './refund-policy.module.scss';
+
+export const metadata: Metadata = {
+  title: 'Refund Policy | Wanmark Global',
+  openGraph: {
+    title: 'Refund Policy | Wanmark Global',
+  },
+  robots: 'noindex',
+};
 
 export default async function RefundPolicy() {
   const res = await getPolicy({ id: '4' });

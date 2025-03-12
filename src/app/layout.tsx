@@ -10,8 +10,20 @@ import { Preloader } from '@/shared/ui/components/preloader';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Wanmark Ltd.',
-  description: 'Business and marketing consulting',
+  icons: {
+    icon: [
+      {
+        media: '(prefers-color-scheme: light)',
+        url: '/logo.svg',
+        href: '/logo.svg',
+      },
+      {
+        media: '(prefers-color-scheme: dark)',
+        url: '/logo.svg',
+        href: '/logo.svg',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

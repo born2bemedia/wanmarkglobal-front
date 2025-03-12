@@ -1,9 +1,19 @@
+import type { Metadata } from 'next';
+
 import { PolicyHero, PolicyLayout } from '@/features/policies/components';
 import { getPolicy } from '@/features/policies/services';
 
 import { parseJSONToElements } from '@/shared/lib/payload';
 
 import st from './cookie-policy.module.scss';
+
+export const metadata: Metadata = {
+  title: 'Cookie Policy | Wanmark Global',
+  openGraph: {
+    title: 'Cookie Policy | Wanmark Global',
+  },
+  robots: 'noindex',
+};
 
 export default async function PrivacyPolicy() {
   const res = await getPolicy({ id: '3' });
