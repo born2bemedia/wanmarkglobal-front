@@ -1,8 +1,10 @@
 'use client';
 
+import { RefObject } from 'react';
 import Image from 'next/image';
 
 import { motion } from '@/shared/lib/motion';
+import { SwiperClass } from '@/shared/lib/slider';
 import { cn } from '@/shared/lib/styles';
 import { ArrowTopRight } from '@/shared/ui/icons';
 import { Button } from '@/shared/ui/kit/button';
@@ -12,7 +14,14 @@ import { Title } from '@/shared/ui/kit/title';
 
 import st from './hero.module.scss';
 
-export function HeroPink() {
+export function HeroPink({
+  swiperRef,
+}: {
+  swiperRef: RefObject<SwiperClass | null>;
+}) {
+  const goNext = () => swiperRef.current?.slideNext();
+  const goPrev = () => swiperRef.current?.slidePrev();
+
   return (
     <section className={cn(st.layout, st.pinkBg)}>
       <motion.div
@@ -66,10 +75,15 @@ export function HeroPink() {
         <section className={st.heroFooter}>
           <Text color="darkPurple">Turn Challenges</Text>
           <div className={st.nextBlock}>
+            <button onClick={goPrev}>
+              <Text color="darkPurple">BACK</Text>
+            </button>
             <Text color="darkPurple">
               03/<span className={st.opacityText}>03</span>
             </Text>
-            <Text color="darkPurple">NEXT</Text>
+            <button onClick={goNext}>
+              <Text color="darkPurple">NEXT</Text>
+            </button>
           </div>
           <Text className={st.scrollText} color="darkPurple">
             Scroll to explore
