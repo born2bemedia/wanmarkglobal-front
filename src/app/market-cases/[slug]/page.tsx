@@ -14,9 +14,11 @@ import { ThirdSection } from './components/third-section';
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const singleCase = await getSingleCase({ slug: params.slug });
+  const awaitedParams = await params;
+
+  const singleCase = await getSingleCase({ slug: awaitedParams.slug });
   const caseData = await casesMapping(singleCase);
 
   return {
