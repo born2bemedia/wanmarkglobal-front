@@ -10,6 +10,7 @@ import { FourthSection } from './components/fourth-section';
 import { Hero } from './components/hero';
 import { SecondSection } from './components/second-section';
 import { ThirdSection } from './components/third-section';
+import { caseMeta } from '@/app/market-cases/[slug]/meta';
 
 export async function generateMetadata({
   params,
@@ -21,13 +22,15 @@ export async function generateMetadata({
   const singleCase = await getSingleCase({ slug: awaitedParams.slug });
   const caseData = await casesMapping(singleCase);
 
+  console.log(caseData);
+
   return {
-    title: `${caseData[0].meta?.title} | Wanmark Global`,
-    description: `${caseData[0].meta?.description}`,
+    title: caseMeta[awaitedParams.slug].title,
+    description: caseMeta[awaitedParams.slug].description,
     openGraph: {
-      title: `${caseData[0].meta?.title} | Wanmark Global`,
-      description: `${caseData[0].meta?.description}`,
-      images: `${caseData[0].meta.image}`,
+      title: caseMeta[awaitedParams.slug].title,
+      description: caseMeta[awaitedParams.slug].description,
+      images: caseMeta[awaitedParams.slug].img,
     },
   };
 }
