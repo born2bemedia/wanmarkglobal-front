@@ -6,6 +6,8 @@ import { ArrowTopRightCircle } from '@/shared/ui/icons';
 import { Case } from '../../lib';
 import st from './case-card.module.scss';
 
+const isVideo = (url: string) => url.endsWith('.webm');
+
 export function CaseCard({
   title,
   slug,
@@ -18,7 +20,14 @@ export function CaseCard({
   return (
     <div className={st.card}>
       <div className={st.cardThumbnail}>
-        <Image src={thumbnail} alt={title} fill />
+        {isVideo(thumbnail) ? (
+          <video className={st.thumbnailMedia} autoPlay loop muted>
+            <source src={thumbnail} type="video/webm" />
+            Your browser does not support the video tag.
+          </video>
+        ) : (
+          <Image src={thumbnail} alt={title} fill />
+        )}
         <div className={st.title}>
           <h2>{title}</h2>
           <p>{subTitle}</p>

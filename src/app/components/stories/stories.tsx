@@ -1,6 +1,7 @@
 'use client';
 
 import { JSX } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { Butterfly, FiveDots, Stairs } from '@/shared/ui/icons';
@@ -25,13 +26,14 @@ export function Stories({ values }: { values: StoryPreview[] }) {
         </Text>
       </section>
       <section className={st.storiesLayout}>
-        {values.map(({ id, type, title }, i) => (
+        {values.map(({ id, type, title, thumbnail }, i) => (
           <StoryCard
             key={id}
             id={id}
             title={title}
             color={colors[i]}
             type={type}
+            thumbnail={thumbnail}
           />
         ))}
       </section>
@@ -44,22 +46,22 @@ export function StoryCard({
   type,
   color,
   title,
+  thumbnail,
 }: {
   id: string;
   title: string;
   type: string;
   color: string;
+  thumbnail: string;
 }) {
   const icons: Record<string, JSX.Element> = {
     pink: <Stairs color="#FFD2FB" height="22" width="22" />,
     blue: <FiveDots width="23" height="22" />,
     purple: <Butterfly color="#D3CBFF" width="21" height="22" />,
   };
-  const imagesSrc: Record<string, string> = {
-    blue: '/articles/blue.png',
-    purple: '/articles/purple.png',
-    pink: '/articles/pink.png',
-  };
+
+  // Helper function to check if the thumbnail is a video file
+  const isVideo = (url: string) => url.endsWith('.webm');
 
   return (
     <article>
@@ -75,14 +77,20 @@ export function StoryCard({
         </Link>
       </section>
       <section>
-        <div
-          className={st.storyCardImage}
-          style={{
-            backgroundImage: `url(${imagesSrc[color]})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        >
+        <div className={st.storyCardImageWrapper}>
+          {isVideo(thumbnail) ? (
+            <video className={st.storyCardMedia} autoPlay loop muted>
+              <source src={thumbnail} type="video/webm" />
+              Your browser does not support the video tag.
+            </video>
+          ) : (
+            <Image
+              className={st.storyCardImage}
+              src={thumbnail}
+              alt={title}
+              fill
+            />
+          )}
           <Tag className={st.storyTag}>
             <Text color="darkBlue" className={st.textSize}>
               {type}

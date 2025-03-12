@@ -48,20 +48,33 @@
   }
 }
 
-.storyCardImage {
-  width: 100%;
-  height: 294px;
+.storyCardImageWrapper {
   position: relative;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  width: 100%;
+  height: 300px;
   border-radius: 12px;
+  overflow: hidden;
+}
 
-  .storyTag {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-  }
+.storyCardMedia {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.storyCardImage {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.storyTag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
 }
 
 .textSize {

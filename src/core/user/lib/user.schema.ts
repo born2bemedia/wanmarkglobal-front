@@ -2,12 +2,12 @@ import { z } from '@/shared/lib/forms';
 import { isPhoneValid } from '@/shared/ui/kit/phone-field';
 
 export const userSchema = z.object({
-  firstName: z.string().nonempty('First name is required'),
-  lastName: z.string().nonempty('Last name is required'),
-  email: z.string().nonempty('Email is required'),
+  firstName: z.string().nonempty('Please provide your name'),
+  lastName: z.string().nonempty('Please provide your last name'),
+  email: z.string().nonempty('Please provide your email'),
   phone: z
     .string()
-    .nonempty('Phone is required')
+    .nonempty('Please provide your phone number')
     .refine(isPhoneValid, 'Invalid phone number format'),
   address: z.string().optional(),
   city: z.string().optional(),

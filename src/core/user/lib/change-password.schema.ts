@@ -8,7 +8,7 @@ export const changePasswordSchema = z
       .min(6, 'Retype Password must be at least 6 characters'),
   })
   .refine(data => data.password === data.confirmPassword, {
-    message: 'Passwords must match',
+    message: 'The passwords do not match',
     path: ['confirmPassword'],
   });
 

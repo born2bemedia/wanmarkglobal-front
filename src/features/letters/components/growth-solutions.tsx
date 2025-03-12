@@ -10,7 +10,7 @@ export function getGrowthSolutions({ firstName }: { firstName: string }) {
         </header>
         <section class="main">
           <section style="padding: 40px">
-            <h2 class="mainHeading">Your Custom Marketing Consulting Request Received</h2>
+            <h2 class="mainHeading">Your Growth Package Request Received</h2>
             <strong  class="strong" style="margin-top: 28px">Dear ${firstName},</strong>
             <p class="paragraph">Thank you for contacting <strong class="strong">Wanmark Global</strong>. We've successfully received your request for a <strong class="strong">custom marketing consulting</strong>, and our team is already working on it.</p>
             <p class="paragraph">One of our experts will review your selected services and prepare a <strong class="strong">tailored strategy</strong> to meet your specific needs. We will contact you shortly with further details and next steps.</p>
