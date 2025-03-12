@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 
 import { ContactUsBtn } from '@/shared/ui/components/contact-us-btn';
 import { Separator } from '@/shared/ui/kit/separator';
@@ -46,18 +45,18 @@ export function Hero({
             <Title level={5} color="white" weight={500} uppercase>
               {subtitle}
             </Title>
-            <Link href="/contact" className={st.contactBtnDesktop}>
+            <span className={st.contactBtnDesktop}>
               <ContactUsBtn variant="white" />
-            </Link>
+            </span>
           </div>
         </section>
         <Separator className={st.separator} />
         <Text className={st.scrollText} uppercase>
           Scroll to explore
         </Text>
-        <Link href="/contact" className={st.contactBtnMobile}>
+        <span className={st.contactBtnMobile}>
           <ContactUsBtn variant="white" />
-        </Link>
+        </span>
       </section>
     </section>
   );
