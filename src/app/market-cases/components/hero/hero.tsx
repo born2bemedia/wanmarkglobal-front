@@ -13,7 +13,7 @@ export function Hero() {
       image={
         <Image
           className={st.metallicSphere}
-          src="/cases/metallic-white.png"
+          src="/cases/metallic-white.svg"
           alt="metallic-white"
           width={453}
           height={449}
@@ -27,9 +27,8 @@ export function Hero() {
       }}
       contactText={{
         color: 'darkBlue',
-        value:
-          'How Strategic Planning Turns Ideas into Success',
-          width: '640px',
+        value: 'How Strategic Planning Turns Ideas into Success',
+        width: '640px',
       }}
       scrollToExplore={{
         color: 'mediumBlue',
