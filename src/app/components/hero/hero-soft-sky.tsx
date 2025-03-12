@@ -1,8 +1,10 @@
 'use client';
 
+import { RefObject } from 'react';
 import Image from 'next/image';
 
 import { motion } from '@/shared/lib/motion';
+import { SwiperClass } from '@/shared/lib/slider';
 import { cn } from '@/shared/lib/styles';
 import { ArrowTopRight } from '@/shared/ui/icons';
 import { Button } from '@/shared/ui/kit/button';
@@ -12,7 +14,13 @@ import { Title } from '@/shared/ui/kit/title';
 
 import st from './hero.module.scss';
 
-export function HeroSoftSky() {
+export function HeroSoftSky({
+  swiperRef,
+}: {
+  swiperRef: RefObject<SwiperClass | null>;
+}) {
+  const goNext = () => swiperRef.current?.slideNext();
+
   return (
     <section className={cn(st.layout, st.blueBg)}>
       <motion.div
@@ -54,7 +62,9 @@ export function HeroSoftSky() {
             <Text>
               01/<span className={st.opacityText}>03</span>
             </Text>
-            <Text>NEXT</Text>
+            <button onClick={goNext}>
+              <Text>NEXT</Text>
+            </button>
           </div>
           <Text className={st.scrollText}>Scroll to explore</Text>
         </section>
