@@ -48,6 +48,23 @@
   }
 }
 
+.storyCardImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.storyCardMedia {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .storyCardImage {
   width: 100%;
   height: 294px;
@@ -56,12 +73,12 @@
   background-size: cover;
   background-position: center;
   border-radius: 12px;
+}
 
-  .storyTag {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-  }
+.storyTag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
 }
 
 @media (max-width: 768px) {

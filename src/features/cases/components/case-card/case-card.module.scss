@@ -18,6 +18,14 @@
     border-radius: 12px;
     overflow: hidden;
     box-sizing: border-box;
+    .thumbnailMedia {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
     @media (max-width: 768px) {
       width: 100%;
       height: 452px;

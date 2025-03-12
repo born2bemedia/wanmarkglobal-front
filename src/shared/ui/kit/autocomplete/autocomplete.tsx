@@ -14,6 +14,7 @@ export function Autocomplete({
   hint,
   initialValue,
   onChange,
+  disabled,
 }: {
   items: { value: string; label: string }[];
   onChange?: (value: string) => void;
@@ -21,6 +22,7 @@ export function Autocomplete({
   placeholder?: string;
   label?: string;
   hint?: string;
+  disabled?: boolean;
 }) {
   const [search, setSearch] = useState(initialValue);
   const [isOpen, setIsOpen] = useState(false);
@@ -61,6 +63,7 @@ export function Autocomplete({
         value={search}
         label={label}
         hint={hint}
+        disabled={disabled}
         placeholder={placeholder}
         onChange={e => {
           setSearch(e.target.value);

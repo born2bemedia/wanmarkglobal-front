@@ -7,6 +7,7 @@ import st from './cases-wrap.module.scss';
 export async function CasesWrap() {
   const cases = await getCases();
   const casesData = await casesLoopMapping(cases.reverse());
+
   return (
     <section className={st.casesWrap}>
       {casesData.map((item, index) => (

@@ -21,6 +21,10 @@
     outline: none;
     box-shadow: 0 0 0 2px #C1D5FF;
   }
+
+  &:disabled {
+    color: #000000;
+  }
 }
 
 .dangerIntent {

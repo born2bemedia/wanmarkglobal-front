@@ -1,5 +1,7 @@
 'use client';
 
+import { useState } from 'react';
+
 import { UserSchema, userSchema } from '@/core/user/lib';
 import { saveUser, useUserStore } from '@/core/user/services';
 
@@ -18,6 +20,8 @@ import { Title } from '@/shared/ui/kit/title';
 import st from './personal-info.module.scss';
 
 export function ChangeInfoForm() {
+  const [edit, setEdit] = useState<boolean>(false);
+
   const { user, setUser } = useUserStore();
   const countryCode = useCountryCode();
 
@@ -43,15 +47,18 @@ export function ChangeInfoForm() {
   });
 
   const onSubmit = handleSubmit(async (data: UserSchema) => {
-    const res = await saveUser({ ...data, userID: user?.id ?? -1 });
+    if (edit) {
+      const res = await saveUser({ ...data, userID: user?.id ?? -1 });
 
-    if (res.message) {
-      reset(data);
-      setUser(res.doc);
-      notifySuccess(res.message);
-    } else {
-      console.error(res);
-      notifyError('Failed to save user data. Please try again later.');
+      if (res.message) {
+        reset(data);
+        setUser(res.doc);
+        notifySuccess(res.message);
+        setEdit(false);
+      } else {
+        console.error(res);
+        notifyError('Failed to save user data. Please try again later.');
+      }
     }
   });
 
@@ -61,16 +68,30 @@ export function ChangeInfoForm() {
         <Title level={5} weight={500} color="darkBlue" uppercase>
           Personal Information
         </Title>
-        <Button variant="transparent" className={st.btn}>
-          {isSubmitting ? (
-            <>
-              SAVING...
-              <Loader width={14} height={14} />
-            </>
-          ) : (
-            <>SAVE</>
-          )}
-        </Button>
+        {edit ? (
+          <Button variant="transparent" type="submit" className={st.btn}>
+            {isSubmitting ? (
+              <>
+                SAVING...
+                <Loader width={14} height={14} />
+              </>
+            ) : (
+              <>SAVE</>
+            )}
+          </Button>
+        ) : (
+          <Button
+            variant="transparent"
+            type="button"
+            className={st.btn}
+            onClick={e => {
+              e.preventDefault();
+              setEdit(true);
+            }}
+          >
+            EDIT
+          </Button>
+        )}
       </section>
       <section className={st.formInner}>
         <section className={st.row}>
@@ -82,6 +103,7 @@ export function ChangeInfoForm() {
                 placeholder="Enter First Name"
                 label="First Name"
                 hint={error?.message}
+                disabled={!edit}
                 {...field}
               />
             )}
@@ -94,6 +116,7 @@ export function ChangeInfoForm() {
                 placeholder="Enter Last Name"
                 label="Last Name"
                 hint={error?.message}
+                disabled={!edit}
                 {...field}
               />
             )}
@@ -107,6 +130,7 @@ export function ChangeInfoForm() {
               <TextField
                 placeholder="Enter Your Email"
                 label="Email"
+                disabled={!edit}
                 hint={error?.message}
                 {...field}
               />
@@ -120,6 +144,7 @@ export function ChangeInfoForm() {
                 label="Phone"
                 country={countryCode}
                 hint={isTouched ? error?.message : undefined}
+                disabled={!edit}
                 {...field}
               />
             )}
@@ -134,6 +159,7 @@ export function ChangeInfoForm() {
                 placeholder="Enter Your Address"
                 label="Address"
                 hint={error?.message}
+                disabled={!edit}
                 {...field}
               />
             )}
@@ -146,6 +172,7 @@ export function ChangeInfoForm() {
                 placeholder="Enter Your City"
                 label="City"
                 hint={error?.message}
+                disabled={!edit}
                 {...field}
               />
             )}
@@ -160,6 +187,7 @@ export function ChangeInfoForm() {
                 placeholder="Enter Your ZIP"
                 label="ZIP"
                 hint={error?.message}
+                disabled={!edit}
                 {...field}
               />
             )}
@@ -175,6 +203,7 @@ export function ChangeInfoForm() {
                 label="Country"
                 hint={error?.message}
                 onChange={field.onChange}
+                disabled={!edit}
               />
             )}
           />
