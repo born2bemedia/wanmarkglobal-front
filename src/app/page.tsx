@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+
 import { getCases } from '@/features/cases/actions';
 import { casesLoopMapping } from '@/features/cases/lib/utils';
 
@@ -7,6 +9,17 @@ import { HowHelps } from './components/how-helps';
 import { HowItWorks } from './components/how-it-works';
 import { Stories } from './components/stories';
 import { WhereToStart } from './components/where-to-start';
+
+export const metadata: Metadata = {
+  title: 'Business & Marketing Consulting | Wanmark Global',
+  description:
+    'Get expert business and marketing consulting to turn your ideas into a structured, profitable business. Book a consultation today.',
+  openGraph: {
+    title: 'Business & Marketing Consulting | Wanmark Global',
+    description:
+      'Get expert business and marketing consulting to turn your ideas into a structured, profitable business. Book a consultation today.',
+  },
+};
 
 export default async function Home() {
   const cases = await getCases();

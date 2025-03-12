@@ -12,6 +12,7 @@ export async function casesMapping(cases: OriginCase[]) {
         challenge: item.challenge,
         strategy: item.strategy,
         result: item.result,
+        meta: item.metaTags,
         firstSection: {
           text: item.firstSection?.text,
           image: `${process.env.SERVER_URL}${item.firstSection?.image?.url}`,

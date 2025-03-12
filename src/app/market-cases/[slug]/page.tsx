@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+
 import { getSingleCase } from '@/features/cases/actions';
 import { casesMapping } from '@/features/cases/lib/utils';
 
@@ -9,12 +11,30 @@ import { Hero } from './components/hero';
 import { SecondSection } from './components/second-section';
 import { ThirdSection } from './components/third-section';
 
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const singleCase = await getSingleCase({ slug: params.slug });
+  const caseData = await casesMapping(singleCase);
+
+  return {
+    title: `${caseData[0].meta?.title} | Wanmark Global`,
+    description: `${caseData[0].meta?.description}`,
+    openGraph: {
+      title: `${caseData[0].meta?.title} | Wanmark Global`,
+      description: `${caseData[0].meta?.description}`,
+    },
+  };
+}
+
 export default async function MarketCasePage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const awaitedParams = await params; // Await the params
+  const awaitedParams = await params;
   const { slug } = awaitedParams;
 
   const singleCase = await getSingleCase({ slug });

@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+
 import {
   aboutOurServices,
   aboutTheProcess,
@@ -7,6 +9,17 @@ import {
 import { FaqSection } from './components/faq-section';
 import { HaveQuestion } from './components/have-question';
 import { Hero } from './components/hero';
+
+export const metadata: Metadata = {
+  title: 'FAQ – Business & Marketing Consulting Answers | Wanmark Global',
+  description:
+    'Find answers to common questions about our consulting services, process, payments, and how we help individuals grow their businesses.',
+  openGraph: {
+    title: 'FAQ – Business & Marketing Consulting Answers | Wanmark Global',
+    description:
+      'Find answers to common questions about our consulting services, process, payments, and how we help individuals grow their businesses.',
+  },
+};
 
 export default function Faq() {
   return (
