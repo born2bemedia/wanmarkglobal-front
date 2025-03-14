@@ -2,6 +2,7 @@
 
 import { RefObject } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { motion } from '@/shared/lib/motion';
 import { SwiperClass } from '@/shared/lib/slider';
@@ -13,6 +14,7 @@ import { Text } from '@/shared/ui/kit/text';
 import { Title } from '@/shared/ui/kit/title';
 
 import st from './hero.module.scss';
+import { ContactUsButton } from '@/app/components/hero/contact-button';
 
 export function HeroSoftSky({
   swiperRef,
@@ -71,19 +73,5 @@ export function HeroSoftSky({
         <ContactUsButton mobile />
       </section>
     </section>
-  );
-}
-
-function ContactUsButton({ mobile = false }: { mobile?: boolean }) {
-  return (
-    <Button
-      className={cn(st.btn, {
-        [st.mobileBtn]: mobile,
-        [st.desktopBtn]: !mobile,
-      })}
-    >
-      Contact Us
-      <ArrowTopRight />
-    </Button>
   );
 }

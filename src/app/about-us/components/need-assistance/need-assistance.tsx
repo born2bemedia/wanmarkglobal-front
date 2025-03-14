@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { Layout } from '@/shared/ui/components/layout/layout';
 import { ArrowTopRightCircle } from '@/shared/ui/icons';
@@ -32,9 +33,11 @@ export function NeedAssistance() {
             path to success. Let’s build and grow your business together.
           </Text>
         </div>
-        <Button variant="black">
-          Contact Us <ArrowTopRightCircle color="black" />
-        </Button>
+        <Link href="/contact">
+          <Button variant="black">
+            Contact Us <ArrowTopRightCircle color="black" />
+          </Button>
+        </Link>
       </section>
     </Layout>
   );

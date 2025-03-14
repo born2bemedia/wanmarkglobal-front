@@ -2,6 +2,7 @@
 
 import { RefObject } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { motion } from '@/shared/lib/motion';
 import { SwiperClass } from '@/shared/lib/slider';
@@ -13,6 +14,7 @@ import { Text } from '@/shared/ui/kit/text';
 import { Title } from '@/shared/ui/kit/title';
 
 import st from './hero.module.scss';
+import { ContactUsButton } from '@/app/components/hero/contact-button';
 
 export function HeroPink({
   swiperRef,
@@ -69,7 +71,7 @@ export function HeroPink({
             To thrive, you need proven business and marketing execution. Every
             idea entering the market faces competition and standard market laws.
           </Text>
-          <ContactUsButton />
+          <ContactUsButton iconColor="blackPurple" textColor="darkPurple" />
         </div>
         <Separator />
         <section className={st.heroFooter}>
@@ -89,24 +91,12 @@ export function HeroPink({
             Scroll to explore
           </Text>
         </section>
-        <ContactUsButton mobile />
+        <ContactUsButton
+          iconColor="blackPurple"
+          textColor="darkPurple"
+          mobile
+        />
       </section>
     </section>
-  );
-}
-
-function ContactUsButton({ mobile = false }: { mobile?: boolean }) {
-  return (
-    <Button
-      className={cn(st.btn, {
-        [st.mobileBtn]: mobile,
-        [st.desktopBtn]: !mobile,
-      })}
-    >
-      <Text weight={500} color="darkPurple">
-        Contact Us
-      </Text>
-      <ArrowTopRight color="blackPurple" />
-    </Button>
   );
 }

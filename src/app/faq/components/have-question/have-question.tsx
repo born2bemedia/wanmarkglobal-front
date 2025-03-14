@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { Layout } from '@/shared/ui/components/layout/layout';
 import { ArrowTopRightCircle } from '@/shared/ui/icons';
@@ -14,7 +15,7 @@ export function HaveQuestion() {
   return (
     <Layout className={st.layout}>
       <Title level={3} weight={500} uppercase>
-      Still Have Questions?
+        Still Have Questions?
       </Title>
       <Image
         src="/faq/have-question.png"
@@ -25,11 +26,14 @@ export function HaveQuestion() {
       />
       <section className={st.requestLayout}>
         <Text color="lightBlue">
-        If you don&apos;t see your question here, feel free to contact our team for assistance.
+          If you don&apos;t see your question here, feel free to contact our
+          team for assistance.
         </Text>
-        <Button variant="black">
-        Contact Us <ArrowTopRightCircle color="black" />
-        </Button>
+        <Link href="/contact">
+          <Button variant="black">
+            Contact Us <ArrowTopRightCircle color="black" />
+          </Button>
+        </Link>
       </section>
     </Layout>
   );

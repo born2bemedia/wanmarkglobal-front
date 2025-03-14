@@ -1,6 +1,7 @@
 'use client';
 
 import { ReactNode } from 'react';
+import Link from 'next/link';
 
 import { motion } from '@/shared/lib/motion';
 import { cn } from '@/shared/lib/styles';
@@ -92,18 +93,20 @@ function ContactUsButton({
   children: ReactNode;
 }) {
   return (
-    <Button
-      variant="white"
-      className={cn(
-        {
-          [st.desktopBtn]: !mobile,
-          [st.mobileBtn]: mobile,
-        },
-        st.btnWithIcon,
-      )}
-    >
-      Contact Us
-      {children}
-    </Button>
+    <Link href="/contact">
+      <Button
+        variant="white"
+        className={cn(
+          {
+            [st.desktopBtn]: !mobile,
+            [st.mobileBtn]: mobile,
+          },
+          st.btnWithIcon,
+        )}
+      >
+        Contact Us
+        {children}
+      </Button>
+    </Link>
   );
 }

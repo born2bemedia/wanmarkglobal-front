@@ -17,7 +17,7 @@ export async function PackageRequestForm() {
   const services = await servicesMapping(products);
 
   return (
-    <section className={st.layout}>
+    <section className={st.layout} id="order-form">
       <PackageInfo />
       <OrderForm type="Business Consulting" services={services} />
     </section>

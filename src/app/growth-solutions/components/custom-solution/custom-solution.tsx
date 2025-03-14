@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { Layout } from '@/shared/ui/components/layout/layout';
 import { ArrowTopRightCircle } from '@/shared/ui/icons';
@@ -27,9 +28,11 @@ export function CustomSolution() {
         <Text color="lightBlue">
           Build your own package and get a tailored plan at a lower price.
         </Text>
-        <Button variant="black">
-          Request <ArrowTopRightCircle color="black" />
-        </Button>
+        <Link href="#order-form">
+          <Button variant="black">
+            Request <ArrowTopRightCircle color="black" />
+          </Button>
+        </Link>
       </section>
     </Layout>
   );

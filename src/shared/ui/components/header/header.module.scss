@@ -11,9 +11,22 @@
   padding: 12px 30px;
 }
 
+.header.scrolled {
+  top: 0;
+  background: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, .15);
+  margin-left: 12px;
+  width: calc(100% - 84px);
+}
+
+
 body[data-scroll-locked] {
   .header {
     width: calc(100% - 66px);
+  }
+
+  .header.scrolled {
+    width: calc(100% - 90px);
   }
 }
 
@@ -73,6 +86,11 @@ body[data-scroll-locked] {
 }
 
 @media (max-width: 1058px) {
+  .header {
+    margin-left: 0 !important;
+    width: calc(100% - 60px) !important;
+  }
+
   .networks {
     display: none;
   }

@@ -12,7 +12,7 @@ export function originOrdersMapping(res: OriginOrder): Order[] {
     orderStatus: order.status,
     paymentMethod: order.paymentMethod,
     getInvoice:
-      order.paymentMethod === 'paid'
+      order.status === 'completed'
         ? `${process.env.SERVER_URL}${order.invoice?.url}`
         : null,
   }));

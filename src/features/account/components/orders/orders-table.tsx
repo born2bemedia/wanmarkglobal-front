@@ -87,26 +87,24 @@ const columns = columnDefBuilder<Order>([
     accessorKey: 'getInvoice',
     header: 'Get Invoice',
     size: 200,
-    cell: ({ getValue }) => {
-      return (
-        <button
-          className={st.downloadBtn}
-          disabled={!getValue<string>()}
-          onClick={() =>
-            getValue<string>()
-              ? downloadFile({
-                  url: getValue<string>(),
-                  fileName: 'invoice.pdf',
-                })
-              : null
-          }
-        >
-          <Text size="lg" color="deepBlack" weight={400} underline>
-            DOWNLOAD
-          </Text>
-        </button>
-      );
-    },
+    cell: ({ getValue }) => (
+      <button
+        className={st.downloadBtn}
+        disabled={!getValue<string>()}
+        onClick={() =>
+          getValue<string>()
+            ? downloadFile({
+                url: getValue<string>(),
+                fileName: 'invoice.pdf',
+              })
+            : null
+        }
+      >
+        <Text size="lg" color="deepBlack" weight={400} underline>
+          DOWNLOAD
+        </Text>
+      </button>
+    ),
   },
 ]);
 
