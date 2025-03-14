@@ -18,7 +18,7 @@ export function CustomSolution() {
         Need a Custom Solution?
       </Title>
       <Image
-        src="/custom-solution.svg"
+        src="/custom-solution.webp"
         alt="custom-solution-img"
         width={1200}
         height={400}

@@ -19,7 +19,7 @@ const steps = [
     img: (
       <Image
         className={cn(st.stepImg, st.stepOneImg)}
-        src="/metallic-urchin.svg"
+        src="/metallic-urchin.webp"
         alt="metallic"
         width={375}
         height={375}
@@ -32,7 +32,7 @@ const steps = [
     img: (
       <Image
         className={cn(st.stepImg, st.stepTwoImg)}
-        src="/metallic-thorn.svg"
+        src="/metallic-thorn.webp"
         alt="metallic"
         width={351}
         height={351}
@@ -45,7 +45,7 @@ const steps = [
     img: (
       <Image
         className={cn(st.stepImg, st.stepThreeImg)}
-        src="/metallic-dentures.svg"
+        src="/metallic-dentures.webp"
         alt="metallic"
         width={333}
         height={333}

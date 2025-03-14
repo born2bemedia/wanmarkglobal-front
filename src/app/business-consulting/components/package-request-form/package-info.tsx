@@ -26,7 +26,7 @@ export function PackageInfo() {
       >
         <Image
           className={st.orderImg}
-          src="/metallic-white.svg"
+          src="/metallic-white.webp"
           alt="metallic"
           width={595}
           height={595}

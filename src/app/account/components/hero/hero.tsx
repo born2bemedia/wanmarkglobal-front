@@ -19,7 +19,7 @@ export function Hero() {
       >
         <Image
           className={st.image}
-          src="/pricing/metallic.svg"
+          src="/pricing/metallic.png"
           alt="hero-figure"
           width={431}
           height={431}

@@ -25,7 +25,7 @@ export function WhereToStart() {
       <section>
         <Image
           className={st.imgBanner}
-          src="/where-to-start.svg"
+          src="/where-to-start.webp"
           alt="where-to-start-banner"
           width={1200}
           height={400}

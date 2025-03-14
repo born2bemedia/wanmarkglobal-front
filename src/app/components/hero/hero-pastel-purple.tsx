@@ -31,7 +31,7 @@ export function HeroPastelPurple({
         transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
       >
         <Image
-          src="/home/purple-metallic-two.svg"
+          src="/home/purple-metallic-two.png"
           alt="metallic-sphere"
           className={st.purpleMetallicTwo}
           width={683}
@@ -46,7 +46,7 @@ export function HeroPastelPurple({
         transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
       >
         <Image
-          src="/home/purple-metallic-one.svg"
+          src="/home/purple-metallic-one.webp"
           alt="metallic-sphere"
           className={st.purpleMetallicOne}
           width={446}

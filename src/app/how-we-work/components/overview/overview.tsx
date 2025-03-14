@@ -30,7 +30,7 @@ const steps = [
     img: (
       <Image
         className={st.metallicOne}
-        src="/metallic-milky-way.svg"
+        src="/metallic-milky-way.webp"
         alt="metallic"
         width={360}
         height={356}
@@ -59,7 +59,7 @@ const steps = [
     img: (
       <Image
         className={st.metallicTwo}
-        src="/metallic-growth.svg"
+        src="/metallic-growth.webp"
         alt="metallic"
         width={360}
         height={356}

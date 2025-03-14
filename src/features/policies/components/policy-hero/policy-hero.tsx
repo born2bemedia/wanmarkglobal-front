@@ -28,7 +28,7 @@ export function PolicyHero({
         transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
       >
         <Image
-          src="/metallic-white.svg"
+          src="/metallic-white.webp"
           alt="metallic-sphere"
           className={st.metallicSphere}
           width={546}

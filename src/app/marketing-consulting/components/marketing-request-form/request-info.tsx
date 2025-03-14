@@ -26,7 +26,7 @@ export function RequestInfo() {
       >
         <Image
           className={st.orderImg}
-          src="/metallic-thorn.svg"
+          src="/metallic-thorn.webp"
           alt="metallic"
           width={692}
           height={692}

@@ -19,7 +19,7 @@ const steps = [
     img: (
       <Image
         className={cn(st.stepImg, st.stepOneImg)}
-        src="/metallic-vase.svg"
+        src="/metallic-vase.webp"
         alt="metallic"
         width={277}
         height={277}
@@ -32,7 +32,7 @@ const steps = [
     img: (
       <Image
         className={cn(st.stepImg, st.stepTwoImg)}
-        src="/metallic-worm.svg"
+        src="/metallic-worm.webp"
         alt="metallic"
         width={340}
         height={340}
@@ -45,7 +45,7 @@ const steps = [
     img: (
       <Image
         className={cn(st.stepImg, st.stepThreeImg)}
-        src="/metallic-star.svg"
+        src="/metallic-star.webp"
         alt="metallic"
         width={323}
         height={323}

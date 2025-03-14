@@ -18,7 +18,7 @@ export function Hero({ title = 'Your Selected Services' }: { title?: string }) {
         transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
       >
         <Image
-          src="/metallic-white.svg"
+          src="/metallic-white.webp"
           alt="metallic-sphere"
           className={st.metallicSphere}
           width={546}

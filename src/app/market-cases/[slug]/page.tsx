@@ -22,8 +22,6 @@ export async function generateMetadata({
   const singleCase = await getSingleCase({ slug: awaitedParams.slug });
   const caseData = await casesMapping(singleCase);
 
-  console.log(caseData);
-
   return {
     title: caseMeta[awaitedParams.slug].title,
     description: caseMeta[awaitedParams.slug].description,

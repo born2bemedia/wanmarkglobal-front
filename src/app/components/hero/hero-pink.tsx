@@ -31,7 +31,7 @@ export function HeroPink({
         transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
       >
         <Image
-          src="/home/pink-metallic-two.svg"
+          src="/home/pink-metallic-two.webp"
           alt="metallic-sphere"
           className={st.pinkMetallicTwo}
           width={581}
@@ -46,7 +46,7 @@ export function HeroPink({
         transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
       >
         <Image
-          src="/home/pink-metallic-one.svg"
+          src="/home/pink-metallic-one.webp"
           alt="metallic-sphere"
           className={st.pinkMetallicOne}
           width={483}
