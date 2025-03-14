@@ -14,7 +14,7 @@ export function Hero() {
       image={
         <Image
           className={st.metallicSphere}
-          src="/metallic-growth.svg"
+          src="/metallic-growth.webp"
           alt="metallic-white"
           width={453}
           height={449}

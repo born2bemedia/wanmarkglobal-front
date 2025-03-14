@@ -13,7 +13,7 @@ export function Hero() {
       scrollToExplore={{ color: 'mediumBlue', value: 'Scroll to explore' }}
       image={
         <Image
-          src="/metallic-sphere.svg"
+          src="/metallic-sphere.webp"
           alt="metallic-sphere"
           className={st.metallicSphere}
           width={483}

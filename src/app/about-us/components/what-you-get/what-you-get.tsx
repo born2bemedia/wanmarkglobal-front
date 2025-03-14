@@ -32,8 +32,8 @@ const steps = [
         className={cn(st.stepImg, st.stepTwoImg)}
         src="/about/step-two.png"
         alt="metallic"
-        width={340}
-        height={360}
+        width={330}
+        height={350}
       />
     ),
   },
@@ -46,8 +46,8 @@ const steps = [
         className={cn(st.stepImg, st.stepThreeImg)}
         src="/about/step-three.png"
         alt="metallic"
-        width={380}
-        height={380}
+        width={370}
+        height={370}
       />
     ),
   },
@@ -61,7 +61,10 @@ export function WhatYouGet() {
           What You Get with Us
         </Title>
       </section>
-      <FlowSlider steps={steps.map((item, index) => ({ ...item, index }))} notag />
+      <FlowSlider
+        steps={steps.map((item, index) => ({ ...item, index }))}
+        notag
+      />
     </section>
   );
 }

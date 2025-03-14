@@ -41,7 +41,7 @@ export function GeneralRequestForm({
         >
           <Image
             className={st.orderImg}
-            src="/metallic-dentures.svg"
+            src="/metallic-dentures.webp"
             alt="metallic"
             width={520}
             height={520}

@@ -1,5 +1,6 @@
 'use client';
 
+import Head from 'next/head';
 import Image from 'next/image';
 
 import { ContactUsBtn } from '@/shared/ui/components/contact-us-btn';
@@ -22,6 +23,16 @@ export function Hero({
 }) {
   return (
     <section className={st.layout}>
+      {isVideo(backgroundSrc) && (
+        <Head>
+          <link
+            rel="preload"
+            as="video"
+            href={backgroundSrc}
+            type="video/mp4"
+          />
+        </Head>
+      )}
       {isVideo(backgroundSrc) ? (
         <video className={st.background} autoPlay loop muted playsInline>
           <source src={backgroundSrc} type="video/mp4" />
@@ -34,6 +45,7 @@ export function Hero({
           width={1400}
           height={400}
           className={st.background}
+          priority
         />
       )}
       <section className={st.content}>
