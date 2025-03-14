@@ -2,13 +2,10 @@
 
 import { RefObject } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 
 import { motion } from '@/shared/lib/motion';
 import { SwiperClass } from '@/shared/lib/slider';
 import { cn } from '@/shared/lib/styles';
-import { ArrowTopRight } from '@/shared/ui/icons';
-import { Button } from '@/shared/ui/kit/button';
 import { Separator } from '@/shared/ui/kit/separator';
 import { Text } from '@/shared/ui/kit/text';
 import { Title } from '@/shared/ui/kit/title';
