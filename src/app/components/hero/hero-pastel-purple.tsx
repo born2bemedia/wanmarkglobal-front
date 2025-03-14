@@ -6,13 +6,12 @@ import Image from 'next/image';
 import { motion } from '@/shared/lib/motion';
 import { SwiperClass } from '@/shared/lib/slider';
 import { cn } from '@/shared/lib/styles';
-import { ArrowTopRight } from '@/shared/ui/icons';
-import { Button } from '@/shared/ui/kit/button';
 import { Separator } from '@/shared/ui/kit/separator';
 import { Text } from '@/shared/ui/kit/text';
 import { Title } from '@/shared/ui/kit/title';
 
 import st from './hero.module.scss';
+import { ContactUsButton } from '@/app/components/hero/contact-button';
 
 export function HeroPastelPurple({
   swiperRef,
@@ -68,7 +67,7 @@ export function HeroPastelPurple({
           <Text weight={300} color="blackPurple" className={st.text}>
             14% of startups fail due to poor marketing strategies.
           </Text>
-          <ContactUsButton />
+          <ContactUsButton textColor="blackPurple" iconColor="blackPurple" />
         </div>
         <Separator />
         <section className={st.heroFooter}>
@@ -88,24 +87,12 @@ export function HeroPastelPurple({
             Scroll to explore
           </Text>
         </section>
-        <ContactUsButton mobile />
+        <ContactUsButton
+          textColor="blackPurple"
+          iconColor="blackPurple"
+          mobile
+        />
       </section>
     </section>
-  );
-}
-
-function ContactUsButton({ mobile = false }: { mobile?: boolean }) {
-  return (
-    <Button
-      className={cn(st.btn, {
-        [st.mobileBtn]: mobile,
-        [st.desktopBtn]: !mobile,
-      })}
-    >
-      <Text weight={500} color="blackPurple">
-        Contact Us
-      </Text>
-      <ArrowTopRight color="blackPurple" />
-    </Button>
   );
 }

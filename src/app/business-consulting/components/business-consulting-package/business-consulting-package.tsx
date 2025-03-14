@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { cn } from '@/shared/lib/styles';
 import { FlowSlider } from '@/shared/ui/components/flow-slider';
@@ -103,9 +104,11 @@ export function BusinessConsultingPackage() {
             On Demand
           </Text>
         </div>
-        <Button variant="black">
-          Request <ArrowTopRightCircle color="black" />
-        </Button>
+        <Link href="#order-form">
+          <Button variant="black">
+            Request <ArrowTopRightCircle color="black" />
+          </Button>
+        </Link>
       </section>
     </section>
   );

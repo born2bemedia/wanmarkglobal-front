@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -25,6 +25,7 @@ export function Header() {
   const router = useRouter();
 
   const [cartDialogOpen, setCartDialogOpen] = useState<boolean>(false);
+  const [scrolled, setScrolled] = useState<boolean>(false);
 
   const openCartHandler = () => {
     const cartProducts = getCartProducts();
@@ -36,8 +37,24 @@ export function Header() {
     }
   };
 
+  const handleScroll = () => {
+    if (window.scrollY > 50) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <header className={st.header}>
+    <header className={cn(st.header, { [st.scrolled]: scrolled })}>
       <section className={st.logoAndLinks}>
         <Link href="/">
           <Image src="/full-logo.svg" alt="Wanmark" width={130} height={25} />
