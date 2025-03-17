@@ -43,7 +43,11 @@ export const useLanguageSwitcher = ({
   }, [context]);
 
   const switchLanguage = (lang: string) => {
-    setCookie(context, COOKIE_NAME, '/auto/' + lang);
+    setCookie(context, COOKIE_NAME, '/auto/' + lang, {
+      path: '/',
+      maxAge: 30 * 24 * 60 * 60,
+      sameSite: 'lax',
+    });
     window.location.reload();
   };
 
