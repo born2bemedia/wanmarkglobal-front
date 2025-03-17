@@ -35,19 +35,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <title>Business & Marketing Consulting | Wanmark Global</title>
         <GoogleAnalytics gaId={process.env.GA_ID ?? ''} />
-        <Script
-          src="/assets/scripts/lang-config.js"
-          strategy="beforeInteractive"
-        />
         <Script
           src="/assets/scripts/translation.js"
           strategy="beforeInteractive"
         />
-        <Script
-          src="//translate.google.com/translate_a/element.js?cb=TranslateInit"
-          strategy="afterInteractive"
-        />
+        {process.env.GOOGLE_TRANSLATION_CONFIG && (
+          <Script
+            src="//translate.google.com/translate_a/element.js?cb=TranslateInit"
+            strategy="afterInteractive"
+          />
+        )}
       </head>
       <body>
         <Header />
