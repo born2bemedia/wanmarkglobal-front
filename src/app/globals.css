@@ -15,6 +15,7 @@ body {
   background: #EFEFEF;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  top: 0 !important;
 }
 
 body[data-scroll-locked] {
@@ -37,4 +38,8 @@ body[data-scroll-locked] {
 
 .no-scroll {
   overflow: hidden;
+}
+
+.skiptranslate {
+  display: none !important;
 }

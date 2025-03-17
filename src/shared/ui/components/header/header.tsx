@@ -11,6 +11,7 @@ import { UserBadge } from '@/core/user/components';
 import { BurgerMenu } from '@/features/burger-menu/components';
 import { EmptyCartDialog } from '@/features/cart/components';
 import { getCartProducts } from '@/features/cart/services';
+import { LanguageSwitcher } from '@/features/lang-switcher/components';
 
 import { cn } from '@/shared/lib/styles';
 import { SocialNetworks } from '@/shared/ui/components/social-networks';
@@ -61,14 +62,7 @@ export function Header() {
         </Link>
         <section className={cn(st.toolbar, st.networks)}>
           <span className={st.select}>
-            <Select
-              options={[
-                { label: 'ENG', value: 'ENG' },
-                { label: 'DEU', value: 'DEU' },
-                { label: 'ITA', value: 'ITA' },
-              ]}
-              value="ENG"
-            />
+            <LanguageSwitcher />
           </span>
           <SocialNetworks />
         </section>

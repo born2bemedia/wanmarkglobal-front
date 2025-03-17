@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { GoogleAnalytics } from '@next/third-parties/google';
 
 import { Toaster } from '@/shared/lib/notify';
@@ -33,7 +34,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <GoogleAnalytics gaId={process.env.GA_ID ?? ''} />
+      <head>
+        <GoogleAnalytics gaId={process.env.GA_ID ?? ''} />
+        <Script
+          src="/assets/scripts/lang-config.js"
+          strategy="beforeInteractive"
+        />
+        <Script
+          src="/assets/scripts/translation.js"
+          strategy="beforeInteractive"
+        />
+        <Script
+          src="//translate.google.com/translate_a/element.js?cb=TranslateInit"
+          strategy="afterInteractive"
+        />
+      </head>
       <body>
         <Header />
         <Preloader />
