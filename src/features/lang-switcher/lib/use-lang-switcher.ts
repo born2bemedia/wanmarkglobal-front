@@ -41,12 +41,18 @@ export const useLanguageSwitcher = () => {
   }, []);
 
   const switchLanguage = (lang: string) => {
-    cookies.remove(COOKIE_NAME, { path: '/' });
+    const domainVariants = [
+      window.location.hostname,
+      `.${window.location.hostname}`,
+    ];
 
-    cookies.set(COOKIE_NAME, `/auto/${lang}`, {
-      path: '/',
-      expires: 30,
-      sameSite: 'lax',
+    domainVariants.forEach(domain => {
+      cookies.set(COOKIE_NAME, `/auto/${lang}`, {
+        path: '/',
+        expires: 30,
+        sameSite: 'lax',
+        domain,
+      });
     });
 
     window.location.reload();
