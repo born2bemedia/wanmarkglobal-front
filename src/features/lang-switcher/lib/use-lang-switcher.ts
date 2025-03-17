@@ -43,7 +43,7 @@ export const useLanguageSwitcher = () => {
   const switchLanguage = async (lang: string) => {
     const setCookie = () => {
       return new Promise<void>(resolve => {
-        cookies.remove(COOKIE_NAME, { domain: window.location.hostname });
+        cookies.remove(COOKIE_NAME);
         cookies.set(COOKIE_NAME, `/auto/${lang}`, {
           path: '/',
           expires: 30,
