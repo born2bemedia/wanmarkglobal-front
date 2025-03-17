@@ -1,5 +1,6 @@
 'use client';
 
+import { ReactNode } from 'react';
 import {
   DropdownMenuContent,
   DropdownMenuItem,
@@ -21,7 +22,7 @@ export function Select({
   textWeight = 500,
 }: {
   options: SelectOption[];
-  value: string;
+  value: ReactNode;
   textWeight?: 400 | 500;
   onChange?: (value: string) => void;
 }) {
