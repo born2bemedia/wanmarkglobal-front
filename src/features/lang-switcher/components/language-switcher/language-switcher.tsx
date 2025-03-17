@@ -1,18 +1,12 @@
 'use client';
 
-import { NextPageContext } from 'next';
-
-import { useLanguageSwitcher } from '@/features/lang-switcher/lib';
-
 import { Select } from '@/shared/ui/kit/select';
 
-export type LanguageSwitcherProps = {
-  context?: NextPageContext;
-};
+import { useLanguageSwitcher } from '../../lib';
 
-export function LanguageSwitcher({ context }: LanguageSwitcherProps = {}) {
+export function LanguageSwitcher() {
   const { currentLanguage, switchLanguage, languageConfig } =
-    useLanguageSwitcher({ context });
+    useLanguageSwitcher();
 
   if (!languageConfig) {
     return null;
