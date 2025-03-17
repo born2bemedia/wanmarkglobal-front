@@ -40,22 +40,28 @@ export const useLanguageSwitcher = () => {
     setCurrentLanguage(languageValue);
   }, []);
 
-  const switchLanguage = (lang: string) => {
-    const domainVariants = [
-      window.location.hostname,
-      `.${window.location.hostname}`,
-    ];
-
-    domainVariants.forEach(domain => {
-      cookies.set(COOKIE_NAME, `/auto/${lang}`, {
-        path: '/',
-        expires: 30,
-        sameSite: 'lax',
-        domain,
+  const switchLanguage = async (lang: string) => {
+    const setCookie = (domain: string) => {
+      return new Promise<void>(resolve => {
+        cookies.set(COOKIE_NAME, `/auto/${lang}`, {
+          path: '/',
+          expires: 30,
+          sameSite: 'lax',
+          domain: domain,
+        });
+        resolve();
       });
-    });
+    };
 
-    window.location.reload();
+    try {
+      await Promise.all([
+        setCookie(window.location.hostname),
+        setCookie(`.${window.location.hostname}`),
+      ]);
+      window.location.reload();
+    } catch (err) {
+      console.error('Error set new lang', err);
+    }
   };
 
   return {
