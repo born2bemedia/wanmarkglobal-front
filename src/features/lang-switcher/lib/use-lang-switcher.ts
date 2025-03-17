@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import { parseCookies, setCookie } from 'nookies';
 
-import type { LanguageConfig, UseLanguageSwitcherOptions } from './types';
+import { cookies } from '@/shared/lib/browser';
+
+import type { LanguageConfig } from './types';
 
 const COOKIE_NAME = 'googtrans';
 
@@ -19,15 +20,12 @@ const getLanguageConfig = (): LanguageConfig | undefined => {
   return cfg;
 };
 
-export const useLanguageSwitcher = ({
-  context,
-}: UseLanguageSwitcherOptions = {}) => {
+export const useLanguageSwitcher = () => {
   const [currentLanguage, setCurrentLanguage] = useState<string>('');
 
   useEffect(() => {
     const cfg = getLanguageConfig();
-    const cookies = parseCookies(context);
-    const existingLanguageCookieValue = cookies[COOKIE_NAME];
+    const existingLanguageCookieValue = cookies.get(COOKIE_NAME);
 
     let languageValue = '';
     if (existingLanguageCookieValue) {
@@ -40,12 +38,12 @@ export const useLanguageSwitcher = ({
       languageValue = cfg.defaultLanguage;
     }
     setCurrentLanguage(languageValue);
-  }, [context]);
+  }, []);
 
   const switchLanguage = (lang: string) => {
-    setCookie(context, COOKIE_NAME, '/auto/' + lang, {
+    cookies.set(COOKIE_NAME, '/auto/' + lang, {
       path: '/',
-      maxAge: 30 * 24 * 60 * 60,
+      expires: 30,
       sameSite: 'lax',
     });
     window.location.reload();
