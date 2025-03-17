@@ -2,7 +2,7 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ['localhost', 'cms.wanmarkglobal.com'],
+    domains: ['localhost', 'cms.wanmarkglobal.com', 'wanmarkglobal.com'],
   },
   env: {
     GOOGLE_TRANSLATION_CONFIG: JSON.stringify({
