@@ -40,12 +40,16 @@ export const useLanguageSwitcher = () => {
     setCurrentLanguage(languageValue);
   }, []);
 
-  const switchLanguage = (lang: string) => {
-    cookies.set(COOKIE_NAME, '/auto/' + lang, {
-      path: '/',
-      expires: 30,
-      sameSite: 'lax',
+  const switchLanguage = async (lang: string) => {
+    await new Promise<void>(resolve => {
+      cookies.set(COOKIE_NAME, `/auto/${lang}`, {
+        path: '/',
+        expires: 30,
+        sameSite: 'lax',
+      });
+      setTimeout(resolve, 0);
     });
+
     window.location.reload();
   };
 
