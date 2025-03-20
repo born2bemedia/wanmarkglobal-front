@@ -1,0 +1,114 @@
+.selectContent {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 66px;
+  background-color: #fff;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 4px;
+  animation-duration: 400ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+  z-index: 900;
+}
+.selectContent[data-side='top'] {
+  animation-name: slideDownAndFade;
+}
+.selectContent[data-side='right'] {
+  animation-name: slideLeftAndFade;
+}
+.selectContent[data-side='bottom'] {
+  animation-name: slideUpAndFade;
+}
+.selectContent[data-side='left'] {
+  animation-name: slideRightAndFade;
+}
+
+.selectItem {
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  height: 25px;
+  position: relative;
+  user-select: none;
+  outline: none;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.42);
+  padding: 4px 10px;
+  color: #410d56;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  &:hover {
+    background: #fff;
+  }
+}
+
+.selectTrigger {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 63px;
+  background: transparent;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.selectTrigger > svg {
+  transition: transform 0.3s ease-in-out;
+}
+
+.selectTrigger[data-state='open'] > svg {
+  transform: rotate(180deg);
+}
+
+@keyframes slideUpAndFade {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideRightAndFade {
+  from {
+    opacity: 0;
+    transform: translateX(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideDownAndFade {
+  from {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeftAndFade {
+  from {
+    opacity: 0;
+    transform: translateX(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
