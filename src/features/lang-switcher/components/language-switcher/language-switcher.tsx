@@ -1,6 +1,8 @@
 'use client';
 
-import { Select } from '@/shared/ui/kit/select';
+import { Switcher } from '@/features/lang-switcher/components/switcher';
+
+import { English, Germany, Italy } from '@/shared/ui/icons/countries';
 
 import { useLanguageSwitcher } from '../../lib';
 
@@ -13,11 +15,44 @@ export function LanguageSwitcher() {
   }
 
   return (
-    <Select
+    <Switcher
       options={[
-        { label: <span className="notranslate">EN</span>, value: 'en' },
-        { label: <span className="notranslate">DE</span>, value: 'de' },
-        { label: <span className="notranslate">IT</span>, value: 'it' },
+        {
+          label: (
+            <span
+              className="notranslate"
+              style={{ display: 'flex', alignItems: 'center', gap: '10px' }}
+            >
+              <English />
+              EN
+            </span>
+          ),
+          value: 'en',
+        },
+        {
+          label: (
+            <span
+              className="notranslate"
+              style={{ display: 'flex', alignItems: 'center', gap: '10px' }}
+            >
+              <Germany />
+              DE
+            </span>
+          ),
+          value: 'de',
+        },
+        {
+          label: (
+            <span
+              className="notranslate"
+              style={{ display: 'flex', alignItems: 'center', gap: '10px' }}
+            >
+              <Italy />
+              IT
+            </span>
+          ),
+          value: 'it',
+        },
       ]}
       value={
         <span className="notranslate">{currentLanguage.toUpperCase()}</span>
