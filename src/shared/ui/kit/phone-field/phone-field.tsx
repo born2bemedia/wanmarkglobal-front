@@ -6,11 +6,11 @@ import {
   PhoneInputProps,
 } from 'react-international-phone';
 
+import { excludedCountries } from '@/shared/lib/countries';
 import { Text } from '@/shared/ui/kit/text';
 
 import 'react-international-phone/style.css';
 import st from './phone-field.module.scss';
-import { excludedCountries } from '@/shared/lib/countries';
 
 export function PhoneField({
   country,
