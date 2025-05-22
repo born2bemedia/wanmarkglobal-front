@@ -12,9 +12,9 @@ export function Autocomplete({
   placeholder,
   label,
   hint,
-  initialValue,
   onChange,
   disabled,
+  initialValue = '',
 }: {
   items: { value: string; label: string }[];
   onChange?: (value: string) => void;
