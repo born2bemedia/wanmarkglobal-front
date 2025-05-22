@@ -1,11 +1,16 @@
 'use client';
 
-import { PhoneInput, PhoneInputProps } from 'react-international-phone';
+import {
+  defaultCountries,
+  PhoneInput,
+  PhoneInputProps,
+} from 'react-international-phone';
 
 import { Text } from '@/shared/ui/kit/text';
 
 import 'react-international-phone/style.css';
 import st from './phone-field.module.scss';
+import { excludedCountries } from '@/shared/lib/countries';
 
 export function PhoneField({
   country,
@@ -23,7 +28,16 @@ export function PhoneField({
         {label}
       </Text>
       <PhoneInput
-        defaultCountry={country ?? 'us'}
+        defaultCountry={
+          defaultCountries.some(
+            ([, iso2]) => iso2 === country && !excludedCountries.includes(iso2),
+          )
+            ? country
+            : 'us'
+        }
+        countries={defaultCountries.filter(
+          ([, iso2]) => !excludedCountries.includes(iso2),
+        )}
         className={st.container}
         inputClassName={st.phoneField}
         countrySelectorStyleProps={{
