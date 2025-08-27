@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import ReCaptcha from 'react-google-recaptcha';
 
 import { Controller, useForm, zodResolver } from '@/shared/lib/forms';
 import { useCountryCode } from '@/shared/lib/hooks';
@@ -33,6 +34,8 @@ export function OrderNoServicesForm({
     | 'Growth Solutions';
 }) {
   const [dialogOpen, setDialogOpen] = useState<boolean>(false);
+  const [isReCaptchaVerified, setIsReCaptchaVerified] =
+    useState<boolean>(false);
 
   const countryCode = useCountryCode();
 
@@ -64,6 +67,9 @@ export function OrderNoServicesForm({
       notifyError('Failed to send the request. Please try again later.');
     }
   });
+
+  const onReCaptchaChange = (token: string | null) =>
+    setIsReCaptchaVerified(!!token);
 
   return (
     <form onSubmit={onSubmit} className={st.formLayout}>
@@ -154,7 +160,7 @@ export function OrderNoServicesForm({
         <Button
           variant="black"
           className={st.requestBtn}
-          disabled={isSubmitting}
+          disabled={isSubmitting || !isReCaptchaVerified}
         >
           {isSubmitting ? (
             <>
@@ -168,6 +174,10 @@ export function OrderNoServicesForm({
             </>
           )}
         </Button>
+        <ReCaptcha
+          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? ''}
+          onChange={onReCaptchaChange}
+        />
       </section>
       <Dialog
         open={dialogOpen}
