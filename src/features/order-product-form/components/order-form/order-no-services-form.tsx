@@ -174,11 +174,12 @@ export function OrderNoServicesForm({
             </>
           )}
         </Button>
-        <ReCaptcha
-          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? ''}
-          onChange={onReCaptchaChange}
-        />
       </section>
+      <ReCaptcha
+        className={st.reCaptcha}
+        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? ''}
+        onChange={onReCaptchaChange}
+      />
       <Dialog
         open={dialogOpen}
         onOpenChange={setDialogOpen}
