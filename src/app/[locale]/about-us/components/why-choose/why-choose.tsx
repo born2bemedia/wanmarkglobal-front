@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 import { Layout } from '@/shared/ui/components/layout';
 import { Text } from '@/shared/ui/kit/text';
@@ -7,22 +8,32 @@ import { Title } from '@/shared/ui/kit/title';
 import st from './why-choose.module.scss';
 
 export function WhyChoose() {
+  const t = useTranslations('aboutUs.whyChoose');
+
   const reasons = [
     {
-      title: 'You work with real experts',
-      description:
-        'Our team applies decades of combined experience to every project.',
+      title: t('cards.0.title', { fallback: 'You work with real experts' }),
+      description: t('cards.0.desc', {
+        fallback:
+          'Our team applies decades of combined experience to every project.',
+      }),
       icon: '/about/why1.svg',
     },
     {
-      title: 'You get structured, documented strategies',
-      description:
-        'No vague advice, just clear business roadmaps and execution plans.',
+      title: t('cards.1.title', {
+        fallback: 'You get structured, documented strategies',
+      }),
+      description: t('cards.1.desc', {
+        fallback:
+          'No vague advice, just clear business roadmaps and execution plans.',
+      }),
       icon: '/about/why2.svg',
     },
     {
-      title: 'You avoid costly mistakes',
-      description: 'We focus on data-driven decisions, not guesswork.',
+      title: t('cards.2.title', { fallback: 'You avoid costly mistakes' }),
+      description: t('cards.2.desc', {
+        fallback: 'We focus on data-driven decisions, not guesswork.',
+      }),
       icon: '/about/why3.svg',
     },
   ];
@@ -31,7 +42,7 @@ export function WhyChoose() {
     <Layout className={st.layout}>
       <div className={st.content}>
         <Title level={3} weight={500} uppercase>
-          Why Choose Wanmark Global?
+          {t('title', { fallback: 'Why Choose Wanmark Global?' })}
         </Title>
         <div className={st.reasons}>
           {reasons.map(reason => (

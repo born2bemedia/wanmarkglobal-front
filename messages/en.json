@@ -126,6 +126,67 @@
       "read": "READ FULL STORY"
     }
   },
+  "aboutUs": {
+    "hero": {
+      "title": "The Experts Behind Your Business Success",
+      "text": "We don't guess—we use proven formulas and real market data to build businesses that work.",
+      "scroll": "Scroll to explore"
+    },
+    "whatYouGet": {
+      "title": "What You Get with Us",
+      "cards": {
+        "0": {
+          "title": "hours of research and market analysis",
+          "desc": "Every project starts with deep insights into your industry, competitors, and the audience."
+        },
+        "1": {
+          "title": "hours of structured business development",
+          "desc": "We create financial plans, pricing strategies, and step-by-step business models tailored to your goals."
+        },
+        "2": {
+          "title": "hours of execution and strategy implementation",
+          "desc": "From launch to optimization, we guide you through every stage with clear, actionable roadmaps."
+        }
+      }
+    },
+    "provenFormulas": {
+      "title": "We Use Proven Formulas for Success",
+      "text": {
+        "0": "Every successful business follows a structured approach. Our consulting is based on a",
+        "1": "reliable, market-tested formula",
+        "2": "that works across industries:"
+      }
+    },
+    "formulaBlock": {
+      "yourIdea": "Your Idea",
+      "wanmarkExpertise": "Wanmark Expertise",
+      "marketKnowledge": "Market Knowledge",
+      "yourBusinessSuccess": "Your Business Success"
+    },
+    "whyChoose": {
+      "title": "Why Choose Wanmark Global?",
+      "cards": {
+        "0": {
+          "title": "You work with real experts",
+          "desc": "Our team applies decades of combined experience to every project."
+        },
+        "1": {
+          "title": "You get structured, documented strategies",
+          "desc": "No vague advice, just clear business roadmaps and execution plans."
+        },
+        "2": {
+          "title": "You avoid costly mistakes",
+          "desc": "We focus on data-driven decisions, not guesswork."
+        }
+      }
+    },
+    "needAssistance": {
+      "title": "Need Assistance?",
+      "subtitle": "Skyrocket Your Business with Expert Guidance",
+      "text": "Remove all obstacles, avoid costly mistakes, and follow a proven path to success. Let’s build and grow your business together.",
+      "button": "Contact Us"
+    }
+  },
   "contactUsBtn": {
     "text": "Contact Us"
   }
