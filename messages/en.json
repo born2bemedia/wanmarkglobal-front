@@ -187,7 +187,87 @@
       "button": "Contact Us"
     }
   },
+  "businessConsulting": {
+    "hero": {
+      "title": "Business Consulting",
+      "text": "Start, Structure, and Grow Your Business",
+      "scroll": "Scroll to explore"
+    },
+    "setup": {
+      "title": "Business Setup & Structure",
+      "desc": "Lay the groundwork for a legally sound, financially stable, and well-organized business."
+    },
+    "operationsAndEfficiency": {
+      "title": "Operations & Efficiency",
+      "desc": "Eliminate inefficiencies and structure your daily workflow for maximum productivity."
+    },
+    "clientAcquisition": {
+      "title": "Client Acquisition & Sales Strategy",
+      "desc": "Develop a structured approach to attract and convert customers effectively."
+    },
+    "scalingBusinessGrowth": {
+      "title": "Scaling & Business Growth",
+      "desc": "Expand your business strategically, automate processes, and increase revenue."
+    },
+    "consultingPackage": {
+      "title": {
+        "0": "Flexible Business",
+        "1": "Consulting Package"
+      },
+      "desc": {
+        "0": "Need multiple services across different categories?",
+        "1": "Build your own package and get a custom price with a bulk order discount."
+      },
+      "howItWorks": "How It Works",
+      "price": "Price:",
+      "onDemand": "On Demand",
+      "request": "Request",
+      "cards": {
+        "0": "Select the services you need from any segment.",
+        "1": "Get a personalized plan tailored to your business goals.",
+        "2": "Enjoy a lower price per service when bundling multiple options."
+      }
+    },
+    "packageInfo": {
+      "title": "Package Request Form",
+      "text": "Request Your Custom Business Consulting Solution"
+    }
+  },
   "contactUsBtn": {
     "text": "Contact Us"
+  },
+  "orderForm": {
+    "failed": "Failed to send the request. Please try again later.",
+    "firstName": {
+      "placeholder": "Enter First Name",
+      "label": "First Name"
+    },
+    "lastName": {
+      "placeholder": "Enter Last Name",
+      "label": "Last Name"
+    },
+    "phone": {
+      "label": "Phone"
+    },
+    "email": {
+      "placeholder": "Enter Your Email",
+      "label": "Email"
+    },
+    "projectDescription": {
+      "placeholder": "Tell us a little about the project...",
+      "label": "Project Description"
+    },
+    "selectedServices": {
+      "label": "Select Services"
+    },
+    "agreement": {
+      "label": "I agree to the Terms and Conditions and Privacy Policy of Wanmark Global."
+    },
+    "requestNow": "Request Now",
+    "sending": "Sending...",
+    "success": {
+      "title": "Your request has been submitted!",
+      "text": "We will review your selections and contact you shortly with a personalized proposal."
+    }
   }
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 import { HeroBanner } from '@/shared/ui/components/hero-banner';
 import { ArrowTopRightCircle } from '@/shared/ui/icons';
@@ -8,9 +9,14 @@ import { ArrowTopRightCircle } from '@/shared/ui/icons';
 import st from './hero.module.scss';
 
 export function Hero() {
+  const t = useTranslations('businessConsulting.hero');
+
   return (
     <HeroBanner
-      scrollToExplore={{ color: 'mediumBlue', value: 'Scroll to explore' }}
+      scrollToExplore={{
+        color: 'mediumBlue',
+        value: t('scroll', { fallback: 'Scroll to explore' }),
+      }}
       image={
         <Image
           src="/metallic-sphere.webp"
@@ -21,10 +27,15 @@ export function Hero() {
         />
       }
       color="#D3CBFF"
-      title={{ color: 'mediumBlue', value: 'Business Consulting' }}
+      title={{
+        color: 'mediumBlue',
+        value: t('title', { fallback: 'Business Consulting' }),
+      }}
       contactText={{
         color: 'lightBlue',
-        value: 'Start, Structure, and Grow Your Business',
+        value: t('text', {
+          fallback: 'Start, Structure, and Grow Your Business',
+        }),
       }}
       contactUsIcon={<ArrowTopRightCircle />}
     />

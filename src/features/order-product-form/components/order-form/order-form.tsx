@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 import { useUserStore } from '@/core/user/services/user.store';
 
@@ -41,8 +42,10 @@ export function OrderForm({
   services: Service[];
 }) {
   const [dialogOpen, setDialogOpen] = useState<boolean>(false);
-  const { user } = useUserStore();
 
+  const t = useTranslations('orderForm');
+
+  const { user } = useUserStore();
   const countryCode = useCountryCode();
 
   const {
@@ -71,7 +74,11 @@ export function OrderForm({
       reset();
     } catch (e) {
       console.error('Error send form', e);
-      notifyError('Failed to send the request. Please try again later.');
+      notifyError(
+        t('failed', {
+          fallback: 'Failed to send the request. Please try again later.',
+        }),
+      );
     }
   });
 
@@ -85,8 +92,10 @@ export function OrderForm({
           control={control}
           render={({ field, fieldState: { error } }) => (
             <TextField
-              placeholder="Enter First Name"
-              label="First Name"
+              placeholder={t('firstName.placeholder', {
+                fallback: 'Enter First Name',
+              })}
+              label={t('firstName.label', { fallback: 'First Name' })}
               hint={error?.message}
               {...field}
             />
@@ -97,8 +106,10 @@ export function OrderForm({
           control={control}
           render={({ field, fieldState: { error } }) => (
             <TextField
-              placeholder="Enter Last Name"
-              label="Last Name"
+              placeholder={t('lastName.placeholder', {
+                fallback: 'Enter Last Name',
+              })}
+              label={t('lastName.label', { fallback: 'Last Name' })}
               hint={error?.message}
               {...field}
             />
@@ -111,7 +122,7 @@ export function OrderForm({
           control={control}
           render={({ field, fieldState: { error, isTouched } }) => (
             <PhoneField
-              label="Phone"
+              label={t('phone.label', { fallback: 'Phone' })}
               country={countryCode}
               hint={isTouched ? error?.message : undefined}
               {...field}
@@ -123,8 +134,10 @@ export function OrderForm({
           control={control}
           render={({ field, fieldState: { error } }) => (
             <TextField
-              placeholder="Enter Your Email"
-              label="Email"
+              placeholder={t('email.placeholder', {
+                fallback: 'Enter Your Email',
+              })}
+              label={t('email.label', { fallback: 'Email' })}
               hint={error?.message}
               {...field}
             />
@@ -136,8 +149,12 @@ export function OrderForm({
         control={control}
         render={({ field, fieldState: { error } }) => (
           <TextArea
-            placeholder="Tell us a little about the project..."
-            label="Project Description"
+            placeholder={t('projectDescription.placeholder', {
+              fallback: 'Tell us a little about the project...',
+            })}
+            label={t('projectDescription.label', {
+              fallback: 'Project Description',
+            })}
             hint={error?.message}
             {...field}
           />
@@ -149,7 +166,11 @@ export function OrderForm({
         render={({ field, fieldState: { error } }) => (
           <section className={st.servicesLayout}>
             <div className={st.servicesTitle}>
-              <Text color="darkBlue">Select Services</Text>
+              <Text color="darkBlue">
+                {t('selectedServices.label', {
+                  fallback: 'Select Services',
+                })}
+              </Text>
               {error && <Text color="lightBlue">*{error.message}</Text>}
             </div>
             <section className={st.services}>
@@ -203,7 +224,10 @@ export function OrderForm({
                 variant="secondary"
                 checked={field.value}
                 onCheckedChange={field.onChange}
-                label="I agree to the Terms and Conditions and Privacy Policy of Wanmark Global."
+                label={t('agreement.label', {
+                  fallback:
+                    'I agree to the Terms and Conditions and Privacy Policy of Wanmark Global.',
+                })}
               />
               {error && (
                 <Text color="lightBlue" className={st.agreementError}>
@@ -221,12 +245,12 @@ export function OrderForm({
         >
           {isSubmitting ? (
             <>
-              Sending...
+              {t('sending', { fallback: 'Sending...' })}
               <Loader />
             </>
           ) : (
             <>
-              Request Now
+              {t('requestNow', { fallback: 'Request Now' })}
               <ArrowTopRightCircle color="black" />
             </>
           )}
@@ -240,11 +264,15 @@ export function OrderForm({
       >
         <section className={st.dialogContent}>
           <Title level={5} color="darkBlue" weight={500} uppercase>
-            Your request has been submitted!
+            {t('success.title', {
+              fallback: 'Your request has been submitted!',
+            })}
           </Title>
           <Text color="lightBlue">
-            We will review your selections and contact you shortly with a
-            personalized proposal.
+            {t('success.text', {
+              fallback:
+                'We will review your selections and contact you shortly with a personalized proposal.',
+            })}
           </Text>
         </section>
       </Dialog>
