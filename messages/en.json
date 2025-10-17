@@ -1,0 +1,132 @@
+{
+  "home": {
+    "hero": {
+      "softSky": {
+        "title": "Turn Challenges into Growth.",
+        "subtitle": "Get Expert Guidance for Your Business & Brand.",
+        "text": "Struggling with strategy, marketing, or scaling? We help entrepreneurs, professionals, and small business owners build, grow, and optimize their projects with proven solutions.",
+        "text2": "Turn Challenges into Growth",
+        "next": "NEXT",
+        "scroll": "Scroll to explore"
+      },
+      "pastelPurple": {
+        "title": "100 million new businesses are launched globally each year.",
+        "subtitle": "90% of startups fail, with 70% not surviving between their second and fifth years.",
+        "text": "14% of startups fail due to poor marketing strategies.",
+        "text2": "Turn Challenges",
+        "next": "NEXT",
+        "back": "BACK",
+        "scroll": "Scroll to explore"
+      },
+      "pink": {
+        "title": "Idea is Half the Success.",
+        "text": "To thrive, you need proven business and marketing execution. Every idea entering the market faces competition and standard market laws.",
+        "text2": "Turn Challenges",
+        "next": "NEXT",
+        "back": "BACK",
+        "scroll": "Scroll to explore"
+      }
+    },
+    "howHelps": {
+      "title": "How",
+      "subtitle": "Wanmark Global helps",
+      "cards": {
+        "0": {
+          "title": "Business Consulting",
+          "button": "Go to Business Consulting",
+          "blocks": {
+            "0": {
+              "title": "Validation & Planning",
+              "desc": "Test your idea, structure your business model."
+            },
+            "1": {
+              "title": "Setup & Organization",
+              "desc": "Register, budget, and optimize workflow."
+            },
+            "2": {
+              "title": "First Clients & Growth",
+              "desc": "Launch, attract customers, and scale efficiently."
+            }
+          }
+        },
+        "1": {
+          "title": "Marketing Consulting",
+          "button": "Go to Marketing Consulting",
+          "blocks": {
+            "0": {
+              "title": "Brand & Market Positioning",
+              "desc": "Define your image and target audience."
+            },
+            "1": {
+              "title": "Traffic & Lead Generation",
+              "desc": "Optimize your website, social media, and ads."
+            },
+            "2": {
+              "title": "Sales & Customer Retention",
+              "desc": "Convert leads, nurture clients, and increase profits."
+            }
+          }
+        }
+      }
+    },
+    "whereToStart": {
+      "title": "Not Sure Where to Start?",
+      "subtitle": "Need a Complete Solution?",
+      "text": "Find the right path for your business. Choose a solution that best fits your idea and goals.",
+      "button": "Check Growth Solutions"
+    },
+    "howItWorks": {
+      "title": "How It Works?",
+      "subtitle": "Simple & Effective",
+      "cards": {
+        "0": {
+          "title": "Tell Us About Your Idea",
+          "desc": "Share your goals, challenges, and vision."
+        },
+        "1": {
+          "title": "Get a Tailored Plan",
+          "desc": "We analyze your needs and create a strategy."
+        },
+        "2": {
+          "title": "Implementation & Execution",
+          "desc": "We guide you through the individual strategy."
+        },
+        "3": {
+          "title": "Optimize & Scale",
+          "desc": "Improve results, automate processes, and expand your reach."
+        }
+      }
+    },
+    "faq": {
+      "title": "Got Questions? We Have Answers!",
+      "haveQuestion": "Still Have Questions? Let’s talk.",
+      "contactUs": "Contact Us",
+      "cards": {
+        "0": {
+          "title": "I do not know where to start. Do you work with customers of zero- or idea-level?",
+          "desc": "Yes! We guide you step-by-step from validation to launch. If your idea is not competitive in the market, we will be honest with you."
+        },
+        "1": {
+          "title": "Do I need a big budget for business and marketing consulting?",
+          "desc": "No. We tailor solutions based on your budget and goals. Besides, you can order individual services or complex packages."
+        },
+        "2": {
+          "title": "How long does it take to see results?",
+          "desc": "It varies. We can’t promise specific results within a fixed timeframe, but we ensure you avoid costly mistakes, wasted efforts, and ineffective strategies. With our guidance, you’ll take the right steps, maximizing efficiency and budget use."
+        },
+        "3": {
+          "title": "What if I’ve already started but things aren’t working?",
+          "desc": "We identify the problems, fix what’s missing, and help you move forward. Do not worry, just contact us!"
+        }
+      }
+    },
+    "stories": {
+      "title": "Real Markets. Real Challenges. Real Solutions.",
+      "subtitle": "Examples Speak Louder Than Words. See How Businesses Navigate Success.",
+      "read": "READ FULL STORY"
+    }
+  },
+  "contactUsBtn": {
+    "text": "Contact Us"
+  }
+}
