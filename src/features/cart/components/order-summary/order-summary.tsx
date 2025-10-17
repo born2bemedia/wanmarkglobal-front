@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 import { calculateTotalPrice } from '@/features/cart/lib/utils';
 import { deleteCartProduct, getCartProducts } from '@/features/cart/services';
@@ -14,6 +15,8 @@ import st from './order-summary.module.scss';
 
 export function OrderSummary() {
   const [products, setProducts] = useState(getCartProducts());
+
+  const t = useTranslations('cart.checkout.orderSummary');
 
   const totalPrice = useMemo(() => calculateTotalPrice(products), [products]);
 
@@ -31,7 +34,7 @@ export function OrderSummary() {
   return (
     <section className={st.layout}>
       <Title level={5} color="black" uppercase>
-        Order Summary
+        {t('title', { fallback: 'Order Summary' })}
       </Title>
       <Separator className={st.separator} />
       <section className={st.orders}>
@@ -47,12 +50,12 @@ export function OrderSummary() {
             />
           ))
         ) : (
-          <Text size="lg">No Products</Text>
+          <Text size="lg">{t('noProducts', { fallback: 'No Products' })}</Text>
         )}
       </section>
       <span className={st.price}>
         <Text size="xl" color="deepBlack" weight={200} uppercase>
-          Total:
+          {t('total', { fallback: 'Total:' })}
         </Text>
         <Text size="xl" color="deepBlack" weight={500} uppercase>
           €{totalPrice}

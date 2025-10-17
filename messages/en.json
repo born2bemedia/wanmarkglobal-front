@@ -269,5 +269,60 @@
       "title": "Your request has been submitted!",
       "text": "We will review your selections and contact you shortly with a personalized proposal."
     }
+  },
+  "cart": {
+    "hero": {
+      "title": "Your Selected Services"
+    },
+    "checkout": {
+      "orderSummary": {
+        "title": "Order Summary",
+        "noProducts": "No Products",
+        "total": "Total:"
+      },
+      "orderDetails": {
+        "failed": "Something went wrong. Please try again later.",
+        "orderSummary": "Order Summary",
+        "firstName": {
+          "placeholder": "Enter First Name",
+          "label": "First Name"
+        },
+        "lastName": {
+          "placeholder": "Enter Last Name",
+          "label": "Last Name"
+        },
+        "phone": {
+          "label": "Phone"
+        },
+        "email": {
+          "placeholder": "Enter Your Email",
+          "label": "Email"
+        },
+        "street": {
+          "placeholder": "Enter Your Street",
+          "label": "Street"
+        },
+        "city": {
+          "placeholder": "Enter Your City",
+          "label": "City"
+        },
+        "country": {
+          "placeholder": "Select or Enter Your Country",
+          "label": "Country"
+        },
+        "zip": {
+          "placeholder": "Enter Your ZIP",
+          "label": "ZIP"
+        },
+        "agreement": {
+          "label": "I confirm that the provided details are correct."
+        },
+        "isDetailsCorrect": {
+          "label": "By placing this order, you agree to the Terms of Use and Privacy Policy."
+        },
+        "sending": "Sending...",
+        "confirmAndRequestInvoice": "Confirm and Request Invoice"
+      }
+    }
   }
 }
