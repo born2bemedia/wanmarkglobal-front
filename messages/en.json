@@ -324,5 +324,59 @@
         "confirmAndRequestInvoice": "Confirm and Request Invoice"
       }
     }
+  },
+  "contact": {
+    "hero": {
+      "title": "Let’s Talk About Your Business Success",
+      "text": "Have questions or need expert guidance? Get in touch with us today.",
+      "scroll": "Scroll to explore"
+    },
+    "generalRequestForm": {
+      "title": "General Inquiry Form",
+      "description": "Need assistance or more information? Send us your request, and we’ll respond shortly."
+    },
+    "contactInfo": {
+      "title": "Email & Phone",
+      "text": "Reach out to our team directly for assistance.",
+      "phone": "Phone",
+      "email": "Email"
+    },
+    "ourOffices": {
+      "title": "Our Offices",
+      "desc": "Official company registration details.",
+      "registeredAddress": "Registered Address",
+      "officeAddress": "Office Address"
+    }
+  },
+  "orderNoServicesForm": {
+    "failed": "Failed to send the request. Please try again later.",
+    "firstName": {
+      "placeholder": "Enter First Name",
+      "label": "First Name"
+    },
+    "lastName": {
+      "placeholder": "Enter Last Name",
+      "label": "Last Name"
+    },
+    "phone": {
+      "label": "Phone"
+    },
+    "email": {
+      "placeholder": "Enter Your Email",
+      "label": "Email"
+    },
+    "projectDescription": {
+      "placeholder": "Tell us a little about the project...",
+      "label": "Project Description"
+    },
+    "agreement": {
+      "label": "I agree to the Terms and Conditions and Privacy Policy of Wanmark Global."
+    },
+    "requestNow": "Request Now",
+    "sending": "Sending...",
+    "success": {
+      "title": "Your request has been submitted!",
+      "text": "We will review your selections and contact you shortly with a personalized proposal."
+    }
   }
 }

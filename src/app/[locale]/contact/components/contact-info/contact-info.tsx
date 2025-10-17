@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 import { Layout } from '@/shared/ui/components/layout';
 import { FiveDots, Magnet } from '@/shared/ui/icons';
@@ -10,19 +11,29 @@ import { Title } from '@/shared/ui/kit/title';
 import st from './contact-form.module.scss';
 
 export function ContactInfo() {
+  const t = useTranslations('contact.contactInfo');
+
   return (
     <Layout className={st.layout}>
       <section className={st.text}>
         <Title level={3} weight={500} uppercase>
-          Email & Phone
+          {t('title', { fallback: 'Email & Phone' })}
         </Title>
         <Text color="lightBlue">
-          Reach out to our team directly for assistance.
+          {t('text', {
+            fallback: 'Reach out to our team directly for assistance.',
+          })}
         </Text>
       </section>
       <section className={st.cards}>
-        <ContactCard name="Phone" value="+447418036208" />
-        <ContactCard name="Email" value="info@wanmarkglobal.com" />
+        <ContactCard
+          name={t('phone', { fallback: 'Phone' })}
+          value="+447418036208"
+        />
+        <ContactCard
+          name={t('email', { fallback: 'Email' })}
+          value="info@wanmarkglobal.com"
+        />
       </section>
     </Layout>
   );
