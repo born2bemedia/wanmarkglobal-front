@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 
 import { PolicyHero, PolicyLayout } from '@/features/policies/components';
 import { getPolicy } from '@/features/policies/services';
@@ -16,6 +17,8 @@ export const metadata: Metadata = {
 };
 
 export default async function RefundPolicy() {
+  const t = await getTranslations('policies.refund');
+
   const res = await getPolicy({ id: '4' });
   const { elements, lastUpdate } = parseJSONToElements(
     res.content.root.children,
@@ -24,7 +27,10 @@ export default async function RefundPolicy() {
   return (
     <main>
       <PolicyHero
-        title={{ value: 'Refund Policy', color: 'green' }}
+        title={{
+          value: t('title', { fallback: 'Refund Policy' }),
+          color: 'green',
+        }}
         hint={{ value: lastUpdate ?? '', color: 'green' }}
         color="#C1EFBE"
       />

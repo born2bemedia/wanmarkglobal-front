@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 
 import { PolicyHero, PolicyLayout } from '@/features/policies/components';
 import { getPolicy } from '@/features/policies/services';
@@ -16,13 +17,18 @@ export const metadata: Metadata = {
 };
 
 export default async function PrivacyPolicy() {
+  const t = await getTranslations('policies.privacy');
+
   const res = await getPolicy({ id: '2' });
   const { elements } = parseJSONToElements(res.content.root.children);
 
   return (
     <main>
       <PolicyHero
-        title={{ value: 'Privacy Policy', color: 'blackYellow' }}
+        title={{
+          value: t('title', { fallback: 'Privacy Policy' }),
+          color: 'blackYellow',
+        }}
         color="#FFE69E"
       />
       <PolicyLayout className={st.layout}>{elements}</PolicyLayout>

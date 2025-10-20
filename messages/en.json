@@ -658,5 +658,19 @@
       "text": "If you’re unsure which solution fits your budget and needs, contact us for a consultation. Request pricing consultation now!",
       "button": "Contact Us"
     }
+  },
+  "policies": {
+    "privacy": {
+      "title": "Privacy Policy"
+    },
+    "cookie": {
+      "title": "Cookie Policy"
+    },
+    "refund": {
+      "title": "Refund Policy"
+    },
+    "terms": {
+      "title": "Terms of Use"
+    }
   }
 }

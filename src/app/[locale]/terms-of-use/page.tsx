@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 
 import { PolicyHero, PolicyLayout } from '@/features/policies/components';
 import { getPolicy } from '@/features/policies/services';
@@ -14,13 +15,18 @@ export const metadata: Metadata = {
 };
 
 export default async function TermsOfUse() {
+  const t = await getTranslations('policies.terms');
+
   const res = await getPolicy({ id: '1' });
   const { elements } = parseJSONToElements(res.content.root.children);
 
   return (
     <main>
       <PolicyHero
-        title={{ value: 'Terms of Use', color: 'blackPurple' }}
+        title={{
+          value: t('title', { fallback: 'Terms of Use' }),
+          color: 'blackPurple',
+        }}
         color="#D3CBFF"
       />
       <PolicyLayout>{elements}</PolicyLayout>
