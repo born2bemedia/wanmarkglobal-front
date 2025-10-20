@@ -541,5 +541,52 @@
     "theStrategy": "The Strategy:",
     "theResult": "The Result:",
     "contactUs": "Contact Us"
+  },
+  "marketingConsulting": {
+    "hero": {
+      "title": "Marketing Consulting",
+      "text": "Get Noticed, Get Clients, Get Results",
+      "scroll": "Scroll to explore"
+    },
+    "brandMarketPositioning": {
+      "title": "Brand & Market Positioning",
+      "desc": "Define your place in the market and make your brand stand out."
+    },
+    "websiteStrategy": {
+      "title": "Online Presence & Website Strategy",
+      "desc": "Turn your website into a lead-generating machine, not just an online brochure."
+    },
+    "socialContentStrategy": {
+      "title": "Social Media & Content Strategy",
+      "desc": "Build an online presence that attracts and engages your audience."
+    },
+    "customerAcquisition": {
+      "title": "Paid Advertising & Customer Acquisition",
+      "desc": "Launch data-driven ad campaigns that bring in real, paying customers."
+    },
+    "salesLeadStrategy": {
+      "title": "Sales & Lead Nurturing Strategy",
+      "desc": "Turn leads into loyal clients with the right follow-up and conversion tactics."
+    },
+    "marketingConsultingPackage": {
+      "title": {
+        "0": "Flexible Marketing",
+        "1": "Consulting Package"
+      },
+      "desc": "Build your own package and get a custom price with a bulk order discount.",
+      "howItWorks": "How It Works",
+      "price": "Price:",
+      "onDemand": "On Demand",
+      "request": "Request",
+      "cards": {
+        "0": "Select the marketing services you need from any category.",
+        "1": "Get a personalized plan tailored to your business goals.",
+        "2": "Enjoy a lower price per service when bundling multiple options."
+      },
+      "requestForm": {
+        "title": "Package Request Form",
+        "description": "Request Your Custom Marketing Consulting Solution"
+      }
+    }
   }
 }

@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 import { cn } from '@/shared/lib/styles';
 import { FlowSlider } from '@/shared/ui/components/flow-slider';
@@ -12,9 +13,11 @@ import { Title } from '@/shared/ui/kit/title';
 
 import st from './marketing-consulting-package.module.scss';
 
-const steps = [
+const getSteps = (t: ReturnType<typeof useTranslations>) => [
   {
-    title: 'Select the marketing services you need from any category.',
+    title: t('cards.0', {
+      fallback: 'Select the marketing services you need from any category.',
+    }),
     bgColor: '#FFC1F9',
     img: (
       <Image
@@ -27,7 +30,9 @@ const steps = [
     ),
   },
   {
-    title: 'Get a personalized plan tailored to your business goals.',
+    title: t('cards.1', {
+      fallback: 'Get a personalized plan tailored to your business goals.',
+    }),
     bgColor: '#FFC3A0',
     img: (
       <Image
@@ -40,7 +45,9 @@ const steps = [
     ),
   },
   {
-    title: 'Enjoy bulk pricing discounts when bundling multiple services.',
+    title: t('cards.2', {
+      fallback: 'Enjoy bulk pricing discounts when bundling multiple services.',
+    }),
     bgColor: '#FFDE7D',
     img: (
       <Image
@@ -55,6 +62,10 @@ const steps = [
 ];
 
 export function MarketingConsultingPackage() {
+  const t = useTranslations('marketingConsulting.marketingConsultingPackage');
+
+  const steps = getSteps(t);
+
   return (
     <section className={st.layout}>
       <section className={st.header}>
@@ -66,7 +77,7 @@ export function MarketingConsultingPackage() {
             className={st.title}
             uppercase
           >
-            Flexible Marketing
+            {t('title.0', { fallback: 'Flexible Marketing' })}
           </Title>
           <Title
             level={4}
@@ -75,18 +86,20 @@ export function MarketingConsultingPackage() {
             className={st.title}
             uppercase
           >
-            Consulting Package
+            {t('title.1', { fallback: 'Consulting Package' })}
           </Title>
         </div>
         <div className={st.desc}>
           <Text color="lightBlue">
-            Build your own package and get a custom price with a bulk order
-            discount.
+            {t('desc', {
+              fallback:
+                'Build your own package and get a custom price with a bulk order discount.',
+            })}
           </Text>
         </div>
       </section>
       <Title level={5} weight={500} color="darkBlue" className={st.howItWorks}>
-        How It Works
+        {t('howItWorks', { fallback: 'How It Works' })}
       </Title>
       <FlowSlider
         titleWidth={440}
@@ -95,15 +108,16 @@ export function MarketingConsultingPackage() {
       <section className={st.requestLayout}>
         <div className={st.priceLayout}>
           <Title level={3} weight={500} uppercase>
-            Price:
+            {t('price', { fallback: 'Price:' })}
           </Title>
           <Text weight={200} size="heading" uppercase>
-            On Demand
+            {t('onDemand', { fallback: 'On Demand' })}
           </Text>
         </div>
         <Link href="#order-form">
           <Button variant="black">
-            Request <ArrowTopRightCircle color="black" />
+            {t('request', { fallback: 'Request' })}{' '}
+            <ArrowTopRightCircle color="black" />
           </Button>
         </Link>
       </section>
