@@ -453,5 +453,34 @@
         }
       }
     }
+  },
+  "growthSolutions": {
+    "hero": {
+      "title": "Growth Solutions",
+      "text": "From Idea to a Thriving Business",
+      "scroll": "Scroll to explore"
+    },
+    "customSolution": {
+      "title": "Need a Custom Solution?",
+      "text": "Build your own package and get a tailored plan at a lower price.",
+      "request": "Request"
+    },
+    "requestForm": {
+      "title": "Package Request Form",
+      "description": "Request Your Custom Business Consulting Solution"
+    }
+  },
+  "packageCard": {
+    "productAdded": {
+      "0": "Product",
+      "1": "added to cart"
+    },
+    "productAlreadyAdded": {
+      "0": "Product",
+      "1": "already added in the cart"
+    },
+    "includes": "Includes:",
+    "price": "Price:",
+    "orderNow": "Order Now"
   }
 }

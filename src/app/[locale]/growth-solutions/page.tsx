@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 
 import { solutionsMapping } from '@/features/package/lib';
 import { getProducts } from '@/features/product/services';
@@ -22,6 +23,8 @@ export const metadata: Metadata = {
 };
 
 export default async function GrowthSolutions() {
+  const t = await getTranslations('growthSolutions.requestForm');
+
   const products = await getProducts({ slug: 'growth-solutions' });
   const solutions = solutionsMapping(products);
 
@@ -37,7 +40,13 @@ export default async function GrowthSolutions() {
         <MarketPackages key={index} packages={pair} position={index} />
       ))}
       <CustomSolution />
-      <GeneralRequestForm subject="Growth Solutions" />
+      <GeneralRequestForm
+        title={t('title', { fallback: 'Package Request Form' })}
+        description={t('description', {
+          fallback: 'Request Your Custom Business Consulting Solution',
+        })}
+        subject="Growth Solutions"
+      />
     </main>
   );
 }
