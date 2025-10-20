@@ -2,6 +2,7 @@
 
 import Head from 'next/head';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 import { ContactUsBtn } from '@/shared/ui/components/contact-us-btn';
 import { Separator } from '@/shared/ui/kit/separator';
@@ -21,6 +22,8 @@ export function Hero({
   subtitle: string;
   backgroundSrc: string;
 }) {
+  const t = useTranslations('marketCasesSlug.hero');
+
   return (
     <section className={st.layout}>
       {isVideo(backgroundSrc) && (
@@ -64,7 +67,7 @@ export function Hero({
         </section>
         <Separator className={st.separator} />
         <Text className={st.scrollText} uppercase>
-          Scroll to explore
+          {t('scroll', { fallback: 'Scroll to explore' })}
         </Text>
         <span className={st.contactBtnMobile}>
           <ContactUsBtn variant="white" />

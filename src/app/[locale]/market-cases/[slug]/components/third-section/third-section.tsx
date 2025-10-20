@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 import { Text } from '@/shared/ui/kit/text';
 
@@ -12,12 +13,14 @@ export function ThirdSection({
   subtitle: string;
   strategies: { icon: string; subtitle: string; text: string }[];
 }) {
+  const t = useTranslations('marketCasesSlug');
+
   return (
     <section className={st.layout}>
       <div className={st.content}>
         <div className={st.subtitle}>
           <h2>
-            <span>The Strategy: </span>
+            <span>{t('theStrategy', { fallback: 'The Strategy:' })} </span>
             {subtitle}
           </h2>
         </div>

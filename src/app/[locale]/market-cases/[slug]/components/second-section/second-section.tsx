@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslations } from 'next-intl';
 
 import { Text } from '@/shared/ui/kit/text';
 
@@ -11,6 +12,8 @@ export function SecondSection({
   text: string;
   subtitle: string;
 }) {
+  const t = useTranslations('marketCasesSlug');
+
   return (
     <section className={st.layout}>
       <div className={st.content}>
@@ -21,7 +24,7 @@ export function SecondSection({
         </div>
         <div className={st.subtitle}>
           <h2>
-            <span>The Challenge: </span>
+            <span>{t('theChallenge', { fallback: 'The Challenge:' })} </span>
             {subtitle}
           </h2>
         </div>

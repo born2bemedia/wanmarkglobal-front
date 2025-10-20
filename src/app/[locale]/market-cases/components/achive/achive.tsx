@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 import { Layout } from '@/shared/ui/components/layout/layout';
 import { ArrowTopRightCircle } from '@/shared/ui/icons';
@@ -12,10 +13,12 @@ import { Title } from '@/shared/ui/kit/title';
 import st from './achive.module.scss';
 
 export function Achive() {
+  const t = useTranslations('marketCases.achive');
+
   return (
     <Layout className={st.layout}>
       <Title level={3} weight={500} uppercase>
-        Want to Achieve the Same Success?
+        {t('title', { fallback: 'Want to Achieve the Same Success?' })}
       </Title>
       <Image
         src="/cases/achive.png"
@@ -26,14 +29,15 @@ export function Achive() {
       />
       <section className={st.requestLayout}>
         <Text color="lightBlue">
-          We have the knowledge, expertise, and proven strategies to turn bold
-          ideas into thriving businesses. With structured planning,
-          market-tested execution, and data-driven marketing, your project can
-          be the next big success story.
+          {t('text', {
+            fallback:
+              'We have the knowledge, expertise, and proven strategies to turn bold ideas into thriving businesses. With structured planning, market-tested execution, and data-driven marketing, your project can be the next big success story.',
+          })}
         </Text>
         <Link href="/contact">
           <Button variant="black">
-            Contact Us <ArrowTopRightCircle color="black" />
+            {t('button', { fallback: 'Contact Us' })}{' '}
+            <ArrowTopRightCircle color="black" />
           </Button>
         </Link>
       </section>

@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 import { HeroBanner } from '@/shared/ui/components/hero-banner';
 import { ArrowTopRightCircle } from '@/shared/ui/icons';
@@ -8,6 +9,8 @@ import { ArrowTopRightCircle } from '@/shared/ui/icons';
 import st from './hero.module.scss';
 
 export function Hero() {
+  const t = useTranslations('marketCases.hero');
+
   return (
     <HeroBanner
       image={
@@ -22,17 +25,19 @@ export function Hero() {
       color="#FAFAFA"
       title={{
         color: 'darkBlue',
-        value: 'Market Cases',
+        value: t('title', { fallback: 'Market Cases' }),
         width: '640px',
       }}
       contactText={{
         color: 'darkBlue',
-        value: 'How Strategic Planning Turns Ideas into Success',
+        value: t('text', {
+          fallback: 'How Strategic Planning Turns Ideas into Success',
+        }),
         width: '640px',
       }}
       scrollToExplore={{
         color: 'mediumBlue',
-        value: 'Scroll to explore',
+        value: t('scroll', { fallback: 'Scroll to explore' }),
       }}
       contactUsIcon={<ArrowTopRightCircle color="blue" />}
     />

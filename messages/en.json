@@ -514,5 +514,32 @@
   },
   "contactUsButton": {
     "label": "Contact Us"
+  },
+  "marketCases": {
+    "hero": {
+      "title": "Market Cases",
+      "text": "How Strategic Planning Turns Ideas into Success",
+      "scroll": "Scroll to explore"
+    },
+    "caseCard": {
+      "read": "Read the Case",
+      "challenge": "The Challenge",
+      "strategy": "The Strategy",
+      "result": "The Result"
+    },
+    "achive": {
+      "title": "Want to Achieve the Same Success?",
+      "text": "We have the knowledge, expertise, and proven strategies to turn bold ideas into thriving businesses. With structured planning, market-tested execution, and data-driven marketing, your project can be the next big success story.",
+      "button": "Contact Us"
+    }
+  },
+  "marketCasesSlug": {
+    "hero": {
+      "scroll": "Scroll to explore"
+    },
+    "theChallenge": "The Challenge:",
+    "theStrategy": "The Strategy:",
+    "theResult": "The Result:",
+    "contactUs": "Contact Us"
   }
 }
