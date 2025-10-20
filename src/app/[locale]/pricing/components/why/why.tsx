@@ -1,5 +1,7 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
+
 import { cn } from '@/shared/lib/styles';
 import { ArrowTopRightCircle } from '@/shared/ui/icons';
 import { LinkButton } from '@/shared/ui/kit/link-button';
@@ -9,21 +11,29 @@ import { Title } from '@/shared/ui/kit/title';
 import st from './why.module.scss';
 
 export function Why() {
+  const t = useTranslations('pricing.why');
+
   const reasons = [
     {
       id: '01',
-      title: 'Avoid costly mistakes',
-      description: 'that can set your business back.',
+      title: t('reasons.0.title', { fallback: 'Avoid costly mistakes' }),
+      description: t('reasons.0.desc', {
+        fallback: 'that can set your business back.',
+      }),
     },
     {
       id: '02',
-      title: 'Save time',
-      description: 'by getting expert insights without trial and error.',
+      title: t('reasons.1.title', { fallback: 'Save time' }),
+      description: t('reasons.1.desc', {
+        fallback: 'by getting expert insights without trial and error.',
+      }),
     },
     {
       id: '03',
-      title: 'Maximize ROI',
-      description: 'with strategies that generate long-term results.',
+      title: t('reasons.2.title', { fallback: 'Maximize ROI' }),
+      description: t('reasons.2.desc', {
+        fallback: 'with strategies that generate long-term results.',
+      }),
     },
   ];
 
@@ -31,7 +41,7 @@ export function Why() {
     <section className={st.layout}>
       <section className={st.titleLayout}>
         <Title level={3} color="darkBlue" weight={500} className={st.title}>
-          Why Consulting Saves You Money
+          {t('title', { fallback: 'Why Consulting Saves You Money' })}
         </Title>
         <ContactUs />
       </section>
@@ -63,6 +73,8 @@ export function Why() {
 }
 
 function ContactUs({ mobile }: { mobile?: boolean }) {
+  const t = useTranslations('pricing.why');
+
   return (
     <div
       className={cn(st.contactLayout, {
@@ -72,7 +84,9 @@ function ContactUs({ mobile }: { mobile?: boolean }) {
     >
       <div className={st.contactText}>
         <Text color="lightBlue" className={st.contactText}>
-          Working with experienced consultants helps you:
+          {t('contactUs', {
+            fallback: 'Working with experienced consultants helps you:',
+          })}
         </Text>
       </div>
       <ContactUsButton />
@@ -81,7 +95,7 @@ function ContactUs({ mobile }: { mobile?: boolean }) {
 }
 
 function ContactUsButton() {
-  //const [isHovered, setIsHovered] = useState(false);
+  const t = useTranslations('pricing.why');
 
   return (
     <LinkButton
@@ -89,7 +103,9 @@ function ContactUsButton() {
       url="/growth-solutions"
       className={st.linkButton}
     >
-      <span>Explore Growth Solutions</span>
+      <span>
+        {t('contactUsButton', { fallback: 'Explore Growth Solutions' })}
+      </span>
       <ArrowTopRightCircle color="black" />
     </LinkButton>
   );

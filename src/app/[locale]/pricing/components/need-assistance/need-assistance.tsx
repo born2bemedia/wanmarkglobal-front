@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 import { Layout } from '@/shared/ui/components/layout/layout';
 import { ArrowTopRightCircle } from '@/shared/ui/icons';
@@ -12,10 +13,12 @@ import { Title } from '@/shared/ui/kit/title';
 import st from './need-assistance.module.scss';
 
 export function NeedAssistance() {
+  const t = useTranslations('pricing.needAssistance');
+
   return (
     <Layout className={st.layout}>
       <Title level={3} weight={500} uppercase>
-        Have Questions About Pricing?
+        {t('title', { fallback: 'Have Questions About Pricing?' })}
       </Title>
       <Image
         src="/pricing/assistance.png"
@@ -26,13 +29,16 @@ export function NeedAssistance() {
       <section className={st.requestLayout}>
         <div>
           <Text color="lightBlue">
-            If you’re unsure which solution fits your budget and needs, contact
-            us for a consultation. Request pricing consultation now!r.
+            {t('text', {
+              fallback:
+                'If you’re unsure which solution fits your budget and needs, contact us for a consultation. Request pricing consultation now!',
+            })}
           </Text>
         </div>
         <Link href="/contact">
           <Button variant="black">
-            Contact Us <ArrowTopRightCircle color="black" />
+            {t('button', { fallback: 'Contact Us' })}{' '}
+            <ArrowTopRightCircle color="black" />
           </Button>
         </Link>
       </section>

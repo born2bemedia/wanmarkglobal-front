@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 import { HeroBanner } from '@/shared/ui/components/hero-banner';
 import { ArrowTopRightCircle } from '@/shared/ui/icons';
@@ -15,10 +16,15 @@ export function Hero() {
     setIsMobile(window.innerWidth < 768);
   }, []);
 
+  const t = useTranslations('pricing.hero');
+
   return (
     <div className={st.hero}>
       <HeroBanner
-        scrollToExplore={{ color: 'lightGreen', value: 'Scroll to explore' }}
+        scrollToExplore={{
+          color: 'lightGreen',
+          value: t('scroll', { fallback: 'Scroll to explore' }),
+        }}
         image={
           <Image
             src="/pricing/metallic.png"
@@ -31,13 +37,15 @@ export function Hero() {
         color="#C1EFBE"
         title={{
           color: 'green',
-          value: 'Let’s Make It Clear',
+          value: t('title', { fallback: 'Let’s Make It Clear' }),
           width: `${isMobile ? '100%' : '50%'}`,
         }}
         contactText={{
           color: 'lightGreen',
-          value:
-            'Learn how we price our business and marketing consulting services and what goes into the cost.',
+          value: t('text', {
+            fallback:
+              'Learn how we price our business and marketing consulting services and what goes into the cost.',
+          }),
           width: `${isMobile ? '100%' : '50%'}`,
         }}
         contactUsIcon={<ArrowTopRightCircle color="green" />}

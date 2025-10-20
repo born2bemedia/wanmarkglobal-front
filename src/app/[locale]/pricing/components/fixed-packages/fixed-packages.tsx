@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 import { Layout } from '@/shared/ui/components/layout';
 import { ArrowDown, ArrowTopRightCircle } from '@/shared/ui/icons';
@@ -9,21 +10,27 @@ import { Title } from '@/shared/ui/kit/title';
 import st from './fixed-packages.module.scss';
 
 export const FixedPackages = () => {
+  const t = useTranslations('pricing.fixedPackages');
+
   const packages = [
     {
-      title: 'Business Idea Validation',
-      description:
-        'Pre-defined service bundles for structured business growth. These provide clear deliverables and cost transparency.',
+      title: t('packages.0.title', { fallback: 'Business Idea Validation' }),
+      description: t('packages.0.desc', {
+        fallback:
+          'Pre-defined service bundles for structured business growth. These provide clear deliverables and cost transparency.',
+      }),
       img: '/pricing/package1.png',
-      button: 'Business Consulting',
+      button: t('packages.0.button', { fallback: 'Business Consulting' }),
       link: '/business-consulting',
     },
     {
-      title: 'Custom Consulting Solutions',
-      description:
-        'Fully tailored strategies where you select individual services based on your business goals.',
+      title: t('packages.1.title', { fallback: 'Custom Consulting Solutions' }),
+      description: t('packages.1.desc', {
+        fallback:
+          'Fully tailored strategies where you select individual services based on your business goals.',
+      }),
       img: '/pricing/package2.png',
-      button: 'Marketing Consulting',
+      button: t('packages.1.button', { fallback: 'Marketing Consulting' }),
       link: '/marketing-consulting',
     },
   ];
@@ -38,10 +45,12 @@ export const FixedPackages = () => {
           className={st.title}
           uppercase
         >
-          Fixed Packages vs. Custom Solutions
+          {t('title', { fallback: 'Fixed Packages vs. Custom Solutions' })}
         </Title>
         <Text color="lightBlue" className={st.textWidth}>
-          We offer two pricing models to fit different needs:
+          {t('text', {
+            fallback: 'We offer two pricing models to fit different needs:',
+          })}
         </Text>
       </section>
       <section className={st.packagesLayout}>
@@ -62,7 +71,6 @@ export const FixedPackages = () => {
                 {item.description}
               </Text>
             </div>
-
             <div className={st.packageImage}>
               <Image src={item.img} alt={item.title} fill />
             </div>

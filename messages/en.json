@@ -588,5 +588,75 @@
         "description": "Request Your Custom Marketing Consulting Solution"
       }
     }
+  },
+  "pricing": {
+    "hero": {
+      "title": "Let’s Make It Clear",
+      "text": "Learn how we price our business and marketing consulting services and what goes into the cost.",
+      "scroll": "Scroll to explore"
+    },
+    "whatDetermines": {
+      "title": "What Determines the Price",
+      "text": "Every consulting project is unique, and pricing depends on several key factors:",
+      "learn": "Learn How We Work",
+      "reasons": {
+        "0": {
+          "title": "Scope of Services",
+          "desc": "The number and complexity of services required."
+        },
+        "1": {
+          "title": "Customization Level",
+          "desc": "Each strategy is tailored to your specific goals."
+        },
+        "2": {
+          "title": "Expert Involvement",
+          "desc": "You work with a dedicated manager and top-tier specialists."
+        },
+        "3": {
+          "title": "Long-Term Impact",
+          "desc": "Our strategies are designed for sustainable business growth, not quick fixes."
+        }
+      }
+    },
+    "fixedPackages": {
+      "title": "Fixed Packages vs. Custom Solutions",
+      "text": "We offer two pricing models to fit different needs:",
+      "packages": {
+        "0": {
+          "title": "Business Idea Validation",
+          "desc": "Pre-defined service bundles for structured business growth. These provide clear deliverables and cost transparency.",
+          "button": "Business Consulting"
+        },
+        "1": {
+          "title": "Custom Consulting Solutions",
+          "desc": "Fully tailored strategies where you select individual services based on your business goals.",
+          "button": "Marketing Consulting"
+        }
+      }
+    },
+    "why": {
+      "title": "Why Consulting Saves You Money",
+      "contactUs": "Working with experienced consultants helps you:",
+      "contactUsButton": "Explore Growth Solutions",
+      "reasons": {
+        "0": {
+          "title": "Avoid costly mistakes",
+          "desc": "that can set your business back."
+        },
+        "1": {
+          "title": "Save time",
+          "desc": "by getting expert insights without trial and error."
+        },
+        "2": {
+          "title": "Maximize ROI",
+          "desc": "with strategies that generate long-term results."
+        }
+      }
+    },
+    "needAssistance": {
+      "title": "Have Questions About Pricing?",
+      "text": "If you’re unsure which solution fits your budget and needs, contact us for a consultation. Request pricing consultation now!",
+      "button": "Contact Us"
+    }
   }
 }
