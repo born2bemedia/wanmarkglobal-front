@@ -378,5 +378,80 @@
       "title": "Your request has been submitted!",
       "text": "We will review your selections and contact you shortly with a personalized proposal."
     }
+  },
+  "faq": {
+    "hero": {
+      "title": "Answers to Your Questions",
+      "text": "Clear, specific details about our services, process, and how we help turn ideas into businesses.",
+      "scroll": "Scroll to explore"
+    },
+    "haveQuestion": {
+      "title": "Still Have Questions?",
+      "text": "If you don't see your question here, feel free to contact our team for assistance.",
+      "button": "Contact Us"
+    },
+    "aboutOurServices": {
+      "title": "About Our Services",
+      "items": {
+        "0": {
+          "title": "What documents do I receive after purchasing a service?",
+          "desc": "Depending on the service, you will receive well-structured strategies, reports, analyses, financial models, marketing roadmaps, and other deliverables in your client account. These documents are professionally formatted and ready for implementation."
+        },
+        "1": {
+          "title": "Do you help with legal company registration and setup?",
+          "desc": "We provide legal and registration guidance, helping you understand business structures, tax basics, and compliance. However, we do not handle direct company registration or legal filings."
+        },
+        "2": {
+          "title": "Can I request changes to a completed service?",
+          "desc": "Yes, we will refine the deliverables if you need minor adjustments based on our initial agreement. We can discuss custom consulting options for additional work beyond the original scope."
+        },
+        "3": {
+          "title": "How do I know which service is right for me?",
+          "desc": "If you're unsure, you can either explore our structured packages or request a consultation, during which we assess your needs and recommend the best approach."
+        }
+      }
+    },
+    "aboutTheProcess": {
+      "title": "About the Process",
+      "items": {
+        "0": {
+          "title": "When do I need to pay for the services?",
+          "desc": "Payment is required before we start working on your project. Once we receive your order, we send you an invoice with bank transfer details. After payment confirmation, we begin execution."
+        },
+        "1": {
+          "title": "Can I pay with a credit card or PayPal?",
+          "desc": "Currently, we only accept bank transfers. You will receive payment details along with your invoice after placing an order."
+        },
+        "2": {
+          "title": "What happens if I'm dissatisfied with the service?",
+          "desc": "We ensure clear expectations and regular check-ins during the process to prevent this. However, if you're not satisfied with the outcome, we will work with you to adjust or refine the deliverables within the agreed scope."
+        },
+        "3": {
+          "title": "How will I communicate with my assigned consultant?",
+          "desc": "Your dedicated manager will coordinate the process and communicate with you via email, scheduled calls, or sessions based on the service package."
+        }
+      }
+    },
+    "clientsQuestions": {
+      "title": "Clients Questions",
+      "items": {
+        "0": {
+          "title": "I want to start a business but have nothing yet. Where should I begin?",
+          "desc": "If you only have an idea, start with our Business Foundation Package. We will help you validate your idea, develop a business model, set pricing, and plan finances—all essential first steps before launching."
+        },
+        "1": {
+          "title": "Do I need experience in business or marketing to work with you?",
+          "desc": "No, our services are designed for both beginners and experienced entrepreneurs. We guide you through the process, providing clear strategies and actionable recommendations."
+        },
+        "2": {
+          "title": "Can I buy multiple services at once?",
+          "desc": "Yes, you can bundle multiple services or choose a Growth Package that includes everything you need at a lower total cost. If you want a custom combination, we offer flexible consulting packages where you select services that fit your needs."
+        },
+        "3": {
+          "title": "How long does it take to complete a service?",
+          "desc": "Timelines vary depending on the service. Simple strategies and reports can take a few days, while full consulting packages, depending on complexity, may require several weeks. After placing your order, you will receive a clear delivery timeline."
+        }
+      }
+    }
   }
 }

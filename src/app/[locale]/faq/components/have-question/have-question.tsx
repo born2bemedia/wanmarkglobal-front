@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 import { Layout } from '@/shared/ui/components/layout/layout';
 import { ArrowTopRightCircle } from '@/shared/ui/icons';
@@ -12,10 +13,12 @@ import { Title } from '@/shared/ui/kit/title';
 import st from './have-question.module.scss';
 
 export function HaveQuestion() {
+  const t = useTranslations('faq.haveQuestion');
+
   return (
     <Layout className={st.layout}>
       <Title level={3} weight={500} uppercase>
-        Still Have Questions?
+        {t('title', { fallback: 'Still Have Questions?' })}
       </Title>
       <Image
         src="/faq/have-question.png"
@@ -26,12 +29,15 @@ export function HaveQuestion() {
       />
       <section className={st.requestLayout}>
         <Text color="lightBlue">
-          If you don&apos;t see your question here, feel free to contact our
-          team for assistance.
+          {t('text', {
+            fallback:
+              "If you don't see your question here, feel free to contact our team for assistance.",
+          })}
         </Text>
         <Link href="/contact">
           <Button variant="black">
-            Contact Us <ArrowTopRightCircle color="black" />
+            {t('button', { fallback: 'Contact Us' })}{' '}
+            <ArrowTopRightCircle color="black" />
           </Button>
         </Link>
       </section>

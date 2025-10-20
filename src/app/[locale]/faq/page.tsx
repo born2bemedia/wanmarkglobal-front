@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 
 import {
-  aboutOurServices,
-  aboutTheProcess,
-  clientsQuestions,
+  getAboutOurServices,
+  getAboutTheProcess,
+  getClientsQuestions,
 } from '@/shared/lib/faq';
 
 import { FaqSection } from './components/faq-section';
@@ -22,22 +23,30 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Faq() {
+export default async function Faq() {
+  const ts = await getTranslations('faq.aboutOurServices');
+  const tp = await getTranslations('faq.aboutTheProcess');
+  const tq = await getTranslations('faq.clientsQuestions');
+
+  const aboutOurServices = getAboutOurServices(ts);
+  const aboutTheProcess = getAboutTheProcess(tp);
+  const clientsQuestions = getClientsQuestions(tq);
+
   return (
     <main>
       <Hero />
       <FaqSection
-        title="About Our Services"
+        title={ts('title', { fallback: 'About Our Services' })}
         faq={aboutOurServices}
         image={'/faq/faq1.svg'}
       />
       <FaqSection
-        title="About the Process"
+        title={tp('title', { fallback: 'About the Process' })}
         faq={aboutTheProcess}
         image={'/faq/faq2.svg'}
       />
       <FaqSection
-        title="Clients Questions"
+        title={tq('title', { fallback: 'Clients Questions' })}
         faq={clientsQuestions}
         image={'/faq/faq3.svg'}
       />
