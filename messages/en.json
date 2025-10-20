@@ -672,5 +672,23 @@
     "terms": {
       "title": "Terms of Use"
     }
+  },
+  "thankYou": {
+    "hero": {
+      "title": "Thank You for Your Order!"
+    },
+    "orderGreeting": {
+      "title": "Your order has been successfully placed! We've sent a confirmation email with your invoice and payment instructions to your email.",
+      "text": "Once we receive your payment, our team will begin processing your request. If you have any questions, feel free to contact us at"
+    },
+    "nextSteps": {
+      "title": "What is next?",
+      "return": "Return to Homepage",
+      "steps": {
+        "0": "Check your email for your invoice and payment details.",
+        "1": "Complete the bank transfer using the provided instructions.",
+        "2": "We will notify you once your payment is received and your services are initiated."
+      }
+    }
   }
 }

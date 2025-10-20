@@ -2,22 +2,29 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 import { Text } from '@/shared/ui/kit/text';
 
 import st from './order-greeting.module.scss';
 
 export function OrderGreeting() {
+  const t = useTranslations('thankYou.orderGreeting');
+
   return (
     <section className={st.layout}>
       <section className={st.text}>
         <Text size="xl" weight={500} color="deepBlack">
-          Your order has been successfully placed! We’ve sent a confirmation
-          email with your invoice and payment instructions to your email.
+          {t('title', {
+            fallback:
+              'Your order has been successfully placed! We’ve sent a confirmation email with your invoice and payment instructions to your email.',
+          })}
         </Text>
         <Text color="lightBlue">
-          Once we receive your payment, our team will begin processing your
-          request. If you have any questions, feel free to contact us at{' '}
+          {t('text', {
+            fallback:
+              'Once we receive your payment, our team will begin processing your request. If you have any questions, feel free to contact us at',
+          })}{' '}
           <Link href="mailto:info@wanmarkglobal.com" className={st.link}>
             info@wanmarkglobal.com
           </Link>

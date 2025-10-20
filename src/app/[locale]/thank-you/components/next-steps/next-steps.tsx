@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 import { cn } from '@/shared/lib/styles';
 import { ArrowTopRightCircle } from '@/shared/ui/icons';
@@ -10,18 +11,29 @@ import { Title } from '@/shared/ui/kit/title';
 
 import st from './next-steps.module.scss';
 
-const steps = [
-  'Check your email for your invoice and payment details.',
-  'Complete the bank transfer using the provided instructions.',
-  'We will notify you once your payment is received and your services are initiated.',
+const getSteps = (t: ReturnType<typeof useTranslations>) => [
+  t('steps.0', {
+    fallback: 'Check your email for your invoice and payment details.',
+  }),
+  t('steps.1', {
+    fallback: 'Complete the bank transfer using the provided instructions.',
+  }),
+  t('steps.2', {
+    fallback:
+      'We will notify you once your payment is received and your services are initiated.',
+  }),
 ];
 
 export function NextSteps() {
+  const t = useTranslations('thankYou.nextSteps');
+
+  const steps = getSteps(t);
+
   return (
     <section className={st.layout}>
       <section className={st.stepsLayout}>
         <Title level={5} weight={500} color="black" uppercase>
-          What is next?
+          {t('title', { fallback: 'What is next?' })}
         </Title>
         <section className={st.cards}>
           {steps.map((step, i) => (
@@ -31,7 +43,7 @@ export function NextSteps() {
       </section>
       <Link href="/" className={st.btnWrapper}>
         <Button variant="black" className={st.btn}>
-          Return to Homepage
+          {t('return', { fallback: 'Return to Homepage' })}
           <ArrowTopRightCircle color="black" />
         </Button>
       </Link>
