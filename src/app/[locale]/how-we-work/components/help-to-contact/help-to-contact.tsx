@@ -2,6 +2,7 @@
 
 import { useWindowSize } from 'react-use';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 import { ContactUsBtn } from '@/shared/ui/components/contact-us-btn';
 import { Layout } from '@/shared/ui/components/layout';
@@ -11,6 +12,8 @@ import { Title } from '@/shared/ui/kit/title';
 import st from './help-to-contact.module.scss';
 
 export function HelpToContact() {
+  const t = useTranslations('howWeWork.helpToContact');
+
   const { width } = useWindowSize();
 
   return (
@@ -22,7 +25,7 @@ export function HelpToContact() {
         className={st.title}
         uppercase
       >
-        Have Questions? We&#39;re Here to Help
+        {t('title', { fallback: "Have Questions? We're Here to Help" })}
       </Title>
       <section className={st.imgLayout}>
         <Image
@@ -38,8 +41,10 @@ export function HelpToContact() {
       </section>
       <section className={st.footerLayout}>
         <Text color="lightBlue" className={st.text}>
-          Not sure how it works or need more details? Our team is ready to
-          assist you!
+          {t('text', {
+            fallback:
+              'Not sure how it works or need more details? Our team is ready to assist you!',
+          })}
         </Text>
         <ContactUsBtn />
       </section>
