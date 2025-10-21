@@ -846,5 +846,27 @@
       "placeholder": "Confirm New Password",
       "label": "Confirm New Password"
     }
+  },
+  "footer": {
+    "title": "Business & Marketing, Engineered for Your Success.",
+    "registeredAddress": "Registered Address:",
+    "officeAddress": "Office address:",
+    "allRightsReserved": "All rights reserved.",
+    "termsOfUse": "Terms of Use",
+    "privacyPolicy": "Privacy Policy",
+    "cookiePolicy": "Cookie Policy",
+    "refundPolicy": "Refund Policy",
+    "company": "Company",
+    "marketCases": "Market Cases",
+    "aboutUs": "About Us",
+    "contact": "Contact",
+    "services": "Services",
+    "businessConsulting": "Business Consulting",
+    "marketingConsulting": "Marketing Consulting",
+    "growthSolutions": "Growth Solutions",
+    "howWeWork": "How We Work",
+    "faq": "FAQ",
+    "pricing": "Pricing",
+    "resources": "Resources"
   }
 }

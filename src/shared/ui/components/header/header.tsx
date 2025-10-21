@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
@@ -22,6 +21,7 @@ import { Select } from '@/shared/ui/kit/select';
 import { Text } from '@/shared/ui/kit/text';
 
 import st from './header.module.scss';
+import { Link } from '@/i18n/navigation';
 
 export function Header() {
   const [cartDialogOpen, setCartDialogOpen] = useState<boolean>(false);
@@ -76,26 +76,37 @@ export function Header() {
           options={[
             {
               value: '/business-consulting',
-              label: t('businessConsulting', {
-                fallback: 'Business Consulting',
-              }),
+              label: (
+                <Link href="/business-consulting">
+                  {t('businessConsulting', {
+                    fallback: 'Business Consulting',
+                  })}
+                </Link>
+              ),
             },
             {
               value: '/marketing-consulting',
-              label: t('marketingConsulting', {
-                fallback: 'Marketing Consulting',
-              }),
+              label: (
+                <Link href="/marketing-consulting">
+                  {t('marketingConsulting', {
+                    fallback: 'Marketing Consulting',
+                  })}
+                </Link>
+              ),
             },
             {
               value: '/growth-solutions',
-              label: t('growthSolutions', {
-                fallback: 'Growth Solutions',
-              }),
+              label: (
+                <Link href="/growth-solutions">
+                  {t('growthSolutions', {
+                    fallback: 'Growth Solutions',
+                  })}
+                </Link>
+              ),
             },
           ]}
           value={t('services', { fallback: 'Services' })}
           textWeight={500}
-          onChange={value => router.push(value)}
         />
         <Link href="/market-cases">
           <Text weight={500}>
@@ -106,20 +117,27 @@ export function Header() {
           options={[
             {
               value: '/about-us',
-              label: t('aboutUs', { fallback: 'About Us' }),
+              label: (
+                <Link href="/about-us">
+                  {t('aboutUs', { fallback: 'About Us' })}
+                </Link>
+              ),
             },
             {
               value: '/faq',
-              label: t('faq', { fallback: 'FAQ' }),
+              label: <Link href="/faq">{t('faq', { fallback: 'FAQ' })}</Link>,
             },
             {
               value: '/how-we-work',
-              label: t('howWeWork', { fallback: 'How We Work' }),
+              label: (
+                <Link href="/how-we-work">
+                  {t('howWeWork', { fallback: 'How We Work' })}
+                </Link>
+              ),
             },
           ]}
           value={t('company', { fallback: 'Company' })}
           textWeight={500}
-          onChange={value => router.push(value)}
         />
         <Link href="/pricing">
           <Text weight={500}>{t('pricing', { fallback: 'Pricing' })}</Text>
