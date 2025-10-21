@@ -690,5 +690,161 @@
         "2": "We will notify you once your payment is received and your services are initiated."
       }
     }
+  },
+  "header": {
+    "businessConsulting": "Business Consulting",
+    "marketingConsulting": "Marketing Consulting",
+    "growthSolutions": "Growth Solutions",
+    "marketCases": "Market Cases",
+    "aboutUs": "About Us",
+    "faq": "FAQ",
+    "howWeWork": "How We Work",
+    "pricing": "Pricing",
+    "cart": "Cart",
+    "menu": "Menu",
+    "services": "Services",
+    "company": "Company"
+  },
+  "emptyCartDialog": {
+    "title": "Your Selected Services",
+    "text": "You haven’t added any services yet. Explore our business and marketing consulting solutions to find the right fit for your goals.",
+    "button": "Start here"
+  },
+  "loginForm": {
+    "title": "Log In",
+    "email": {
+      "placeholder": "Enter Your Email",
+      "label": "Email"
+    },
+    "password": {
+      "placeholder": "Enter Your Password",
+      "label": "Password"
+    },
+    "forgotPassword": "Forgot your password?",
+    "dontHaveAccount": "Don't have an account yet?",
+    "registration": "Registration",
+    "login": "Login",
+    "requesting": "Requesting...",
+    "failed": "Authentication failed. Please try again."
+  },
+  "registerForm": {
+    "wrong": "Something went wrong.",
+    "title": "Register An Account",
+    "firstName": {
+      "placeholder": "Enter First Name",
+      "label": "First Name"
+    },
+    "lastName": {
+      "placeholder": "Enter Last Name",
+      "label": "Last Name"
+    },
+    "phone": {
+      "label": "Phone"
+    },
+    "email": {
+      "placeholder": "Enter Your Email",
+      "label": "Email"
+    },
+    "password": {
+      "placeholder": "Come up with a password",
+      "label": "Password"
+    },
+    "retypePassword": {
+      "placeholder": "Retype Your Password",
+      "label": "Retype Password"
+    },
+    "registration": "Registration",
+    "requesting": "Requesting...",
+    "alreadyHaveAccount": "Already have an account?",
+    "login": "Login"
+  },
+  "account": {
+    "hero": {
+      "title": "Your Account",
+      "text": "Manage Your Services & Documents"
+    },
+    "settings": {
+      "tabs": {
+        "yourOrders": "Your Orders",
+        "yourDocuments": "Your Documents",
+        "yourData": "Your Data"
+      },
+      "logOut": "Log Out"
+    },
+    "orders": {
+      "title": "Your Orders",
+      "desc": "Review your past and current orders, track progress, and check payment status.",
+      "orderId": "Order ID",
+      "orderDate": "Order Date",
+      "services": "Services",
+      "orderStatus": "Order Status",
+      "paymentMethod": "Payment Method",
+      "getInvoice": "Get Invoice",
+      "download": "DOWNLOAD"
+    },
+    "documents": {
+      "title": "Your Documents",
+      "desc": "Track your order fulfillment progress and download reports, strategies, guides, and other provided documents.",
+      "orderId": "Order ID",
+      "services": "Services",
+      "documentation": "Documentation",
+      "download": "DOWNLOAD"
+    },
+    "personalInfo": {
+      "title": "Your Data",
+      "desc": "Manage your personal and billing information to keep your account up to date."
+    }
+  },
+  "changeInfoForm": {
+    "failed": "Failed to save user data. Please try again later.",
+    "title": "Personal Information",
+    "saving": "SAVING...",
+    "save": "SAVE",
+    "edit": "EDIT",
+    "firstName": {
+      "placeholder": "Enter First Name",
+      "label": "First Name"
+    },
+    "lastName": {
+      "placeholder": "Enter Last Name",
+      "label": "Last Name"
+    },
+    "email": {
+      "placeholder": "Enter Your Email",
+      "label": "Email"
+    },
+    "phone": {
+      "label": "Phone"
+    },
+    "address": {
+      "placeholder": "Enter Your Address",
+      "label": "Address"
+    },
+    "city": {
+      "placeholder": "Enter Your City",
+      "label": "City"
+    },
+    "zip": {
+      "placeholder": "Enter Your ZIP",
+      "label": "ZIP"
+    },
+    "country": {
+      "placeholder": "Select or Enter Your Country",
+      "label": "Country"
+    }
+  },
+  "changePasswordForm": {
+    "error": "Password change failed. Please try again later.",
+    "title": "Password Change",
+    "saving": "CHANGING...",
+    "save": "CHANGE",
+    "password": {
+      "placeholder": "Enter New Password",
+      "label": "New Password"
+    },
+    "confirmPassword": {
+      "placeholder": "Confirm New Password",
+      "label": "Confirm New Password"
+    }
   }
 }

@@ -33,12 +33,12 @@ export async function generateMetadata({
 export default async function MarketCasePage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string, locale: string }>;
 }) {
   const awaitedParams = await params;
-  const { slug } = awaitedParams;
+  const { slug, locale } = awaitedParams;
 
-  const singleCase = await getSingleCase({ slug });
+  const singleCase = await getSingleCase({ slug, locale });
   const caseData = await casesMapping(singleCase);
 
   return (

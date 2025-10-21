@@ -16,11 +16,17 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Faq() {
+export default async function MarketCases({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const awaitedParams = await params;
+
   return (
     <main>
       <Hero />
-      <CasesWrap />
+      <CasesWrap params={awaitedParams} />
       <Achive />
     </main>
   );

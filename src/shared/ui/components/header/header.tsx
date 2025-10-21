@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 import { LoginDialog } from '@/core/auth/components';
 import { UserBadge } from '@/core/user/components';
@@ -23,10 +24,11 @@ import { Text } from '@/shared/ui/kit/text';
 import st from './header.module.scss';
 
 export function Header() {
-  const router = useRouter();
-
   const [cartDialogOpen, setCartDialogOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
+
+  const t = useTranslations('header');
+  const router = useRouter();
 
   const openCartHandler = () => {
     const cartProducts = getCartProducts();
@@ -74,49 +76,57 @@ export function Header() {
           options={[
             {
               value: '/business-consulting',
-              label: 'Business Consulting',
+              label: t('businessConsulting', {
+                fallback: 'Business Consulting',
+              }),
             },
             {
               value: '/marketing-consulting',
-              label: 'Marketing Consulting',
+              label: t('marketingConsulting', {
+                fallback: 'Marketing Consulting',
+              }),
             },
             {
               value: '/growth-solutions',
-              label: 'Growth Solutions',
+              label: t('growthSolutions', {
+                fallback: 'Growth Solutions',
+              }),
             },
           ]}
-          value="Services"
+          value={t('services', { fallback: 'Services' })}
           textWeight={500}
           onChange={value => router.push(value)}
         />
         <Link href="/market-cases">
-          <Text weight={500}>Market Cases</Text>
+          <Text weight={500}>
+            {t('marketCases', { fallback: 'Market Cases' })}
+          </Text>
         </Link>
         <Select
           options={[
             {
               value: '/about-us',
-              label: 'About Us',
+              label: t('aboutUs', { fallback: 'About Us' }),
             },
             {
               value: '/faq',
-              label: 'FAQ',
+              label: t('faq', { fallback: 'FAQ' }),
             },
             {
               value: '/how-we-work',
-              label: 'How We Work',
+              label: t('howWeWork', { fallback: 'How We Work' }),
             },
           ]}
-          value="Company"
+          value={t('company', { fallback: 'Company' })}
           textWeight={500}
           onChange={value => router.push(value)}
         />
         <Link href="/pricing">
-          <Text weight={500}>Pricing</Text>
+          <Text weight={500}>{t('pricing', { fallback: 'Pricing' })}</Text>
         </Link>
         <div className={st.navBtns}>
           <Button variant="grey" onClick={openCartHandler}>
-            <Text weight={500}>Cart</Text>
+            <Text weight={500}>{t('cart', { fallback: 'Cart' })}</Text>
             <Bag />
           </Button>
           <UserBadge />

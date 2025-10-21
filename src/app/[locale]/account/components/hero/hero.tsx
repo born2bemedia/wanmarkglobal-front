@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 import { motion } from '@/shared/lib/motion';
 import { Title } from '@/shared/ui/kit/title';
@@ -8,6 +9,8 @@ import { Title } from '@/shared/ui/kit/title';
 import st from './hero.module.scss';
 
 export function Hero() {
+  const t = useTranslations('account.hero');
+
   return (
     <section className={st.layout}>
       <motion.div
@@ -27,10 +30,10 @@ export function Hero() {
       </motion.div>
       <div className={st.text}>
         <Title weight={500} uppercase>
-          Your Account
+          {t('title', { fallback: 'Your Account' })}
         </Title>
         <Title level={5} color="mediumBlue" weight={500} uppercase>
-          Manage Your Services & Documents
+          {t('text', { fallback: 'Manage Your Services & Documents' })}
         </Title>
       </div>
     </section>

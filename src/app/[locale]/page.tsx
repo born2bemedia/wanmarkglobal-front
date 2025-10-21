@@ -22,8 +22,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function Home() {
-  const cases = await getCases();
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const awaitedParams = await params;
+  const { locale } = awaitedParams;
+
+  const cases = await getCases({ params: { locale } });
   const casesData = await casesLoopMapping(cases.reverse());
 
   const stories = casesData.map(({ slug, title, subTitle, thumbnail }) => ({

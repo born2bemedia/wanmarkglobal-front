@@ -1,5 +1,7 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
+
 import {
   ChangePasswordSchema,
   changePasswordSchema,
@@ -16,6 +18,7 @@ import { Title } from '@/shared/ui/kit/title';
 import st from './personal-info.module.scss';
 
 export function ChangePasswordForm() {
+  const t = useTranslations('changePasswordForm');
   const { user } = useUserStore();
 
   const {
@@ -41,7 +44,11 @@ export function ChangePasswordForm() {
       reset();
     } else {
       console.error(res);
-      notifyError('Password change failed. Please try again later.');
+      notifyError(
+        t('error', {
+          fallback: 'Password change failed. Please try again later.',
+        }),
+      );
     }
   });
 
@@ -49,16 +56,16 @@ export function ChangePasswordForm() {
     <form className={st.form} onSubmit={onSubmit}>
       <section className={st.title}>
         <Title level={5} weight={500} color="darkBlue" uppercase>
-          Password change
+          {t('title', { fallback: 'Password Change' })}
         </Title>
         <Button variant="transparent" className={st.btn}>
           {isSubmitting ? (
             <>
-              CHANGING...
+              {t('saving', { fallback: 'CHANGING...' })}
               <Loader width={14} height={14} />
             </>
           ) : (
-            <>CHANGE</>
+            <>{t('save', { fallback: 'CHANGE' })}</>
           )}
         </Button>
       </section>
@@ -68,8 +75,10 @@ export function ChangePasswordForm() {
           control={control}
           render={({ field, fieldState: { error } }) => (
             <TextField
-              placeholder="Enter New Password"
-              label="New Password"
+              placeholder={t('password.placeholder', {
+                fallback: 'Enter New Password',
+              })}
+              label={t('password.label', { fallback: 'New Password' })}
               hint={error?.message}
               {...field}
             />
@@ -80,8 +89,12 @@ export function ChangePasswordForm() {
           control={control}
           render={({ field, fieldState: { error } }) => (
             <TextField
-              placeholder="Confirm New Password"
-              label="Confirm New Password"
+              placeholder={t('confirmPassword.placeholder', {
+                fallback: 'Confirm New Password',
+              })}
+              label={t('confirmPassword.label', {
+                fallback: 'Confirm New Password',
+              })}
               hint={error?.message}
               {...field}
             />

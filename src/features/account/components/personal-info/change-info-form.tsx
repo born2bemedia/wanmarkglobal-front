@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 import { UserSchema, userSchema } from '@/core/user/lib';
 import { saveUser, useUserStore } from '@/core/user/services';
@@ -24,6 +25,7 @@ export function ChangeInfoForm() {
 
   const { user, setUser } = useUserStore();
   const countryCode = useCountryCode();
+  const t = useTranslations('changeInfoForm');
 
   const {
     handleSubmit,
@@ -57,7 +59,11 @@ export function ChangeInfoForm() {
         setEdit(false);
       } else {
         console.error(res);
-        notifyError('Failed to save user data. Please try again later.');
+        notifyError(
+          t('failed', {
+            fallback: 'Failed to save user data. Please try again later.',
+          }),
+        );
       }
     }
   });
@@ -66,17 +72,17 @@ export function ChangeInfoForm() {
     <form className={st.form} onSubmit={onSubmit}>
       <section className={st.title}>
         <Title level={5} weight={500} color="darkBlue" uppercase>
-          Personal Information
+          {t('title', { fallback: 'Personal Information' })}
         </Title>
         {edit ? (
           <Button variant="transparent" type="submit" className={st.btn}>
             {isSubmitting ? (
               <>
-                SAVING...
+                {t('saving', { fallback: 'SAVING...' })}
                 <Loader width={14} height={14} />
               </>
             ) : (
-              <>SAVE</>
+              <>{t('save', { fallback: 'SAVE' })}</>
             )}
           </Button>
         ) : (
@@ -89,7 +95,7 @@ export function ChangeInfoForm() {
               setEdit(true);
             }}
           >
-            EDIT
+            {t('edit', { fallback: 'EDIT' })}
           </Button>
         )}
       </section>
@@ -100,8 +106,10 @@ export function ChangeInfoForm() {
             control={control}
             render={({ field, fieldState: { error } }) => (
               <TextField
-                placeholder="Enter First Name"
-                label="First Name"
+                placeholder={t('firstName.placeholder', {
+                  fallback: 'Enter First Name',
+                })}
+                label={t('firstName.label', { fallback: 'First Name' })}
                 hint={error?.message}
                 disabled={!edit}
                 {...field}
@@ -113,8 +121,10 @@ export function ChangeInfoForm() {
             control={control}
             render={({ field, fieldState: { error } }) => (
               <TextField
-                placeholder="Enter Last Name"
-                label="Last Name"
+                placeholder={t('lastName.placeholder', {
+                  fallback: 'Enter Last Name',
+                })}
+                label={t('lastName.label', { fallback: 'Last Name' })}
                 hint={error?.message}
                 disabled={!edit}
                 {...field}
@@ -128,8 +138,10 @@ export function ChangeInfoForm() {
             control={control}
             render={({ field, fieldState: { error } }) => (
               <TextField
-                placeholder="Enter Your Email"
-                label="Email"
+                placeholder={t('email.placeholder', {
+                  fallback: 'Enter Your Email',
+                })}
+                label={t('email.label', { fallback: 'Email' })}
                 disabled={!edit}
                 hint={error?.message}
                 {...field}
@@ -141,7 +153,7 @@ export function ChangeInfoForm() {
             control={control}
             render={({ field, fieldState: { error, isTouched } }) => (
               <PhoneField
-                label="Phone"
+                label={t('phone.label', { fallback: 'Phone' })}
                 country={countryCode}
                 hint={isTouched ? error?.message : undefined}
                 disabled={!edit}
@@ -156,8 +168,10 @@ export function ChangeInfoForm() {
             control={control}
             render={({ field, fieldState: { error } }) => (
               <TextField
-                placeholder="Enter Your Address"
-                label="Address"
+                placeholder={t('address.placeholder', {
+                  fallback: 'Enter Your Address',
+                })}
+                label={t('address.label', { fallback: 'Address' })}
                 hint={error?.message}
                 disabled={!edit}
                 {...field}
@@ -169,8 +183,10 @@ export function ChangeInfoForm() {
             control={control}
             render={({ field, fieldState: { error } }) => (
               <TextField
-                placeholder="Enter Your City"
-                label="City"
+                placeholder={t('city.placeholder', {
+                  fallback: 'Enter Your City',
+                })}
+                label={t('city.label', { fallback: 'City' })}
                 hint={error?.message}
                 disabled={!edit}
                 {...field}
@@ -184,8 +200,10 @@ export function ChangeInfoForm() {
             control={control}
             render={({ field, fieldState: { error } }) => (
               <TextField
-                placeholder="Enter Your ZIP"
-                label="ZIP"
+                placeholder={t('zip.placeholder', {
+                  fallback: 'Enter Your ZIP',
+                })}
+                label={t('zip.label', { fallback: 'ZIP' })}
                 hint={error?.message}
                 disabled={!edit}
                 {...field}
@@ -199,8 +217,10 @@ export function ChangeInfoForm() {
               <Autocomplete
                 initialValue={user?.country}
                 items={allowedCountries}
-                placeholder="Select or Enter Your Country"
-                label="Country"
+                placeholder={t('country.placeholder', {
+                  fallback: 'Select or Enter Your Country',
+                })}
+                label={t('country.label', { fallback: 'Country' })}
                 hint={error?.message}
                 onChange={field.onChange}
                 disabled={!edit}

@@ -1,5 +1,7 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
+
 import { ResetPasswordForm } from '@/core/auth/components/reset-password';
 import { LoginSchema, loginSchema } from '@/core/auth/lib/login.schema';
 import { login } from '@/core/auth/services/login.action';
@@ -27,6 +29,8 @@ export function LoginForm() {
   const { openRegister } = useAuthStore();
   const { setUser } = useUserStore();
 
+  const t = useTranslations('loginForm');
+
   const {
     handleSubmit,
     control,
@@ -51,7 +55,9 @@ export function LoginForm() {
       notifySuccess(res.message);
       reset();
     } else {
-      notifyError('Authentication failed. Please try again.');
+      notifyError(
+        t('failed', { fallback: 'Authentication failed. Please try again.' }),
+      );
     }
   });
 
@@ -61,7 +67,7 @@ export function LoginForm() {
     <form onSubmit={onSubmit} className={st.form}>
       <div className={st.header}>
         <Title level={5} color="darkBlue" weight={500} uppercase>
-          Log In
+          {t('title', { fallback: 'Log In' })}
         </Title>
         <button className={st.icon} onClick={() => setOpen(false)}>
           <Close />
@@ -73,8 +79,10 @@ export function LoginForm() {
           control={control}
           render={({ field, fieldState: { error } }) => (
             <TextField
-              placeholder="Enter Your Email"
-              label="Email"
+              placeholder={t('email.placeholder', {
+                fallback: 'Enter Your Email',
+              })}
+              label={t('email.label', { fallback: 'Email' })}
               hint={error?.message}
               {...field}
             />
@@ -86,8 +94,10 @@ export function LoginForm() {
           render={({ field, fieldState: { error } }) => (
             <>
               <TextField
-                placeholder="Enter Your Password"
-                label="Password"
+                placeholder={t('password.placeholder', {
+                  fallback: 'Enter Your Password',
+                })}
+                label={t('password.label', { fallback: 'Password' })}
                 type="password"
                 hint={error?.message}
                 {...field}
@@ -102,7 +112,7 @@ export function LoginForm() {
                   size="sm"
                   className={st.link}
                 >
-                  Forgot your password?
+                  {t('forgotPassword', { fallback: 'Forgot your password?' })}
                 </Text>
               </button>
             </>
@@ -113,23 +123,24 @@ export function LoginForm() {
         <Button variant="black" className={st.btn} disabled={isSubmitting}>
           {isSubmitting ? (
             <>
-              Requesting...
+              {t('requesting', { fallback: 'Requesting...' })}
               <Loader />
             </>
           ) : (
             <>
-              Login <ArrowTopRightCircle color="black" />
+              {t('login', { fallback: 'Login' })}{' '}
+              <ArrowTopRightCircle color="black" />
             </>
           )}
         </Button>
         <Text color="lightBlue">
-          Don&#39;t have an account yet?{' '}
+          {t('dontHaveAccount', { fallback: "Don't have an account yet?" })}{' '}
           <button
             className={st.link}
             type="button"
             onClick={() => openRegister(true)}
           >
-            Registration
+            {t('registration', { fallback: 'Registration' })}
           </button>
         </Text>
       </section>

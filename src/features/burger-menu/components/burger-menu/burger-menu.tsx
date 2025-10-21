@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import {
   Close,
   Content,
@@ -18,6 +19,7 @@ import { UserBadge } from '@/core/user/components';
 
 import { EmptyCartDialog } from '@/features/cart/components';
 import { getCartProducts } from '@/features/cart/services';
+import { LanguageSwitcher } from '@/features/lang-switcher/components';
 
 import { SocialNetworks } from '@/shared/ui/components/social-networks';
 import { Bag, Menu } from '@/shared/ui/icons';
@@ -29,9 +31,11 @@ import { Text } from '@/shared/ui/kit/text';
 import st from './burger-menu.module.scss';
 
 export function BurgerMenu() {
-  const router = useRouter();
   const [open, setOpen] = useState<boolean>(false);
   const [cartDialogOpen, setCartDialogOpen] = useState<boolean>(false);
+
+  const router = useRouter();
+  const t = useTranslations('header');
 
   const openCartHandler = () => {
     const cartProducts = getCartProducts();
@@ -71,7 +75,7 @@ export function BurgerMenu() {
           <section className={st.contentLayout}>
             <Close className={st.close}>
               <Text color="mediumBlue" weight={500}>
-                Menu
+                {t('menu', { fallback: 'Menu' })}
               </Text>
               <CloseIcon color="blue" />
             </Close>
@@ -97,7 +101,9 @@ export function BurgerMenu() {
                         onClick={openCartHandler}
                         className={st.btnsInner}
                       >
-                        <Text weight={500}>Cart</Text>
+                        <Text weight={500}>
+                          {t('cart', { fallback: 'Cart' })}
+                        </Text>
                         <Bag />
                       </Button>
                       <UserBadge className={st.btnsInner} />
@@ -107,62 +113,65 @@ export function BurgerMenu() {
                         options={[
                           {
                             value: '/business-consulting',
-                            label: 'Business Consulting',
+                            label: t('businessConsulting', {
+                              fallback: 'Business Consulting',
+                            }),
                           },
                           {
                             value: '/marketing-consulting',
-                            label: 'Marketing Consulting',
+                            label: t('marketingConsulting', {
+                              fallback: 'Marketing Consulting',
+                            }),
                           },
                           {
                             value: '/growth-solutions',
-                            label: 'Growth Solutions',
+                            label: t('growthSolutions', {
+                              fallback: 'Growth Solutions',
+                            }),
                           },
                         ]}
-                        value="Services"
+                        value={t('services', { fallback: 'Services' })}
                         textWeight={500}
                         onChange={value =>
                           openPageHandler(() => router.push(value))
                         }
                       />
                       <Link href="/market-cases" onClick={() => setOpen(false)}>
-                        <Text weight={500}>Market Cases</Text>
+                        <Text weight={500}>
+                          {t('marketCases', { fallback: 'Market Cases' })}
+                        </Text>
                       </Link>
                       <Select
                         options={[
                           {
                             value: '/about-us',
-                            label: 'About Us',
+                            label: t('aboutUs', { fallback: 'About Us' }),
                           },
                           {
                             value: '/faq',
-                            label: 'FAQ',
+                            label: t('faq', { fallback: 'FAQ' }),
                           },
                           {
                             value: '/how-we-work',
-                            label: 'How We Work',
+                            label: t('howWeWork', { fallback: 'How We Work' }),
                           },
                         ]}
-                        value="Company"
+                        value={t('company', { fallback: 'Company' })}
                         textWeight={500}
                         onChange={value =>
                           openPageHandler(() => router.push(value))
                         }
                       />
                       <Link href="/pricing" onClick={() => setOpen(false)}>
-                        <Text weight={500}>Pricing</Text>
+                        <Text weight={500}>
+                          {t('pricing', { fallback: 'Pricing' })}
+                        </Text>
                       </Link>
                     </section>
                   </section>
                 </section>
                 <section className={st.footer}>
-                  <Select
-                    options={[
-                      { label: 'ENG', value: 'ENG' },
-                      { label: 'DEU', value: 'DEU' },
-                      { label: 'ITA', value: 'ITA' },
-                    ]}
-                    value="ENG"
-                  />
+                  <LanguageSwitcher />
                   <span className={st.networks}>
                     <SocialNetworks />
                   </span>
@@ -177,11 +186,13 @@ export function BurgerMenu() {
 }
 
 function BurgerButton() {
+  const t = useTranslations('header');
+
   return (
     <section className={st.layout}>
       <span className={st.menuLabel}>
         <Text weight={500} color="darkBlue">
-          Menu
+          {t('menu', { fallback: 'Menu' })}
         </Text>
         <Menu />
       </span>
