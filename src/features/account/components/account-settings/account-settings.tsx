@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 import { logout } from '@/core/auth/services/logout.action';
 import { useUserStore } from '@/core/user/services/user.store';
@@ -14,10 +15,19 @@ import { Documents } from '../documents';
 import { Orders } from '../orders';
 import { PersonalInfo } from '../personal-info';
 
-const defaultTabs = [
-  { id: 'yourOrders', label: 'Your Orders' },
-  { id: 'yourDocuments', label: 'Your Documents' },
-  { id: 'yourData', label: 'Your Data' },
+const getDefaultTabs = (t: ReturnType<typeof useTranslations>) => [
+  {
+    id: 'yourOrders',
+    label: t('tabs.yourOrders', { fallback: 'Your Orders' }),
+  },
+  {
+    id: 'yourDocuments',
+    label: t('tabs.yourDocuments', { fallback: 'Your Documents' }),
+  },
+  {
+    id: 'yourData',
+    label: t('tabs.yourData', { fallback: 'Your Data' }),
+  },
 ];
 
 export function AccountSettings({
@@ -27,7 +37,6 @@ export function AccountSettings({
   orders: Order[];
   documents: Document[];
 }) {
-  const { setUser } = useUserStore();
   const [width, setWidth] = useState<number>(0);
   const [isClient, setIsClient] = useState(false);
 
@@ -39,10 +48,15 @@ export function AccountSettings({
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const { setUser } = useUserStore();
+  const t = useTranslations('account.settings');
+
   const logoutHandler = useCallback(async () => {
     setUser(null);
     await logout();
   }, [setUser]);
+
+  const defaultTabs = useMemo(() => getDefaultTabs(t), [t]);
 
   const tabs = useMemo(
     () =>
@@ -50,9 +64,13 @@ export function AccountSettings({
         ? defaultTabs
         : [
             ...defaultTabs,
-            { id: 'logOut', label: 'Log Out', onClick: logoutHandler },
+            {
+              id: 'logOut',
+              label: t('logOut', { fallback: 'Log Out' }),
+              onClick: logoutHandler,
+            },
           ],
-    [width, logoutHandler],
+    [width, logoutHandler, defaultTabs, t],
   );
 
   if (!isClient) {

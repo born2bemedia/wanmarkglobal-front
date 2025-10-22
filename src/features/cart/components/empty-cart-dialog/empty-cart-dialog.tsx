@@ -1,6 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 import { ArrowTopRightCircle } from '@/shared/ui/icons';
 import { Button } from '@/shared/ui/kit/button';
@@ -18,6 +19,7 @@ export function EmptyCartDialog({
   open: boolean;
   onOpen: (open: boolean) => void;
 }) {
+  const t = useTranslations('emptyCartDialog');
   const router = useRouter();
 
   const icon = getRandomIcon();
@@ -32,11 +34,13 @@ export function EmptyCartDialog({
       <section className={st.layout}>
         <div className={st.text}>
           <Title level={5} weight={500} color="darkBlue" uppercase>
-            Your Selected Services
+            {t('title', { fallback: 'Your Selected Services' })}
           </Title>
           <Text color="lightBlue">
-            You haven’t added any services yet. Explore our business and
-            marketing consulting solutions to find the right fit for your goals.
+            {t('text', {
+              fallback:
+                "You haven't added any services yet. Explore our business and marketing consulting solutions to find the right fit for your goals.",
+            })}
           </Text>
         </div>
         {icon}
@@ -47,7 +51,7 @@ export function EmptyCartDialog({
             onOpen(false);
           }}
         >
-          Start here
+          {t('button', { fallback: 'Start here' })}
           <ArrowTopRightCircle color="black" />
         </Button>
       </section>

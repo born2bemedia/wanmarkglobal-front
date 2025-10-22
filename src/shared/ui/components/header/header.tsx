@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 import { LoginDialog } from '@/core/auth/components';
 import { UserBadge } from '@/core/user/components';
@@ -21,12 +21,14 @@ import { Select } from '@/shared/ui/kit/select';
 import { Text } from '@/shared/ui/kit/text';
 
 import st from './header.module.scss';
+import { Link } from '@/i18n/navigation';
 
 export function Header() {
-  const router = useRouter();
-
   const [cartDialogOpen, setCartDialogOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
+
+  const t = useTranslations('header');
+  const router = useRouter();
 
   const openCartHandler = () => {
     const cartProducts = getCartProducts();
@@ -74,49 +76,75 @@ export function Header() {
           options={[
             {
               value: '/business-consulting',
-              label: 'Business Consulting',
+              label: (
+                <Link href="/business-consulting">
+                  {t('businessConsulting', {
+                    fallback: 'Business Consulting',
+                  })}
+                </Link>
+              ),
             },
             {
               value: '/marketing-consulting',
-              label: 'Marketing Consulting',
+              label: (
+                <Link href="/marketing-consulting">
+                  {t('marketingConsulting', {
+                    fallback: 'Marketing Consulting',
+                  })}
+                </Link>
+              ),
             },
             {
               value: '/growth-solutions',
-              label: 'Growth Solutions',
+              label: (
+                <Link href="/growth-solutions">
+                  {t('growthSolutions', {
+                    fallback: 'Growth Solutions',
+                  })}
+                </Link>
+              ),
             },
           ]}
-          value="Services"
+          value={t('services', { fallback: 'Services' })}
           textWeight={500}
-          onChange={value => router.push(value)}
         />
         <Link href="/market-cases">
-          <Text weight={500}>Market Cases</Text>
+          <Text weight={500}>
+            {t('marketCases', { fallback: 'Market Cases' })}
+          </Text>
         </Link>
         <Select
           options={[
             {
               value: '/about-us',
-              label: 'About Us',
+              label: (
+                <Link href="/about-us">
+                  {t('aboutUs', { fallback: 'About Us' })}
+                </Link>
+              ),
             },
             {
               value: '/faq',
-              label: 'FAQ',
+              label: <Link href="/faq">{t('faq', { fallback: 'FAQ' })}</Link>,
             },
             {
               value: '/how-we-work',
-              label: 'How We Work',
+              label: (
+                <Link href="/how-we-work">
+                  {t('howWeWork', { fallback: 'How We Work' })}
+                </Link>
+              ),
             },
           ]}
-          value="Company"
+          value={t('company', { fallback: 'Company' })}
           textWeight={500}
-          onChange={value => router.push(value)}
         />
         <Link href="/pricing">
-          <Text weight={500}>Pricing</Text>
+          <Text weight={500}>{t('pricing', { fallback: 'Pricing' })}</Text>
         </Link>
         <div className={st.navBtns}>
           <Button variant="grey" onClick={openCartHandler}>
-            <Text weight={500}>Cart</Text>
+            <Text weight={500}>{t('cart', { fallback: 'Cart' })}</Text>
             <Bag />
           </Button>
           <UserBadge />

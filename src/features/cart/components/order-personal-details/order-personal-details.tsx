@@ -2,6 +2,7 @@
 
 import { useMemo } from 'react';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 import { useUserStore } from '@/core/user/services/user.store';
 
@@ -29,6 +30,8 @@ import { createOrder } from '../../services/create-order.action';
 import st from './order-personal-details.module.scss';
 
 export function OrderPersonalDetails() {
+  const t = useTranslations('cart.checkout.orderDetails');
+
   const { products } = useCartProducts();
   const countryCode = useCountryCode();
   const router = useRouter();
@@ -71,14 +74,18 @@ export function OrderPersonalDetails() {
       reset();
     } else {
       console.error(res);
-      notifyError('Something went wrong. Please try again later.');
+      notifyError(
+        t('failed', {
+          fallback: 'Something went wrong. Please try again later.',
+        }),
+      );
     }
   });
 
   return (
     <form className={st.layout} onSubmit={onSubmit}>
       <Title level={5} color="black" uppercase>
-        Order Summary
+        {t('orderSummary', { fallback: 'Order Summary' })}
       </Title>
       <Separator className={st.separator} />
       <div className={st.fields}>
@@ -88,8 +95,10 @@ export function OrderPersonalDetails() {
             control={control}
             render={({ field, fieldState: { error } }) => (
               <TextField
-                placeholder="Enter First Name"
-                label="First Name"
+                placeholder={t('firstName.placeholder', {
+                  fallback: 'Enter First Name',
+                })}
+                label={t('firstName.label', { fallback: 'First Name' })}
                 hint={error?.message}
                 {...field}
               />
@@ -100,8 +109,10 @@ export function OrderPersonalDetails() {
             control={control}
             render={({ field, fieldState: { error } }) => (
               <TextField
-                placeholder="Enter Last Name"
-                label="Last Name"
+                placeholder={t('lastName.placeholder', {
+                  fallback: 'Enter Last Name',
+                })}
+                label={t('lastName.label', { fallback: 'Last Name' })}
                 hint={error?.message}
                 {...field}
               />
@@ -114,7 +125,7 @@ export function OrderPersonalDetails() {
             control={control}
             render={({ field, fieldState: { error, isTouched } }) => (
               <PhoneField
-                label="Phone"
+                label={t('phone.label', { fallback: 'Phone' })}
                 country={countryCode}
                 hint={isTouched ? error?.message : undefined}
                 {...field}
@@ -126,8 +137,10 @@ export function OrderPersonalDetails() {
             control={control}
             render={({ field, fieldState: { error } }) => (
               <TextField
-                placeholder="Enter Your Email"
-                label="Email"
+                placeholder={t('email.placeholder', {
+                  fallback: 'Enter Your Email',
+                })}
+                label={t('email.label', { fallback: 'Email' })}
                 hint={error?.message}
                 {...field}
               />
@@ -140,8 +153,10 @@ export function OrderPersonalDetails() {
             control={control}
             render={({ field, fieldState: { error } }) => (
               <TextField
-                placeholder="Enter Your Street"
-                label="Street"
+                placeholder={t('street.placeholder', {
+                  fallback: 'Enter Your Street',
+                })}
+                label={t('street.label', { fallback: 'Street' })}
                 hint={error?.message}
                 {...field}
               />
@@ -152,8 +167,10 @@ export function OrderPersonalDetails() {
             control={control}
             render={({ field, fieldState: { error } }) => (
               <TextField
-                placeholder="Enter Your City"
-                label="City"
+                placeholder={t('city.placeholder', {
+                  fallback: 'Enter Your City',
+                })}
+                label={t('city.label', { fallback: 'City' })}
                 hint={error?.message}
                 {...field}
               />
@@ -167,8 +184,10 @@ export function OrderPersonalDetails() {
             render={({ field, fieldState: { error } }) => (
               <Autocomplete
                 items={allowedCountries}
-                placeholder="Select or Enter Your Country"
-                label="Country"
+                placeholder={t('country.placeholder', {
+                  fallback: 'Select or Enter Your Country',
+                })}
+                label={t('country.label', { fallback: 'Country' })}
                 hint={error?.message}
                 onChange={field.onChange}
               />
@@ -179,8 +198,10 @@ export function OrderPersonalDetails() {
             control={control}
             render={({ field, fieldState: { error } }) => (
               <TextField
-                placeholder="Enter Your ZIP"
-                label="ZIP"
+                placeholder={t('zip.placeholder', {
+                  fallback: 'Enter Your ZIP',
+                })}
+                label={t('zip.label', { fallback: 'ZIP' })}
                 hint={error?.message}
                 {...field}
               />
@@ -199,7 +220,10 @@ export function OrderPersonalDetails() {
                   variant="secondary"
                   checked={field.value}
                   onCheckedChange={field.onChange}
-                  label="I confirm that the provided details are correct."
+                  label={t('agreement.label', {
+                    fallback:
+                      'I confirm that the provided details are correct.',
+                  })}
                 />
                 {error && (
                   <Text color="lightBlue" className={st.agreementError}>
@@ -218,7 +242,10 @@ export function OrderPersonalDetails() {
                   variant="secondary"
                   checked={field.value}
                   onCheckedChange={field.onChange}
-                  label="By placing this order, you agree to the Terms of Use and Privacy Policy."
+                  label={t('isDetailsCorrect.label', {
+                    fallback:
+                      'By placing this order, you agree to the Terms of Use and Privacy Policy.',
+                  })}
                 />
                 {error && (
                   <Text color="lightBlue" className={st.agreementError}>
@@ -236,12 +263,14 @@ export function OrderPersonalDetails() {
         >
           {isSubmitting ? (
             <>
-              Sending...
+              {t('sending', { fallback: 'Sending...' })}
               <Loader />
             </>
           ) : (
             <>
-              Confirm and Request Invoice
+              {t('confirmAndRequestInvoice', {
+                fallback: 'Confirm and Request Invoice',
+              })}
               <ArrowTopRightCircle color="black" />
             </>
           )}

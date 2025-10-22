@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 import { ArrowTopRightCircle } from '@/shared/ui/icons';
 
@@ -17,6 +18,8 @@ export function CaseCard({
   strategy,
   result,
 }: Case) {
+  const t = useTranslations('marketCases.caseCard');
+
   return (
     <div className={st.card}>
       <div className={st.cardThumbnail}>
@@ -33,7 +36,8 @@ export function CaseCard({
           <p>{subTitle}</p>
         </div>
         <Link href={`/market-cases/${slug}`}>
-          Read the Case <ArrowTopRightCircle color="blue" />
+          {t('read', { fallback: 'Read the Case' })}{' '}
+          <ArrowTopRightCircle color="blue" />
         </Link>
       </div>
       <div className={st.cardContent}>
@@ -45,7 +49,7 @@ export function CaseCard({
             height={40}
           />
           <div className={st.info}>
-            <h3>The Challenge</h3>
+            <h3>{t('challenge', { fallback: 'The Challenge' })}</h3>
             <div dangerouslySetInnerHTML={{ __html: challenge }} />
           </div>
         </div>
@@ -57,14 +61,14 @@ export function CaseCard({
             height={40}
           />
           <div className={st.info}>
-            <h3>The Strategy</h3>
+            <h3>{t('strategy', { fallback: 'The Strategy' })}</h3>
             <div dangerouslySetInnerHTML={{ __html: strategy }} />
           </div>
         </div>
         <div className={st.details}>
           <Image src="/cases/result.svg" alt="result" width={40} height={40} />
           <div className={st.info}>
-            <h3>The Result</h3>
+            <h3>{t('result', { fallback: 'The Result' })}</h3>
             <div dangerouslySetInnerHTML={{ __html: result }} />
           </div>
         </div>

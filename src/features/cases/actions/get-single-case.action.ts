@@ -4,11 +4,13 @@ import { OriginCase } from '../lib';
 
 export async function getSingleCase({
   slug,
+  locale,
 }: {
+  locale: string;
   slug: string;
 }): Promise<OriginCase[]> {
   const res = await fetch(
-    `${process.env.SERVER_URL}/api/cases?where[slug][in]=${slug}`,
+    `${process.env.SERVER_URL}/api/cases?where[slug][in]=${slug}&locale=${locale}`,
     {
       method: 'GET',
       next: { revalidate: 60 },

@@ -1,5 +1,7 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
+
 import { useUserStore } from '@/core/user/services/user.store';
 
 import { Controller, useForm, zodResolver } from '@/shared/lib/forms';
@@ -21,6 +23,8 @@ export function RegisterForm() {
   const { setOpen } = useLoginModalStore();
   const { setUser } = useUserStore();
   const { openRegister } = useAuthStore();
+
+  const t = useTranslations('registerForm');
 
   const {
     handleSubmit,
@@ -51,7 +55,7 @@ export function RegisterForm() {
       notifySuccess(res.message);
     } else {
       notifyError(
-        `Something went wrong. ${res.errors.map((e: { message: string }) => e.message).join(' ')}`,
+        `${t('wrong', { fallback: 'Something went wrong.' })} ${res.errors.map((e: { message: string }) => e.message).join(' ')}`,
       );
     }
   });
@@ -60,7 +64,7 @@ export function RegisterForm() {
     <form onSubmit={onSubmit} className={st.form}>
       <div className={st.header}>
         <Title level={5} color="darkBlue" weight={500} uppercase>
-          Register An Account
+          {t('title', { fallback: 'Register An Account' })}
         </Title>
         <button className={st.icon} onClick={() => setOpen(false)}>
           <Close />
@@ -73,8 +77,10 @@ export function RegisterForm() {
             control={control}
             render={({ field, fieldState: { error } }) => (
               <TextField
-                placeholder="Enter First Name"
-                label="First Name"
+                placeholder={t('firstName.placeholder', {
+                  fallback: 'Enter First Name',
+                })}
+                label={t('firstName.label', { fallback: 'First Name' })}
                 hint={error?.message}
                 {...field}
               />
@@ -85,8 +91,10 @@ export function RegisterForm() {
             control={control}
             render={({ field, fieldState: { error } }) => (
               <TextField
-                placeholder="Enter Last Name"
-                label="Last Name"
+                placeholder={t('lastName.placeholder', {
+                  fallback: 'Enter Last Name',
+                })}
+                label={t('lastName.label', { fallback: 'Last Name' })}
                 hint={error?.message}
                 {...field}
               />
@@ -100,7 +108,7 @@ export function RegisterForm() {
             render={({ field, fieldState: { error } }) => (
               <PhoneField
                 placeholder="+1 (555) 000-0000"
-                label="Phone"
+                label={t('phone.label', { fallback: 'Phone' })}
                 hint={error?.message}
                 {...field}
               />
@@ -111,8 +119,10 @@ export function RegisterForm() {
             control={control}
             render={({ field, fieldState: { error } }) => (
               <TextField
-                placeholder="Enter Your Email"
-                label="Email"
+                placeholder={t('email.placeholder', {
+                  fallback: 'Enter Your Email',
+                })}
+                label={t('email.label', { fallback: 'Email' })}
                 hint={error?.message}
                 {...field}
               />
@@ -125,8 +135,10 @@ export function RegisterForm() {
             control={control}
             render={({ field, fieldState: { error } }) => (
               <TextField
-                placeholder="Come up with a password"
-                label="Password"
+                placeholder={t('password.placeholder', {
+                  fallback: 'Come up with a password',
+                })}
+                label={t('password.label', { fallback: 'Password' })}
                 type="password"
                 hint={error?.message}
                 {...field}
@@ -138,8 +150,12 @@ export function RegisterForm() {
             control={control}
             render={({ field, fieldState: { error } }) => (
               <TextField
-                placeholder="Retype Your Password"
-                label="Retype Password"
+                placeholder={t('retypePassword.placeholder', {
+                  fallback: 'Retype Your Password',
+                })}
+                label={t('retypePassword.label', {
+                  fallback: 'Retype Password',
+                })}
                 type="password"
                 hint={error?.message}
                 {...field}
@@ -152,23 +168,24 @@ export function RegisterForm() {
         <Button variant="black" className={st.btn} disabled={isSubmitting}>
           {isSubmitting ? (
             <>
-              Requesting...
+              {t('requesting', { fallback: 'Requesting...' })}
               <Loader />
             </>
           ) : (
             <>
-              Registration <ArrowTopRightCircle color="black" />
+              {t('registration', { fallback: 'Registration' })}{' '}
+              <ArrowTopRightCircle color="black" />
             </>
           )}
         </Button>
         <Text color="lightBlue">
-          Already have an account?{' '}
+          {t('alreadyHaveAccount', { fallback: 'Already have an account?' })}{' '}
           <button
             type="button"
             className={st.link}
             onClick={() => openRegister(false)}
           >
-            Login
+            {t('login', { fallback: 'Login' })}
           </button>
         </Text>
       </section>

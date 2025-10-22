@@ -2,6 +2,7 @@
 
 import { ReactNode } from 'react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 import { motion } from '@/shared/lib/motion';
 import { cn } from '@/shared/lib/styles';
@@ -92,6 +93,8 @@ function ContactUsButton({
   mobile?: boolean;
   children: ReactNode;
 }) {
+  const t = useTranslations('contactUsBtn');
+
   return (
     <Link href="/contact">
       <Button
@@ -104,7 +107,7 @@ function ContactUsButton({
           st.btnWithIcon,
         )}
       >
-        Contact Us
+        {t('text', { fallback: 'Contact Us' })}
         {children}
       </Button>
     </Link>

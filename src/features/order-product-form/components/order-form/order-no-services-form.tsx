@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import ReCaptcha from 'react-google-recaptcha';
+import { useTranslations } from 'next-intl';
 
 import { Controller, useForm, zodResolver } from '@/shared/lib/forms';
 import { useCountryCode } from '@/shared/lib/hooks';
@@ -36,6 +37,8 @@ export function OrderNoServicesForm({
   const [dialogOpen, setDialogOpen] = useState<boolean>(false);
   const [isReCaptchaVerified, setIsReCaptchaVerified] =
     useState<boolean>(false);
+
+  const t = useTranslations('orderNoServicesForm');
 
   const countryCode = useCountryCode();
 
@@ -79,8 +82,10 @@ export function OrderNoServicesForm({
           control={control}
           render={({ field, fieldState: { error } }) => (
             <TextField
-              placeholder="Enter First Name"
-              label="First Name"
+              placeholder={t('firstName.placeholder', {
+                fallback: 'Enter First Name',
+              })}
+              label={t('firstName.label', { fallback: 'First Name' })}
               hint={error?.message}
               {...field}
             />
@@ -91,8 +96,10 @@ export function OrderNoServicesForm({
           control={control}
           render={({ field, fieldState: { error } }) => (
             <TextField
-              placeholder="Enter Last Name"
-              label="Last Name"
+              placeholder={t('lastName.placeholder', {
+                fallback: 'Enter Last Name',
+              })}
+              label={t('lastName.label', { fallback: 'Last Name' })}
               hint={error?.message}
               {...field}
             />
@@ -105,7 +112,7 @@ export function OrderNoServicesForm({
           control={control}
           render={({ field, fieldState: { error, isTouched } }) => (
             <PhoneField
-              label="Phone"
+              label={t('phone.label', { fallback: 'Phone' })}
               country={countryCode}
               hint={isTouched ? error?.message : undefined}
               {...field}
@@ -117,8 +124,10 @@ export function OrderNoServicesForm({
           control={control}
           render={({ field, fieldState: { error } }) => (
             <TextField
-              placeholder="Enter Your Email"
-              label="Email"
+              placeholder={t('email.placeholder', {
+                fallback: 'Enter Your Email',
+              })}
+              label={t('email.label', { fallback: 'Email' })}
               hint={error?.message}
               {...field}
             />
@@ -130,8 +139,12 @@ export function OrderNoServicesForm({
         control={control}
         render={({ field, fieldState: { error } }) => (
           <TextArea
-            placeholder="Tell us a little about the project..."
-            label="Project Description"
+            placeholder={t('projectDescription.placeholder', {
+              fallback: 'Tell us a little about the project...',
+            })}
+            label={t('projectDescription.label', {
+              fallback: 'Project Description',
+            })}
             hint={error?.message}
             {...field}
           />
@@ -147,7 +160,10 @@ export function OrderNoServicesForm({
                 variant="secondary"
                 checked={field.value}
                 onCheckedChange={field.onChange}
-                label="I agree to the Terms and Conditions and Privacy Policy of Wanmark Global."
+                label={t('agreement.label', {
+                  fallback:
+                    'I agree to the Terms and Conditions and Privacy Policy of Wanmark Global.',
+                })}
               />
               {error && (
                 <Text color="lightBlue" className={st.agreementError}>
@@ -164,12 +180,12 @@ export function OrderNoServicesForm({
         >
           {isSubmitting ? (
             <>
-              Sending...
+              {t('sending', { fallback: 'Sending...' })}
               <Loader />
             </>
           ) : (
             <>
-              Request Now
+              {t('requestNow', { fallback: 'Request Now' })}
               <ArrowTopRightCircle color="black" />
             </>
           )}
@@ -188,11 +204,15 @@ export function OrderNoServicesForm({
       >
         <section className={st.dialogContent}>
           <Title level={5} color="darkBlue" weight={500} uppercase>
-            Your request has been submitted!
+            {t('success.title', {
+              fallback: 'Your request has been submitted!',
+            })}
           </Title>
           <Text color="lightBlue">
-            We will review your selections and contact you shortly with a
-            personalized proposal.
+            {t('success.text', {
+              fallback:
+                'We will review your selections and contact you shortly with a personalized proposal.',
+            })}
           </Text>
         </section>
       </Dialog>

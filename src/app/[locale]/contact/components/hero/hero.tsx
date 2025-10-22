@@ -1,0 +1,49 @@
+'use client';
+
+import Image from 'next/image';
+import { useTranslations } from 'next-intl';
+
+import { HeroBanner } from '@/shared/ui/components/hero-banner';
+import { ArrowTopRightCircle } from '@/shared/ui/icons';
+
+import st from './hero.module.scss';
+
+export function Hero() {
+  const t = useTranslations('contact.hero');
+
+  return (
+    <HeroBanner
+      image={
+        <Image
+          className={st.metallicSphere}
+          src="/metallic-about.png"
+          alt="metallic-white"
+          width={648}
+          height={648}
+        />
+      }
+      color="#C1D5FF"
+      title={{
+        color: 'mediumBlue',
+        value: t('title', {
+          fallback: 'Let’s Talk About Your Business Success',
+        }),
+        width: '710px',
+      }}
+      contactText={{
+        color: 'lightBlue',
+        value: t('text', {
+          fallback:
+            'Have questions or need expert guidance? Get in touch with us today.',
+        }),
+        width: '710px',
+      }}
+      scrollToExplore={{
+        color: 'mediumBlue',
+        value: t('scroll', { fallback: 'Scroll to explore' }),
+      }}
+      contactUsIcon={<ArrowTopRightCircle color="blue" />}
+      layoutClassName={st.layout}
+    />
+  );
+}

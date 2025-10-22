@@ -1,0 +1,872 @@
+{
+  "home": {
+    "hero": {
+      "softSky": {
+        "title": "Turn Challenges into Growth.",
+        "subtitle": "Get Expert Guidance for Your Business & Brand.",
+        "text": "Struggling with strategy, marketing, or scaling? We help entrepreneurs, professionals, and small business owners build, grow, and optimize their projects with proven solutions.",
+        "text2": "Turn Challenges into Growth",
+        "next": "NEXT",
+        "scroll": "Scroll to explore"
+      },
+      "pastelPurple": {
+        "title": "100 million new businesses are launched globally each year.",
+        "subtitle": "90% of startups fail, with 70% not surviving between their second and fifth years.",
+        "text": "14% of startups fail due to poor marketing strategies.",
+        "text2": "Turn Challenges",
+        "next": "NEXT",
+        "back": "BACK",
+        "scroll": "Scroll to explore"
+      },
+      "pink": {
+        "title": "Idea is Half the Success.",
+        "text": "To thrive, you need proven business and marketing execution. Every idea entering the market faces competition and standard market laws.",
+        "text2": "Turn Challenges",
+        "next": "NEXT",
+        "back": "BACK",
+        "scroll": "Scroll to explore"
+      }
+    },
+    "howHelps": {
+      "title": "How",
+      "subtitle": "Wanmark Global helps",
+      "cards": {
+        "0": {
+          "title": "Business Consulting",
+          "button": "Go to Business Consulting",
+          "blocks": {
+            "0": {
+              "title": "Validation & Planning",
+              "desc": "Test your idea, structure your business model."
+            },
+            "1": {
+              "title": "Setup & Organization",
+              "desc": "Register, budget, and optimize workflow."
+            },
+            "2": {
+              "title": "First Clients & Growth",
+              "desc": "Launch, attract customers, and scale efficiently."
+            }
+          }
+        },
+        "1": {
+          "title": "Marketing Consulting",
+          "button": "Go to Marketing Consulting",
+          "blocks": {
+            "0": {
+              "title": "Brand & Market Positioning",
+              "desc": "Define your image and target audience."
+            },
+            "1": {
+              "title": "Traffic & Lead Generation",
+              "desc": "Optimize your website, social media, and ads."
+            },
+            "2": {
+              "title": "Sales & Customer Retention",
+              "desc": "Convert leads, nurture clients, and increase profits."
+            }
+          }
+        }
+      }
+    },
+    "whereToStart": {
+      "title": "Not Sure Where to Start?",
+      "subtitle": "Need a Complete Solution?",
+      "text": "Find the right path for your business. Choose a solution that best fits your idea and goals.",
+      "button": "Check Growth Solutions"
+    },
+    "howItWorks": {
+      "title": "How It Works?",
+      "subtitle": "Simple & Effective",
+      "cards": {
+        "0": {
+          "title": "Tell Us About Your Idea",
+          "desc": "Share your goals, challenges, and vision."
+        },
+        "1": {
+          "title": "Get a Tailored Plan",
+          "desc": "We analyze your needs and create a strategy."
+        },
+        "2": {
+          "title": "Implementation & Execution",
+          "desc": "We guide you through the individual strategy."
+        },
+        "3": {
+          "title": "Optimize & Scale",
+          "desc": "Improve results, automate processes, and expand your reach."
+        }
+      }
+    },
+    "faq": {
+      "title": "Got Questions? We Have Answers!",
+      "haveQuestion": "Still Have Questions? Let’s talk.",
+      "contactUs": "Contact Us",
+      "cards": {
+        "0": {
+          "title": "I do not know where to start. Do you work with customers of zero- or idea-level?",
+          "desc": "Yes! We guide you step-by-step from validation to launch. If your idea is not competitive in the market, we will be honest with you."
+        },
+        "1": {
+          "title": "Do I need a big budget for business and marketing consulting?",
+          "desc": "No. We tailor solutions based on your budget and goals. Besides, you can order individual services or complex packages."
+        },
+        "2": {
+          "title": "How long does it take to see results?",
+          "desc": "It varies. We can’t promise specific results within a fixed timeframe, but we ensure you avoid costly mistakes, wasted efforts, and ineffective strategies. With our guidance, you’ll take the right steps, maximizing efficiency and budget use."
+        },
+        "3": {
+          "title": "What if I’ve already started but things aren’t working?",
+          "desc": "We identify the problems, fix what’s missing, and help you move forward. Do not worry, just contact us!"
+        }
+      }
+    },
+    "stories": {
+      "title": "Real Markets. Real Challenges. Real Solutions.",
+      "subtitle": "Examples Speak Louder Than Words. See How Businesses Navigate Success.",
+      "read": "READ FULL STORY"
+    }
+  },
+  "aboutUs": {
+    "hero": {
+      "title": "The Experts Behind Your Business Success",
+      "text": "We don't guess—we use proven formulas and real market data to build businesses that work.",
+      "scroll": "Scroll to explore"
+    },
+    "whatYouGet": {
+      "title": "What You Get with Us",
+      "cards": {
+        "0": {
+          "title": "hours of research and market analysis",
+          "desc": "Every project starts with deep insights into your industry, competitors, and the audience."
+        },
+        "1": {
+          "title": "hours of structured business development",
+          "desc": "We create financial plans, pricing strategies, and step-by-step business models tailored to your goals."
+        },
+        "2": {
+          "title": "hours of execution and strategy implementation",
+          "desc": "From launch to optimization, we guide you through every stage with clear, actionable roadmaps."
+        }
+      }
+    },
+    "provenFormulas": {
+      "title": "We Use Proven Formulas for Success",
+      "text": {
+        "0": "Every successful business follows a structured approach. Our consulting is based on a",
+        "1": "reliable, market-tested formula",
+        "2": "that works across industries:"
+      }
+    },
+    "formulaBlock": {
+      "yourIdea": "Your Idea",
+      "wanmarkExpertise": "Wanmark Expertise",
+      "marketKnowledge": "Market Knowledge",
+      "yourBusinessSuccess": "Your Business Success"
+    },
+    "whyChoose": {
+      "title": "Why Choose Wanmark Global?",
+      "cards": {
+        "0": {
+          "title": "You work with real experts",
+          "desc": "Our team applies decades of combined experience to every project."
+        },
+        "1": {
+          "title": "You get structured, documented strategies",
+          "desc": "No vague advice, just clear business roadmaps and execution plans."
+        },
+        "2": {
+          "title": "You avoid costly mistakes",
+          "desc": "We focus on data-driven decisions, not guesswork."
+        }
+      }
+    },
+    "needAssistance": {
+      "title": "Need Assistance?",
+      "subtitle": "Skyrocket Your Business with Expert Guidance",
+      "text": "Remove all obstacles, avoid costly mistakes, and follow a proven path to success. Let’s build and grow your business together.",
+      "button": "Contact Us"
+    }
+  },
+  "businessConsulting": {
+    "hero": {
+      "title": "Business Consulting",
+      "text": "Start, Structure, and Grow Your Business",
+      "scroll": "Scroll to explore"
+    },
+    "setup": {
+      "title": "Business Setup & Structure",
+      "desc": "Lay the groundwork for a legally sound, financially stable, and well-organized business."
+    },
+    "operationsAndEfficiency": {
+      "title": "Operations & Efficiency",
+      "desc": "Eliminate inefficiencies and structure your daily workflow for maximum productivity."
+    },
+    "clientAcquisition": {
+      "title": "Client Acquisition & Sales Strategy",
+      "desc": "Develop a structured approach to attract and convert customers effectively."
+    },
+    "scalingBusinessGrowth": {
+      "title": "Scaling & Business Growth",
+      "desc": "Expand your business strategically, automate processes, and increase revenue."
+    },
+    "consultingPackage": {
+      "title": {
+        "0": "Flexible Business",
+        "1": "Consulting Package"
+      },
+      "desc": {
+        "0": "Need multiple services across different categories?",
+        "1": "Build your own package and get a custom price with a bulk order discount."
+      },
+      "howItWorks": "How It Works",
+      "price": "Price:",
+      "onDemand": "On Demand",
+      "request": "Request",
+      "cards": {
+        "0": "Select the services you need from any segment.",
+        "1": "Get a personalized plan tailored to your business goals.",
+        "2": "Enjoy a lower price per service when bundling multiple options."
+      }
+    },
+    "packageInfo": {
+      "title": "Package Request Form",
+      "text": "Request Your Custom Business Consulting Solution"
+    }
+  },
+  "contactUsBtn": {
+    "text": "Contact Us"
+  },
+  "orderForm": {
+    "failed": "Failed to send the request. Please try again later.",
+    "firstName": {
+      "placeholder": "Enter First Name",
+      "label": "First Name"
+    },
+    "lastName": {
+      "placeholder": "Enter Last Name",
+      "label": "Last Name"
+    },
+    "phone": {
+      "label": "Phone"
+    },
+    "email": {
+      "placeholder": "Enter Your Email",
+      "label": "Email"
+    },
+    "projectDescription": {
+      "placeholder": "Tell us a little about the project...",
+      "label": "Project Description"
+    },
+    "selectedServices": {
+      "label": "Select Services"
+    },
+    "agreement": {
+      "label": "I agree to the Terms and Conditions and Privacy Policy of Wanmark Global."
+    },
+    "requestNow": "Request Now",
+    "sending": "Sending...",
+    "success": {
+      "title": "Your request has been submitted!",
+      "text": "We will review your selections and contact you shortly with a personalized proposal."
+    }
+  },
+  "cart": {
+    "hero": {
+      "title": "Your Selected Services"
+    },
+    "checkout": {
+      "orderSummary": {
+        "title": "Order Summary",
+        "noProducts": "No Products",
+        "total": "Total:"
+      },
+      "orderDetails": {
+        "failed": "Something went wrong. Please try again later.",
+        "orderSummary": "Order Summary",
+        "firstName": {
+          "placeholder": "Enter First Name",
+          "label": "First Name"
+        },
+        "lastName": {
+          "placeholder": "Enter Last Name",
+          "label": "Last Name"
+        },
+        "phone": {
+          "label": "Phone"
+        },
+        "email": {
+          "placeholder": "Enter Your Email",
+          "label": "Email"
+        },
+        "street": {
+          "placeholder": "Enter Your Street",
+          "label": "Street"
+        },
+        "city": {
+          "placeholder": "Enter Your City",
+          "label": "City"
+        },
+        "country": {
+          "placeholder": "Select or Enter Your Country",
+          "label": "Country"
+        },
+        "zip": {
+          "placeholder": "Enter Your ZIP",
+          "label": "ZIP"
+        },
+        "agreement": {
+          "label": "I confirm that the provided details are correct."
+        },
+        "isDetailsCorrect": {
+          "label": "By placing this order, you agree to the Terms of Use and Privacy Policy."
+        },
+        "sending": "Sending...",
+        "confirmAndRequestInvoice": "Confirm and Request Invoice"
+      }
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Let’s Talk About Your Business Success",
+      "text": "Have questions or need expert guidance? Get in touch with us today.",
+      "scroll": "Scroll to explore"
+    },
+    "generalRequestForm": {
+      "title": "General Inquiry Form",
+      "description": "Need assistance or more information? Send us your request, and we’ll respond shortly."
+    },
+    "contactInfo": {
+      "title": "Email & Phone",
+      "text": "Reach out to our team directly for assistance.",
+      "phone": "Phone",
+      "email": "Email"
+    },
+    "ourOffices": {
+      "title": "Our Offices",
+      "desc": "Official company registration details.",
+      "registeredAddress": "Registered Address",
+      "officeAddress": "Office Address"
+    }
+  },
+  "orderNoServicesForm": {
+    "failed": "Failed to send the request. Please try again later.",
+    "firstName": {
+      "placeholder": "Enter First Name",
+      "label": "First Name"
+    },
+    "lastName": {
+      "placeholder": "Enter Last Name",
+      "label": "Last Name"
+    },
+    "phone": {
+      "label": "Phone"
+    },
+    "email": {
+      "placeholder": "Enter Your Email",
+      "label": "Email"
+    },
+    "projectDescription": {
+      "placeholder": "Tell us a little about the project...",
+      "label": "Project Description"
+    },
+    "agreement": {
+      "label": "I agree to the Terms and Conditions and Privacy Policy of Wanmark Global."
+    },
+    "requestNow": "Request Now",
+    "sending": "Sending...",
+    "success": {
+      "title": "Your request has been submitted!",
+      "text": "We will review your selections and contact you shortly with a personalized proposal."
+    }
+  },
+  "faq": {
+    "hero": {
+      "title": "Answers to Your Questions",
+      "text": "Clear, specific details about our services, process, and how we help turn ideas into businesses.",
+      "scroll": "Scroll to explore"
+    },
+    "haveQuestion": {
+      "title": "Still Have Questions?",
+      "text": "If you don't see your question here, feel free to contact our team for assistance.",
+      "button": "Contact Us"
+    },
+    "aboutOurServices": {
+      "title": "About Our Services",
+      "items": {
+        "0": {
+          "title": "What documents do I receive after purchasing a service?",
+          "desc": "Depending on the service, you will receive well-structured strategies, reports, analyses, financial models, marketing roadmaps, and other deliverables in your client account. These documents are professionally formatted and ready for implementation."
+        },
+        "1": {
+          "title": "Do you help with legal company registration and setup?",
+          "desc": "We provide legal and registration guidance, helping you understand business structures, tax basics, and compliance. However, we do not handle direct company registration or legal filings."
+        },
+        "2": {
+          "title": "Can I request changes to a completed service?",
+          "desc": "Yes, we will refine the deliverables if you need minor adjustments based on our initial agreement. We can discuss custom consulting options for additional work beyond the original scope."
+        },
+        "3": {
+          "title": "How do I know which service is right for me?",
+          "desc": "If you're unsure, you can either explore our structured packages or request a consultation, during which we assess your needs and recommend the best approach."
+        }
+      }
+    },
+    "aboutTheProcess": {
+      "title": "About the Process",
+      "items": {
+        "0": {
+          "title": "When do I need to pay for the services?",
+          "desc": "Payment is required before we start working on your project. Once we receive your order, we send you an invoice with bank transfer details. After payment confirmation, we begin execution."
+        },
+        "1": {
+          "title": "Can I pay with a credit card or PayPal?",
+          "desc": "Currently, we only accept bank transfers. You will receive payment details along with your invoice after placing an order."
+        },
+        "2": {
+          "title": "What happens if I'm dissatisfied with the service?",
+          "desc": "We ensure clear expectations and regular check-ins during the process to prevent this. However, if you're not satisfied with the outcome, we will work with you to adjust or refine the deliverables within the agreed scope."
+        },
+        "3": {
+          "title": "How will I communicate with my assigned consultant?",
+          "desc": "Your dedicated manager will coordinate the process and communicate with you via email, scheduled calls, or sessions based on the service package."
+        }
+      }
+    },
+    "clientsQuestions": {
+      "title": "Clients Questions",
+      "items": {
+        "0": {
+          "title": "I want to start a business but have nothing yet. Where should I begin?",
+          "desc": "If you only have an idea, start with our Business Foundation Package. We will help you validate your idea, develop a business model, set pricing, and plan finances—all essential first steps before launching."
+        },
+        "1": {
+          "title": "Do I need experience in business or marketing to work with you?",
+          "desc": "No, our services are designed for both beginners and experienced entrepreneurs. We guide you through the process, providing clear strategies and actionable recommendations."
+        },
+        "2": {
+          "title": "Can I buy multiple services at once?",
+          "desc": "Yes, you can bundle multiple services or choose a Growth Package that includes everything you need at a lower total cost. If you want a custom combination, we offer flexible consulting packages where you select services that fit your needs."
+        },
+        "3": {
+          "title": "How long does it take to complete a service?",
+          "desc": "Timelines vary depending on the service. Simple strategies and reports can take a few days, while full consulting packages, depending on complexity, may require several weeks. After placing your order, you will receive a clear delivery timeline."
+        }
+      }
+    }
+  },
+  "growthSolutions": {
+    "hero": {
+      "title": "Growth Solutions",
+      "text": "From Idea to a Thriving Business",
+      "scroll": "Scroll to explore"
+    },
+    "customSolution": {
+      "title": "Need a Custom Solution?",
+      "text": "Build your own package and get a tailored plan at a lower price.",
+      "request": "Request"
+    },
+    "requestForm": {
+      "title": "Package Request Form",
+      "description": "Request Your Custom Business Consulting Solution"
+    }
+  },
+  "packageCard": {
+    "productAdded": {
+      "0": "Product",
+      "1": "added to cart"
+    },
+    "productAlreadyAdded": {
+      "0": "Product",
+      "1": "already added in the cart"
+    },
+    "includes": "Includes:",
+    "price": "Price:",
+    "orderNow": "Order Now"
+  },
+  "howWeWork": {
+    "hero": {
+      "title": "How we work",
+      "text": "A structured approach to consulting—so you always know what’s happening next.",
+      "scroll": "Scroll to explore"
+    },
+    "overview": {
+      "0": {
+        "title": "Order Review & Custom Team Assembly",
+        "desc": "Once you place an order, we review your request and invoice you. If needed, we’ll contact you to clarify details and ensure we fully understand your goals. At this stage, we explore your needs and assemble a team of experts best suited to deliver your required services."
+      },
+      "1": {
+        "title": "Secure Payment Account Access",
+        "desc": "After receiving your payment, we will send you a confirmation email with your account credentials. Your dedicated team will then begin working on your project, ensuring each step aligns with your business objectives."
+      },
+      "2": {
+        "title": "Collaborative Execution & Strategy Sessions",
+        "desc": "Throughout the process, we maintain direct communication with you. We schedule strategy sessions to refine ideas, adjust plans, and ensure we meet your expectations every step of the way."
+      },
+      "3": {
+        "title": "Full Access to Order Documents & Deliverables",
+        "desc": "Once services are completed, you’ll find all reports, strategies, guides, and other documented deliverables in your account. This ensures you have ongoing access to all materials, even after your order is fulfilled."
+      }
+    },
+    "helpToContact": {
+      "title": "Have Questions? We're Here to Help",
+      "text": "Not sure how it works or need more details? Our team is ready to assist you!"
+    }
+  },
+  "contactUsButton": {
+    "label": "Contact Us"
+  },
+  "marketCases": {
+    "hero": {
+      "title": "Market Cases",
+      "text": "How Strategic Planning Turns Ideas into Success",
+      "scroll": "Scroll to explore"
+    },
+    "caseCard": {
+      "read": "Read the Case",
+      "challenge": "The Challenge",
+      "strategy": "The Strategy",
+      "result": "The Result"
+    },
+    "achive": {
+      "title": "Want to Achieve the Same Success?",
+      "text": "We have the knowledge, expertise, and proven strategies to turn bold ideas into thriving businesses. With structured planning, market-tested execution, and data-driven marketing, your project can be the next big success story.",
+      "button": "Contact Us"
+    }
+  },
+  "marketCasesSlug": {
+    "hero": {
+      "scroll": "Scroll to explore"
+    },
+    "theChallenge": "The Challenge:",
+    "theStrategy": "The Strategy:",
+    "theResult": "The Result:",
+    "contactUs": "Contact Us"
+  },
+  "marketingConsulting": {
+    "hero": {
+      "title": "Marketing Consulting",
+      "text": "Get Noticed, Get Clients, Get Results",
+      "scroll": "Scroll to explore"
+    },
+    "brandMarketPositioning": {
+      "title": "Brand & Market Positioning",
+      "desc": "Define your place in the market and make your brand stand out."
+    },
+    "websiteStrategy": {
+      "title": "Online Presence & Website Strategy",
+      "desc": "Turn your website into a lead-generating machine, not just an online brochure."
+    },
+    "socialContentStrategy": {
+      "title": "Social Media & Content Strategy",
+      "desc": "Build an online presence that attracts and engages your audience."
+    },
+    "customerAcquisition": {
+      "title": "Paid Advertising & Customer Acquisition",
+      "desc": "Launch data-driven ad campaigns that bring in real, paying customers."
+    },
+    "salesLeadStrategy": {
+      "title": "Sales & Lead Nurturing Strategy",
+      "desc": "Turn leads into loyal clients with the right follow-up and conversion tactics."
+    },
+    "marketingConsultingPackage": {
+      "title": {
+        "0": "Flexible Marketing",
+        "1": "Consulting Package"
+      },
+      "desc": "Build your own package and get a custom price with a bulk order discount.",
+      "howItWorks": "How It Works",
+      "price": "Price:",
+      "onDemand": "On Demand",
+      "request": "Request",
+      "cards": {
+        "0": "Select the marketing services you need from any category.",
+        "1": "Get a personalized plan tailored to your business goals.",
+        "2": "Enjoy a lower price per service when bundling multiple options."
+      },
+      "requestForm": {
+        "title": "Package Request Form",
+        "description": "Request Your Custom Marketing Consulting Solution"
+      }
+    }
+  },
+  "pricing": {
+    "hero": {
+      "title": "Let’s Make It Clear",
+      "text": "Learn how we price our business and marketing consulting services and what goes into the cost.",
+      "scroll": "Scroll to explore"
+    },
+    "whatDetermines": {
+      "title": "What Determines the Price",
+      "text": "Every consulting project is unique, and pricing depends on several key factors:",
+      "learn": "Learn How We Work",
+      "reasons": {
+        "0": {
+          "title": "Scope of Services",
+          "desc": "The number and complexity of services required."
+        },
+        "1": {
+          "title": "Customization Level",
+          "desc": "Each strategy is tailored to your specific goals."
+        },
+        "2": {
+          "title": "Expert Involvement",
+          "desc": "You work with a dedicated manager and top-tier specialists."
+        },
+        "3": {
+          "title": "Long-Term Impact",
+          "desc": "Our strategies are designed for sustainable business growth, not quick fixes."
+        }
+      }
+    },
+    "fixedPackages": {
+      "title": "Fixed Packages vs. Custom Solutions",
+      "text": "We offer two pricing models to fit different needs:",
+      "packages": {
+        "0": {
+          "title": "Business Idea Validation",
+          "desc": "Pre-defined service bundles for structured business growth. These provide clear deliverables and cost transparency.",
+          "button": "Business Consulting"
+        },
+        "1": {
+          "title": "Custom Consulting Solutions",
+          "desc": "Fully tailored strategies where you select individual services based on your business goals.",
+          "button": "Marketing Consulting"
+        }
+      }
+    },
+    "why": {
+      "title": "Why Consulting Saves You Money",
+      "contactUs": "Working with experienced consultants helps you:",
+      "contactUsButton": "Explore Growth Solutions",
+      "reasons": {
+        "0": {
+          "title": "Avoid costly mistakes",
+          "desc": "that can set your business back."
+        },
+        "1": {
+          "title": "Save time",
+          "desc": "by getting expert insights without trial and error."
+        },
+        "2": {
+          "title": "Maximize ROI",
+          "desc": "with strategies that generate long-term results."
+        }
+      }
+    },
+    "needAssistance": {
+      "title": "Have Questions About Pricing?",
+      "text": "If you’re unsure which solution fits your budget and needs, contact us for a consultation. Request pricing consultation now!",
+      "button": "Contact Us"
+    }
+  },
+  "policies": {
+    "privacy": {
+      "title": "Privacy Policy"
+    },
+    "cookie": {
+      "title": "Cookie Policy"
+    },
+    "refund": {
+      "title": "Refund Policy"
+    },
+    "terms": {
+      "title": "Terms of Use"
+    }
+  },
+  "thankYou": {
+    "hero": {
+      "title": "Thank You for Your Order!"
+    },
+    "orderGreeting": {
+      "title": "Your order has been successfully placed! We've sent a confirmation email with your invoice and payment instructions to your email.",
+      "text": "Once we receive your payment, our team will begin processing your request. If you have any questions, feel free to contact us at"
+    },
+    "nextSteps": {
+      "title": "What is next?",
+      "return": "Return to Homepage",
+      "steps": {
+        "0": "Check your email for your invoice and payment details.",
+        "1": "Complete the bank transfer using the provided instructions.",
+        "2": "We will notify you once your payment is received and your services are initiated."
+      }
+    }
+  },
+  "header": {
+    "businessConsulting": "Business Consulting",
+    "marketingConsulting": "Marketing Consulting",
+    "growthSolutions": "Growth Solutions",
+    "marketCases": "Market Cases",
+    "aboutUs": "About Us",
+    "faq": "FAQ",
+    "howWeWork": "How We Work",
+    "pricing": "Pricing",
+    "cart": "Cart",
+    "menu": "Menu",
+    "services": "Services",
+    "company": "Company"
+  },
+  "emptyCartDialog": {
+    "title": "Your Selected Services",
+    "text": "You haven’t added any services yet. Explore our business and marketing consulting solutions to find the right fit for your goals.",
+    "button": "Start here"
+  },
+  "loginForm": {
+    "title": "Log In",
+    "email": {
+      "placeholder": "Enter Your Email",
+      "label": "Email"
+    },
+    "password": {
+      "placeholder": "Enter Your Password",
+      "label": "Password"
+    },
+    "forgotPassword": "Forgot your password?",
+    "dontHaveAccount": "Don't have an account yet?",
+    "registration": "Registration",
+    "login": "Login",
+    "requesting": "Requesting...",
+    "failed": "Authentication failed. Please try again."
+  },
+  "registerForm": {
+    "wrong": "Something went wrong.",
+    "title": "Register An Account",
+    "firstName": {
+      "placeholder": "Enter First Name",
+      "label": "First Name"
+    },
+    "lastName": {
+      "placeholder": "Enter Last Name",
+      "label": "Last Name"
+    },
+    "phone": {
+      "label": "Phone"
+    },
+    "email": {
+      "placeholder": "Enter Your Email",
+      "label": "Email"
+    },
+    "password": {
+      "placeholder": "Come up with a password",
+      "label": "Password"
+    },
+    "retypePassword": {
+      "placeholder": "Retype Your Password",
+      "label": "Retype Password"
+    },
+    "registration": "Registration",
+    "requesting": "Requesting...",
+    "alreadyHaveAccount": "Already have an account?",
+    "login": "Login"
+  },
+  "account": {
+    "hero": {
+      "title": "Your Account",
+      "text": "Manage Your Services & Documents"
+    },
+    "settings": {
+      "tabs": {
+        "yourOrders": "Your Orders",
+        "yourDocuments": "Your Documents",
+        "yourData": "Your Data"
+      },
+      "logOut": "Log Out"
+    },
+    "orders": {
+      "title": "Your Orders",
+      "desc": "Review your past and current orders, track progress, and check payment status.",
+      "orderId": "Order ID",
+      "orderDate": "Order Date",
+      "services": "Services",
+      "orderStatus": "Order Status",
+      "paymentMethod": "Payment Method",
+      "getInvoice": "Get Invoice",
+      "download": "DOWNLOAD"
+    },
+    "documents": {
+      "title": "Your Documents",
+      "desc": "Track your order fulfillment progress and download reports, strategies, guides, and other provided documents.",
+      "orderId": "Order ID",
+      "services": "Services",
+      "documentation": "Documentation",
+      "download": "DOWNLOAD"
+    },
+    "personalInfo": {
+      "title": "Your Data",
+      "desc": "Manage your personal and billing information to keep your account up to date."
+    }
+  },
+  "changeInfoForm": {
+    "failed": "Failed to save user data. Please try again later.",
+    "title": "Personal Information",
+    "saving": "SAVING...",
+    "save": "SAVE",
+    "edit": "EDIT",
+    "firstName": {
+      "placeholder": "Enter First Name",
+      "label": "First Name"
+    },
+    "lastName": {
+      "placeholder": "Enter Last Name",
+      "label": "Last Name"
+    },
+    "email": {
+      "placeholder": "Enter Your Email",
+      "label": "Email"
+    },
+    "phone": {
+      "label": "Phone"
+    },
+    "address": {
+      "placeholder": "Enter Your Address",
+      "label": "Address"
+    },
+    "city": {
+      "placeholder": "Enter Your City",
+      "label": "City"
+    },
+    "zip": {
+      "placeholder": "Enter Your ZIP",
+      "label": "ZIP"
+    },
+    "country": {
+      "placeholder": "Select or Enter Your Country",
+      "label": "Country"
+    }
+  },
+  "changePasswordForm": {
+    "error": "Password change failed. Please try again later.",
+    "title": "Password Change",
+    "saving": "CHANGING...",
+    "save": "CHANGE",
+    "password": {
+      "placeholder": "Enter New Password",
+      "label": "New Password"
+    },
+    "confirmPassword": {
+      "placeholder": "Confirm New Password",
+      "label": "Confirm New Password"
+    }
+  },
+  "footer": {
+    "title": "Business & Marketing, Engineered for Your Success.",
+    "registeredAddress": "Registered Address:",
+    "officeAddress": "Office address:",
+    "allRightsReserved": "All rights reserved.",
+    "termsOfUse": "Terms of Use",
+    "privacyPolicy": "Privacy Policy",
+    "cookiePolicy": "Cookie Policy",
+    "refundPolicy": "Refund Policy",
+    "company": "Company",
+    "marketCases": "Market Cases",
+    "aboutUs": "About Us",
+    "contact": "Contact",
+    "services": "Services",
+    "businessConsulting": "Business Consulting",
+    "marketingConsulting": "Marketing Consulting",
+    "growthSolutions": "Growth Solutions",
+    "howWeWork": "How We Work",
+    "faq": "FAQ",
+    "pricing": "Pricing",
+    "resources": "Resources"
+  }
+}

@@ -2,6 +2,7 @@
 
 import { JSX, ReactNode } from 'react';
 import toast from 'react-hot-toast';
+import { useTranslations } from 'next-intl';
 
 import { getCartProducts } from '@/features/cart/services';
 
@@ -32,6 +33,8 @@ export function PackageCard({
   services: { icon: JSX.Element; title: string }[];
   color: 'surfaceYellow' | 'grey';
 }) {
+  const t = useTranslations('packageCard');
+
   const layoutClasses = cn(st.layout, {
     [st.surfaceYellowColor]: color === 'surfaceYellow',
     [st.greyColor]: color === 'grey',
@@ -55,11 +58,15 @@ export function PackageCard({
     const existingProduct = products.find(product => product.title === title);
 
     if (existingProduct) {
-      toast.error(`Product ${title} already added in the cart`);
+      toast.error(
+        `${t('productAlreadyAdded.0', { fallback: 'Product' })} ${title} ${t('productAlreadyAdded.1', { fallback: 'already added in the cart' })}`,
+      );
     } else {
       const orderProducts = [...products, { id, title, icon, price, color }];
       lsWrite('cart', orderProducts);
-      toast.success(`Product ${title} added to cart`);
+      toast.success(
+        `${t('productAdded.0', { fallback: 'Product' })} ${title} ${t('productAdded.1', { fallback: 'added to cart' })}`,
+      );
     }
   };
 
@@ -80,7 +87,7 @@ export function PackageCard({
           {description}
         </Title>
         <Text color="lightBlue" weight={500} size="lg" className={st.includes}>
-          Includes:
+          {t('includes', { fallback: 'Includes:' })}
         </Text>
         <section className={st.serviceLayout}>
           {services.map(({ icon, title }) => (
@@ -94,14 +101,15 @@ export function PackageCard({
         </section>
         <section className={st.orderLayout}>
           <Title level={4} color="mediumBlue" weight={300}>
-            Price: <span className={st.price}>€{price}</span>
+            {t('price', { fallback: 'Price:' })}{' '}
+            <span className={st.price}>€{price}</span>
           </Title>
           <Button
             variant="black"
             className={st.orderBtn}
             onClick={() => onOrderHandler({ id, icon, title, price, color })}
           >
-            Order Now
+            {t('orderNow', { fallback: 'Order Now' })}
             <ArrowTopRightCircle color="black" />
           </Button>
         </section>
