@@ -16,10 +16,15 @@ export const metadata: Metadata = {
   robots: 'noindex',
 };
 
-export default async function PrivacyPolicy() {
+export default async function PrivacyPolicy({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   const t = await getTranslations('policies.privacy');
 
-  const res = await getPolicy({ id: '2' });
+  const res = await getPolicy({ id: '2', locale });
   const { elements } = parseJSONToElements(res.content.root.children);
 
   return (
