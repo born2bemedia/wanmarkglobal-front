@@ -14,10 +14,15 @@ export const metadata: Metadata = {
   robots: 'noindex',
 };
 
-export default async function TermsOfUse() {
+export default async function TermsOfUse({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   const t = await getTranslations('policies.terms');
 
-  const res = await getPolicy({ id: '1' });
+  const res = await getPolicy({ id: '1', locale });
   const { elements } = parseJSONToElements(res.content.root.children);
 
   return (

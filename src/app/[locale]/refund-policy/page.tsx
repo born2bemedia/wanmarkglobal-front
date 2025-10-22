@@ -16,10 +16,15 @@ export const metadata: Metadata = {
   robots: 'noindex',
 };
 
-export default async function RefundPolicy() {
+export default async function RefundPolicy({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   const t = await getTranslations('policies.refund');
 
-  const res = await getPolicy({ id: '4' });
+  const res = await getPolicy({ id: '4', locale });
   const { elements, lastUpdate } = parseJSONToElements(
     res.content.root.children,
   );
