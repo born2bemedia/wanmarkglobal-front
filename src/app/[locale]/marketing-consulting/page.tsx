@@ -21,17 +21,24 @@ export const metadata: Metadata = {
   },
 };
 
-export default function MarketingConsulting() {
+export default async function MarketingConsulting({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const awaitedParams = await params;
+  const { locale } = awaitedParams;
+
   return (
     <main>
       <Hero />
-      <BrandMarketPositioning />
-      <WebsiteStrategy />
-      <SocialContentStrategy />
-      <CustomerAcquisition />
-      <SalesLeadStrategy />
+      <BrandMarketPositioning locale={locale} />
+      <WebsiteStrategy locale={locale} />
+      <SocialContentStrategy locale={locale} />
+      <CustomerAcquisition locale={locale} />
+      <SalesLeadStrategy locale={locale} />
       <MarketingConsultingPackage />
-      <MarketingRequestForm />
+      <MarketingRequestForm locale={locale} />
     </main>
   );
 }

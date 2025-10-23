@@ -4,11 +4,12 @@ import { ProductList } from '@/features/product/components';
 import { productsMapping } from '@/features/product/lib';
 import { getProducts } from '@/features/product/services';
 
-export async function BrandMarketPositioning() {
+export async function BrandMarketPositioning({ locale }: { locale: string }) {
   const t = await getTranslations('marketingConsulting.brandMarketPositioning');
 
   const productsData = await getProducts({
     slug: 'brand-and-market-positioning',
+    locale,
   });
   const products = await productsMapping(productsData);
 

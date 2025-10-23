@@ -4,11 +4,12 @@ import { ProductList } from '@/features/product/components';
 import { productsMapping } from '@/features/product/lib';
 import { getProducts } from '@/features/product/services';
 
-export async function SalesLeadStrategy() {
+export async function SalesLeadStrategy({ locale }: { locale: string }) {
   const t = await getTranslations('marketingConsulting.salesLeadStrategy');
 
   const productsData = await getProducts({
     slug: 'sales-and-lead-nurturing-strategy',
+    locale,
   });
   const products = await productsMapping(productsData);
 

@@ -20,16 +20,23 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function BusinessConsulting() {
+export default async function BusinessConsulting({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const awaitedParams = await params;
+  const { locale } = awaitedParams;
+
   return (
     <main>
       <Hero />
-      <BusinessSetup />
-      <OperationsAndEfficiency />
-      <ClientAcquisition />
-      <ScalingBusinessGrowth />
+      <BusinessSetup locale={locale} />
+      <OperationsAndEfficiency locale={locale} />
+      <ClientAcquisition locale={locale} />
+      <ScalingBusinessGrowth locale={locale} />
       <BusinessConsultingPackage />
-      <PackageRequestForm />
+      <PackageRequestForm locale={locale} />
     </main>
   );
 }

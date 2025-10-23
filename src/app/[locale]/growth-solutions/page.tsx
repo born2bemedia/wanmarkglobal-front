@@ -22,10 +22,17 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function GrowthSolutions() {
+export default async function GrowthSolutions({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const awaitedParams = await params;
+  const { locale } = awaitedParams;
+
   const t = await getTranslations('growthSolutions.requestForm');
 
-  const products = await getProducts({ slug: 'growth-solutions' });
+  const products = await getProducts({ slug: 'growth-solutions', locale });
   const solutions = solutionsMapping(products);
 
   const solutionPairs = Array.from(
