@@ -4,11 +4,12 @@ import { ProductList } from '@/features/product/components';
 import { productsMapping } from '@/features/product/lib';
 import { getProducts } from '@/features/product/services';
 
-export async function ScalingBusinessGrowth() {
+export async function ScalingBusinessGrowth({ locale }: { locale: string }) {
   const t = await getTranslations('businessConsulting.scalingBusinessGrowth');
 
   const productsData = await getProducts({
     slug: 'scaling-and-business-growth',
+    locale,
   });
   const products = await productsMapping(productsData);
 

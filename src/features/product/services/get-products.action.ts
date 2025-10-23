@@ -4,11 +4,13 @@ import { OriginProduct } from '@/features/product/lib';
 
 export async function getProducts({
   slug,
+  locale = 'en',
 }: {
   slug: string;
+  locale?: string;
 }): Promise<OriginProduct[]> {
   const res = await fetch(
-    `${process.env.SERVER_URL}/api/products?where[category.slug][in]=${slug}`,
+    `${process.env.SERVER_URL}/api/products?where[category.slug][in]=${slug}&locale=${locale}`,
     {
       method: 'GET',
       next: { revalidate: 60 },

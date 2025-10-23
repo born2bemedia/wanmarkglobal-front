@@ -4,11 +4,12 @@ import { ProductList } from '@/features/product/components';
 import { productsMapping } from '@/features/product/lib';
 import { getProducts } from '@/features/product/services';
 
-export async function ClientAcquisition() {
+export async function ClientAcquisition({ locale }: { locale: string }) {
   const t = await getTranslations('businessConsulting.clientAcquisition');
 
   const productsData = await getProducts({
     slug: 'client-acquisition-and-sales-strategy',
+    locale,
   });
   const products = await productsMapping(productsData);
 

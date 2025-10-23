@@ -5,14 +5,17 @@ import { getProducts } from '@/features/product/services';
 import st from './marketing-request-form.module.scss';
 import { RequestInfo } from './request-info';
 
-export async function MarketingRequestForm() {
+export async function MarketingRequestForm({ locale }: { locale: string }) {
   const products = (
     await Promise.all([
-      getProducts({ slug: 'brand-and-market-positioning' }),
-      getProducts({ slug: 'paid-advertising-and-customer-acquisition' }),
-      getProducts({ slug: 'sales-and-lead-nurturing-strategy' }),
-      getProducts({ slug: 'social-media-and-content-strategy' }),
-      getProducts({ slug: 'online-presence-and-website-strategy' }),
+      getProducts({ slug: 'brand-and-market-positioning', locale }),
+      getProducts({
+        slug: 'paid-advertising-and-customer-acquisition',
+        locale,
+      }),
+      getProducts({ slug: 'sales-and-lead-nurturing-strategy', locale }),
+      getProducts({ slug: 'social-media-and-content-strategy', locale }),
+      getProducts({ slug: 'online-presence-and-website-strategy', locale }),
     ])
   ).flat();
   const services = await servicesMapping(products);
