@@ -11,4 +11,5 @@ export type TextColor =
   | 'coral'
   | 'lightGreen'
   | 'green'
-  | 'blackPurple';
+  | 'blackPurple'
+  | 'blackYellow';

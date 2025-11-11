@@ -53,6 +53,7 @@ export function Text({
       [st.lightGreen]: color === 'lightGreen',
       [st.green]: color === 'green',
       [st.blackPurple]: color === 'blackPurple',
+      [st.blackYellow]: color === 'blackYellow',
       [st.xlSize]: size === 'xl',
       [st.capitalize]: capitalize,
       [st.underline]: underline,
