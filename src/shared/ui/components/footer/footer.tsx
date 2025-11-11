@@ -57,9 +57,9 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="tel:+447418036208">
+              <Link href="tel:+447427816785 ">
                 <Text size="lg" color="darkBlue">
-                  +447418036208
+                  +447427816785
                 </Text>
               </Link>
             </li>

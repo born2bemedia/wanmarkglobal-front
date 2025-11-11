@@ -29,6 +29,7 @@ export function ContactInfo() {
         <ContactCard
           name={t('phone', { fallback: 'Phone' })}
           value="+447418036208"
+          type="phone"
         />
         <ContactCard
           name={t('email', { fallback: 'Email' })}
@@ -39,10 +40,18 @@ export function ContactInfo() {
   );
 }
 
-function ContactCard({ name, value }: { name: string; value: string }) {
+function ContactCard({
+  name,
+  value,
+  type = 'email',
+}: {
+  name: string;
+  value: string;
+  type?: 'phone' | 'email';
+}) {
   return (
     <article className={st.cardLayout}>
-      {name === 'Phone' ? (
+      {type === 'phone' ? (
         <FiveDots width="31" height="30" />
       ) : (
         <Magnet width="29" height="29" />
@@ -51,7 +60,7 @@ function ContactCard({ name, value }: { name: string; value: string }) {
         <Text color="deepBlack" size="xl">
           {name}
         </Text>
-        <Link href={name === 'Phone' ? `tel:${value}` : `mailto:${value}`}>
+        <Link href={type === 'phone' ? `tel:${value}` : `mailto:${value}`}>
           <Text color="lightBlue">{value}</Text>
         </Link>
       </div>
