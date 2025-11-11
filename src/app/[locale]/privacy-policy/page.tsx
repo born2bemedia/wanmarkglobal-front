@@ -25,7 +25,9 @@ export default async function PrivacyPolicy({
   const t = await getTranslations('policies.privacy');
 
   const res = await getPolicy({ id: '2', locale });
-  const { elements } = parseJSONToElements(res.content.root.children);
+  const { elements, lastUpdate } = parseJSONToElements(
+    res.content.root.children,
+  );
 
   return (
     <main>
@@ -35,6 +37,7 @@ export default async function PrivacyPolicy({
           color: 'blackYellow',
         }}
         color="#FFE69E"
+        hint={{ value: lastUpdate ?? '', color: 'blackYellow' }}
       />
       <PolicyLayout className={st.layout}>{elements}</PolicyLayout>
     </main>

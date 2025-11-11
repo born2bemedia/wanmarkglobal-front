@@ -23,7 +23,9 @@ export default async function TermsOfUse({
   const t = await getTranslations('policies.terms');
 
   const res = await getPolicy({ id: '1', locale });
-  const { elements } = parseJSONToElements(res.content.root.children);
+  const { elements, lastUpdate } = parseJSONToElements(
+    res.content.root.children,
+  );
 
   return (
     <main>
@@ -32,6 +34,7 @@ export default async function TermsOfUse({
           value: t('title', { fallback: 'Terms of Use' }),
           color: 'blackPurple',
         }}
+        hint={{ value: lastUpdate ?? '', color: 'blackPurple' }}
         color="#D3CBFF"
       />
       <PolicyLayout>{elements}</PolicyLayout>
