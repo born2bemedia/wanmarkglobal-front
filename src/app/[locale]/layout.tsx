@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { GoogleAnalytics } from '@next/third-parties/google';
 
 import { Toaster } from '@/shared/lib/notify';
+import { CookieConsent } from '@/shared/ui/components/cookie-consent';
 import { Footer } from '@/shared/ui/components/footer';
 import { Header } from '@/shared/ui/components/header';
 import { Preloader } from '@/shared/ui/components/preloader';
@@ -44,6 +45,7 @@ export default async function RootLayout({
           <Preloader />
           {children}
           <Footer />
+          <CookieConsent />
           <Toaster position="bottom-right" reverseOrder={false} />
         </NextIntlClientProvider>
       </body>

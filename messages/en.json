@@ -868,5 +868,12 @@
     "faq": "FAQ",
     "pricing": "Pricing",
     "resources": "Resources"
+  },
+  "cookieConsent": {
+    "title": "Cookie settings",
+    "text": "Cookies help us improve our website. By clicking 'Accept,' you agree to our use of cookies for functionality, analytics, and personalized content. Learn more in our",
+    "link": "Cookie Policy",
+    "accept": "Accept",
+    "decline": "Decline"
   }
 }
