@@ -28,7 +28,7 @@ export function ContactInfo() {
       <section className={st.cards}>
         <ContactCard
           name={t('phone', { fallback: 'Phone' })}
-          value="+447418036208"
+          value="+447427816785"
           type="phone"
         />
         <ContactCard
