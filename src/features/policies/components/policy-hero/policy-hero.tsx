@@ -3,7 +3,7 @@
 import Image from 'next/image';
 
 import { motion } from '@/shared/lib/motion';
-import { Text, TextColor } from '@/shared/ui/kit/text';
+import { TextColor } from '@/shared/ui/kit/text';
 import { Title } from '@/shared/ui/kit/title';
 import { TitleColor } from '@/shared/ui/kit/title/types';
 
@@ -12,7 +12,7 @@ import st from './policy-hero.module.scss';
 export function PolicyHero({
   title,
   color,
-  hint,
+  hint, // eslint-disable-line @typescript-eslint/no-unused-vars
 }: {
   title: { value: string; color: TitleColor };
   hint?: { value: string; color: TextColor };
@@ -36,7 +36,6 @@ export function PolicyHero({
         />
       </motion.div>
       <section className={st.title}>
-        {hint ? <Text color={hint.color}>{hint.value}</Text> : null}
         <Title weight={500} color={title.color} uppercase>
           {title.value}
         </Title>
